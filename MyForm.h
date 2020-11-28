@@ -191,6 +191,28 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tbPage_GestionClient = (gcnew System::Windows::Forms::TabPage());
 			this->tbPage_GestionClient_Supprimer = (gcnew System::Windows::Forms::TabControl());
 			this->tbPage_GestionClient_Creer = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->tbPage_GestionClient_Modifier = (gcnew System::Windows::Forms::TabPage());
 			this->tbPage_GestionClient_Afficher = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
@@ -224,34 +246,13 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tabPage28 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage29 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage30 = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->tbC_MenuPrincipal->SuspendLayout();
 			this->tbPage_Informations->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->tbPage_GestionClient->SuspendLayout();
 			this->tbPage_GestionClient_Supprimer->SuspendLayout();
 			this->tbPage_GestionClient_Creer->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->tbPage_GestionPersonnel->SuspendLayout();
 			this->tbC_GestionPersonnel->SuspendLayout();
 			this->tbPage_GestionCommande->SuspendLayout();
@@ -260,7 +261,6 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tbC_GestionStock->SuspendLayout();
 			this->tbPage_GestionStatistiques->SuspendLayout();
 			this->tbC_GestionStatistiques->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tbC_MenuPrincipal
@@ -497,6 +497,219 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tbPage_GestionClient_Creer->TabIndex = 0;
 			this->tbPage_GestionClient_Creer->Text = L"Creer";
 			this->tbPage_GestionClient_Creer->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::Gray;
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button2->Cursor = System::Windows::Forms::Cursors::Default;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(180, 473);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(107, 42);
+			this->button2->TabIndex = 22;
+			this->button2->Text = L"Effacer tous les champs";
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Gray;
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(180, 425);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(107, 42);
+			this->button1->TabIndex = 21;
+			this->button1->Text = L"Creer";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(417, 425);
+			this->textBox8->Multiline = true;
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(522, 87);
+			this->textBox8->TabIndex = 20;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(111, 344);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(30, 13);
+			this->label12->TabIndex = 19;
+			this->label12->Text = L"Pays";
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(142, 341);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(170, 20);
+			this->textBox7->TabIndex = 18;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(111, 318);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(63, 13);
+			this->label11->TabIndex = 17;
+			this->label11->Text = L"Code postal";
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(180, 315);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(132, 20);
+			this->textBox6->TabIndex = 16;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(111, 292);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(26, 13);
+			this->label10->TabIndex = 15;
+			this->label10->Text = L"Ville";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(142, 289);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(170, 20);
+			this->textBox4->TabIndex = 14;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(111, 266);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(27, 13);
+			this->label9->TabIndex = 13;
+			this->label9->Text = L"Rue";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(109, 247);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(130, 16);
+			this->label8->TabIndex = 12;
+			this->label8->Text = L"Adresse de facturation";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(414, 54);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(112, 13);
+			this->label7->TabIndex = 11;
+			this->label7->Text = L"Adresse(s) de livraison";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(109, 146);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(37, 16);
+			this->label6->TabIndex = 10;
+			this->label6->Text = L"Email";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(109, 196);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(104, 16);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"Date de naissance";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(109, 97);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(51, 16);
+			this->label4->TabIndex = 8;
+			this->label4->Text = L"Prenom";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(109, 54);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(35, 16);
+			this->label3->TabIndex = 7;
+			this->label3->Text = L"Nom";
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Location = System::Drawing::Point(112, 212);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker1->TabIndex = 6;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(142, 263);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(170, 20);
+			this->textBox5->TabIndex = 5;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(112, 162);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(117, 20);
+			this->textBox3->TabIndex = 3;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(112, 113);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(117, 20);
+			this->textBox2->TabIndex = 2;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(112, 70);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(117, 20);
+			this->textBox1->TabIndex = 1;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(417, 70);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(522, 291);
+			this->dataGridView1->TabIndex = 0;
 			// 
 			// tbPage_GestionClient_Modifier
 			// 
@@ -850,218 +1063,6 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tabPage30->Text = L"Simulation variation";
 			this->tabPage30->UseVisualStyleBackColor = true;
 			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(417, 70);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(522, 291);
-			this->dataGridView1->TabIndex = 0;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(112, 70);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(117, 20);
-			this->textBox1->TabIndex = 1;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(112, 113);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(117, 20);
-			this->textBox2->TabIndex = 2;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(112, 162);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(117, 20);
-			this->textBox3->TabIndex = 3;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(142, 263);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(170, 20);
-			this->textBox5->TabIndex = 5;
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(112, 212);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker1->TabIndex = 6;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(109, 54);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(35, 16);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"Nom";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(109, 97);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(51, 16);
-			this->label4->TabIndex = 8;
-			this->label4->Text = L"Prenom";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(109, 196);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(104, 16);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"Date de naissance";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(109, 146);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(37, 16);
-			this->label6->TabIndex = 10;
-			this->label6->Text = L"Email";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(414, 54);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(112, 13);
-			this->label7->TabIndex = 11;
-			this->label7->Text = L"Adresse(s) de livraison";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(109, 247);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(130, 16);
-			this->label8->TabIndex = 12;
-			this->label8->Text = L"Adresse de facturation";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(111, 266);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(27, 13);
-			this->label9->TabIndex = 13;
-			this->label9->Text = L"Rue";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(111, 292);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(26, 13);
-			this->label10->TabIndex = 15;
-			this->label10->Text = L"Ville";
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(142, 289);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(170, 20);
-			this->textBox4->TabIndex = 14;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(111, 318);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(63, 13);
-			this->label11->TabIndex = 17;
-			this->label11->Text = L"Code postal";
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(180, 315);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(132, 20);
-			this->textBox6->TabIndex = 16;
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(111, 344);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(30, 13);
-			this->label12->TabIndex = 19;
-			this->label12->Text = L"Pays";
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(142, 341);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(170, 20);
-			this->textBox7->TabIndex = 18;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(417, 425);
-			this->textBox8->Multiline = true;
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(522, 87);
-			this->textBox8->TabIndex = 20;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::Gray;
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(180, 425);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(107, 42);
-			this->button1->TabIndex = 21;
-			this->button1->Text = L"Creer";
-			this->button1->UseVisualStyleBackColor = false;
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::Gray;
-			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button2->Cursor = System::Windows::Forms::Cursors::Default;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(180, 473);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(107, 42);
-			this->button2->TabIndex = 22;
-			this->button2->Text = L"Effacer tous les champs";
-			this->button2->UseVisualStyleBackColor = false;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1084,6 +1085,7 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tbPage_GestionClient_Supprimer->ResumeLayout(false);
 			this->tbPage_GestionClient_Creer->ResumeLayout(false);
 			this->tbPage_GestionClient_Creer->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->tbPage_GestionPersonnel->ResumeLayout(false);
 			this->tbC_GestionPersonnel->ResumeLayout(false);
 			this->tbPage_GestionCommande->ResumeLayout(false);
@@ -1092,7 +1094,6 @@ private: System::Windows::Forms::TextBox^ textBox4;
 			this->tbC_GestionStock->ResumeLayout(false);
 			this->tbPage_GestionStatistiques->ResumeLayout(false);
 			this->tbC_GestionStatistiques->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1131,3 +1132,5 @@ private: System::Windows::Forms::TextBox^ textBox4;
 
 };
 }
+
+
