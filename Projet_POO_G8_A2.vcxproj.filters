@@ -13,15 +13,105 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Svc_cpp">
+      <UniqueIdentifier>{65d47e58-4b8b-460b-b531-a6ca3e6c6b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Cmp_cpp">
+      <UniqueIdentifier>{283c0fbe-08b4-4892-b5b8-5518e8dbb64a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Cmp_h">
+      <UniqueIdentifier>{7f41a2e7-de0a-40fa-acaa-035b9fe049fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Svc_h">
+      <UniqueIdentifier>{17a83fe6-17ff-40cf-b942-0e94228606a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CL_CAD.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionPersonnel.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionClient.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionStock.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionCommande.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionStatistique.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBPERSONNEL.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBCLIENT.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBSOCIETE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBCOMMANDE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBLIGNECOMMANDE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBARTICLE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBNATURE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_CAD.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionPersonnel.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionClient.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionStock.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionCommande.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionStatistique.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBPERSONNEL.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBCLIENT.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBSOCIETE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBCOMMANDE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBLIGNECOMMANDE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBARTICLE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBNATURE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
