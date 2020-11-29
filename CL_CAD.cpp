@@ -4,7 +4,7 @@ namespace NS_Composants {
 
 	CL_CAD::CL_CAD() {
 		this->rq_Sql = "RIEN";
-		this->strCon = "Data Source=desktop-6lfj9o0\\db_prosit6_poo; Initial Catalog=Corbeille6; Integrated Security=true;";
+		this->strCon = "Data Source=DESKTOP-6LFJ9O0\\SQLSERVERRPOO; Initial Catalog=Database_Projet_POO_G8; Integrated Security=true;";
 		con = gcnew SqlConnection(strCon);
 		cmd = gcnew SqlCommand();
 		cmd->Connection = con;
