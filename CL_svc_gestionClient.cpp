@@ -6,14 +6,14 @@ namespace NS_Svc {
 
 		cad = gcnew NS_Composants::CL_CAD();
 		TBCLIENT = gcnew NS_Composants::CL_TBCLIENT();
-		dataSetSVC = gcnew DataSet();
+		dataSetClient = gcnew DataSet();
 	}
 
 	DataSet^ CL_svc_gestionClient::listeClient(String^ dataTableName) {
-		dataSetSVC->Clear();
-		dataSetSVC = cad->getRows(TBCLIENT->SELECT(), dataTableName);
+		dataSetClient->Clear();
+		dataSetClient = cad->getRows(TBCLIENT->SELECT(), dataTableName);
 
-		return dataSetSVC;
+		return dataSetClient;
 	}
 
 	int^ CL_svc_gestionClient::ajouter(String^ nom, String^ prenom, String^ DDN, String^ D1A, String^ email) {
@@ -42,4 +42,5 @@ namespace NS_Svc {
 		TBCLIENT->setID_client(id);
 		cad->actionRowsID(TBCLIENT->DELETE());
 	}
+
 }

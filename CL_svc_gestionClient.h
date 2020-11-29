@@ -15,7 +15,7 @@ namespace NS_Svc {
 	private:
 		NS_Composants::CL_CAD^ cad;
 		NS_Composants::CL_TBCLIENT^ TBCLIENT;
-		DataSet^ dataSetSVC;
+		DataSet^ dataSetClient;
 
 	public:
 		CL_svc_gestionClient();

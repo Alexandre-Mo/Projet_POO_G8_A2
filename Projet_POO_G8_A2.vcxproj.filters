@@ -69,6 +69,12 @@
     <ClCompile Include="CL_TBNATURE.cpp">
       <Filter>Fichiers sources\Cmp_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="CL_TBADRESSE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionAdresse.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -112,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="CL_TBNATURE.h">
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBADRESSE.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionAdresse.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

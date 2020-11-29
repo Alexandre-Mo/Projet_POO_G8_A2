@@ -4,6 +4,7 @@
 #include "CL_CAD.h"
 #include "CL_TBCLIENT.h"
 #include "CL_svc_gestionClient.h"
+#include "CL_svc_gestionAdresse.h"
 
 namespace ProjetPOOG8A2 {
 
@@ -124,17 +125,27 @@ namespace ProjetPOOG8A2 {
 
 	private: System::Windows::Forms::Label^ label2;
 private: System::Windows::Forms::Label^ label7;
-private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::TextBox^ txtBx_message_client;
+
 private: System::Windows::Forms::GroupBox^ groupBox5;
-private: System::Windows::Forms::Button^ button8;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Button^ button10;
-private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::Button^ btn_Modifier_client;
+private: System::Windows::Forms::Button^ btn_first_client;
+
+
+
+private: System::Windows::Forms::Button^ btn_Supprimer_client;
+private: System::Windows::Forms::Button^ btn_left_client;
+
+
 private: System::Windows::Forms::GroupBox^ groupBox4;
-private: System::Windows::Forms::Button^ button7;
-private: System::Windows::Forms::Button^ button6;
-private: System::Windows::Forms::Button^ button5;
-private: System::Windows::Forms::Button^ button4;
+private: System::Windows::Forms::Button^ btn_Nouveau_client;
+private: System::Windows::Forms::Button^ btn_enregistrer_client;
+private: System::Windows::Forms::Button^ btn_right_client;
+private: System::Windows::Forms::Button^ btn_last_client;
+
+
+
+
 private: System::Windows::Forms::GroupBox^ groupBox3;
 private: System::Windows::Forms::Label^ label9;
 private: System::Windows::Forms::TextBox^ txtBx_ID_client;
@@ -145,7 +156,8 @@ private: System::Windows::Forms::TextBox^ txtBx_DDN_client;
 
 private: System::Windows::Forms::Label^ label8;
 private: System::Windows::Forms::Label^ label6;
-private: System::Windows::Forms::DataGridView^ dataGridView1;
+private: System::Windows::Forms::DataGridView^ dataGrid_adresse_livraison;
+
 private: System::Windows::Forms::Label^ label92;
 private: System::Windows::Forms::TextBox^ txtBx_Nom_client_information;
 
@@ -160,7 +172,7 @@ private: System::Windows::Forms::TextBox^ txtBx_email_client;
 
 
 private: System::Windows::Forms::Label^ label85;
-private: System::Windows::Forms::TextBox^ txtBx_rue_client;
+
 private: System::Windows::Forms::TextBox^ txtBx_code_postal_client;
 
 
@@ -169,7 +181,8 @@ private: System::Windows::Forms::Label^ label91;
 private: System::Windows::Forms::TextBox^ txtBx_ville_client;
 
 private: System::Windows::Forms::Label^ label90;
-private: System::Windows::Forms::Label^ label87;
+
+
 private: System::Windows::Forms::Label^ label89;
 private: System::Windows::Forms::Label^ label88;
 private: System::Windows::Forms::GroupBox^ groupBox2;
@@ -552,6 +565,26 @@ private: System::Windows::Forms::Label^ label42;
 		/// </summary>
 		System::ComponentModel::Container^ components;
 		int index_client;
+		NS_Svc::CL_svc_gestionClient^ Client = gcnew NS_Svc::CL_svc_gestionClient();
+
+private: System::Windows::Forms::TextBox^ txtBx_rue_client;
+
+private: System::Windows::Forms::Label^ label32;
+private: System::Windows::Forms::TextBox^ txtBx_ID_adresse_client;
+
+
+private: System::Windows::Forms::Label^ label35;
+private: System::Windows::Forms::TextBox^ txtBx_num_rue_client;
+
+private: System::Windows::Forms::Label^ lbl1;
+private: System::Windows::Forms::Label^ label36;
+private: System::Windows::Forms::DataGridView^ dataGridView3;
+
+
+
+
+	   NS_Svc::CL_svc_gestionAdresse^ Adresse = gcnew NS_Svc::CL_svc_gestionAdresse();
+	   NS_Svc::CL_svc_gestionAdresse^ Adr = gcnew NS_Svc::CL_svc_gestionAdresse();
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -572,25 +605,31 @@ private: System::Windows::Forms::Label^ label42;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tbPage_GestionClient = (gcnew System::Windows::Forms::TabPage());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_message_client = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->btn_Modifier_client = (gcnew System::Windows::Forms::Button());
+			this->btn_first_client = (gcnew System::Windows::Forms::Button());
+			this->btn_Supprimer_client = (gcnew System::Windows::Forms::Button());
+			this->btn_left_client = (gcnew System::Windows::Forms::Button());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->btn_Nouveau_client = (gcnew System::Windows::Forms::Button());
+			this->btn_enregistrer_client = (gcnew System::Windows::Forms::Button());
+			this->btn_right_client = (gcnew System::Windows::Forms::Button());
+			this->btn_last_client = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->txtBx_ID_adresse_client = (gcnew System::Windows::Forms::TextBox());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->txtBx_rue_client = (gcnew System::Windows::Forms::TextBox());
+			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_ID_client = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_D1A_client = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_DDN_client = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGrid_adresse_livraison = (gcnew System::Windows::Forms::DataGridView());
 			this->label92 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_Nom_client_information = (gcnew System::Windows::Forms::TextBox());
 			this->label84 = (gcnew System::Windows::Forms::Label());
@@ -598,13 +637,13 @@ private: System::Windows::Forms::Label^ label42;
 			this->txtBx_pays_client = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_email_client = (gcnew System::Windows::Forms::TextBox());
 			this->label85 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_rue_client = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_num_rue_client = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_code_postal_client = (gcnew System::Windows::Forms::TextBox());
 			this->label86 = (gcnew System::Windows::Forms::Label());
 			this->label91 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_ville_client = (gcnew System::Windows::Forms::TextBox());
 			this->label90 = (gcnew System::Windows::Forms::Label());
-			this->label87 = (gcnew System::Windows::Forms::Label());
+			this->lbl1 = (gcnew System::Windows::Forms::Label());
 			this->label89 = (gcnew System::Windows::Forms::Label());
 			this->label88 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
@@ -741,7 +780,8 @@ private: System::Windows::Forms::Label^ label42;
 			this->groupBox5->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->groupBox3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_livraison))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->tbPage_GestionPersonnel->SuspendLayout();
@@ -947,7 +987,7 @@ private: System::Windows::Forms::Label^ label42;
 			// tbPage_GestionClient
 			// 
 			this->tbPage_GestionClient->Controls->Add(this->label7);
-			this->tbPage_GestionClient->Controls->Add(this->textBox3);
+			this->tbPage_GestionClient->Controls->Add(this->txtBx_message_client);
 			this->tbPage_GestionClient->Controls->Add(this->groupBox5);
 			this->tbPage_GestionClient->Controls->Add(this->groupBox3);
 			this->tbPage_GestionClient->Controls->Add(this->groupBox2);
@@ -964,29 +1004,29 @@ private: System::Windows::Forms::Label^ label42;
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(313, 435);
+			this->label7->Location = System::Drawing::Point(313, 459);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(54, 16);
 			this->label7->TabIndex = 46;
 			this->label7->Text = L"Message";
 			// 
-			// textBox3
+			// txtBx_message_client
 			// 
-			this->textBox3->Location = System::Drawing::Point(316, 454);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(683, 77);
-			this->textBox3->TabIndex = 50;
+			this->txtBx_message_client->Location = System::Drawing::Point(316, 478);
+			this->txtBx_message_client->Multiline = true;
+			this->txtBx_message_client->Name = L"txtBx_message_client";
+			this->txtBx_message_client->Size = System::Drawing::Size(683, 53);
+			this->txtBx_message_client->TabIndex = 50;
 			// 
 			// groupBox5
 			// 
-			this->groupBox5->Controls->Add(this->button8);
-			this->groupBox5->Controls->Add(this->button2);
-			this->groupBox5->Controls->Add(this->button10);
-			this->groupBox5->Controls->Add(this->button3);
+			this->groupBox5->Controls->Add(this->btn_Modifier_client);
+			this->groupBox5->Controls->Add(this->btn_first_client);
+			this->groupBox5->Controls->Add(this->btn_Supprimer_client);
+			this->groupBox5->Controls->Add(this->btn_left_client);
 			this->groupBox5->Controls->Add(this->groupBox4);
-			this->groupBox5->Controls->Add(this->button5);
-			this->groupBox5->Controls->Add(this->button4);
+			this->groupBox5->Controls->Add(this->btn_right_client);
+			this->groupBox5->Controls->Add(this->btn_last_client);
 			this->groupBox5->Location = System::Drawing::Point(52, 200);
 			this->groupBox5->Name = L"groupBox5";
 			this->groupBox5->Size = System::Drawing::Size(182, 308);
@@ -994,46 +1034,49 @@ private: System::Windows::Forms::Label^ label42;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Menu";
 			// 
-			// button8
+			// btn_Modifier_client
 			// 
-			this->button8->Location = System::Drawing::Point(12, 21);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(157, 38);
-			this->button8->TabIndex = 48;
-			this->button8->Text = L"Modifier";
-			this->button8->UseVisualStyleBackColor = true;
+			this->btn_Modifier_client->Location = System::Drawing::Point(12, 21);
+			this->btn_Modifier_client->Name = L"btn_Modifier_client";
+			this->btn_Modifier_client->Size = System::Drawing::Size(157, 38);
+			this->btn_Modifier_client->TabIndex = 48;
+			this->btn_Modifier_client->Text = L"Modifier";
+			this->btn_Modifier_client->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// btn_first_client
 			// 
-			this->button2->Location = System::Drawing::Point(6, 247);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(38, 38);
-			this->button2->TabIndex = 39;
-			this->button2->Text = L"<<";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btn_first_client->Location = System::Drawing::Point(6, 247);
+			this->btn_first_client->Name = L"btn_first_client";
+			this->btn_first_client->Size = System::Drawing::Size(38, 38);
+			this->btn_first_client->TabIndex = 39;
+			this->btn_first_client->Text = L"<<";
+			this->btn_first_client->UseVisualStyleBackColor = true;
+			this->btn_first_client->Click += gcnew System::EventHandler(this, &MyForm::btn_first_client_Click);
 			// 
-			// button10
+			// btn_Supprimer_client
 			// 
-			this->button10->Location = System::Drawing::Point(12, 65);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(157, 38);
-			this->button10->TabIndex = 45;
-			this->button10->Text = L"Supprimer";
-			this->button10->UseVisualStyleBackColor = true;
+			this->btn_Supprimer_client->Location = System::Drawing::Point(12, 65);
+			this->btn_Supprimer_client->Name = L"btn_Supprimer_client";
+			this->btn_Supprimer_client->Size = System::Drawing::Size(157, 38);
+			this->btn_Supprimer_client->TabIndex = 45;
+			this->btn_Supprimer_client->Text = L"Supprimer";
+			this->btn_Supprimer_client->UseVisualStyleBackColor = true;
+			this->btn_Supprimer_client->Click += gcnew System::EventHandler(this, &MyForm::btn_Supprimer_client_Click);
 			// 
-			// button3
+			// btn_left_client
 			// 
-			this->button3->Location = System::Drawing::Point(49, 247);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(38, 38);
-			this->button3->TabIndex = 40;
-			this->button3->Text = L"<";
-			this->button3->UseVisualStyleBackColor = true;
+			this->btn_left_client->Location = System::Drawing::Point(49, 247);
+			this->btn_left_client->Name = L"btn_left_client";
+			this->btn_left_client->Size = System::Drawing::Size(38, 38);
+			this->btn_left_client->TabIndex = 40;
+			this->btn_left_client->Text = L"<";
+			this->btn_left_client->UseVisualStyleBackColor = true;
+			this->btn_left_client->Click += gcnew System::EventHandler(this, &MyForm::btn_left_client_Click);
 			// 
 			// groupBox4
 			// 
-			this->groupBox4->Controls->Add(this->button7);
-			this->groupBox4->Controls->Add(this->button6);
+			this->groupBox4->Controls->Add(this->btn_Nouveau_client);
+			this->groupBox4->Controls->Add(this->btn_enregistrer_client);
 			this->groupBox4->Location = System::Drawing::Point(6, 115);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Size = System::Drawing::Size(169, 117);
@@ -1041,51 +1084,61 @@ private: System::Windows::Forms::Label^ label42;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Creer un nouveau client";
 			// 
-			// button7
+			// btn_Nouveau_client
 			// 
-			this->button7->Location = System::Drawing::Point(6, 19);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(157, 38);
-			this->button7->TabIndex = 44;
-			this->button7->Text = L"Nouveau";
-			this->button7->UseVisualStyleBackColor = true;
+			this->btn_Nouveau_client->Location = System::Drawing::Point(6, 19);
+			this->btn_Nouveau_client->Name = L"btn_Nouveau_client";
+			this->btn_Nouveau_client->Size = System::Drawing::Size(157, 38);
+			this->btn_Nouveau_client->TabIndex = 44;
+			this->btn_Nouveau_client->Text = L"Nouveau";
+			this->btn_Nouveau_client->UseVisualStyleBackColor = true;
+			this->btn_Nouveau_client->Click += gcnew System::EventHandler(this, &MyForm::btn_Nouveau_client_Click);
 			// 
-			// button6
+			// btn_enregistrer_client
 			// 
-			this->button6->Location = System::Drawing::Point(6, 63);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(157, 38);
-			this->button6->TabIndex = 43;
-			this->button6->Text = L"Enregistrer";
-			this->button6->UseVisualStyleBackColor = true;
+			this->btn_enregistrer_client->Location = System::Drawing::Point(6, 63);
+			this->btn_enregistrer_client->Name = L"btn_enregistrer_client";
+			this->btn_enregistrer_client->Size = System::Drawing::Size(157, 38);
+			this->btn_enregistrer_client->TabIndex = 43;
+			this->btn_enregistrer_client->Text = L"Enregistrer";
+			this->btn_enregistrer_client->UseVisualStyleBackColor = true;
+			this->btn_enregistrer_client->Click += gcnew System::EventHandler(this, &MyForm::btn_enregistrer_client_Click);
 			// 
-			// button5
+			// btn_right_client
 			// 
-			this->button5->Location = System::Drawing::Point(93, 247);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(38, 38);
-			this->button5->TabIndex = 41;
-			this->button5->Text = L">";
-			this->button5->UseVisualStyleBackColor = true;
+			this->btn_right_client->Location = System::Drawing::Point(93, 247);
+			this->btn_right_client->Name = L"btn_right_client";
+			this->btn_right_client->Size = System::Drawing::Size(38, 38);
+			this->btn_right_client->TabIndex = 41;
+			this->btn_right_client->Text = L">";
+			this->btn_right_client->UseVisualStyleBackColor = true;
+			this->btn_right_client->Click += gcnew System::EventHandler(this, &MyForm::btn_right_client_Click);
 			// 
-			// button4
+			// btn_last_client
 			// 
-			this->button4->Location = System::Drawing::Point(137, 247);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(38, 38);
-			this->button4->TabIndex = 42;
-			this->button4->Text = L">>";
-			this->button4->UseVisualStyleBackColor = true;
+			this->btn_last_client->Location = System::Drawing::Point(137, 247);
+			this->btn_last_client->Name = L"btn_last_client";
+			this->btn_last_client->Size = System::Drawing::Size(38, 38);
+			this->btn_last_client->TabIndex = 42;
+			this->btn_last_client->Text = L">>";
+			this->btn_last_client->UseVisualStyleBackColor = true;
+			this->btn_last_client->Click += gcnew System::EventHandler(this, &MyForm::btn_last_client_Click);
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->label36);
+			this->groupBox3->Controls->Add(this->dataGridView3);
+			this->groupBox3->Controls->Add(this->txtBx_ID_adresse_client);
+			this->groupBox3->Controls->Add(this->label35);
+			this->groupBox3->Controls->Add(this->txtBx_rue_client);
+			this->groupBox3->Controls->Add(this->label32);
 			this->groupBox3->Controls->Add(this->label9);
 			this->groupBox3->Controls->Add(this->txtBx_ID_client);
 			this->groupBox3->Controls->Add(this->txtBx_D1A_client);
 			this->groupBox3->Controls->Add(this->txtBx_DDN_client);
 			this->groupBox3->Controls->Add(this->label8);
 			this->groupBox3->Controls->Add(this->label6);
-			this->groupBox3->Controls->Add(this->dataGridView1);
+			this->groupBox3->Controls->Add(this->dataGrid_adresse_livraison);
 			this->groupBox3->Controls->Add(this->label92);
 			this->groupBox3->Controls->Add(this->txtBx_Nom_client_information);
 			this->groupBox3->Controls->Add(this->label84);
@@ -1093,21 +1146,75 @@ private: System::Windows::Forms::Label^ label42;
 			this->groupBox3->Controls->Add(this->txtBx_pays_client);
 			this->groupBox3->Controls->Add(this->txtBx_email_client);
 			this->groupBox3->Controls->Add(this->label85);
-			this->groupBox3->Controls->Add(this->txtBx_rue_client);
+			this->groupBox3->Controls->Add(this->txtBx_num_rue_client);
 			this->groupBox3->Controls->Add(this->txtBx_code_postal_client);
 			this->groupBox3->Controls->Add(this->label86);
 			this->groupBox3->Controls->Add(this->label91);
 			this->groupBox3->Controls->Add(this->txtBx_ville_client);
 			this->groupBox3->Controls->Add(this->label90);
-			this->groupBox3->Controls->Add(this->label87);
+			this->groupBox3->Controls->Add(this->lbl1);
 			this->groupBox3->Controls->Add(this->label89);
 			this->groupBox3->Controls->Add(this->label88);
 			this->groupBox3->Location = System::Drawing::Point(316, 6);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(683, 426);
+			this->groupBox3->Size = System::Drawing::Size(683, 450);
 			this->groupBox3->TabIndex = 38;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Information";
+			this->groupBox3->Enter += gcnew System::EventHandler(this, &MyForm::groupBox3_Enter);
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label36->Location = System::Drawing::Point(220, 192);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(133, 16);
+			this->label36->TabIndex = 49;
+			this->label36->Text = L"Commande(s) du client";
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(213, 208);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->Size = System::Drawing::Size(462, 232);
+			this->dataGridView3->TabIndex = 48;
+			// 
+			// txtBx_ID_adresse_client
+			// 
+			this->txtBx_ID_adresse_client->Location = System::Drawing::Point(149, 269);
+			this->txtBx_ID_adresse_client->Name = L"txtBx_ID_adresse_client";
+			this->txtBx_ID_adresse_client->Size = System::Drawing::Size(58, 20);
+			this->txtBx_ID_adresse_client->TabIndex = 46;
+			this->txtBx_ID_adresse_client->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(85, 272);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(58, 13);
+			this->label35->TabIndex = 47;
+			this->label35->Text = L"ID adresse";
+			this->label35->Click += gcnew System::EventHandler(this, &MyForm::label35_Click);
+			// 
+			// txtBx_rue_client
+			// 
+			this->txtBx_rue_client->Location = System::Drawing::Point(37, 294);
+			this->txtBx_rue_client->Name = L"txtBx_rue_client";
+			this->txtBx_rue_client->Size = System::Drawing::Size(170, 20);
+			this->txtBx_rue_client->TabIndex = 44;
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(6, 297);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(27, 13);
+			this->label32->TabIndex = 45;
+			this->label32->Text = L"Rue";
 			// 
 			// label9
 			// 
@@ -1130,7 +1237,7 @@ private: System::Windows::Forms::Label^ label42;
 			// 
 			// txtBx_D1A_client
 			// 
-			this->txtBx_D1A_client->Location = System::Drawing::Point(11, 390);
+			this->txtBx_D1A_client->Location = System::Drawing::Point(9, 420);
 			this->txtBx_D1A_client->Name = L"txtBx_D1A_client";
 			this->txtBx_D1A_client->Size = System::Drawing::Size(200, 20);
 			this->txtBx_D1A_client->TabIndex = 41;
@@ -1147,7 +1254,7 @@ private: System::Windows::Forms::Label^ label42;
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(6, 371);
+			this->label8->Location = System::Drawing::Point(4, 401);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(129, 16);
 			this->label8->TabIndex = 39;
@@ -1164,13 +1271,13 @@ private: System::Windows::Forms::Label^ label42;
 			this->label6->TabIndex = 38;
 			this->label6->Text = L"Adresse(s) de livraison";
 			// 
-			// dataGridView1
+			// dataGrid_adresse_livraison
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(215, 27);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(462, 383);
-			this->dataGridView1->TabIndex = 37;
+			this->dataGrid_adresse_livraison->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_adresse_livraison->Location = System::Drawing::Point(215, 27);
+			this->dataGrid_adresse_livraison->Name = L"dataGrid_adresse_livraison";
+			this->dataGrid_adresse_livraison->Size = System::Drawing::Size(462, 156);
+			this->dataGrid_adresse_livraison->TabIndex = 37;
 			// 
 			// label92
 			// 
@@ -1193,7 +1300,7 @@ private: System::Windows::Forms::Label^ label42;
 			// label84
 			// 
 			this->label84->AutoSize = true;
-			this->label84->Location = System::Drawing::Point(8, 345);
+			this->label84->Location = System::Drawing::Point(6, 375);
 			this->label84->Name = L"label84";
 			this->label84->Size = System::Drawing::Size(30, 13);
 			this->label84->TabIndex = 36;
@@ -1208,7 +1315,7 @@ private: System::Windows::Forms::Label^ label42;
 			// 
 			// txtBx_pays_client
 			// 
-			this->txtBx_pays_client->Location = System::Drawing::Point(39, 342);
+			this->txtBx_pays_client->Location = System::Drawing::Point(37, 372);
 			this->txtBx_pays_client->Name = L"txtBx_pays_client";
 			this->txtBx_pays_client->Size = System::Drawing::Size(170, 20);
 			this->txtBx_pays_client->TabIndex = 35;
@@ -1223,22 +1330,22 @@ private: System::Windows::Forms::Label^ label42;
 			// label85
 			// 
 			this->label85->AutoSize = true;
-			this->label85->Location = System::Drawing::Point(8, 319);
+			this->label85->Location = System::Drawing::Point(6, 349);
 			this->label85->Name = L"label85";
 			this->label85->Size = System::Drawing::Size(63, 13);
 			this->label85->TabIndex = 34;
 			this->label85->Text = L"Code postal";
 			// 
-			// txtBx_rue_client
+			// txtBx_num_rue_client
 			// 
-			this->txtBx_rue_client->Location = System::Drawing::Point(39, 264);
-			this->txtBx_rue_client->Name = L"txtBx_rue_client";
-			this->txtBx_rue_client->Size = System::Drawing::Size(170, 20);
-			this->txtBx_rue_client->TabIndex = 23;
+			this->txtBx_num_rue_client->Location = System::Drawing::Point(37, 269);
+			this->txtBx_num_rue_client->Name = L"txtBx_num_rue_client";
+			this->txtBx_num_rue_client->Size = System::Drawing::Size(42, 20);
+			this->txtBx_num_rue_client->TabIndex = 23;
 			// 
 			// txtBx_code_postal_client
 			// 
-			this->txtBx_code_postal_client->Location = System::Drawing::Point(77, 316);
+			this->txtBx_code_postal_client->Location = System::Drawing::Point(75, 346);
 			this->txtBx_code_postal_client->Name = L"txtBx_code_postal_client";
 			this->txtBx_code_postal_client->Size = System::Drawing::Size(132, 20);
 			this->txtBx_code_postal_client->TabIndex = 33;
@@ -1246,7 +1353,7 @@ private: System::Windows::Forms::Label^ label42;
 			// label86
 			// 
 			this->label86->AutoSize = true;
-			this->label86->Location = System::Drawing::Point(8, 293);
+			this->label86->Location = System::Drawing::Point(6, 323);
 			this->label86->Name = L"label86";
 			this->label86->Size = System::Drawing::Size(26, 13);
 			this->label86->TabIndex = 32;
@@ -1265,7 +1372,7 @@ private: System::Windows::Forms::Label^ label42;
 			// 
 			// txtBx_ville_client
 			// 
-			this->txtBx_ville_client->Location = System::Drawing::Point(39, 290);
+			this->txtBx_ville_client->Location = System::Drawing::Point(37, 320);
 			this->txtBx_ville_client->Name = L"txtBx_ville_client";
 			this->txtBx_ville_client->Size = System::Drawing::Size(170, 20);
 			this->txtBx_ville_client->TabIndex = 31;
@@ -1281,14 +1388,15 @@ private: System::Windows::Forms::Label^ label42;
 			this->label90->TabIndex = 27;
 			this->label90->Text = L"Date de naissance";
 			// 
-			// label87
+			// lbl1
 			// 
-			this->label87->AutoSize = true;
-			this->label87->Location = System::Drawing::Point(8, 267);
-			this->label87->Name = L"label87";
-			this->label87->Size = System::Drawing::Size(27, 13);
-			this->label87->TabIndex = 30;
-			this->label87->Text = L"Rue";
+			this->lbl1->AutoSize = true;
+			this->lbl1->Location = System::Drawing::Point(6, 272);
+			this->lbl1->Name = L"lbl1";
+			this->lbl1->Size = System::Drawing::Size(29, 13);
+			this->lbl1->TabIndex = 30;
+			this->lbl1->Text = L"Num";
+			this->lbl1->Click += gcnew System::EventHandler(this, &MyForm::label87_Click);
 			// 
 			// label89
 			// 
@@ -2620,7 +2728,8 @@ private: System::Windows::Forms::Label^ label42;
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_livraison))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
@@ -2661,16 +2770,25 @@ private: System::Windows::Forms::Label^ label42;
 
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		NS_Svc::CL_svc_gestionClient^ load = gcnew NS_Svc::CL_svc_gestionClient();
 
 		index_client = 0;
 
-		txtBx_ID_client->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
-		txtBx_D1A_client->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
-		txtBx_DDN_client->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
-		txtBx_email_client->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
-		txtBx_Nom_client_information->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
-		txtBx_Prenom_client_information->Text = (load->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+		txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+		txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+		txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+		txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+		txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+		txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse",1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
 		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2707,6 +2825,151 @@ private: System::Void tabPage10_Click(System::Object^ sender, System::EventArgs^
 private: System::Void tbPage_GestionCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label87_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
+
+private: System::Void btn_Supprimer_client_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void btn_Nouveau_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	txtBx_ID_client->Text = "";
+	txtBx_D1A_client->Clear();
+	txtBx_DDN_client->Clear();
+	txtBx_email_client->Clear();
+	txtBx_Nom_client_information->Clear();
+	txtBx_Prenom_client_information->Clear();
+
+	txtBx_ID_adresse_client->Clear();
+	txtBx_rue_client->Clear();
+	txtBx_num_rue_client->Clear();
+	txtBx_code_postal_client->Clear();
+	txtBx_pays_client->Clear();
+	txtBx_ville_client->Clear();
+
+	dataGrid_adresse_livraison->DataSource = nullptr;
+	txtBx_message_client->Clear();
+	txtBx_message_client->Text = "Rentrez les données pour le nouveau client, puis cliquez sur enregistrer";
+}
+private: System::Void btn_first_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	index_client = 0;
+
+	txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+	txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+	txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+	txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+ 	txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+
+}
+private: System::Void btn_left_client_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (index_client > 0)index_client--;
+	txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+	txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+	txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+	txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+  txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+
+}
+private: System::Void btn_right_client_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	int nbRows = Convert::ToInt32((Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows->Count);
+	if (index_client < nbRows - 1)index_client++;
+
+	txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+	txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+	txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+	txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+	txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+}
+private: System::Void btn_last_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	index_client = Convert::ToInt32((Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows->Count)- 1;
+
+	txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+	txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+	txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+	txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+	txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+}
+private: System::Void btn_enregistrer_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (txtBx_ID_client->Text == "") {
+		Client->ajouter(txtBx_Nom_client_information->Text, txtBx_Prenom_client_information->Text, txtBx_DDN_client->Text, txtBx_D1A_client->Text, txtBx_email_client->Text);
+		index_client = Convert::ToInt32((Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows->Count) - 1;
+
+		txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+		txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+		txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+		txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+		txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+		txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+		Adresse->ajouter(txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
+		
+		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+	}
+	else {
+	txtBx_message_client->Clear();
+	txtBx_message_client->Text = "Cliquez sur nouveau pour ajouter une personne";
+	}
 }
 };
 }
