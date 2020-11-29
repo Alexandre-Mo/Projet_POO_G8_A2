@@ -114,4 +114,9 @@
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLScript_create_BDD_Projet.sql">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+  </ItemGroup>
 </Project>
