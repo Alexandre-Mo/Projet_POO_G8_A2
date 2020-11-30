@@ -619,6 +619,8 @@ private: System::Windows::Forms::TextBox^ txtBx_num_rue_personnel;
 
 private: System::Windows::Forms::Label^ label21;
 	   NS_Svc::CL_svc_gestionAdresse^ Adr = gcnew NS_Svc::CL_svc_gestionAdresse();
+	   NS_Svc::CL_svc_gestionAdresse^ Adresse_livraison = gcnew NS_Svc::CL_svc_gestionAdresse();
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -1309,6 +1311,7 @@ private: System::Windows::Forms::Label^ label21;
 			// 
 			// dataGrid_adresse_livraison
 			// 
+			this->dataGrid_adresse_livraison->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGrid_adresse_livraison->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_adresse_livraison->Location = System::Drawing::Point(215, 27);
 			this->dataGrid_adresse_livraison->Name = L"dataGrid_adresse_livraison";
@@ -3060,8 +3063,83 @@ private: System::Void btn_enregistrer_client_Click(System::Object^ sender, Syste
 }
 private: System::Void btn_Modifier_client_Click(System::Object^ sender, System::EventArgs^ e) {
 	Client->modifier(Convert::ToInt32(txtBx_ID_client->Text), txtBx_Nom_client_information->Text, txtBx_Prenom_client_information->Text, txtBx_DDN_client->Text, txtBx_D1A_client->Text, txtBx_email_client->Text);
-	Adresse->modifier(txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
+	Adresse->modifier(Convert::ToInt32(txtBx_ID_adresse_client->Text),txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
 
+	for (int i = 0; i < dataGrid_adresse_livraison->SelectedRows->Count; i++) {
+
+		if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]->Value->ToString() == "") {
+			txtBx_message_client->Text = "Adresse de livraison ajouté ! \n";
+			dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]->Value = Adresse->ajouter(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+		}
+		else {
+			Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+		}
+
+
+
+
+	//Adresse->ajouter(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[0]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[0]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+	
+	
+	
+/*
+		for (int y = 0; y < Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows->Count; y++) {
+		if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0]) {
+			
+			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
+				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+			
+			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
+				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+			
+			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
+				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+			
+			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
+				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+			
+			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
+				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+
+		}
+		else {
+			//if(){}
+			//Adresse->ajouter(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
+
+		}
+	}	*/
+	
+	} 
+}
+private: System::Void btn_rechercher_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		   txtBx_nom_client_affichage->Text;
+		   txtBx_Prenom_client_affichage->Text;
+		   dataGrid_DDN_client->DataSource = Client->rechercher("dbo.Adresse", (txtBx_nom_client_affichage->Text), (txtBx_Prenom_client_affichage->Text))->Tables["dbo.Adresse"];
+
+	   }
+private: System::Void btn_selectionner_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (dataGrid_DDN_client->SelectedRows->Count >= 0) {
+
+		txtBx_ID_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_D1A_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_DDN_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_email_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_Nom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_Prenom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[5]->ToString();
+
+		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+	}
+	else {
+		txtBx_message_client->Text = "Merci de rechercher un client avec de selectionner !";
+	}
 }
 	   
 // EVENEMENT PERSONNEL
@@ -3202,40 +3280,8 @@ private: System::Void btn_enregistrer_personnel_Click(System::Object^ sender, Sy
 }
 private: System::Void btn_Modifier_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	Personnel->modifier(Convert::ToInt32(txtBx_ID_personnel->Text), txtBx_Prenom_personnel_information->Text, txtBx_Nom_personnel_information->Text, txtBx_DE_personnel->Text, Convert::ToInt32(txtBx_ID_SH->Text));
-	Adresse->modifier(txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 2, 0, Convert::ToInt32(txtBx_ID_personnel->Text));
+	Adresse->modifier(Convert::ToInt32(txtBx_ID_personnel->Text),txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 2, 0, Convert::ToInt32(txtBx_ID_personnel->Text));
 
-}
-
-
-private: System::Void btn_rechercher_client_Click(System::Object^ sender, System::EventArgs^ e) {
-	txtBx_nom_client_affichage->Text;
-	txtBx_Prenom_client_affichage->Text;
-	dataGrid_DDN_client->DataSource = Client->rechercher("dbo.Adresse", (txtBx_nom_client_affichage->Text), (txtBx_Prenom_client_affichage->Text))->Tables["dbo.Adresse"];
-
-}
-private: System::Void btn_selectionner_client_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dataGrid_DDN_client->SelectedRows->Count >= 0) {
-		
-		txtBx_ID_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[0]->ToString();
-		txtBx_D1A_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[1]->ToString();
-		txtBx_DDN_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_email_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[3]->ToString();
-		txtBx_Nom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[4]->ToString();
-		txtBx_Prenom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[5]->ToString();
-
-		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
-
-		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
-		
-	}
-	else {
-		txtBx_message_client->Text = "Merci de rechercher un client avec de selectionner !";
-	}
 }
 };
 }

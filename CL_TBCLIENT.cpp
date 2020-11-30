@@ -16,7 +16,7 @@ namespace NS_Composants {
 		return "INSERT INTO dbo.Client " + "(DDN_client,Email_client,Nom_client, Prenom_client) " + "VALUES('" + getDDN_client() + "', '" + getEmail() + "', '" + getNom_client() + "', '" + getPrenom_client() + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBCLIENT::UPDATE(void) {
-		return "UPDATE dbo.Client set Nom_client = ' " + getNom_client()->ToString() + "'" + ", Prenom_client = '" + getPrenom_client()->ToString() + "'" + ", Email_client='" + getEmail()->ToString() + "'" + ", DDN_client = '" + getDDN_client()->ToString() + "'" + ", D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
+		return "UPDATE dbo.Client set Nom_client = '" + getNom_client()->ToString() + "'" + ", Prenom_client = '" + getPrenom_client()->ToString() + "'" + ", Email_client='" + getEmail()->ToString() + "'" + ", DDN_client = '" + getDDN_client()->ToString() + "'" + ", D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
 	}
 	String^ CL_TBCLIENT::DELETE(void) {
 		return "DELETE FROM dbo.Client WHERE ID_client =" + Convert::ToInt32(getID_client());

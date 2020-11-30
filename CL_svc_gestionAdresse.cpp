@@ -21,7 +21,7 @@ namespace NS_Svc {
 
 
 	int^ CL_svc_gestionAdresse::ajouter(String^ Nom_rue, int Num_rue, int Code_postal, String^ Pays, String^ Ville, int Type, int ID_client, int ID_personnel) {
-		int id_personne;
+		int id_adresse;
 		TBADRESSE->setNom_rue(Nom_rue);
 		TBADRESSE->setNum_rue(Num_rue);
 		TBADRESSE->setCode_postal(Code_postal);
@@ -31,11 +31,12 @@ namespace NS_Svc {
 		TBADRESSE->setID_client(ID_client);
 		TBADRESSE->setID_personnel(ID_personnel);
 
-		id_personne = cad->actionRowsID(TBADRESSE->INSERT());
-		return id_personne;
+		id_adresse = cad->actionRowsID(TBADRESSE->INSERT());
+		return id_adresse;
 	}
 
-	void CL_svc_gestionAdresse::modifier(String^ Nom_rue, int Num_rue, int Code_postal, String^ Pays, String^ Ville, int Type, int ID_client, int ID_personnel) {
+	void CL_svc_gestionAdresse::modifier(int id,String^ Nom_rue, int Num_rue, int Code_postal, String^ Pays, String^ Ville, int Type, int ID_client, int ID_personnel) {
+		TBADRESSE->setID_adresse(id);
 		TBADRESSE->setNom_rue(Nom_rue);
 		TBADRESSE->setNum_rue(Num_rue);
 		TBADRESSE->setCode_postal(Code_postal);

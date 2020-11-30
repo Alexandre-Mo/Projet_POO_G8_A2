@@ -15,7 +15,7 @@ namespace NS_Composants {
 		return "INSERT INTO dbo.Personnel" + "(Date_embauche,Nom_personnel, Prenom_personnel,ID_personnel_SH) " + "VALUES('" + getDE_personnel() + "', '" + getNom_personnel() + "', '" + getPrenom_personnel() + "'"+ getIDSup_personnel() +"'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBPERSONNEL::UPDATE(void) {
-		return "UPDATE dbo.Personnel set Nom_Personnel = ' " + getNom_personnel()->ToString() + "'" + ", Prenom_personnel = '" + getPrenom_personnel()->ToString() + "'" + ", Date_embauche = '" + getDE_personnel()->ToString() + "'" + " WHERE ID_personnel = '" + Convert::ToInt32(getID_personnel()) + "'";
+		return "UPDATE dbo.Personnel set Nom_Personnel = '" + getNom_personnel()->ToString() + "'" + ", Prenom_personnel = '" + getPrenom_personnel()->ToString() + "'" + ", Date_embauche = '" + getDE_personnel()->ToString() + "'" + " WHERE ID_personnel = '" + Convert::ToInt32(getID_personnel()) + "'";
 	}
 	String^ CL_TBPERSONNEL::DELETE(void) {
 		return "DELETE FROM dbo.Personnel WHERE ID_Personnel =" + Convert::ToInt32(getID_personnel());
