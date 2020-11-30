@@ -22,6 +22,9 @@ namespace NS_Svc {
 		int^ ajouter(String^, String^, String^, int);
 		void modifier(int, String^, String^, String^, int);
 		void supprimer(int);
+		DataSet^ rechercher(String^, String^, String^);
+		DataSet^ selectionner(String^, int);
+
 	};
 
 }

@@ -26,6 +26,9 @@ namespace NS_Composants {
 
 
 	// GETTER
+	int CL_TBLIGNECOMMANDE::getID_Ligne() {
+		return this->ID_Ligne;
+	}
 	int CL_TBLIGNECOMMANDE::getQauntite_Produit() {
 		return this->Qauntite_Produit;
 	}
@@ -43,6 +46,9 @@ namespace NS_Composants {
 	}
 
 	// SETTER
+	void CL_TBLIGNECOMMANDE::setID_Ligne(int ID_article) {
+		this->ID_Ligne = ID_Ligne;
+	}
 	void CL_TBLIGNECOMMANDE::setID_article(int ID_article) {
 		this->ID_article = ID_article;
 	}

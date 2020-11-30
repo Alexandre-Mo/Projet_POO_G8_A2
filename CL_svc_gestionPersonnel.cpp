@@ -41,4 +41,18 @@ namespace NS_Svc {
 		cad->actionRowsID(TBPERSONNEL->DELETE());
 	}
 
+	DataSet^ CL_svc_gestionPersonnel::rechercher(String^ dataTableName, String^ nom, String^ prenom) {
+		TBPERSONNEL->setNom_personnel(nom);
+		TBPERSONNEL->setPrenom_personnel(prenom);
+		dataSetPersonnel = cad->getRows(TBPERSONNEL->SELECTbyName(), dataTableName);
+		return dataSetPersonnel;
+	}
+
+	DataSet^ CL_svc_gestionPersonnel::selectionner(String^ dataTableName, int ID_client) {
+		TBPERSONNEL->setID_personnel(ID_client);
+		dataSetPersonnel = cad->getRows(TBPERSONNEL->SELECTbyID(), dataTableName);
+		return dataSetPersonnel;
+	}
+	
+
 }

@@ -18,6 +18,8 @@ namespace NS_Composants {
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);
+		String^ SELECTbyName(void);
+		String^ SELECTbyID(void);
 
 		// GETTER
 		int getID_personnel();

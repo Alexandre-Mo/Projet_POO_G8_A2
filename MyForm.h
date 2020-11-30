@@ -264,16 +264,22 @@ private: System::Windows::Forms::Label^ label20;
 
 private: System::Windows::Forms::Label^ label22;
 private: System::Windows::Forms::GroupBox^ groupBox9;
-private: System::Windows::Forms::Button^ button19;
+private: System::Windows::Forms::Button^ btn_selectionner_personnel;
+
 private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::DataGridView^ dataGridView4;
-private: System::Windows::Forms::Button^ button20;
+private: System::Windows::Forms::DataGridView^ dataGrid_DE_personnel_affichage;
+
+private: System::Windows::Forms::Button^ btn_rechercher_personnel;
+
 private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::TextBox^ txtBx_Nom_personnel_affichage;
+private: System::Windows::Forms::TextBox^ txtBx_nom_personnel_affichage;
+
+
 
 
 private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::TextBox^ txtBx_Prenom_personnel_affichage;
+private: System::Windows::Forms::TextBox^ txtBx_prenom_personnel_affichage;
+
 
 private: System::Windows::Forms::GroupBox^ groupBox18;
 private: System::Windows::Forms::Button^ button29;
@@ -619,6 +625,10 @@ private: System::Windows::Forms::TextBox^ txtBx_num_rue_personnel;
 
 private: System::Windows::Forms::Label^ label21;
 	   NS_Svc::CL_svc_gestionAdresse^ Adr = gcnew NS_Svc::CL_svc_gestionAdresse();
+private: System::Windows::Forms::Button^ btn_selectionner_SH;
+private: System::Windows::Forms::Button^ btn_rechercher_SH;
+private: System::Windows::Forms::Label^ label37;
+private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 	   NS_Svc::CL_svc_gestionAdresse^ Adresse_livraison = gcnew NS_Svc::CL_svc_gestionAdresse();
 
 
@@ -732,14 +742,14 @@ private: System::Windows::Forms::Label^ label21;
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
-			this->button19 = (gcnew System::Windows::Forms::Button());
+			this->btn_selectionner_personnel = (gcnew System::Windows::Forms::Button());
 			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
-			this->button20 = (gcnew System::Windows::Forms::Button());
+			this->dataGrid_DE_personnel_affichage = (gcnew System::Windows::Forms::DataGridView());
+			this->btn_rechercher_personnel = (gcnew System::Windows::Forms::Button());
 			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_Nom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_nom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_Prenom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_prenom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->tbPage_GestionCommande = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox18 = (gcnew System::Windows::Forms::GroupBox());
 			this->button29 = (gcnew System::Windows::Forms::Button());
@@ -809,6 +819,10 @@ private: System::Windows::Forms::Label^ label21;
 			this->tabPage28 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage29 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage30 = (gcnew System::Windows::Forms::TabPage());
+			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->dataGrid_DE_SH = (gcnew System::Windows::Forms::DataGridView());
+			this->btn_rechercher_SH = (gcnew System::Windows::Forms::Button());
+			this->btn_selectionner_SH = (gcnew System::Windows::Forms::Button());
 			this->tbC_MenuPrincipal->SuspendLayout();
 			this->tbPage_Informations->SuspendLayout();
 			this->groupBox1->SuspendLayout();
@@ -826,7 +840,7 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox8->SuspendLayout();
 			this->groupBox10->SuspendLayout();
 			this->groupBox9->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->BeginInit();
 			this->tbPage_GestionCommande->SuspendLayout();
 			this->groupBox18->SuspendLayout();
 			this->groupBox15->SuspendLayout();
@@ -840,6 +854,7 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox14->SuspendLayout();
 			this->tbPage_GestionStatistiques->SuspendLayout();
 			this->tbC_GestionStatistiques->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tbC_MenuPrincipal
@@ -1741,15 +1756,19 @@ private: System::Windows::Forms::Label^ label21;
 			// 
 			// groupBox10
 			// 
+			this->groupBox10->Controls->Add(this->btn_selectionner_SH);
+			this->groupBox10->Controls->Add(this->btn_rechercher_SH);
+			this->groupBox10->Controls->Add(this->label37);
+			this->groupBox10->Controls->Add(this->dataGrid_DE_SH);
 			this->groupBox10->Controls->Add(this->label12);
 			this->groupBox10->Controls->Add(this->txtBx_ID_SH);
 			this->groupBox10->Controls->Add(this->label26);
 			this->groupBox10->Controls->Add(this->label13);
 			this->groupBox10->Controls->Add(this->txtBx_prenom_SH);
 			this->groupBox10->Controls->Add(this->txtBx_nom_SH);
-			this->groupBox10->Location = System::Drawing::Point(305, 98);
+			this->groupBox10->Location = System::Drawing::Point(305, 75);
 			this->groupBox10->Name = L"groupBox10";
-			this->groupBox10->Size = System::Drawing::Size(319, 155);
+			this->groupBox10->Size = System::Drawing::Size(372, 231);
 			this->groupBox10->TabIndex = 44;
 			this->groupBox10->TabStop = false;
 			this->groupBox10->Text = L"Superieur hierarchique";
@@ -1759,17 +1778,18 @@ private: System::Windows::Forms::Label^ label21;
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(17, 17);
+			this->label12->Location = System::Drawing::Point(6, 16);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(146, 16);
+			this->label12->Size = System::Drawing::Size(78, 32);
 			this->label12->TabIndex = 50;
-			this->label12->Text = L"ID superieur hierarchique";
+			this->label12->Text = L"ID superieur \r\nhierarchique";
 			// 
 			// txtBx_ID_SH
 			// 
-			this->txtBx_ID_SH->Location = System::Drawing::Point(20, 33);
+			this->txtBx_ID_SH->Enabled = false;
+			this->txtBx_ID_SH->Location = System::Drawing::Point(9, 51);
 			this->txtBx_ID_SH->Name = L"txtBx_ID_SH";
-			this->txtBx_ID_SH->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_SH->Size = System::Drawing::Size(143, 20);
 			this->txtBx_ID_SH->TabIndex = 49;
 			// 
 			// label26
@@ -1777,35 +1797,35 @@ private: System::Windows::Forms::Label^ label21;
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(17, 99);
+			this->label26->Location = System::Drawing::Point(6, 132);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(193, 16);
+			this->label26->Size = System::Drawing::Size(122, 32);
 			this->label26->TabIndex = 48;
-			this->label26->Text = L"Prenom du superieur hierarchique";
+			this->label26->Text = L"Prenom du superieur\r\nhierarchique";
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(17, 56);
+			this->label13->Location = System::Drawing::Point(6, 74);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(177, 16);
+			this->label13->Size = System::Drawing::Size(109, 32);
 			this->label13->TabIndex = 47;
-			this->label13->Text = L"Nom du superieur hierarchique";
+			this->label13->Text = L"Nom du superieur \r\nhierarchique";
 			// 
 			// txtBx_prenom_SH
 			// 
-			this->txtBx_prenom_SH->Location = System::Drawing::Point(20, 115);
+			this->txtBx_prenom_SH->Location = System::Drawing::Point(9, 167);
 			this->txtBx_prenom_SH->Name = L"txtBx_prenom_SH";
-			this->txtBx_prenom_SH->Size = System::Drawing::Size(200, 20);
+			this->txtBx_prenom_SH->Size = System::Drawing::Size(143, 20);
 			this->txtBx_prenom_SH->TabIndex = 46;
 			// 
 			// txtBx_nom_SH
 			// 
-			this->txtBx_nom_SH->Location = System::Drawing::Point(20, 72);
+			this->txtBx_nom_SH->Location = System::Drawing::Point(9, 109);
 			this->txtBx_nom_SH->Name = L"txtBx_nom_SH";
-			this->txtBx_nom_SH->Size = System::Drawing::Size(200, 20);
+			this->txtBx_nom_SH->Size = System::Drawing::Size(143, 20);
 			this->txtBx_nom_SH->TabIndex = 45;
 			// 
 			// label11
@@ -1958,14 +1978,14 @@ private: System::Windows::Forms::Label^ label21;
 			// 
 			// groupBox9
 			// 
-			this->groupBox9->Controls->Add(this->button19);
+			this->groupBox9->Controls->Add(this->btn_selectionner_personnel);
 			this->groupBox9->Controls->Add(this->label23);
-			this->groupBox9->Controls->Add(this->dataGridView4);
-			this->groupBox9->Controls->Add(this->button20);
+			this->groupBox9->Controls->Add(this->dataGrid_DE_personnel_affichage);
+			this->groupBox9->Controls->Add(this->btn_rechercher_personnel);
 			this->groupBox9->Controls->Add(this->label24);
-			this->groupBox9->Controls->Add(this->txtBx_Nom_personnel_affichage);
+			this->groupBox9->Controls->Add(this->txtBx_nom_personnel_affichage);
 			this->groupBox9->Controls->Add(this->label25);
-			this->groupBox9->Controls->Add(this->txtBx_Prenom_personnel_affichage);
+			this->groupBox9->Controls->Add(this->txtBx_prenom_personnel_affichage);
 			this->groupBox9->Location = System::Drawing::Point(9, 6);
 			this->groupBox9->Name = L"groupBox9";
 			this->groupBox9->Size = System::Drawing::Size(301, 164);
@@ -1973,14 +1993,15 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox9->TabStop = false;
 			this->groupBox9->Text = L"Affichage";
 			// 
-			// button19
+			// btn_selectionner_personnel
 			// 
-			this->button19->Location = System::Drawing::Point(33, 130);
-			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(75, 23);
-			this->button19->TabIndex = 45;
-			this->button19->Text = L"Selectionner";
-			this->button19->UseVisualStyleBackColor = true;
+			this->btn_selectionner_personnel->Location = System::Drawing::Point(33, 130);
+			this->btn_selectionner_personnel->Name = L"btn_selectionner_personnel";
+			this->btn_selectionner_personnel->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_personnel->TabIndex = 45;
+			this->btn_selectionner_personnel->Text = L"Selectionner";
+			this->btn_selectionner_personnel->UseVisualStyleBackColor = true;
+			this->btn_selectionner_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_personnel_Click);
 			// 
 			// label23
 			// 
@@ -1993,22 +2014,23 @@ private: System::Windows::Forms::Label^ label21;
 			this->label23->TabIndex = 44;
 			this->label23->Text = L"Date d\'embauche";
 			// 
-			// dataGridView4
+			// dataGrid_DE_personnel_affichage
 			// 
-			this->dataGridView4->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView4->Location = System::Drawing::Point(137, 32);
-			this->dataGridView4->Name = L"dataGridView4";
-			this->dataGridView4->Size = System::Drawing::Size(158, 121);
-			this->dataGridView4->TabIndex = 43;
+			this->dataGrid_DE_personnel_affichage->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DE_personnel_affichage->Location = System::Drawing::Point(137, 32);
+			this->dataGrid_DE_personnel_affichage->Name = L"dataGrid_DE_personnel_affichage";
+			this->dataGrid_DE_personnel_affichage->Size = System::Drawing::Size(158, 121);
+			this->dataGrid_DE_personnel_affichage->TabIndex = 43;
 			// 
-			// button20
+			// btn_rechercher_personnel
 			// 
-			this->button20->Location = System::Drawing::Point(33, 101);
-			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(75, 23);
-			this->button20->TabIndex = 42;
-			this->button20->Text = L"Rechercher";
-			this->button20->UseVisualStyleBackColor = true;
+			this->btn_rechercher_personnel->Location = System::Drawing::Point(33, 101);
+			this->btn_rechercher_personnel->Name = L"btn_rechercher_personnel";
+			this->btn_rechercher_personnel->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_personnel->TabIndex = 42;
+			this->btn_rechercher_personnel->Text = L"Rechercher";
+			this->btn_rechercher_personnel->UseVisualStyleBackColor = true;
+			this->btn_rechercher_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_personnel_Click);
 			// 
 			// label24
 			// 
@@ -2021,12 +2043,12 @@ private: System::Windows::Forms::Label^ label21;
 			this->label24->TabIndex = 41;
 			this->label24->Text = L"Prenom";
 			// 
-			// txtBx_Nom_personnel_affichage
+			// txtBx_nom_personnel_affichage
 			// 
-			this->txtBx_Nom_personnel_affichage->Location = System::Drawing::Point(14, 32);
-			this->txtBx_Nom_personnel_affichage->Name = L"txtBx_Nom_personnel_affichage";
-			this->txtBx_Nom_personnel_affichage->Size = System::Drawing::Size(117, 20);
-			this->txtBx_Nom_personnel_affichage->TabIndex = 38;
+			this->txtBx_nom_personnel_affichage->Location = System::Drawing::Point(14, 32);
+			this->txtBx_nom_personnel_affichage->Name = L"txtBx_nom_personnel_affichage";
+			this->txtBx_nom_personnel_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_nom_personnel_affichage->TabIndex = 38;
 			// 
 			// label25
 			// 
@@ -2039,12 +2061,12 @@ private: System::Windows::Forms::Label^ label21;
 			this->label25->TabIndex = 40;
 			this->label25->Text = L"Nom";
 			// 
-			// txtBx_Prenom_personnel_affichage
+			// txtBx_prenom_personnel_affichage
 			// 
-			this->txtBx_Prenom_personnel_affichage->Location = System::Drawing::Point(14, 75);
-			this->txtBx_Prenom_personnel_affichage->Name = L"txtBx_Prenom_personnel_affichage";
-			this->txtBx_Prenom_personnel_affichage->Size = System::Drawing::Size(117, 20);
-			this->txtBx_Prenom_personnel_affichage->TabIndex = 39;
+			this->txtBx_prenom_personnel_affichage->Location = System::Drawing::Point(14, 75);
+			this->txtBx_prenom_personnel_affichage->Name = L"txtBx_prenom_personnel_affichage";
+			this->txtBx_prenom_personnel_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_prenom_personnel_affichage->TabIndex = 39;
 			// 
 			// tbPage_GestionCommande
 			// 
@@ -2751,6 +2773,45 @@ private: System::Windows::Forms::Label^ label21;
 			this->tabPage30->Text = L"Simulation variation";
 			this->tabPage30->UseVisualStyleBackColor = true;
 			// 
+			// label37
+			// 
+			this->label37->AutoSize = true;
+			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label37->Location = System::Drawing::Point(155, 32);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(103, 16);
+			this->label37->TabIndex = 52;
+			this->label37->Text = L"Date d\'embauche";
+			// 
+			// dataGrid_DE_SH
+			// 
+			this->dataGrid_DE_SH->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DE_SH->Location = System::Drawing::Point(158, 51);
+			this->dataGrid_DE_SH->Name = L"dataGrid_DE_SH";
+			this->dataGrid_DE_SH->Size = System::Drawing::Size(208, 136);
+			this->dataGrid_DE_SH->TabIndex = 51;
+			// 
+			// btn_rechercher_SH
+			// 
+			this->btn_rechercher_SH->Location = System::Drawing::Point(40, 193);
+			this->btn_rechercher_SH->Name = L"btn_rechercher_SH";
+			this->btn_rechercher_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_SH->TabIndex = 53;
+			this->btn_rechercher_SH->Text = L"Rechercher";
+			this->btn_rechercher_SH->UseVisualStyleBackColor = true;
+			this->btn_rechercher_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_SH_Click);
+			// 
+			// btn_selectionner_SH
+			// 
+			this->btn_selectionner_SH->Location = System::Drawing::Point(226, 193);
+			this->btn_selectionner_SH->Name = L"btn_selectionner_SH";
+			this->btn_selectionner_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_SH->TabIndex = 46;
+			this->btn_selectionner_SH->Text = L"Selectionner";
+			this->btn_selectionner_SH->UseVisualStyleBackColor = true;
+			this->btn_selectionner_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_SH_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2790,7 +2851,7 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox10->PerformLayout();
 			this->groupBox9->ResumeLayout(false);
 			this->groupBox9->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->EndInit();
 			this->tbPage_GestionCommande->ResumeLayout(false);
 			this->tbPage_GestionCommande->PerformLayout();
 			this->groupBox18->ResumeLayout(false);
@@ -2810,6 +2871,7 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox14->PerformLayout();
 			this->tbPage_GestionStatistiques->ResumeLayout(false);
 			this->tbC_GestionStatistiques->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2853,6 +2915,9 @@ private: System::Windows::Forms::Label^ label21;
 		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
 		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
+		txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
+		
 
 		
 	}
@@ -3044,6 +3109,7 @@ private: System::Void btn_enregistrer_client_Click(System::Object^ sender, Syste
 		for (int i = 0; i < dataGrid_adresse_livraison->SelectedRows->Count;i++)
 		{
 		Adresse->ajouter(dataGrid_adresse_livraison->Rows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->Rows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->Rows[i]->Cells["Ville"]->Value->ToString(),3,Convert::ToInt32(txtBx_ID_client->Text),0);
+		
 		}
 
 		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
@@ -3074,46 +3140,12 @@ private: System::Void btn_Modifier_client_Click(System::Object^ sender, System::
 		else {
 			Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
 		}
-
-
-
-
-	//Adresse->ajouter(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[0]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[0]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[0]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-	
-	
-	
-/*
-		for (int y = 0; y < Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows->Count; y++) {
-		if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0]) {
-			
-			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
-				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-			
-			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
-				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-			
-			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
-				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-			
-			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
-				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-			
-			if (dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"] == Adresse->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text))->Tables["dbo.Adresse"]->Rows[y]->ItemArray[0])
-				Adresse_livraison->modifier(Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["ID_adresse"]),dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-
-		}
-		else {
-			//if(){}
-			//Adresse->ajouter(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->SelectedRows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->SelectedRows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_client->Text), 0);
-
-		}
-	}	*/
 	
 	} 
 }
 private: System::Void btn_rechercher_client_Click(System::Object^ sender, System::EventArgs^ e) {
-		   txtBx_nom_client_affichage->Text;
-		   txtBx_Prenom_client_affichage->Text;
+		// txtBx_nom_client_affichage->Text;
+		//   txtBx_Prenom_client_affichage->Text;
 		   dataGrid_DDN_client->DataSource = Client->rechercher("dbo.Adresse", (txtBx_nom_client_affichage->Text), (txtBx_Prenom_client_affichage->Text))->Tables["dbo.Adresse"];
 
 	   }
@@ -3144,7 +3176,7 @@ private: System::Void btn_selectionner_client_Click(System::Object^ sender, Syst
 	   
 // EVENEMENT PERSONNEL
 private: System::Void btn_Supprimer_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	Adresse->supprimer(Convert::ToInt32(txtBx_ID_personnel->Text), 1);
+	Adresse->supprimer(Convert::ToInt32(txtBx_ID_personnel->Text), 2);
 	Personnel->supprimer(Convert::ToInt32(txtBx_ID_personnel->Text));
 	txtBx_message_personnel->Text = "Personnel supprimé";
 
@@ -3196,6 +3228,8 @@ private: System::Void btn_first_personnel_Click(System::Object^ sender, System::
 	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
 	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
+	txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
 
 
 
@@ -3215,6 +3249,8 @@ private: System::Void btn_left_personnel_Click(System::Object^ sender, System::E
 	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
 	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
+	txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
 
 
 }
@@ -3235,6 +3271,9 @@ private: System::Void btn_right_personnel_Click(System::Object^ sender, System::
 	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
 	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
+	txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
+
 
 }
 private: System::Void btn_last_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3251,6 +3290,9 @@ private: System::Void btn_last_personnel_Click(System::Object^ sender, System::E
 	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
 	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
 	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+	txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
 
 }
 private: System::Void btn_enregistrer_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3281,6 +3323,45 @@ private: System::Void btn_enregistrer_personnel_Click(System::Object^ sender, Sy
 private: System::Void btn_Modifier_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	Personnel->modifier(Convert::ToInt32(txtBx_ID_personnel->Text), txtBx_Prenom_personnel_information->Text, txtBx_Nom_personnel_information->Text, txtBx_DE_personnel->Text, Convert::ToInt32(txtBx_ID_SH->Text));
 	Adresse->modifier(Convert::ToInt32(txtBx_ID_personnel->Text),txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 2, 0, Convert::ToInt32(txtBx_ID_personnel->Text));
+
+}
+
+private: System::Void btn_rechercher_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	//txtBx_nom_personnel_affichage->Text;
+	//txtBx_prenom_personnel_affichage->Text;
+	dataGrid_DE_personnel_affichage->DataSource = Personnel->rechercher("dbo.Adresse", (txtBx_nom_personnel_affichage->Text), (txtBx_prenom_personnel_affichage->Text))->Tables["dbo.Adresse"];
+
+}
+private: System::Void btn_selectionner_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (dataGrid_DE_personnel_affichage->SelectedRows->Count >= 0) {
+
+		txtBx_ID_personnel->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_personnel_affichage->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_DE_personnel->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_personnel_affichage->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_Nom_personnel_information->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_personnel_affichage->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_Prenom_personnel_information->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_personnel_affichage->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_ID_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_personnel_affichage->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[4]->ToString();
+		
+		//txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+		txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+
+		//dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
+
+	}
+	else {
+		txtBx_message_personnel->Text = "Merci de rechercher un personnel avec de selectionner !";
+	}
+}
+private: System::Void btn_rechercher_SH_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	dataGrid_DE_SH->DataSource = Personnel->rechercher("dbo.Adresse", (txtBx_nom_SH->Text), (txtBx_prenom_SH->Text))->Tables["dbo.Adresse"];
+	
+}
+private: System::Void btn_selectionner_SH_Click(System::Object^ sender, System::EventArgs^ e) {
+	txtBx_ID_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(dataGrid_DE_SH->SelectedRows[0]->Cells["ID_personnel"]->Value)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[0]->ToString();
 
 }
 };
