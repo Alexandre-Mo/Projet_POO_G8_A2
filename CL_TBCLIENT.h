@@ -7,7 +7,7 @@ namespace NS_Composants {
 	ref class CL_TBCLIENT
 	{
 	private:
-		int^ ID_client;
+		int ID_client;
 		String^ D1A_client;
 		String^ DDN_client;
 		String^ email;
@@ -29,7 +29,7 @@ namespace NS_Composants {
 		String^ getPrenom_client();
 
 	// SETTER
-		void setID_client(int^);
+		void setID_client(int);
 		void setD1A_client(String^);
 		void setDDN_client(String^);
 		void setEmail(String^);

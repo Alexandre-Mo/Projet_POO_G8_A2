@@ -21,8 +21,8 @@ namespace NS_Svc {
 		CL_svc_gestionClient();
 		DataSet^ listeClient(String^);
 		int^ ajouter(String^, String^, String^, String^, String^);
-		void modifier(int^, String^, String^, String^ , String^ , String^);
-		void supprimer(int^);
+		void modifier(int, String^, String^, String^ , String^ , String^);
+		void supprimer(int);
 
 	};
 

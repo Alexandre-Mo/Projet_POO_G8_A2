@@ -21,8 +21,8 @@ namespace NS_Svc {
 		CL_svc_gestionAdresse();
 		DataSet^ listeAdresse(String^,int, int);
 		int^ ajouter(String^, int, int, String^, String^, int, int, int);
-		void modifier(String^, int^, int^, String^, String^, int^, int^, int^);
-		void supprimer(int^);
+		void modifier(String^, int, int, String^, String^, int, int, int);
+		void supprimer(int,int);
 
 	};
 
