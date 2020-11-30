@@ -4,6 +4,7 @@
 #include "CL_CAD.h"
 #include "CL_TBCLIENT.h"
 #include "CL_svc_gestionClient.h"
+#include "CL_svc_gestionPersonnel.h"
 #include "CL_svc_gestionAdresse.h"
 
 namespace ProjetPOOG8A2 {
@@ -199,17 +200,27 @@ private: System::Windows::Forms::TextBox^ txtBx_Prenom_client_affichage;
 
 
 private: System::Windows::Forms::Label^ label10;
-private: System::Windows::Forms::TextBox^ textBox7;
+private: System::Windows::Forms::TextBox^ txtBx_message_personnel;
+
 private: System::Windows::Forms::GroupBox^ groupBox6;
-private: System::Windows::Forms::Button^ button11;
-private: System::Windows::Forms::Button^ button12;
-private: System::Windows::Forms::Button^ button13;
-private: System::Windows::Forms::Button^ button14;
+private: System::Windows::Forms::Button^ btn_Modifier_personnel;
+private: System::Windows::Forms::Button^ btn_first_personnel;
+
+
+
+private: System::Windows::Forms::Button^ btn_Supprimer_personnel;
+private: System::Windows::Forms::Button^ btn_left_personnel;
+
+
 private: System::Windows::Forms::GroupBox^ groupBox7;
-private: System::Windows::Forms::Button^ button15;
-private: System::Windows::Forms::Button^ button16;
-private: System::Windows::Forms::Button^ button17;
-private: System::Windows::Forms::Button^ button18;
+private: System::Windows::Forms::Button^ btn_Nouveau_personnel;
+private: System::Windows::Forms::Button^ btn_enregistrer_personnel;
+private: System::Windows::Forms::Button^ btn_right_personnel;
+private: System::Windows::Forms::Button^ btn_last_personnel;
+
+
+
+
 private: System::Windows::Forms::GroupBox^ groupBox8;
 private: System::Windows::Forms::GroupBox^ groupBox10;
 private: System::Windows::Forms::Label^ label12;
@@ -579,7 +590,9 @@ private: System::Windows::Forms::Label^ label42;
 		/// </summary>
 		System::ComponentModel::Container^ components;
 		int index_client;
+		int index_personnel;
 		NS_Svc::CL_svc_gestionClient^ Client = gcnew NS_Svc::CL_svc_gestionClient();
+		NS_Svc::CL_svc_gestionPersonnel^ Personnel = gcnew NS_Svc::CL_svc_gestionPersonnel();
 
 private: System::Windows::Forms::TextBox^ txtBx_rue_client;
 
@@ -674,17 +687,17 @@ private: System::Windows::Forms::Label^ label21;
 			this->txtBx_Prenom_client_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->tbPage_GestionPersonnel = (gcnew System::Windows::Forms::TabPage());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_message_personnel = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->btn_Modifier_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_first_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_Supprimer_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_left_personnel = (gcnew System::Windows::Forms::Button());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button17 = (gcnew System::Windows::Forms::Button());
-			this->button18 = (gcnew System::Windows::Forms::Button());
+			this->btn_Nouveau_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_enregistrer_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_right_personnel = (gcnew System::Windows::Forms::Button());
+			this->btn_last_personnel = (gcnew System::Windows::Forms::Button());
 			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
 			this->txtBx_num_rue_personnel = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
@@ -1533,7 +1546,7 @@ private: System::Windows::Forms::Label^ label21;
 			// tbPage_GestionPersonnel
 			// 
 			this->tbPage_GestionPersonnel->Controls->Add(this->label10);
-			this->tbPage_GestionPersonnel->Controls->Add(this->textBox7);
+			this->tbPage_GestionPersonnel->Controls->Add(this->txtBx_message_personnel);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox6);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox8);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox9);
@@ -1556,23 +1569,23 @@ private: System::Windows::Forms::Label^ label21;
 			this->label10->TabIndex = 53;
 			this->label10->Text = L"Message";
 			// 
-			// textBox7
+			// txtBx_message_personnel
 			// 
-			this->textBox7->Location = System::Drawing::Point(316, 454);
-			this->textBox7->Multiline = true;
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(683, 77);
-			this->textBox7->TabIndex = 55;
+			this->txtBx_message_personnel->Location = System::Drawing::Point(316, 454);
+			this->txtBx_message_personnel->Multiline = true;
+			this->txtBx_message_personnel->Name = L"txtBx_message_personnel";
+			this->txtBx_message_personnel->Size = System::Drawing::Size(683, 77);
+			this->txtBx_message_personnel->TabIndex = 55;
 			// 
 			// groupBox6
 			// 
-			this->groupBox6->Controls->Add(this->button11);
-			this->groupBox6->Controls->Add(this->button12);
-			this->groupBox6->Controls->Add(this->button13);
-			this->groupBox6->Controls->Add(this->button14);
+			this->groupBox6->Controls->Add(this->btn_Modifier_personnel);
+			this->groupBox6->Controls->Add(this->btn_first_personnel);
+			this->groupBox6->Controls->Add(this->btn_Supprimer_personnel);
+			this->groupBox6->Controls->Add(this->btn_left_personnel);
 			this->groupBox6->Controls->Add(this->groupBox7);
-			this->groupBox6->Controls->Add(this->button17);
-			this->groupBox6->Controls->Add(this->button18);
+			this->groupBox6->Controls->Add(this->btn_right_personnel);
+			this->groupBox6->Controls->Add(this->btn_last_personnel);
 			this->groupBox6->Location = System::Drawing::Point(52, 200);
 			this->groupBox6->Name = L"groupBox6";
 			this->groupBox6->Size = System::Drawing::Size(182, 308);
@@ -1580,46 +1593,50 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox6->TabStop = false;
 			this->groupBox6->Text = L"Menu";
 			// 
-			// button11
+			// btn_Modifier_personnel
 			// 
-			this->button11->Location = System::Drawing::Point(12, 21);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(157, 38);
-			this->button11->TabIndex = 48;
-			this->button11->Text = L"Modifier";
-			this->button11->UseVisualStyleBackColor = true;
+			this->btn_Modifier_personnel->Location = System::Drawing::Point(12, 21);
+			this->btn_Modifier_personnel->Name = L"btn_Modifier_personnel";
+			this->btn_Modifier_personnel->Size = System::Drawing::Size(157, 38);
+			this->btn_Modifier_personnel->TabIndex = 48;
+			this->btn_Modifier_personnel->Text = L"Modifier";
+			this->btn_Modifier_personnel->UseVisualStyleBackColor = true;
+			this->btn_Modifier_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_Modifier_personnel_Click);
 			// 
-			// button12
+			// btn_first_personnel
 			// 
-			this->button12->Location = System::Drawing::Point(6, 247);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(38, 38);
-			this->button12->TabIndex = 39;
-			this->button12->Text = L"<<";
-			this->button12->UseVisualStyleBackColor = true;
+			this->btn_first_personnel->Location = System::Drawing::Point(6, 247);
+			this->btn_first_personnel->Name = L"btn_first_personnel";
+			this->btn_first_personnel->Size = System::Drawing::Size(38, 38);
+			this->btn_first_personnel->TabIndex = 39;
+			this->btn_first_personnel->Text = L"<<";
+			this->btn_first_personnel->UseVisualStyleBackColor = true;
+			this->btn_first_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_first_personnel_Click);
 			// 
-			// button13
+			// btn_Supprimer_personnel
 			// 
-			this->button13->Location = System::Drawing::Point(12, 65);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(157, 38);
-			this->button13->TabIndex = 45;
-			this->button13->Text = L"Supprimer";
-			this->button13->UseVisualStyleBackColor = true;
+			this->btn_Supprimer_personnel->Location = System::Drawing::Point(12, 65);
+			this->btn_Supprimer_personnel->Name = L"btn_Supprimer_personnel";
+			this->btn_Supprimer_personnel->Size = System::Drawing::Size(157, 38);
+			this->btn_Supprimer_personnel->TabIndex = 45;
+			this->btn_Supprimer_personnel->Text = L"Supprimer";
+			this->btn_Supprimer_personnel->UseVisualStyleBackColor = true;
+			this->btn_Supprimer_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_Supprimer_personnel_Click);
 			// 
-			// button14
+			// btn_left_personnel
 			// 
-			this->button14->Location = System::Drawing::Point(49, 247);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(38, 38);
-			this->button14->TabIndex = 40;
-			this->button14->Text = L"<";
-			this->button14->UseVisualStyleBackColor = true;
+			this->btn_left_personnel->Location = System::Drawing::Point(49, 247);
+			this->btn_left_personnel->Name = L"btn_left_personnel";
+			this->btn_left_personnel->Size = System::Drawing::Size(38, 38);
+			this->btn_left_personnel->TabIndex = 40;
+			this->btn_left_personnel->Text = L"<";
+			this->btn_left_personnel->UseVisualStyleBackColor = true;
+			this->btn_left_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_left_personnel_Click);
 			// 
 			// groupBox7
 			// 
-			this->groupBox7->Controls->Add(this->button15);
-			this->groupBox7->Controls->Add(this->button16);
+			this->groupBox7->Controls->Add(this->btn_Nouveau_personnel);
+			this->groupBox7->Controls->Add(this->btn_enregistrer_personnel);
 			this->groupBox7->Location = System::Drawing::Point(6, 115);
 			this->groupBox7->Name = L"groupBox7";
 			this->groupBox7->Size = System::Drawing::Size(169, 117);
@@ -1627,41 +1644,45 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox7->TabStop = false;
 			this->groupBox7->Text = L"Creer un nouveau client";
 			// 
-			// button15
+			// btn_Nouveau_personnel
 			// 
-			this->button15->Location = System::Drawing::Point(6, 19);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(157, 38);
-			this->button15->TabIndex = 44;
-			this->button15->Text = L"Nouveau";
-			this->button15->UseVisualStyleBackColor = true;
+			this->btn_Nouveau_personnel->Location = System::Drawing::Point(6, 19);
+			this->btn_Nouveau_personnel->Name = L"btn_Nouveau_personnel";
+			this->btn_Nouveau_personnel->Size = System::Drawing::Size(157, 38);
+			this->btn_Nouveau_personnel->TabIndex = 44;
+			this->btn_Nouveau_personnel->Text = L"Nouveau";
+			this->btn_Nouveau_personnel->UseVisualStyleBackColor = true;
+			this->btn_Nouveau_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_Nouveau_personnel_Click);
 			// 
-			// button16
+			// btn_enregistrer_personnel
 			// 
-			this->button16->Location = System::Drawing::Point(6, 63);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(157, 38);
-			this->button16->TabIndex = 43;
-			this->button16->Text = L"Enregistrer";
-			this->button16->UseVisualStyleBackColor = true;
+			this->btn_enregistrer_personnel->Location = System::Drawing::Point(6, 63);
+			this->btn_enregistrer_personnel->Name = L"btn_enregistrer_personnel";
+			this->btn_enregistrer_personnel->Size = System::Drawing::Size(157, 38);
+			this->btn_enregistrer_personnel->TabIndex = 43;
+			this->btn_enregistrer_personnel->Text = L"Enregistrer";
+			this->btn_enregistrer_personnel->UseVisualStyleBackColor = true;
+			this->btn_enregistrer_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_enregistrer_personnel_Click);
 			// 
-			// button17
+			// btn_right_personnel
 			// 
-			this->button17->Location = System::Drawing::Point(93, 247);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(38, 38);
-			this->button17->TabIndex = 41;
-			this->button17->Text = L">";
-			this->button17->UseVisualStyleBackColor = true;
+			this->btn_right_personnel->Location = System::Drawing::Point(93, 247);
+			this->btn_right_personnel->Name = L"btn_right_personnel";
+			this->btn_right_personnel->Size = System::Drawing::Size(38, 38);
+			this->btn_right_personnel->TabIndex = 41;
+			this->btn_right_personnel->Text = L">";
+			this->btn_right_personnel->UseVisualStyleBackColor = true;
+			this->btn_right_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_right_personnel_Click);
 			// 
-			// button18
+			// btn_last_personnel
 			// 
-			this->button18->Location = System::Drawing::Point(137, 247);
-			this->button18->Name = L"button18";
-			this->button18->Size = System::Drawing::Size(38, 38);
-			this->button18->TabIndex = 42;
-			this->button18->Text = L">>";
-			this->button18->UseVisualStyleBackColor = true;
+			this->btn_last_personnel->Location = System::Drawing::Point(137, 247);
+			this->btn_last_personnel->Name = L"btn_last_personnel";
+			this->btn_last_personnel->Size = System::Drawing::Size(38, 38);
+			this->btn_last_personnel->TabIndex = 42;
+			this->btn_last_personnel->Text = L">>";
+			this->btn_last_personnel->UseVisualStyleBackColor = true;
+			this->btn_last_personnel->Click += gcnew System::EventHandler(this, &MyForm::btn_last_personnel_Click);
 			// 
 			// groupBox8
 			// 
@@ -1736,7 +1757,6 @@ private: System::Windows::Forms::Label^ label21;
 			// 
 			// txtBx_ID_SH
 			// 
-			this->txtBx_ID_SH->Enabled = false;
 			this->txtBx_ID_SH->Location = System::Drawing::Point(20, 33);
 			this->txtBx_ID_SH->Name = L"txtBx_ID_SH";
 			this->txtBx_ID_SH->Size = System::Drawing::Size(200, 20);
@@ -2788,6 +2808,7 @@ private: System::Windows::Forms::Label^ label21;
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
+		// CHARGEMENT CLIENT
 		index_client = 0;
 
 		txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
@@ -2805,6 +2826,23 @@ private: System::Windows::Forms::Label^ label21;
 		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
 		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+
+		// CHARGEMENT PERSONNEL 
+
+		index_personnel = 0;
+
+		txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
+		txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+		txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+		txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
+		txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+
+		txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
 
 		
 	}
@@ -2852,7 +2890,7 @@ private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
-
+// EVENEMENT CLIENT
 private: System::Void btn_Supprimer_client_Click(System::Object^ sender, System::EventArgs^ e) {
 	Adresse->supprimer(Convert::ToInt32(txtBx_ID_client->Text), 1);
 	Client->supprimer(Convert::ToInt32(txtBx_ID_client->Text));
@@ -3018,7 +3056,8 @@ private: System::Void btn_Modifier_client_Click(System::Object^ sender, System::
 	Adresse->modifier(txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
 
 }
-	   //*modif*//
+	   
+// EVENEMENT PERSONNEL
 private: System::Void btn_Supprimer_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	Adresse->supprimer(Convert::ToInt32(txtBx_ID_personnel->Text), 1);
 	Personnel->supprimer(Convert::ToInt32(txtBx_ID_personnel->Text));
@@ -3026,36 +3065,33 @@ private: System::Void btn_Supprimer_personnel_Click(System::Object^ sender, Syst
 
 	if (index_personnel > 0)index_personnel--;
 	txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-	txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+	txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-	txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
-
+	
 }
 private: System::Void btn_Nouveau_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	txtBx_ID_personnel->Text = "";
-	txtBx_IDSup_personnel->Clear();
+	txtBx_ID_SH->Clear();
+	txtBx_prenom_SH->Clear();
+	txtBx_nom_SH->Clear();
 	txtBx_DE_personnel->Clear();
 	txtBx_Nom_personnel_information->Clear();
 	txtBx_Prenom_personnel_information->Clear();
-
-	txtBx_ID_adresse_personnel->Clear();
+	
 	txtBx_rue_personnel->Clear();
 	txtBx_num_rue_personnel->Clear();
 	txtBx_code_postal_personnel->Clear();
 	txtBx_pays_personnel->Clear();
 	txtBx_ville_personnel->Clear();
-
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, 0))->Tables["dbo.Adresse"];
 
 	txtBx_message_personnel->Clear();
 	txtBx_message_personnel->Text = "Rentrez les données pour le nouveau personnel, puis cliquez sur enregistrer";
@@ -3064,19 +3100,18 @@ private: System::Void btn_first_personnel_Click(System::Object^ sender, System::
 	index_personnel = 0;
 
 	txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-	txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+	txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-	txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
+
 
 
 }
@@ -3084,19 +3119,17 @@ private: System::Void btn_left_personnel_Click(System::Object^ sender, System::E
 
 	if (index_personnel > 0)index_personnel--;
 	txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-	txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+	txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-	txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
 
 
 }
@@ -3106,66 +3139,54 @@ private: System::Void btn_right_personnel_Click(System::Object^ sender, System::
 	if (index_personnel < nbRows - 1)index_personnel++;
 
 	txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-	txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+	txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-	txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
 
 }
 private: System::Void btn_last_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	index_personnel = Convert::ToInt32((Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows->Count) - 1;
 
 	txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-	txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+	txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+	txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+	txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+	txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-	txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
-
-	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
+	txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
 }
 private: System::Void btn_enregistrer_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (txtBx_ID_personnel->Text == "") {
-		Personnel->ajouter(txtBx_Nom_personnel_information->Text, txtBx_Prenom_personnel_information->Text, txtBx_DE_personnel->Text, txtBx_IDSup_personnel->Text, txtBx_email_personnel->Text);
+		Personnel->ajouter(txtBx_Nom_personnel_information->Text, txtBx_Prenom_personnel_information->Text, txtBx_DE_personnel->Text, Convert::ToInt32(txtBx_ID_SH->Text));
 		index_personnel = Convert::ToInt32((Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows->Count) - 1;
 
 		txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-		txtBx_IDSup_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-		txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-		txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-		txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[5]->ToString();
+		txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+		txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+		txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+		txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 
-		Adresse->ajouter(txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 1, Convert::ToInt32(txtBx_ID_personnel->Text), 0);
-		for (int i = 0; i < dataGrid_adresse_livraison->SelectedRows->Count; i++)
-		{
-			Adresse->ajouter(dataGrid_adresse_livraison->Rows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->Rows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->Rows[i]->Cells["Ville"]->Value->ToString(), 3, Convert::ToInt32(txtBx_ID_personnel->Text), 0);
-		}
+		Adresse->ajouter(txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 2, 0, Convert::ToInt32(txtBx_ID_personnel->Text));
 
-		txtBx_ID_adresse_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-		txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-		txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
-
-		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"];
-
+		txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+		txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		
 	}
 	else {
 		txtBx_message_personnel->Clear();
@@ -3173,11 +3194,11 @@ private: System::Void btn_enregistrer_personnel_Click(System::Object^ sender, Sy
 	}
 }
 private: System::Void btn_Modifier_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	Personnel->modifier(Convert::ToInt32(txtBx_ID_personnel->Text), txtBx_Nom_personnel_information->Text, txtBx_Prenom_personnel_information->Text, txtBx_DE_personnel->Text, txtBx_IDSup_personnel->Text, txtBx_email_personnel->Text);
-	Adresse->modifier(txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 1, Convert::ToInt32(txtBx_ID_personnel->Text), 0);
+	Personnel->modifier(Convert::ToInt32(txtBx_ID_personnel->Text), txtBx_Prenom_personnel_information->Text, txtBx_Nom_personnel_information->Text, txtBx_DE_personnel->Text, Convert::ToInt32(txtBx_ID_SH->Text));
+	Adresse->modifier(txtBx_rue_personnel->Text, Convert::ToInt32(txtBx_num_rue_personnel->Text), Convert::ToInt32(txtBx_code_postal_personnel->Text), txtBx_pays_personnel->Text, txtBx_ville_personnel->Text, 2, 0, Convert::ToInt32(txtBx_ID_personnel->Text));
 
 }
-private: System::Void label21_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
+
 };
 }
