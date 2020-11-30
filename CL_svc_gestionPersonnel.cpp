@@ -16,29 +16,27 @@ namespace NS_Svc {
 		return dataSetPersonnel;
 	}
 
-	int^ CL_svc_gestionPersonnel::ajouter(String^ nom, String^ prenom, String^ DE, int^ IDSup, String^ email) {
+	int^ CL_svc_gestionPersonnel::ajouter(String^ nom, String^ prenom, String^ DE, int IDSup) {
 		int id_personne;
 		TBPERSONNEL->setNom_personnel(nom);
 		TBPERSONNEL->setPrenom_personnel(prenom);
 		TBPERSONNEL->setDE_personnel(DE);
 		TBPERSONNEL->setIDSup_personnel(IDSup);
-		TBPERSONNEL->setEmail(email);
 
 		id_personne = cad->actionRowsID(TBPERSONNEL->INSERT());
 		return id_personne;
 	}
 
-	void CL_svc_gestionPersonnel::modifier(int^ id, String^ nom, String^ prenom, String^ DE, int^ IDSup, String^ email) {
+	void CL_svc_gestionPersonnel::modifier(int id, String^ nom, String^ prenom, String^ DE, int IDSup) {
 		TBPERSONNEL->setID_personnel(id);
 		TBPERSONNEL->setNom_personnel(nom);
 		TBPERSONNEL->setPrenom_personnel(prenom);
 		TBPERSONNEL->setDE_personnel(DE);
 		TBPERSONNEL->setIDSup_personnel(IDSup);
-		TBPERSONNEL->setEmail(email);
 		cad->actionRowsID(TBPERSONNEL->UPDATE());
 	}
 
-	void CL_svc_gestionPersonnel::supprimer(int^ id) {
+	void CL_svc_gestionPersonnel::supprimer(int id) {
 		TBPERSONNEL->setID_personnel(id);
 		cad->actionRowsID(TBPERSONNEL->DELETE());
 	}
