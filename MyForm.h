@@ -1042,6 +1042,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView3;
 			this->btn_Modifier_client->TabIndex = 48;
 			this->btn_Modifier_client->Text = L"Modifier";
 			this->btn_Modifier_client->UseVisualStyleBackColor = true;
+			this->btn_Modifier_client->Click += gcnew System::EventHandler(this, &MyForm::btn_Modifier_client_Click);
 			// 
 			// btn_first_client
 			// 
@@ -1184,6 +1185,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView3;
 			// 
 			// txtBx_ID_adresse_client
 			// 
+			this->txtBx_ID_adresse_client->Enabled = false;
 			this->txtBx_ID_adresse_client->Location = System::Drawing::Point(149, 269);
 			this->txtBx_ID_adresse_client->Name = L"txtBx_ID_adresse_client";
 			this->txtBx_ID_adresse_client->Size = System::Drawing::Size(58, 20);
@@ -2837,6 +2839,26 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 
 
 private: System::Void btn_Supprimer_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	Adresse->supprimer(Convert::ToInt32(txtBx_ID_client->Text), 1);
+	Client->supprimer(Convert::ToInt32(txtBx_ID_client->Text));
+	txtBx_message_client->Text = "Client supprimé";
+
+	if (index_client > 0)index_client--;
+	txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+	txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+	txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+	txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+
+	txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+	txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+	txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
 
 }
 private: System::Void btn_Nouveau_client_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2854,7 +2876,8 @@ private: System::Void btn_Nouveau_client_Click(System::Object^ sender, System::E
 	txtBx_pays_client->Clear();
 	txtBx_ville_client->Clear();
 
-	dataGrid_adresse_livraison->DataSource = nullptr;
+	dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3,0))->Tables["dbo.Adresse"];
+
 	txtBx_message_client->Clear();
 	txtBx_message_client->Text = "Rentrez les données pour le nouveau client, puis cliquez sur enregistrer";
 }
@@ -2889,7 +2912,7 @@ private: System::Void btn_left_client_Click(System::Object^ sender, System::Even
 	txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
 	txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
 
-  txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+    txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
 	txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
 	txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
 	txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
@@ -2955,7 +2978,11 @@ private: System::Void btn_enregistrer_client_Click(System::Object^ sender, Syste
 		txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
 
 		Adresse->ajouter(txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
-		
+		for (int i = 0; i < dataGrid_adresse_livraison->SelectedRows->Count;i++)
+		{
+		Adresse->ajouter(dataGrid_adresse_livraison->Rows[i]->Cells["Nom_rue"]->Value->ToString(), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Num_rue"]->Value->ToString()), Convert::ToInt32(dataGrid_adresse_livraison->Rows[i]->Cells["Code_postal"]->Value->ToString()), dataGrid_adresse_livraison->Rows[i]->Cells["Pays"]->Value->ToString(), dataGrid_adresse_livraison->Rows[i]->Cells["Ville"]->Value->ToString(),3,Convert::ToInt32(txtBx_ID_client->Text),0);
+		}
+
 		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
 		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
 		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
@@ -2970,6 +2997,11 @@ private: System::Void btn_enregistrer_client_Click(System::Object^ sender, Syste
 	txtBx_message_client->Clear();
 	txtBx_message_client->Text = "Cliquez sur nouveau pour ajouter une personne";
 	}
+}
+private: System::Void btn_Modifier_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	Client->modifier(Convert::ToInt32(txtBx_ID_client->Text), txtBx_Nom_client_information->Text, txtBx_Prenom_client_information->Text, txtBx_DDN_client->Text, txtBx_D1A_client->Text, txtBx_email_client->Text);
+	Adresse->modifier(txtBx_rue_client->Text, Convert::ToInt32(txtBx_num_rue_client->Text), Convert::ToInt32(txtBx_code_postal_client->Text), txtBx_pays_client->Text, txtBx_ville_client->Text, 1, Convert::ToInt32(txtBx_ID_client->Text), 0);
+
 }
 };
 }

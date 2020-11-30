@@ -28,7 +28,7 @@ namespace NS_Svc {
 		return id_personne;
 	}
 
-	void CL_svc_gestionClient::modifier(int^ id, String^ nom, String^ prenom, String^ DDN, String^ D1A, String^ email) {
+	void CL_svc_gestionClient::modifier(int id, String^ nom, String^ prenom, String^ DDN, String^ D1A, String^ email) {
 		TBCLIENT->setNom_client(nom);
 		TBCLIENT->setPrenom_client(prenom);
 		TBCLIENT->setID_client(id);
@@ -38,7 +38,7 @@ namespace NS_Svc {
 		cad->actionRowsID(TBCLIENT->UPDATE());
 	}
 
-	void CL_svc_gestionClient::supprimer(int^ id) {
+	void CL_svc_gestionClient::supprimer(int id) {
 		TBCLIENT->setID_client(id);
 		cad->actionRowsID(TBCLIENT->DELETE());
 	}
