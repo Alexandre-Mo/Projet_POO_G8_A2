@@ -44,7 +44,7 @@ namespace NS_Composants {
 	}
 
 	// SETTER
-	void CL_TBCLIENT::setID_client(int^ ID_client) {
+	void CL_TBCLIENT::setID_client(int ID_client) {
 		this->ID_client= ID_client;
 	}
 	void CL_TBCLIENT::setD1A_client(String^ D1A_client) {
@@ -57,9 +57,9 @@ namespace NS_Composants {
 		this->email= email;
 	}
 	void CL_TBCLIENT::setNom_client(String^ nom_client) {
-		this->nom_client = nom_client;
+		this->nom_client= nom_client;
 	}
 	void CL_TBCLIENT::setPrenom_client(String^ prenom_client) {
-		this->prenom_client = prenom_client;
+		this->prenom_client= prenom_client;
 	}
 }

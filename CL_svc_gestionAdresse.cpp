@@ -11,7 +11,10 @@ namespace NS_Svc {
 
 	DataSet^ CL_svc_gestionAdresse::listeAdresse(String^ dataTableName,int Type, int ID) {
 		dataSetAdresse->Clear();
-		dataSetAdresse = cad->getRows(TBADRESSE->SELECT(Type,ID), dataTableName);
+		TBADRESSE->setType(Type);
+		TBADRESSE->setID_client(ID);
+		TBADRESSE->setID_personnel(ID);
+		dataSetAdresse = cad->getRows(TBADRESSE->SELECT(), dataTableName);
 
 		return dataSetAdresse;
 	}
@@ -32,7 +35,7 @@ namespace NS_Svc {
 		return id_personne;
 	}
 
-	void CL_svc_gestionAdresse::modifier(String^ Nom_rue, int^ Num_rue, int^ Code_postal, String^ Pays, String^ Ville, int^ Type, int^ ID_client, int^ ID_personnel) {
+	void CL_svc_gestionAdresse::modifier(String^ Nom_rue, int Num_rue, int Code_postal, String^ Pays, String^ Ville, int Type, int ID_client, int ID_personnel) {
 		TBADRESSE->setNom_rue(Nom_rue);
 		TBADRESSE->setNum_rue(Num_rue);
 		TBADRESSE->setCode_postal(Code_postal);
@@ -44,8 +47,10 @@ namespace NS_Svc {
 		cad->actionRowsID(TBADRESSE->UPDATE());
 	}
 
-	void CL_svc_gestionAdresse::supprimer(int^ id) {
-		TBADRESSE->setID_adresse(id);
+	void CL_svc_gestionAdresse::supprimer(int id, int Type) {
+		TBADRESSE->setID_client(id);
+		TBADRESSE->setID_personnel(id);
+		TBADRESSE->setType(Type);
 		cad->actionRowsID(TBADRESSE->DELETE());
 	}
 
