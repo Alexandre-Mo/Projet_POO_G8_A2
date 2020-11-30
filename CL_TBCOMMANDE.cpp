@@ -65,7 +65,7 @@ namespace NS_Composants {
 	void CL_TBCOMMANDE::setMode_payement(String^ Mode_payement) {
 		this->Mode_payement = Mode_payement;
 	}
-	void CL_TBCOMMANDE::setRemise(int Remise) {
+	void CL_TBCOMMANDE::setRemise(float Remise) {
 		this->Remise = Remise;
 	}
 	void CL_TBCOMMANDE::setID_Societe(int ID_Societe) {

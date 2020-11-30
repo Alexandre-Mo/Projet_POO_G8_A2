@@ -33,14 +33,14 @@ namespace NS_Composants {
 		int getID_client();
 
 		// SETTER
-		int setID_commande();
-		String^ setDate_emission();
-		String^ setDate_payement();
-		String^ setMode_payement();
-		float setRemise();
-		int setID_Societe();
-		int setID_societe_Produit();
-		int setID_client();
+		void setID_commande(int);
+		void setDate_emission(String^);
+		void setDate_payement(String^);
+		void setMode_payement(String^);
+		void setRemise(float);
+		void setID_Societe(int);
+		void setID_societe_Produit(int);
+		void setID_client(int);
 	};
 
 }
