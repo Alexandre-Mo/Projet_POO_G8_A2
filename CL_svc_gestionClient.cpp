@@ -43,4 +43,17 @@ namespace NS_Svc {
 		cad->actionRowsID(TBCLIENT->DELETE());
 	}
 
+	DataSet^ CL_svc_gestionClient::rechercher(String^ dataTableName,String^ nom, String^ prenom) {
+		TBCLIENT->setNom_client(nom);
+		TBCLIENT->setPrenom_client(prenom);
+		dataSetClient = cad->getRows(TBCLIENT->SELECTbyName(), dataTableName);
+		return dataSetClient;
+	}
+
+	DataSet^ CL_svc_gestionClient::selectionner(String^ dataTableName, int ID_client) {
+		TBCLIENT->setID_client(ID_client);
+		dataSetClient = cad->getRows(TBCLIENT->SELECTbyID(), dataTableName);
+		return dataSetClient;
+	}
+
 }

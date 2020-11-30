@@ -187,12 +187,16 @@ private: System::Windows::Forms::Label^ label90;
 private: System::Windows::Forms::Label^ label89;
 private: System::Windows::Forms::Label^ label88;
 private: System::Windows::Forms::GroupBox^ groupBox2;
-private: System::Windows::Forms::Button^ button9;
+private: System::Windows::Forms::Button^ btn_selectionner_client;
+
 private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::DataGridView^ dataGridView2;
-private: System::Windows::Forms::Button^ button1;
+private: System::Windows::Forms::DataGridView^ dataGrid_DDN_client;
+
+private: System::Windows::Forms::Button^ btn_rechercher_client;
+
 private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::TextBox^ txtBx_nom__client_affichage;
+private: System::Windows::Forms::TextBox^ txtBx_nom_client_affichage;
+
 
 
 private: System::Windows::Forms::Label^ label4;
@@ -677,12 +681,12 @@ private: System::Windows::Forms::Label^ label21;
 			this->label89 = (gcnew System::Windows::Forms::Label());
 			this->label88 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->btn_selectionner_client = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->dataGrid_DDN_client = (gcnew System::Windows::Forms::DataGridView());
+			this->btn_rechercher_client = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_nom__client_affichage = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_nom_client_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_Prenom_client_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->tbPage_GestionPersonnel = (gcnew System::Windows::Forms::TabPage());
@@ -813,7 +817,7 @@ private: System::Windows::Forms::Label^ label21;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_livraison))->BeginInit();
 			this->groupBox2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DDN_client))->BeginInit();
 			this->tbPage_GestionPersonnel->SuspendLayout();
 			this->groupBox6->SuspendLayout();
 			this->groupBox7->SuspendLayout();
@@ -1208,7 +1212,7 @@ private: System::Windows::Forms::Label^ label21;
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(213, 208);
+			this->dataGridView3->Location = System::Drawing::Point(213, 211);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->Size = System::Drawing::Size(462, 232);
 			this->dataGridView3->TabIndex = 48;
@@ -1454,12 +1458,12 @@ private: System::Windows::Forms::Label^ label21;
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->button9);
+			this->groupBox2->Controls->Add(this->btn_selectionner_client);
 			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Controls->Add(this->dataGridView2);
-			this->groupBox2->Controls->Add(this->button1);
+			this->groupBox2->Controls->Add(this->dataGrid_DDN_client);
+			this->groupBox2->Controls->Add(this->btn_rechercher_client);
 			this->groupBox2->Controls->Add(this->label3);
-			this->groupBox2->Controls->Add(this->txtBx_nom__client_affichage);
+			this->groupBox2->Controls->Add(this->txtBx_nom_client_affichage);
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->txtBx_Prenom_client_affichage);
 			this->groupBox2->Location = System::Drawing::Point(9, 6);
@@ -1469,14 +1473,15 @@ private: System::Windows::Forms::Label^ label21;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Affichage";
 			// 
-			// button9
+			// btn_selectionner_client
 			// 
-			this->button9->Location = System::Drawing::Point(33, 130);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(75, 23);
-			this->button9->TabIndex = 45;
-			this->button9->Text = L"Selectionner";
-			this->button9->UseVisualStyleBackColor = true;
+			this->btn_selectionner_client->Location = System::Drawing::Point(33, 130);
+			this->btn_selectionner_client->Name = L"btn_selectionner_client";
+			this->btn_selectionner_client->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_client->TabIndex = 45;
+			this->btn_selectionner_client->Text = L"Selectionner";
+			this->btn_selectionner_client->UseVisualStyleBackColor = true;
+			this->btn_selectionner_client->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_client_Click);
 			// 
 			// label5
 			// 
@@ -1489,22 +1494,24 @@ private: System::Windows::Forms::Label^ label21;
 			this->label5->TabIndex = 44;
 			this->label5->Text = L"Date de naissance";
 			// 
-			// dataGridView2
+			// dataGrid_DDN_client
 			// 
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(137, 32);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(158, 121);
-			this->dataGridView2->TabIndex = 43;
+			this->dataGrid_DDN_client->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCellsExceptHeader;
+			this->dataGrid_DDN_client->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DDN_client->Location = System::Drawing::Point(137, 32);
+			this->dataGrid_DDN_client->Name = L"dataGrid_DDN_client";
+			this->dataGrid_DDN_client->Size = System::Drawing::Size(158, 121);
+			this->dataGrid_DDN_client->TabIndex = 43;
 			// 
-			// button1
+			// btn_rechercher_client
 			// 
-			this->button1->Location = System::Drawing::Point(33, 101);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 42;
-			this->button1->Text = L"Rechercher";
-			this->button1->UseVisualStyleBackColor = true;
+			this->btn_rechercher_client->Location = System::Drawing::Point(33, 101);
+			this->btn_rechercher_client->Name = L"btn_rechercher_client";
+			this->btn_rechercher_client->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_client->TabIndex = 42;
+			this->btn_rechercher_client->Text = L"Rechercher";
+			this->btn_rechercher_client->UseVisualStyleBackColor = true;
+			this->btn_rechercher_client->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_client_Click);
 			// 
 			// label3
 			// 
@@ -1517,12 +1524,12 @@ private: System::Windows::Forms::Label^ label21;
 			this->label3->TabIndex = 41;
 			this->label3->Text = L"Prenom";
 			// 
-			// txtBx_nom__client_affichage
+			// txtBx_nom_client_affichage
 			// 
-			this->txtBx_nom__client_affichage->Location = System::Drawing::Point(14, 32);
-			this->txtBx_nom__client_affichage->Name = L"txtBx_nom__client_affichage";
-			this->txtBx_nom__client_affichage->Size = System::Drawing::Size(117, 20);
-			this->txtBx_nom__client_affichage->TabIndex = 38;
+			this->txtBx_nom_client_affichage->Location = System::Drawing::Point(14, 32);
+			this->txtBx_nom_client_affichage->Name = L"txtBx_nom_client_affichage";
+			this->txtBx_nom_client_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_nom_client_affichage->TabIndex = 38;
 			// 
 			// label4
 			// 
@@ -2769,7 +2776,7 @@ private: System::Windows::Forms::Label^ label21;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_livraison))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DDN_client))->EndInit();
 			this->tbPage_GestionPersonnel->ResumeLayout(false);
 			this->tbPage_GestionPersonnel->PerformLayout();
 			this->groupBox6->ResumeLayout(false);
@@ -3200,5 +3207,35 @@ private: System::Void btn_Modifier_personnel_Click(System::Object^ sender, Syste
 }
 
 
+private: System::Void btn_rechercher_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	txtBx_nom_client_affichage->Text;
+	txtBx_Prenom_client_affichage->Text;
+	dataGrid_DDN_client->DataSource = Client->rechercher("dbo.Adresse", (txtBx_nom_client_affichage->Text), (txtBx_Prenom_client_affichage->Text))->Tables["dbo.Adresse"];
+
+}
+private: System::Void btn_selectionner_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (dataGrid_DDN_client->SelectedRows->Count >= 0) {
+		
+		txtBx_ID_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_D1A_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_DDN_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_email_client->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_Nom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_Prenom_client_information->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[5]->ToString();
+
+		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
+
+		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+		
+	}
+	else {
+		txtBx_message_client->Text = "Merci de rechercher un client avec de selectionner !";
+	}
+}
 };
 }

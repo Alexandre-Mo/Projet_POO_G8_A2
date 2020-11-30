@@ -22,9 +22,16 @@ namespace NS_Composants {
 		return "DELETE FROM dbo.Client WHERE ID_client =" + Convert::ToInt32(getID_client());
 	}
 
+	String^ CL_TBCLIENT::SELECTbyName(void) {
+		return "SELECT ID_client,DDN_client FROM dbo.Client WHERE Nom_client = '" + getNom_client() + "' AND Prenom_client = '" + getPrenom_client()+"'" ;
+	}
+
+	String^ CL_TBCLIENT::SELECTbyID(void) {
+		return "SELECT * FROM dbo.Client WHERE ID_client = " + Convert::ToInt32(getID_client());
+	}
 
 	// GETTER
-	int^ CL_TBCLIENT::getID_client() {
+	int CL_TBCLIENT::getID_client() {
 		return this->ID_client;
 	}
 	String^ CL_TBCLIENT::getD1A_client() {
