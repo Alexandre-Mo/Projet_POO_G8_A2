@@ -6,37 +6,34 @@ namespace NS_Composants {
 
 	ref class CL_TBLIGNECOMMANDE
 	{
-	};
-
-}
-
-#pragma once
-
-namespace NS_Composants {
-
-	using namespace System;
-
-	ref class CL_TBARTICLE
-	{
 	private:
-		int quantite_stock;
+		int ID_Ligne;
+		float Prix_unitaire_HT;
+		float Taux_TVA;
+		int Qauntite_Produit;
+		int ID_commande;
 		int ID_article;
-		String^ Reference_article;
 	public:
-		CL_TBARTICLE();
+		CL_TBLIGNECOMMANDE();
 		String^ SELECT(void);
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);
 
 		// GETTER
-		int getquantite_stock();
+		int getID_Ligne();
 		int getID_article();
-		String^ getReference_article();
+		int getQauntite_Produit();
+		int getID_commande();
+		float getPrix_unitaire_HT();
+		float getTaux_TVA();
 		// SETTER
-		void setquantite_stock(int);
+		void setID_Ligne(int);
 		void setID_article(int);
-		void setReference_article(String^);
+		void setQauntite_Produit(int);
+		void setID_commande(int);
+		void setPrix_unitaire_HT(float);
+		void setTaux_TVA(float);
 	};
 
 }
