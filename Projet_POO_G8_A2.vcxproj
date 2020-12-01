@@ -137,7 +137,6 @@
     <ClCompile Include="CL_TBLIGNECOMMANDE.cpp" />
     <ClCompile Include="CL_TBNATURE.cpp" />
     <ClCompile Include="CL_TBPERSONNEL.cpp" />
-    <ClCompile Include="CL_TBSOCIETE.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +155,6 @@
     <ClInclude Include="CL_TBLIGNECOMMANDE.h" />
     <ClInclude Include="CL_TBNATURE.h" />
     <ClInclude Include="CL_TBPERSONNEL.h" />
-    <ClInclude Include="CL_TBSOCIETE.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

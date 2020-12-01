@@ -54,9 +54,6 @@
     <ClCompile Include="CL_TBCLIENT.cpp">
       <Filter>Fichiers sources\Cmp_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="CL_TBSOCIETE.cpp">
-      <Filter>Fichiers sources\Cmp_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="CL_TBCOMMANDE.cpp">
       <Filter>Fichiers sources\Cmp_cpp</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
     <ClInclude Include="CL_TBCLIENT.h">
-      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_TBSOCIETE.h">
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
     <ClInclude Include="CL_TBCOMMANDE.h">
