@@ -18,8 +18,8 @@ namespace NS_Svc {
 
 	int^ CL_svc_gestionStock::ajouter(int quantite, String^ ref) {
 		int id_article;
-		TBARTICLE->quantite_stock(quantite);
-		TBARTICLE->Reference_article_information; (ref);
+		TBARTICLE->setquantite_stock(quantite);
+		TBARTICLE->setReference_article_information(ref);
 
 		id_article = cad->actionRowsID(TBARTICLE->INSERT());
 		return id_article;
