@@ -75,6 +75,9 @@
     <ClCompile Include="CL_svc_gestionAdresse.cpp">
       <Filter>Fichiers sources\Svc_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="CL_svc_gestionLigneCommande.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -123,6 +126,9 @@
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
     <ClInclude Include="CL_svc_gestionAdresse.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionLigneCommande.h">
       <Filter>Fichiers d%27en-tête\Svc_h</Filter>
     </ClInclude>
   </ItemGroup>

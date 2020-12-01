@@ -1,6 +1,7 @@
 #pragma once
 
-
+#include "CL_CAD.h"
+#include "CL_TBCOMMANDE.h"
 
 namespace NS_Svc {
 
@@ -11,6 +12,19 @@ namespace NS_Svc {
 
 	ref class CL_svc_gestionCommande
 	{
+	private:
+		NS_Composants::CL_CAD^ cad;
+		NS_Composants::CL_TBCOMMANDE^ TBCOMMANDE;
+		DataSet^ dataSetCommande;
+
+	public:
+		CL_svc_gestionCommande();
+		DataSet^ listeCommande(String^);
+		int^ ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe, int ID_client);
+		void modifier(int, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe, int ID_client);
+		void supprimer(int);
+		//DataSet^ rechercher(String^, String^, String^);
+		//DataSet^ selectionner(String^, int);
 	};
 
 }

@@ -12,13 +12,13 @@ namespace NS_Composants {
 
 	}
 	String^ CL_TBLIGNECOMMANDE::SELECT(void) {
-		return "SELECT * FROM dbo.Ligne_commande";
+		return "SELECT * FROM dbo.Ligne_commande WHERE ID_commande = '" + getID_commande() + "'";
 	}
 	String^ CL_TBLIGNECOMMANDE::INSERT(void) {
-		return "INSERT INTO dbo.Ligne_commande" + "(Prix_unitaire_HT, Taux_TVA, ID_article, ID_commande, Qauntite_Produit) " + "VALUES('" + getPrix_unitaire_HT() + "', '" + getTaux_TVA() + "', '" + Convert::ToInt32(getID_article()) + "', '" + Convert::ToInt32(getID_commande()) + "', '" + getQauntite_Produit() + "', '" + getTaux_TVA() + "'); SELECT @@IDENTITY;";
+		return "INSERT INTO dbo.Ligne_commande" + "(Prix_unitaire_HT, Taux_TVA, ID_article, ID_commande, Qauntite_Produit) " + "VALUES('" + getPrix_unitaire_HT() + "', '" + getTaux_TVA() + "', '" + Convert::ToInt32(getID_article()) + "', '" + Convert::ToInt32(getID_commande()) + "', '" + getQuantite_Produit() + "', '" + getTaux_TVA() + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBLIGNECOMMANDE::UPDATE(void) {
-		return "UPDATE dbo.Ligne_commande set Qauntite_Produit = ' " + Convert::ToInt32(getQauntite_Produit()) + "'" + ", ID_commande = '" + "'" + Convert::ToInt32(getID_commande()) + "'" + ", ID_article = '" + "'" + Convert::ToInt32(getID_article()) + "'" + ", Prix_unitaire_HT = '" + getPrix_unitaire_HT() + "'" + ", Taux_TVA = '" + getTaux_TVA() + "'";
+		return "UPDATE dbo.Ligne_commande set Qauntite_Produit = ' " + Convert::ToInt32(getQuantite_Produit()) + "'" + ", ID_commande = '" + "'" + Convert::ToInt32(getID_commande()) + "'" + ", ID_article = '" + "'" + Convert::ToInt32(getID_article()) + "'" + ", Prix_unitaire_HT = '" + getPrix_unitaire_HT() + "'" + ", Taux_TVA = '" + getTaux_TVA() + "'";
 	}
 	String^ CL_TBLIGNECOMMANDE::DELETE(void) {
 		return "DELETE FROM dbo.Ligne_commande WHERE ID_Ligne =" + Convert::ToInt32(getID_Ligne());
@@ -29,7 +29,7 @@ namespace NS_Composants {
 	int CL_TBLIGNECOMMANDE::getID_Ligne() {
 		return this->ID_Ligne;
 	}
-	int CL_TBLIGNECOMMANDE::getQauntite_Produit() {
+	int CL_TBLIGNECOMMANDE::getQuantite_Produit() {
 		return this->Qauntite_Produit;
 	}
 	int CL_TBLIGNECOMMANDE::getID_commande() {
@@ -55,7 +55,7 @@ namespace NS_Composants {
 	void CL_TBLIGNECOMMANDE::setID_commande(int ID_commande) {
 		this->ID_commande = ID_commande;
 	}
-	void CL_TBLIGNECOMMANDE::setQauntite_Produit(int Qauntite_Produit) {
+	void CL_TBLIGNECOMMANDE::setQuantite_Produit(int Qauntite_Produit) {
 		this->Qauntite_Produit = Qauntite_Produit;
 	}
 	void CL_TBLIGNECOMMANDE::setPrix_unitaire_HT(float Prix_unitaire_HT) {

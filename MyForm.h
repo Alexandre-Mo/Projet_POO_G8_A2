@@ -6,6 +6,8 @@
 #include "CL_svc_gestionClient.h"
 #include "CL_svc_gestionPersonnel.h"
 #include "CL_svc_gestionAdresse.h"
+#include "CL_svc_gestionCommande.h"
+#include "CL_svc_gestionLigneCommande.h"
 
 namespace ProjetPOOG8A2 {
 
@@ -283,7 +285,8 @@ private: System::Windows::Forms::TextBox^ txtBx_prenom_personnel_affichage;
 
 private: System::Windows::Forms::GroupBox^ groupBox18;
 private: System::Windows::Forms::Button^ button29;
-private: System::Windows::Forms::TextBox^ textBox26;
+private: System::Windows::Forms::TextBox^ txtBx_ID_commande_affichage;
+
 private: System::Windows::Forms::Label^ label31;
 private: System::Windows::Forms::Label^ label43;
 private: System::Windows::Forms::TextBox^ textBox35;
@@ -298,19 +301,29 @@ private: System::Windows::Forms::Button^ button36;
 private: System::Windows::Forms::Button^ button37;
 private: System::Windows::Forms::Button^ button38;
 private: System::Windows::Forms::GroupBox^ groupBox17;
-private: System::Windows::Forms::TextBox^ textBox27;
-private: System::Windows::Forms::TextBox^ textBox29;
+private: System::Windows::Forms::TextBox^ tktBx_remise;
+
+private: System::Windows::Forms::TextBox^ txtBx_date_emission;
+
 private: System::Windows::Forms::Label^ label33;
 private: System::Windows::Forms::Label^ label34;
 private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::TextBox^ textBox36;
-private: System::Windows::Forms::TextBox^ textBox38;
+private: System::Windows::Forms::TextBox^ txtBx_ID_commande_information;
+
+private: System::Windows::Forms::TextBox^ txtBx_date_payment;
+
+
 private: System::Windows::Forms::Label^ label46;
-private: System::Windows::Forms::DataGridView^ dataGridView6;
+private: System::Windows::Forms::DataGridView^ dataGrid_ligne_commande;
+
+
 private: System::Windows::Forms::Label^ label47;
-private: System::Windows::Forms::TextBox^ textBox39;
-private: System::Windows::Forms::TextBox^ textBox40;
-private: System::Windows::Forms::TextBox^ textBox42;
+private: System::Windows::Forms::TextBox^ txtBx_ID_client_commande;
+private: System::Windows::Forms::TextBox^ txtBx_nom_societe;
+private: System::Windows::Forms::TextBox^ txtBx_mode_payment;
+
+
+
 private: System::Windows::Forms::Label^ label51;
 private: System::Windows::Forms::Label^ label52;
 private: System::Windows::Forms::Label^ label54;
@@ -337,262 +350,9 @@ private: System::Windows::Forms::GroupBox^ groupBox14;
 private: System::Windows::Forms::Button^ button30;
 private: System::Windows::Forms::TextBox^ textBox33;
 private: System::Windows::Forms::Label^ label42;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	protected:
 
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -601,8 +361,13 @@ private: System::Windows::Forms::Label^ label42;
 		System::ComponentModel::Container^ components;
 		int index_client;
 		int index_personnel;
+		int index_commande;
+		NS_Svc::CL_svc_gestionAdresse^ Adresse_livraison = gcnew NS_Svc::CL_svc_gestionAdresse();
 		NS_Svc::CL_svc_gestionClient^ Client = gcnew NS_Svc::CL_svc_gestionClient();
 		NS_Svc::CL_svc_gestionPersonnel^ Personnel = gcnew NS_Svc::CL_svc_gestionPersonnel();
+		NS_Svc::CL_svc_gestionCommande^ Commande = gcnew NS_Svc::CL_svc_gestionCommande();
+		NS_Svc::CL_svc_gestionLigneCommande^ LigneCommande = gcnew NS_Svc::CL_svc_gestionLigneCommande();
+
 
 private: System::Windows::Forms::TextBox^ txtBx_rue_client;
 
@@ -628,8 +393,10 @@ private: System::Windows::Forms::Label^ label21;
 private: System::Windows::Forms::Button^ btn_selectionner_SH;
 private: System::Windows::Forms::Button^ btn_rechercher_SH;
 private: System::Windows::Forms::Label^ label37;
+private: System::Windows::Forms::TextBox^ txtBx_ID_societe;
+private: System::Windows::Forms::Label^ label38;
 private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
-	   NS_Svc::CL_svc_gestionAdresse^ Adresse_livraison = gcnew NS_Svc::CL_svc_gestionAdresse();
+	
 
 
 #pragma region Windows Form Designer generated code
@@ -718,6 +485,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->txtBx_num_rue_personnel = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
+			this->btn_selectionner_SH = (gcnew System::Windows::Forms::Button());
+			this->btn_rechercher_SH = (gcnew System::Windows::Forms::Button());
+			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->dataGrid_DE_SH = (gcnew System::Windows::Forms::DataGridView());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_ID_SH = (gcnew System::Windows::Forms::TextBox());
 			this->label26 = (gcnew System::Windows::Forms::Label());
@@ -753,7 +524,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionCommande = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox18 = (gcnew System::Windows::Forms::GroupBox());
 			this->button29 = (gcnew System::Windows::Forms::Button());
-			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_ID_commande_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label43 = (gcnew System::Windows::Forms::Label());
 			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
@@ -768,19 +539,19 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->button37 = (gcnew System::Windows::Forms::Button());
 			this->button38 = (gcnew System::Windows::Forms::Button());
 			this->groupBox17 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
+			this->tktBx_remise = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_date_emission = (gcnew System::Windows::Forms::TextBox());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label44 = (gcnew System::Windows::Forms::Label());
-			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox38 = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_ID_commande_information = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_date_payment = (gcnew System::Windows::Forms::TextBox());
 			this->label46 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGrid_ligne_commande = (gcnew System::Windows::Forms::DataGridView());
 			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox40 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox42 = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_ID_client_commande = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_nom_societe = (gcnew System::Windows::Forms::TextBox());
+			this->txtBx_mode_payment = (gcnew System::Windows::Forms::TextBox());
 			this->label51 = (gcnew System::Windows::Forms::Label());
 			this->label52 = (gcnew System::Windows::Forms::Label());
 			this->label54 = (gcnew System::Windows::Forms::Label());
@@ -819,10 +590,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tabPage28 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage29 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage30 = (gcnew System::Windows::Forms::TabPage());
-			this->label37 = (gcnew System::Windows::Forms::Label());
-			this->dataGrid_DE_SH = (gcnew System::Windows::Forms::DataGridView());
-			this->btn_rechercher_SH = (gcnew System::Windows::Forms::Button());
-			this->btn_selectionner_SH = (gcnew System::Windows::Forms::Button());
+			this->txtBx_ID_societe = (gcnew System::Windows::Forms::TextBox());
+			this->label38 = (gcnew System::Windows::Forms::Label());
 			this->tbC_MenuPrincipal->SuspendLayout();
 			this->tbPage_Informations->SuspendLayout();
 			this->groupBox1->SuspendLayout();
@@ -839,6 +608,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox7->SuspendLayout();
 			this->groupBox8->SuspendLayout();
 			this->groupBox10->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->BeginInit();
 			this->groupBox9->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->BeginInit();
 			this->tbPage_GestionCommande->SuspendLayout();
@@ -846,7 +616,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox15->SuspendLayout();
 			this->groupBox16->SuspendLayout();
 			this->groupBox17->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_ligne_commande))->BeginInit();
 			this->tbPage_GestionStock->SuspendLayout();
 			this->groupBox11->SuspendLayout();
 			this->groupBox12->SuspendLayout();
@@ -854,7 +624,6 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox14->SuspendLayout();
 			this->tbPage_GestionStatistiques->SuspendLayout();
 			this->tbC_GestionStatistiques->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tbC_MenuPrincipal
@@ -1773,6 +1542,45 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox10->TabStop = false;
 			this->groupBox10->Text = L"Superieur hierarchique";
 			// 
+			// btn_selectionner_SH
+			// 
+			this->btn_selectionner_SH->Location = System::Drawing::Point(226, 193);
+			this->btn_selectionner_SH->Name = L"btn_selectionner_SH";
+			this->btn_selectionner_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_SH->TabIndex = 46;
+			this->btn_selectionner_SH->Text = L"Selectionner";
+			this->btn_selectionner_SH->UseVisualStyleBackColor = true;
+			this->btn_selectionner_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_SH_Click);
+			// 
+			// btn_rechercher_SH
+			// 
+			this->btn_rechercher_SH->Location = System::Drawing::Point(40, 193);
+			this->btn_rechercher_SH->Name = L"btn_rechercher_SH";
+			this->btn_rechercher_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_SH->TabIndex = 53;
+			this->btn_rechercher_SH->Text = L"Rechercher";
+			this->btn_rechercher_SH->UseVisualStyleBackColor = true;
+			this->btn_rechercher_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_SH_Click);
+			// 
+			// label37
+			// 
+			this->label37->AutoSize = true;
+			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label37->Location = System::Drawing::Point(155, 32);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(103, 16);
+			this->label37->TabIndex = 52;
+			this->label37->Text = L"Date d\'embauche";
+			// 
+			// dataGrid_DE_SH
+			// 
+			this->dataGrid_DE_SH->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DE_SH->Location = System::Drawing::Point(158, 51);
+			this->dataGrid_DE_SH->Name = L"dataGrid_DE_SH";
+			this->dataGrid_DE_SH->Size = System::Drawing::Size(208, 136);
+			this->dataGrid_DE_SH->TabIndex = 51;
+			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
@@ -2087,7 +1895,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// groupBox18
 			// 
 			this->groupBox18->Controls->Add(this->button29);
-			this->groupBox18->Controls->Add(this->textBox26);
+			this->groupBox18->Controls->Add(this->txtBx_ID_commande_affichage);
 			this->groupBox18->Controls->Add(this->label31);
 			this->groupBox18->Location = System::Drawing::Point(64, 38);
 			this->groupBox18->Name = L"groupBox18";
@@ -2105,12 +1913,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->button29->Text = L"Rechercher";
 			this->button29->UseVisualStyleBackColor = true;
 			// 
-			// textBox26
+			// txtBx_ID_commande_affichage
 			// 
-			this->textBox26->Location = System::Drawing::Point(20, 45);
-			this->textBox26->Name = L"textBox26";
-			this->textBox26->Size = System::Drawing::Size(117, 20);
-			this->textBox26->TabIndex = 38;
+			this->txtBx_ID_commande_affichage->Location = System::Drawing::Point(20, 45);
+			this->txtBx_ID_commande_affichage->Name = L"txtBx_ID_commande_affichage";
+			this->txtBx_ID_commande_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_ID_commande_affichage->TabIndex = 38;
 			// 
 			// label31
 			// 
@@ -2243,19 +2051,21 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// groupBox17
 			// 
-			this->groupBox17->Controls->Add(this->textBox27);
-			this->groupBox17->Controls->Add(this->textBox29);
+			this->groupBox17->Controls->Add(this->txtBx_ID_societe);
+			this->groupBox17->Controls->Add(this->label38);
+			this->groupBox17->Controls->Add(this->tktBx_remise);
+			this->groupBox17->Controls->Add(this->txtBx_date_emission);
 			this->groupBox17->Controls->Add(this->label33);
 			this->groupBox17->Controls->Add(this->label34);
 			this->groupBox17->Controls->Add(this->label44);
-			this->groupBox17->Controls->Add(this->textBox36);
-			this->groupBox17->Controls->Add(this->textBox38);
+			this->groupBox17->Controls->Add(this->txtBx_ID_commande_information);
+			this->groupBox17->Controls->Add(this->txtBx_date_payment);
 			this->groupBox17->Controls->Add(this->label46);
-			this->groupBox17->Controls->Add(this->dataGridView6);
+			this->groupBox17->Controls->Add(this->dataGrid_ligne_commande);
 			this->groupBox17->Controls->Add(this->label47);
-			this->groupBox17->Controls->Add(this->textBox39);
-			this->groupBox17->Controls->Add(this->textBox40);
-			this->groupBox17->Controls->Add(this->textBox42);
+			this->groupBox17->Controls->Add(this->txtBx_ID_client_commande);
+			this->groupBox17->Controls->Add(this->txtBx_nom_societe);
+			this->groupBox17->Controls->Add(this->txtBx_mode_payment);
 			this->groupBox17->Controls->Add(this->label51);
 			this->groupBox17->Controls->Add(this->label52);
 			this->groupBox17->Controls->Add(this->label54);
@@ -2266,19 +2076,19 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox17->TabStop = false;
 			this->groupBox17->Text = L"Information";
 			// 
-			// textBox27
+			// tktBx_remise
 			// 
-			this->textBox27->Location = System::Drawing::Point(9, 315);
-			this->textBox27->Name = L"textBox27";
-			this->textBox27->Size = System::Drawing::Size(200, 20);
-			this->textBox27->TabIndex = 49;
+			this->tktBx_remise->Location = System::Drawing::Point(9, 315);
+			this->tktBx_remise->Name = L"tktBx_remise";
+			this->tktBx_remise->Size = System::Drawing::Size(200, 20);
+			this->tktBx_remise->TabIndex = 49;
 			// 
-			// textBox29
+			// txtBx_date_emission
 			// 
-			this->textBox29->Location = System::Drawing::Point(9, 262);
-			this->textBox29->Name = L"textBox29";
-			this->textBox29->Size = System::Drawing::Size(200, 20);
-			this->textBox29->TabIndex = 45;
+			this->txtBx_date_emission->Location = System::Drawing::Point(9, 262);
+			this->txtBx_date_emission->Name = L"txtBx_date_emission";
+			this->txtBx_date_emission->Size = System::Drawing::Size(200, 20);
+			this->txtBx_date_emission->TabIndex = 45;
 			// 
 			// label33
 			// 
@@ -2313,20 +2123,20 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label44->TabIndex = 43;
 			this->label44->Text = L"ID de la commande";
 			// 
-			// textBox36
+			// txtBx_ID_commande_information
 			// 
-			this->textBox36->Enabled = false;
-			this->textBox36->Location = System::Drawing::Point(9, 32);
-			this->textBox36->Name = L"textBox36";
-			this->textBox36->Size = System::Drawing::Size(200, 20);
-			this->textBox36->TabIndex = 42;
+			this->txtBx_ID_commande_information->Enabled = false;
+			this->txtBx_ID_commande_information->Location = System::Drawing::Point(9, 32);
+			this->txtBx_ID_commande_information->Name = L"txtBx_ID_commande_information";
+			this->txtBx_ID_commande_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_commande_information->TabIndex = 42;
 			// 
-			// textBox38
+			// txtBx_date_payment
 			// 
-			this->textBox38->Location = System::Drawing::Point(9, 216);
-			this->textBox38->Name = L"textBox38";
-			this->textBox38->Size = System::Drawing::Size(200, 20);
-			this->textBox38->TabIndex = 40;
+			this->txtBx_date_payment->Location = System::Drawing::Point(9, 216);
+			this->txtBx_date_payment->Name = L"txtBx_date_payment";
+			this->txtBx_date_payment->Size = System::Drawing::Size(200, 20);
+			this->txtBx_date_payment->TabIndex = 40;
 			// 
 			// label46
 			// 
@@ -2339,13 +2149,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label46->TabIndex = 38;
 			this->label46->Text = L"Ligne de commande";
 			// 
-			// dataGridView6
+			// dataGrid_ligne_commande
 			// 
-			this->dataGridView6->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView6->Location = System::Drawing::Point(215, 27);
-			this->dataGridView6->Name = L"dataGridView6";
-			this->dataGridView6->Size = System::Drawing::Size(462, 383);
-			this->dataGridView6->TabIndex = 37;
+			this->dataGrid_ligne_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_ligne_commande->Location = System::Drawing::Point(215, 27);
+			this->dataGrid_ligne_commande->Name = L"dataGrid_ligne_commande";
+			this->dataGrid_ligne_commande->Size = System::Drawing::Size(462, 383);
+			this->dataGrid_ligne_commande->TabIndex = 37;
 			// 
 			// label47
 			// 
@@ -2358,26 +2168,26 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label47->TabIndex = 25;
 			this->label47->Text = L"ID client";
 			// 
-			// textBox39
+			// txtBx_ID_client_commande
 			// 
-			this->textBox39->Location = System::Drawing::Point(9, 71);
-			this->textBox39->Name = L"textBox39";
-			this->textBox39->Size = System::Drawing::Size(200, 20);
-			this->textBox39->TabIndex = 20;
+			this->txtBx_ID_client_commande->Location = System::Drawing::Point(9, 71);
+			this->txtBx_ID_client_commande->Name = L"txtBx_ID_client_commande";
+			this->txtBx_ID_client_commande->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_client_commande->TabIndex = 20;
 			// 
-			// textBox40
+			// txtBx_nom_societe
 			// 
-			this->textBox40->Location = System::Drawing::Point(9, 114);
-			this->textBox40->Name = L"textBox40";
-			this->textBox40->Size = System::Drawing::Size(200, 20);
-			this->textBox40->TabIndex = 21;
+			this->txtBx_nom_societe->Location = System::Drawing::Point(9, 114);
+			this->txtBx_nom_societe->Name = L"txtBx_nom_societe";
+			this->txtBx_nom_societe->Size = System::Drawing::Size(104, 20);
+			this->txtBx_nom_societe->TabIndex = 21;
 			// 
-			// textBox42
+			// txtBx_mode_payment
 			// 
-			this->textBox42->Location = System::Drawing::Point(9, 163);
-			this->textBox42->Name = L"textBox42";
-			this->textBox42->Size = System::Drawing::Size(200, 20);
-			this->textBox42->TabIndex = 22;
+			this->txtBx_mode_payment->Location = System::Drawing::Point(9, 163);
+			this->txtBx_mode_payment->Name = L"txtBx_mode_payment";
+			this->txtBx_mode_payment->Size = System::Drawing::Size(200, 20);
+			this->txtBx_mode_payment->TabIndex = 22;
 			// 
 			// label51
 			// 
@@ -2773,44 +2583,24 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tabPage30->Text = L"Simulation variation";
 			this->tabPage30->UseVisualStyleBackColor = true;
 			// 
-			// label37
+			// txtBx_ID_societe
 			// 
-			this->label37->AutoSize = true;
-			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txtBx_ID_societe->Enabled = false;
+			this->txtBx_ID_societe->Location = System::Drawing::Point(119, 115);
+			this->txtBx_ID_societe->Name = L"txtBx_ID_societe";
+			this->txtBx_ID_societe->Size = System::Drawing::Size(90, 20);
+			this->txtBx_ID_societe->TabIndex = 50;
+			// 
+			// label38
+			// 
+			this->label38->AutoSize = true;
+			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label37->Location = System::Drawing::Point(155, 32);
-			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(103, 16);
-			this->label37->TabIndex = 52;
-			this->label37->Text = L"Date d\'embauche";
-			// 
-			// dataGrid_DE_SH
-			// 
-			this->dataGrid_DE_SH->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_DE_SH->Location = System::Drawing::Point(158, 51);
-			this->dataGrid_DE_SH->Name = L"dataGrid_DE_SH";
-			this->dataGrid_DE_SH->Size = System::Drawing::Size(208, 136);
-			this->dataGrid_DE_SH->TabIndex = 51;
-			// 
-			// btn_rechercher_SH
-			// 
-			this->btn_rechercher_SH->Location = System::Drawing::Point(40, 193);
-			this->btn_rechercher_SH->Name = L"btn_rechercher_SH";
-			this->btn_rechercher_SH->Size = System::Drawing::Size(75, 23);
-			this->btn_rechercher_SH->TabIndex = 53;
-			this->btn_rechercher_SH->Text = L"Rechercher";
-			this->btn_rechercher_SH->UseVisualStyleBackColor = true;
-			this->btn_rechercher_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_SH_Click);
-			// 
-			// btn_selectionner_SH
-			// 
-			this->btn_selectionner_SH->Location = System::Drawing::Point(226, 193);
-			this->btn_selectionner_SH->Name = L"btn_selectionner_SH";
-			this->btn_selectionner_SH->Size = System::Drawing::Size(75, 23);
-			this->btn_selectionner_SH->TabIndex = 46;
-			this->btn_selectionner_SH->Text = L"Selectionner";
-			this->btn_selectionner_SH->UseVisualStyleBackColor = true;
-			this->btn_selectionner_SH->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_SH_Click);
+			this->label38->Location = System::Drawing::Point(116, 99);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(62, 16);
+			this->label38->TabIndex = 51;
+			this->label38->Text = L"ID société";
 			// 
 			// MyForm
 			// 
@@ -2849,6 +2639,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox8->PerformLayout();
 			this->groupBox10->ResumeLayout(false);
 			this->groupBox10->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->EndInit();
 			this->groupBox9->ResumeLayout(false);
 			this->groupBox9->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->EndInit();
@@ -2860,7 +2651,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox16->ResumeLayout(false);
 			this->groupBox17->ResumeLayout(false);
 			this->groupBox17->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_ligne_commande))->EndInit();
 			this->tbPage_GestionStock->ResumeLayout(false);
 			this->tbPage_GestionStock->PerformLayout();
 			this->groupBox11->ResumeLayout(false);
@@ -2871,7 +2662,6 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox14->PerformLayout();
 			this->tbPage_GestionStatistiques->ResumeLayout(false);
 			this->tbC_GestionStatistiques->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_SH))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2918,6 +2708,22 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 		txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
 		txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
 		
+
+		// CHARGEMENT COMMANDE
+		index_commande = 0;
+
+		txtBx_ID_commande_information->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[0]->ToString();
+		txtBx_date_emission->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[1]->ToString();
+		txtBx_date_payment->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[2]->ToString();
+		txtBx_mode_payment->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[3]->ToString();
+		tktBx_remise->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[4]->ToString();
+		txtBx_ID_client_commande->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[6]->ToString();
+		txtBx_ID_societe->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[7]->ToString();
+		txtBx_nom_societe->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[8]->ToString();
+
+		
+		dataGrid_ligne_commande->DataSource = (LigneCommande->listeLigneCommande("dbo.Adresse", Convert::ToInt32(txtBx_ID_commande_information->Text)))->Tables["dbo.Adresse"];
+
 
 		
 	}

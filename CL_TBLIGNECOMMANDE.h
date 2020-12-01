@@ -23,14 +23,14 @@ namespace NS_Composants {
 		// GETTER
 		int getID_Ligne();
 		int getID_article();
-		int getQauntite_Produit();
+		int getQuantite_Produit();
 		int getID_commande();
 		float getPrix_unitaire_HT();
 		float getTaux_TVA();
 		// SETTER
 		void setID_Ligne(int);
 		void setID_article(int);
-		void setQauntite_Produit(int);
+		void setQuantite_Produit(int);
 		void setID_commande(int);
 		void setPrix_unitaire_HT(float);
 		void setTaux_TVA(float);
