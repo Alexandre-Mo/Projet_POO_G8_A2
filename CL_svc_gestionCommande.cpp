@@ -17,26 +17,24 @@ namespace NS_Svc {
 		return dataSetCommande;
 	}
 
-	int^ CL_svc_gestionCommande::ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe,int ID_client) {
+	int CL_svc_gestionCommande::ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise,int ID_client) {
 		int id_personne;
 		TBCOMMANDE->setDate_emission(Date_emission);
 		TBCOMMANDE->setDate_payement(Date_payement);
 		TBCOMMANDE->setMode_payement(Mode_payement);
 		TBCOMMANDE->setRemise(Remise);
-		TBCOMMANDE->setID_Societe(ID_societe);
 		TBCOMMANDE->setID_client(ID_client);
 
 		id_personne = cad->actionRowsID(TBCOMMANDE->INSERT());
 		return id_personne;
 	}
 
-	void CL_svc_gestionCommande::modifier(int id, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe, int ID_client) {
+	void CL_svc_gestionCommande::modifier(int id, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client) {
 		TBCOMMANDE->setID_commande(id);
 		TBCOMMANDE->setDate_emission(Date_emission);
 		TBCOMMANDE->setDate_payement(Date_payement);
 		TBCOMMANDE->setMode_payement(Mode_payement);
 		TBCOMMANDE->setRemise(Remise);
-		TBCOMMANDE->setID_Societe(ID_societe);
 		TBCOMMANDE->setID_client(ID_client);
 		cad->actionRowsID(TBCOMMANDE->UPDATE());
 	}

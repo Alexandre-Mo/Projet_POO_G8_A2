@@ -12,7 +12,7 @@ namespace NS_Composants {
 
 	}
 	String^ CL_TBLIGNECOMMANDE::SELECT(void) {
-		return "SELECT * FROM dbo.Ligne_commande WHERE ID_commande = '" + getID_commande() + "'";
+		return "SELECT Prix_unitaire_HT,Taux_TVA,Quantite_Produit,Reference_article,Couleur FROM (dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article) INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur WHERE ID_commande = '" + getID_commande() + "'";
 	}
 	String^ CL_TBLIGNECOMMANDE::INSERT(void) {
 		return "INSERT INTO dbo.Ligne_commande" + "(Prix_unitaire_HT, Taux_TVA, ID_article, ID_commande, Qauntite_Produit) " + "VALUES('" + getPrix_unitaire_HT() + "', '" + getTaux_TVA() + "', '" + Convert::ToInt32(getID_article()) + "', '" + Convert::ToInt32(getID_commande()) + "', '" + getQuantite_Produit() + "', '" + getTaux_TVA() + "'); SELECT @@IDENTITY;";

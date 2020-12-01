@@ -127,6 +127,7 @@
     <ClCompile Include="CL_svc_gestionClient.cpp" />
     <ClCompile Include="CL_svc_gestionCommande.cpp" />
     <ClCompile Include="CL_svc_gestionLigneCommande.cpp" />
+    <ClCompile Include="CL_svc_gestionNature.cpp" />
     <ClCompile Include="CL_svc_gestionPersonnel.cpp" />
     <ClCompile Include="CL_svc_gestionStatistique.cpp" />
     <ClCompile Include="CL_svc_gestionStock.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="CL_svc_gestionClient.h" />
     <ClInclude Include="CL_svc_gestionCommande.h" />
     <ClInclude Include="CL_svc_gestionLigneCommande.h" />
+    <ClInclude Include="CL_svc_gestionNature.h" />
     <ClInclude Include="CL_svc_gestionPersonnel.h" />
     <ClInclude Include="CL_svc_gestionStatistique.h" />
     <ClInclude Include="CL_svc_gestionStock.h" />

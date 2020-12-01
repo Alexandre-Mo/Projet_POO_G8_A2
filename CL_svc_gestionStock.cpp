@@ -16,19 +16,20 @@ namespace NS_Svc {
 		return dataSetArticle;
 	}
 
-	int^ CL_svc_gestionStock::ajouter(int quantite, String^ ref) {
+	int CL_svc_gestionStock::ajouter(int quantite, String^ ref,int ID_couleur) {
 		int id_article;
 		TBARTICLE->setquantite_stock(quantite);
 		TBARTICLE->setReference_article_information(ref);
-
+		TBARTICLE->setID_couleur(ID_couleur);
 		id_article = cad->actionRowsID(TBARTICLE->INSERT());
 		return id_article;
 	}
 
-	void CL_svc_gestionStock::modifier(int quantite, int id, String^ ref) {
+	void CL_svc_gestionStock::modifier(int quantite, int id, String^ ref,int ID_couleur) {
 		TBARTICLE->setquantite_stock(quantite);
 		TBARTICLE->setID_article(id);
 		TBARTICLE->setReference_article_information(ref);
+		TBARTICLE->setID_couleur(ID_couleur);
 		cad->actionRowsID(TBARTICLE->UPDATE());
 	}
 
@@ -37,17 +38,11 @@ namespace NS_Svc {
 		cad->actionRowsID(TBARTICLE->DELETE());
 	}
 
-//	DataSet^ CL_svc_gestionStock::rechercher(String^ dataTableName, String^ nom, String^ prenom) {
-//		TBARTICLE->setNom_stock(nom);
-//		TBARTICLE->setPrenom_stock(prenom);
-//		dataSetStock = cad->getRows(TBARTICLE->SELECTbyName(), dataTableName);
-//		return dataSetStock;
-//	}
-//	DataSet^ CL_svc_gestionStock::selectionner(String^ dataTableName, int ID_client) {
-//		TBARTICLE->setID_stock(ID_client);
-//		dataSetStock = cad->getRows(TBARTICLE->SELECTbyID(), dataTableName);
-//		return dataSetStock;
-//	}
-
+	DataSet^ CL_svc_gestionStock::selectionner(String^ dataTableName, String^ ref_article, String^ couleur) {
+		TBARTICLE->setReference_article_information(ref_article);
+		TBARTICLE->setCouleur(couleur);
+		dataSetArticle = cad->getRows(TBARTICLE->SELECTbyNameAndColor(), dataTableName);
+		return dataSetArticle;
+	}
 
 }

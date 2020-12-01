@@ -20,8 +20,8 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionCommande();
 		DataSet^ listeCommande(String^);
-		int^ ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe, int ID_client);
-		void modifier(int, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_societe, int ID_client);
+		int ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client);
+		void modifier(int, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client);
 		void supprimer(int);
 		//DataSet^ rechercher(String^, String^, String^);
 		//DataSet^ selectionner(String^, int);

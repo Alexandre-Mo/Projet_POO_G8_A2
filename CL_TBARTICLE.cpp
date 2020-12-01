@@ -9,16 +9,20 @@ namespace NS_Composants {
 
 	}
 	String^ CL_TBARTICLE::SELECT(void) {
-		return "SELECT * FROM dbo.Article";
+		return "SELECT * FROM dbo.Article INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur";
 	}
 	String^ CL_TBARTICLE::INSERT(void) {
-		return "INSERT INTO dbo.Article" + "(quantite_stock, Reference_article_information) " + "VALUES('" + Convert::ToInt32(getquantite_stock()) + "', '" + getReference_article_information() + "'); SELECT @@IDENTITY;";
+		return "INSERT INTO dbo.Article" + "(quantite_stock, Reference_article,ID_couleur) " + "VALUES('" + Convert::ToInt32(getquantite_stock()) + "', '" + getReference_article_information() +"','"+ Convert::ToInt32(getquantite_stock()) + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBARTICLE::UPDATE(void) {
-		return "UPDATE dbo.Article set quantite_stock = ' " + Convert::ToInt32(getquantite_stock()) + "'" + ", Reference_article_information = '" + getReference_article_information()->ToString() + "'" + ", ID_article = '" + Convert::ToInt32(getID_article()) + "'";
+		return "UPDATE dbo.Article set quantite_stock = ' " + Convert::ToInt32(getquantite_stock()) + "'" + ", Reference_article = '" + getReference_article_information()->ToString() + "'"+", ID_couleur ='"+ Convert::ToInt32(getID_couleur())+"' WHERE ID_article = '"+ Convert::ToInt32(getID_article()) +"'";
 	}
 	String^ CL_TBARTICLE::DELETE(void) {
 		return "DELETE FROM dbo.Article WHERE ID_article =" + Convert::ToInt32(getID_article());
+	}
+
+	String^ CL_TBARTICLE::SELECTbyNameAndColor(void) {
+		return "SELECT * FROM dbo.Article INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur WHERE  Reference_article = '" + getReference_article_information()->ToString()+"' AND Couleur = '"+ getCouleur()->ToString()+"'";
 	}
 
 
@@ -32,6 +36,12 @@ namespace NS_Composants {
 	String^ CL_TBARTICLE::getReference_article_information() {
 		return this->Reference_article_information;
 	}
+	int CL_TBARTICLE::getID_couleur() {
+		return this->ID_couleur;
+	}
+	String^ CL_TBARTICLE::getCouleur() {
+		return this->Couleur;
+	}
 
 	// SETTER
 	void CL_TBARTICLE::setID_article(int ID_article) {
@@ -42,5 +52,12 @@ namespace NS_Composants {
 	}
 	void CL_TBARTICLE::setReference_article_information(String^ Reference_article_information) {
 		this->Reference_article_information = Reference_article_information;
+	}
+	void CL_TBARTICLE::setCouleur(String^ Couleur) {
+		this->Couleur = Couleur;
+	}
+
+	void CL_TBARTICLE::setID_couleur(int ID_couleur) {
+		this->ID_couleur = ID_couleur;
 	}
 }
