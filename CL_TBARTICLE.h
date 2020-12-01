@@ -9,7 +9,7 @@ namespace NS_Composants {
 	private:
 		int quantite_stock;
 		int ID_article;
-		String^ Reference_article;
+		String^ Reference_article_information;
 	public:
 		CL_TBARTICLE();
 		String^ SELECT(void);
@@ -20,11 +20,11 @@ namespace NS_Composants {
 		// GETTER
 		int getquantite_stock();
 		int getID_article();
-		String^ getReference_article();
+		String^ getReference_article_information();
 		// SETTER
 		void setquantite_stock(int);
 		void setID_article(int);
-		void setReference_article(String^);
+		void setReference_article_information(String^);
 	};
 
 }
