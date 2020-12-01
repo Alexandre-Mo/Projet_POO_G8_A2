@@ -16,7 +16,7 @@ namespace NS_Composants {
 		return "SELECT * FROM dbo.Commande INNER JOIN dbo.Societe ON dbo.Commande.ID_societe = dbo.Societe.ID_societe";
 	}
 	String^ CL_TBCOMMANDE::INSERT(void) {
-		return "INSERT INTO dbo.Commande " + "(Date_emission, Date_payement, Mode_payement, Remise, ID_societe, ID_client) " + "VALUES('" + getDate_emission() + "', '" + getDate_payement() + "', '" + getMode_payement() + "', '" + getRemise() + "', '" + getID_Societe() + "', '" + getID_client() + "'); SELECT @@IDENTITY;";
+		return "INSERT INTO dbo.Commande " + "(DDate_emission, Date_payement, Mode_payement, Remise, ID_Societe, ID_societe_Produit, ID_client) " + "VALUES('" + getDate_emission() + "', '" + getDate_payement() + "', '" + getMode_payement() + "', '" + getRemise() + "', '" + getID_Societe() + "', '" + getID_societe_Produit() + "', '" + getID_client() + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBCOMMANDE::UPDATE(void) {
 		return "UPDATE dbo.Commande set Date_emission = ' " + getDate_emission()->ToString() + "'" + ", Date_payement = '" + getDate_payement()->ToString() + "'" + ", Mode_payement='" + getMode_payement()->ToString() + "'" + ", Remise = '" + getRemise() + "'" + ", ID_Societe = '" + Convert::ToInt32(getID_client()) + ", ID_societe_Produit = '" + Convert::ToInt32(getID_societe_Produit()) + ", ID_client = '" + Convert::ToInt32(getID_client()) + "' WHERE ID_commande = '" + Convert::ToInt32(getID_commande()) + "'";
