@@ -291,8 +291,8 @@ private: System::Windows::Forms::Button^ btn_rechercher_commande;
 private: System::Windows::Forms::TextBox^ txtBx_ID_commande_affichage;
 
 private: System::Windows::Forms::Label^ label31;
-private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::TextBox^ txtBx_message_commande;
+
+
 
 private: System::Windows::Forms::GroupBox^ groupBox15;
 private: System::Windows::Forms::Button^ btn_modifier_commande;
@@ -424,8 +424,8 @@ private: System::Windows::Forms::Button^ btn_rechercher_SH;
 private: System::Windows::Forms::Label^ label37;
 
 
-private: System::Windows::Forms::Label^ label47;
-private: System::Windows::Forms::TextBox^ txtBx_ID_client_commande;
+
+
 
 
 private: System::Windows::Forms::GroupBox^ groupBox19;
@@ -447,6 +447,56 @@ private: System::Windows::Forms::Label^ label45;
 private: System::Windows::Forms::TextBox^ txtBx_couleur_article_affichage;
 
 private: System::Windows::Forms::Label^ label48;
+private: System::Windows::Forms::GroupBox^ groupBox20;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::TextBox^ textBox7;
+private: System::Windows::Forms::Label^ label58;
+private: System::Windows::Forms::TextBox^ txtBx_message_commande;
+
+private: System::Windows::Forms::Label^ label57;
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Label^ label56;
+private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::Label^ label43;
+private: System::Windows::Forms::Label^ label38;
+private: System::Windows::Forms::Button^ btn_selectionner_adresse_commande;
+
+private: System::Windows::Forms::DataGridView^ dataGrid_adresse_commande;
+
+private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::FolderBrowserDialog^ folderBrowserDialog1;
+private: System::Windows::Forms::TextBox^ txtBxID_adresse_commande;
+
+
+private: System::Windows::Forms::Label^ label49;
+private: System::Windows::Forms::TextBox^ txtBxRue_adresse_commande;
+
+private: System::Windows::Forms::Label^ label50;
+private: System::Windows::Forms::Label^ label51;
+private: System::Windows::Forms::TextBox^ txtBxPays_adresse_commande;
+
+private: System::Windows::Forms::Label^ label53;
+private: System::Windows::Forms::TextBox^ txtBxNum_adresse_commande;
+private: System::Windows::Forms::TextBox^ txtBxCode_postale_adresse_commande;
+
+
+
+private: System::Windows::Forms::Label^ label55;
+private: System::Windows::Forms::TextBox^ txtBxVille_adresse_commande;
+
+private: System::Windows::Forms::Label^ label59;
+private: System::Windows::Forms::TextBox^ txtBx_ID_client_commande;
+
+private: System::Windows::Forms::Label^ label47;
 
 
 
@@ -577,12 +627,17 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_prenom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->tbPage_GestionCommande = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox20 = (gcnew System::Windows::Forms::GroupBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label58 = (gcnew System::Windows::Forms::Label());
+			this->txtBx_message_commande = (gcnew System::Windows::Forms::TextBox());
+			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->groupBox18 = (gcnew System::Windows::Forms::GroupBox());
 			this->btn_rechercher_commande = (gcnew System::Windows::Forms::Button());
 			this->txtBx_ID_commande_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->label31 = (gcnew System::Windows::Forms::Label());
-			this->label43 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_message_commande = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox15 = (gcnew System::Windows::Forms::GroupBox());
 			this->btn_modifier_commande = (gcnew System::Windows::Forms::Button());
 			this->btn_first_commande = (gcnew System::Windows::Forms::Button());
@@ -594,16 +649,34 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_right_commande = (gcnew System::Windows::Forms::Button());
 			this->btn_last_commande = (gcnew System::Windows::Forms::Button());
 			this->groupBox17 = (gcnew System::Windows::Forms::GroupBox());
-			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->txtBx_ID_client_commande = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label43 = (gcnew System::Windows::Forms::Label());
 			this->groupBox19 = (gcnew System::Windows::Forms::GroupBox());
-			this->btn_selectionner_client_commande = (gcnew System::Windows::Forms::Button());
-			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->dataGrid_DDN_client_commande = (gcnew System::Windows::Forms::DataGridView());
+			this->txtBx_ID_client_commande = (gcnew System::Windows::Forms::TextBox());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->txtBxID_adresse_commande = (gcnew System::Windows::Forms::TextBox());
+			this->label38 = (gcnew System::Windows::Forms::Label());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->btn_selectionner_adresse_commande = (gcnew System::Windows::Forms::Button());
+			this->txtBxRue_adresse_commande = (gcnew System::Windows::Forms::TextBox());
+			this->dataGrid_adresse_commande = (gcnew System::Windows::Forms::DataGridView());
+			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->txtBxPays_adresse_commande = (gcnew System::Windows::Forms::TextBox());
 			this->btn_rechercher_client_commande = (gcnew System::Windows::Forms::Button());
+			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->txtBxNum_adresse_commande = (gcnew System::Windows::Forms::TextBox());
+			this->btn_selectionner_client_commande = (gcnew System::Windows::Forms::Button());
+			this->txtBxCode_postale_adresse_commande = (gcnew System::Windows::Forms::TextBox());
+			this->dataGrid_DDN_client_commande = (gcnew System::Windows::Forms::DataGridView());
+			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->txtBxVille_adresse_commande = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_nom_client_commande = (gcnew System::Windows::Forms::TextBox());
+			this->label59 = (gcnew System::Windows::Forms::Label());
 			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->label56 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_prenom_client_commande = (gcnew System::Windows::Forms::TextBox());
 			this->tktBx_remise = (gcnew System::Windows::Forms::TextBox());
 			this->txtBx_date_emission = (gcnew System::Windows::Forms::TextBox());
@@ -656,6 +729,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tabPage28 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage29 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage30 = (gcnew System::Windows::Forms::TabPage());
+			this->folderBrowserDialog1 = (gcnew System::Windows::Forms::FolderBrowserDialog());
 			this->tbC_MenuPrincipal->SuspendLayout();
 			this->tbPage_Informations->SuspendLayout();
 			this->groupBox1->SuspendLayout();
@@ -676,11 +750,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox9->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->BeginInit();
 			this->tbPage_GestionCommande->SuspendLayout();
+			this->groupBox20->SuspendLayout();
 			this->groupBox18->SuspendLayout();
 			this->groupBox15->SuspendLayout();
 			this->groupBox16->SuspendLayout();
 			this->groupBox17->SuspendLayout();
 			this->groupBox19->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_commande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DDN_client_commande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_ligne_commande))->BeginInit();
 			this->tbPage_GestionStock->SuspendLayout();
@@ -1502,7 +1578,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox7->Size = System::Drawing::Size(169, 117);
 			this->groupBox7->TabIndex = 47;
 			this->groupBox7->TabStop = false;
-			this->groupBox7->Text = L"Creer un nouveau client";
+			this->groupBox7->Text = L"Creer un nouveau personnel";
 			// 
 			// btn_Nouveau_personnel
 			// 
@@ -1944,9 +2020,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// tbPage_GestionCommande
 			// 
-			this->tbPage_GestionCommande->Controls->Add(this->groupBox18);
-			this->tbPage_GestionCommande->Controls->Add(this->label43);
+			this->tbPage_GestionCommande->Controls->Add(this->groupBox20);
 			this->tbPage_GestionCommande->Controls->Add(this->txtBx_message_commande);
+			this->tbPage_GestionCommande->Controls->Add(this->label57);
+			this->tbPage_GestionCommande->Controls->Add(this->groupBox18);
 			this->tbPage_GestionCommande->Controls->Add(this->groupBox15);
 			this->tbPage_GestionCommande->Controls->Add(this->groupBox17);
 			this->tbPage_GestionCommande->Location = System::Drawing::Point(4, 22);
@@ -1958,21 +2035,89 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionCommande->UseVisualStyleBackColor = true;
 			this->tbPage_GestionCommande->Click += gcnew System::EventHandler(this, &MyForm::tbPage_GestionCommande_Click);
 			// 
+			// groupBox20
+			// 
+			this->groupBox20->Controls->Add(this->button3);
+			this->groupBox20->Controls->Add(this->button2);
+			this->groupBox20->Controls->Add(this->textBox7);
+			this->groupBox20->Controls->Add(this->label58);
+			this->groupBox20->Location = System::Drawing::Point(153, 138);
+			this->groupBox20->Name = L"groupBox20";
+			this->groupBox20->Size = System::Drawing::Size(157, 190);
+			this->groupBox20->TabIndex = 57;
+			this->groupBox20->TabStop = false;
+			this->groupBox20->Text = L"Facture";
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(36, 128);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(83, 43);
+			this->button3->TabIndex = 43;
+			this->button3->Text = L"Génerer la facture";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(5, 73);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(148, 23);
+			this->button2->TabIndex = 42;
+			this->button2->Text = L"Selectionner un dossier...";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(5, 102);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(145, 20);
+			this->textBox7->TabIndex = 38;
+			// 
+			// label58
+			// 
+			this->label58->AutoSize = true;
+			this->label58->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label58->Location = System::Drawing::Point(16, 22);
+			this->label58->Name = L"label58";
+			this->label58->Size = System::Drawing::Size(135, 32);
+			this->label58->TabIndex = 40;
+			this->label58->Text = L"Choisir un dossier pour \r\nla facture";
+			// 
+			// txtBx_message_commande
+			// 
+			this->txtBx_message_commande->Location = System::Drawing::Point(11, 346);
+			this->txtBx_message_commande->Multiline = true;
+			this->txtBx_message_commande->Name = L"txtBx_message_commande";
+			this->txtBx_message_commande->Size = System::Drawing::Size(299, 196);
+			this->txtBx_message_commande->TabIndex = 43;
+			// 
+			// label57
+			// 
+			this->label57->AutoSize = true;
+			this->label57->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label57->Location = System::Drawing::Point(8, 330);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(54, 16);
+			this->label57->TabIndex = 44;
+			this->label57->Text = L"Message";
+			// 
 			// groupBox18
 			// 
 			this->groupBox18->Controls->Add(this->btn_rechercher_commande);
 			this->groupBox18->Controls->Add(this->txtBx_ID_commande_affichage);
 			this->groupBox18->Controls->Add(this->label31);
-			this->groupBox18->Location = System::Drawing::Point(64, 38);
+			this->groupBox18->Location = System::Drawing::Point(153, 6);
 			this->groupBox18->Name = L"groupBox18";
-			this->groupBox18->Size = System::Drawing::Size(157, 103);
+			this->groupBox18->Size = System::Drawing::Size(157, 126);
 			this->groupBox18->TabIndex = 56;
 			this->groupBox18->TabStop = false;
 			this->groupBox18->Text = L"Affichage";
 			// 
 			// btn_rechercher_commande
 			// 
-			this->btn_rechercher_commande->Location = System::Drawing::Point(37, 71);
+			this->btn_rechercher_commande->Location = System::Drawing::Point(37, 87);
 			this->btn_rechercher_commande->Name = L"btn_rechercher_commande";
 			this->btn_rechercher_commande->Size = System::Drawing::Size(82, 23);
 			this->btn_rechercher_commande->TabIndex = 42;
@@ -1982,7 +2127,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_commande_affichage
 			// 
-			this->txtBx_ID_commande_affichage->Location = System::Drawing::Point(20, 45);
+			this->txtBx_ID_commande_affichage->Location = System::Drawing::Point(20, 61);
 			this->txtBx_ID_commande_affichage->Name = L"txtBx_ID_commande_affichage";
 			this->txtBx_ID_commande_affichage->Size = System::Drawing::Size(117, 20);
 			this->txtBx_ID_commande_affichage->TabIndex = 38;
@@ -1992,30 +2137,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label31->AutoSize = true;
 			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label31->Location = System::Drawing::Point(17, 29);
+			this->label31->Location = System::Drawing::Point(17, 27);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(113, 16);
+			this->label31->Size = System::Drawing::Size(93, 32);
 			this->label31->TabIndex = 40;
-			this->label31->Text = L"ID de la commande";
-			// 
-			// label43
-			// 
-			this->label43->AutoSize = true;
-			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label43->Location = System::Drawing::Point(313, 435);
-			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(54, 16);
-			this->label43->TabIndex = 53;
-			this->label43->Text = L"Message";
-			// 
-			// txtBx_message_commande
-			// 
-			this->txtBx_message_commande->Location = System::Drawing::Point(316, 454);
-			this->txtBx_message_commande->Multiline = true;
-			this->txtBx_message_commande->Name = L"txtBx_message_commande";
-			this->txtBx_message_commande->Size = System::Drawing::Size(683, 77);
-			this->txtBx_message_commande->TabIndex = 55;
+			this->label31->Text = L"Reference de la \r\ncommande";
 			// 
 			// groupBox15
 			// 
@@ -2026,9 +2152,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox15->Controls->Add(this->groupBox16);
 			this->groupBox15->Controls->Add(this->btn_right_commande);
 			this->groupBox15->Controls->Add(this->btn_last_commande);
-			this->groupBox15->Location = System::Drawing::Point(52, 200);
+			this->groupBox15->Location = System::Drawing::Point(11, 6);
 			this->groupBox15->Name = L"groupBox15";
-			this->groupBox15->Size = System::Drawing::Size(182, 308);
+			this->groupBox15->Size = System::Drawing::Size(136, 322);
 			this->groupBox15->TabIndex = 54;
 			this->groupBox15->TabStop = false;
 			this->groupBox15->Text = L"Menu";
@@ -2037,7 +2163,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->btn_modifier_commande->Location = System::Drawing::Point(12, 21);
 			this->btn_modifier_commande->Name = L"btn_modifier_commande";
-			this->btn_modifier_commande->Size = System::Drawing::Size(157, 38);
+			this->btn_modifier_commande->Size = System::Drawing::Size(113, 38);
 			this->btn_modifier_commande->TabIndex = 48;
 			this->btn_modifier_commande->Text = L"Modifier";
 			this->btn_modifier_commande->UseVisualStyleBackColor = true;
@@ -2045,7 +2171,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_first_commande
 			// 
-			this->btn_first_commande->Location = System::Drawing::Point(6, 247);
+			this->btn_first_commande->Location = System::Drawing::Point(24, 235);
 			this->btn_first_commande->Name = L"btn_first_commande";
 			this->btn_first_commande->Size = System::Drawing::Size(38, 38);
 			this->btn_first_commande->TabIndex = 39;
@@ -2057,7 +2183,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->btn_supprimer_commande->Location = System::Drawing::Point(12, 65);
 			this->btn_supprimer_commande->Name = L"btn_supprimer_commande";
-			this->btn_supprimer_commande->Size = System::Drawing::Size(157, 38);
+			this->btn_supprimer_commande->Size = System::Drawing::Size(113, 38);
 			this->btn_supprimer_commande->TabIndex = 45;
 			this->btn_supprimer_commande->Text = L"Supprimer";
 			this->btn_supprimer_commande->UseVisualStyleBackColor = true;
@@ -2065,7 +2191,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_left_commande
 			// 
-			this->btn_left_commande->Location = System::Drawing::Point(49, 247);
+			this->btn_left_commande->Location = System::Drawing::Point(67, 235);
 			this->btn_left_commande->Name = L"btn_left_commande";
 			this->btn_left_commande->Size = System::Drawing::Size(38, 38);
 			this->btn_left_commande->TabIndex = 40;
@@ -2077,18 +2203,18 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox16->Controls->Add(this->btn_nouveau_commande);
 			this->groupBox16->Controls->Add(this->enregistrer);
-			this->groupBox16->Location = System::Drawing::Point(6, 115);
+			this->groupBox16->Location = System::Drawing::Point(6, 105);
 			this->groupBox16->Name = L"groupBox16";
-			this->groupBox16->Size = System::Drawing::Size(169, 117);
+			this->groupBox16->Size = System::Drawing::Size(125, 127);
 			this->groupBox16->TabIndex = 47;
 			this->groupBox16->TabStop = false;
-			this->groupBox16->Text = L"Creer un nouveau client";
+			this->groupBox16->Text = L"Creer une nouvelle commande";
 			// 
 			// btn_nouveau_commande
 			// 
-			this->btn_nouveau_commande->Location = System::Drawing::Point(6, 19);
+			this->btn_nouveau_commande->Location = System::Drawing::Point(6, 33);
 			this->btn_nouveau_commande->Name = L"btn_nouveau_commande";
-			this->btn_nouveau_commande->Size = System::Drawing::Size(157, 38);
+			this->btn_nouveau_commande->Size = System::Drawing::Size(113, 38);
 			this->btn_nouveau_commande->TabIndex = 44;
 			this->btn_nouveau_commande->Text = L"Nouveau";
 			this->btn_nouveau_commande->UseVisualStyleBackColor = true;
@@ -2096,9 +2222,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// enregistrer
 			// 
-			this->enregistrer->Location = System::Drawing::Point(6, 63);
+			this->enregistrer->Location = System::Drawing::Point(6, 77);
 			this->enregistrer->Name = L"enregistrer";
-			this->enregistrer->Size = System::Drawing::Size(157, 38);
+			this->enregistrer->Size = System::Drawing::Size(113, 38);
 			this->enregistrer->TabIndex = 43;
 			this->enregistrer->Text = L"Enregistrer";
 			this->enregistrer->UseVisualStyleBackColor = true;
@@ -2106,7 +2232,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_right_commande
 			// 
-			this->btn_right_commande->Location = System::Drawing::Point(93, 247);
+			this->btn_right_commande->Location = System::Drawing::Point(24, 279);
 			this->btn_right_commande->Name = L"btn_right_commande";
 			this->btn_right_commande->Size = System::Drawing::Size(38, 38);
 			this->btn_right_commande->TabIndex = 41;
@@ -2116,7 +2242,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_last_commande
 			// 
-			this->btn_last_commande->Location = System::Drawing::Point(137, 247);
+			this->btn_last_commande->Location = System::Drawing::Point(67, 279);
 			this->btn_last_commande->Name = L"btn_last_commande";
 			this->btn_last_commande->Size = System::Drawing::Size(38, 38);
 			this->btn_last_commande->TabIndex = 42;
@@ -2126,8 +2252,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// groupBox17
 			// 
-			this->groupBox17->Controls->Add(this->label47);
-			this->groupBox17->Controls->Add(this->txtBx_ID_client_commande);
+			this->groupBox17->Controls->Add(this->textBox1);
+			this->groupBox17->Controls->Add(this->label43);
 			this->groupBox17->Controls->Add(this->groupBox19);
 			this->groupBox17->Controls->Add(this->tktBx_remise);
 			this->groupBox17->Controls->Add(this->txtBx_date_emission);
@@ -2143,80 +2269,164 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox17->Controls->Add(this->label54);
 			this->groupBox17->Location = System::Drawing::Point(316, 6);
 			this->groupBox17->Name = L"groupBox17";
-			this->groupBox17->Size = System::Drawing::Size(683, 426);
+			this->groupBox17->Size = System::Drawing::Size(683, 540);
 			this->groupBox17->TabIndex = 52;
 			this->groupBox17->TabStop = false;
 			this->groupBox17->Text = L"Information";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(9, 437);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(200, 20);
+			this->textBox1->TabIndex = 54;
+			// 
+			// label43
+			// 
+			this->label43->AutoSize = true;
+			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label43->Location = System::Drawing::Point(6, 418);
+			this->label43->Name = L"label43";
+			this->label43->Size = System::Drawing::Size(154, 16);
+			this->label43->TabIndex = 53;
+			this->label43->Text = L"Reference de la commande";
+			// 
+			// groupBox19
+			// 
+			this->groupBox19->Controls->Add(this->txtBx_ID_client_commande);
+			this->groupBox19->Controls->Add(this->label47);
+			this->groupBox19->Controls->Add(this->txtBxID_adresse_commande);
+			this->groupBox19->Controls->Add(this->label38);
+			this->groupBox19->Controls->Add(this->label49);
+			this->groupBox19->Controls->Add(this->btn_selectionner_adresse_commande);
+			this->groupBox19->Controls->Add(this->txtBxRue_adresse_commande);
+			this->groupBox19->Controls->Add(this->dataGrid_adresse_commande);
+			this->groupBox19->Controls->Add(this->label50);
+			this->groupBox19->Controls->Add(this->label51);
+			this->groupBox19->Controls->Add(this->txtBxPays_adresse_commande);
+			this->groupBox19->Controls->Add(this->btn_rechercher_client_commande);
+			this->groupBox19->Controls->Add(this->label53);
+			this->groupBox19->Controls->Add(this->label39);
+			this->groupBox19->Controls->Add(this->txtBxNum_adresse_commande);
+			this->groupBox19->Controls->Add(this->btn_selectionner_client_commande);
+			this->groupBox19->Controls->Add(this->txtBxCode_postale_adresse_commande);
+			this->groupBox19->Controls->Add(this->dataGrid_DDN_client_commande);
+			this->groupBox19->Controls->Add(this->label55);
+			this->groupBox19->Controls->Add(this->label40);
+			this->groupBox19->Controls->Add(this->txtBxVille_adresse_commande);
+			this->groupBox19->Controls->Add(this->txtBx_nom_client_commande);
+			this->groupBox19->Controls->Add(this->label59);
+			this->groupBox19->Controls->Add(this->label41);
+			this->groupBox19->Controls->Add(this->label56);
+			this->groupBox19->Controls->Add(this->txtBx_prenom_client_commande);
+			this->groupBox19->Location = System::Drawing::Point(215, 169);
+			this->groupBox19->Name = L"groupBox19";
+			this->groupBox19->Size = System::Drawing::Size(467, 371);
+			this->groupBox19->TabIndex = 52;
+			this->groupBox19->TabStop = false;
+			this->groupBox19->Text = L"Client";
+			// 
+			// txtBx_ID_client_commande
+			// 
+			this->txtBx_ID_client_commande->Location = System::Drawing::Point(9, 44);
+			this->txtBx_ID_client_commande->Name = L"txtBx_ID_client_commande";
+			this->txtBx_ID_client_commande->Size = System::Drawing::Size(117, 20);
+			this->txtBx_ID_client_commande->TabIndex = 70;
 			// 
 			// label47
 			// 
 			this->label47->AutoSize = true;
 			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label47->Location = System::Drawing::Point(6, 217);
+			this->label47->Location = System::Drawing::Point(6, 25);
 			this->label47->Name = L"label47";
 			this->label47->Size = System::Drawing::Size(54, 16);
-			this->label47->TabIndex = 55;
+			this->label47->TabIndex = 71;
 			this->label47->Text = L"ID client";
 			// 
-			// txtBx_ID_client_commande
+			// txtBxID_adresse_commande
 			// 
-			this->txtBx_ID_client_commande->Enabled = false;
-			this->txtBx_ID_client_commande->Location = System::Drawing::Point(9, 233);
-			this->txtBx_ID_client_commande->Name = L"txtBx_ID_client_commande";
-			this->txtBx_ID_client_commande->Size = System::Drawing::Size(200, 20);
-			this->txtBx_ID_client_commande->TabIndex = 53;
+			this->txtBxID_adresse_commande->Enabled = false;
+			this->txtBxID_adresse_commande->Location = System::Drawing::Point(406, 44);
+			this->txtBxID_adresse_commande->Name = L"txtBxID_adresse_commande";
+			this->txtBxID_adresse_commande->Size = System::Drawing::Size(52, 20);
+			this->txtBxID_adresse_commande->TabIndex = 68;
 			// 
-			// groupBox19
+			// label38
 			// 
-			this->groupBox19->Controls->Add(this->btn_selectionner_client_commande);
-			this->groupBox19->Controls->Add(this->label39);
-			this->groupBox19->Controls->Add(this->dataGrid_DDN_client_commande);
-			this->groupBox19->Controls->Add(this->btn_rechercher_client_commande);
-			this->groupBox19->Controls->Add(this->label40);
-			this->groupBox19->Controls->Add(this->txtBx_nom_client_commande);
-			this->groupBox19->Controls->Add(this->label41);
-			this->groupBox19->Controls->Add(this->txtBx_prenom_client_commande);
-			this->groupBox19->Location = System::Drawing::Point(307, 233);
-			this->groupBox19->Name = L"groupBox19";
-			this->groupBox19->Size = System::Drawing::Size(301, 164);
-			this->groupBox19->TabIndex = 52;
-			this->groupBox19->TabStop = false;
-			this->groupBox19->Text = L"Client";
-			// 
-			// btn_selectionner_client_commande
-			// 
-			this->btn_selectionner_client_commande->Location = System::Drawing::Point(32, 133);
-			this->btn_selectionner_client_commande->Name = L"btn_selectionner_client_commande";
-			this->btn_selectionner_client_commande->Size = System::Drawing::Size(75, 23);
-			this->btn_selectionner_client_commande->TabIndex = 45;
-			this->btn_selectionner_client_commande->Text = L"Selectionner";
-			this->btn_selectionner_client_commande->UseVisualStyleBackColor = true;
-			this->btn_selectionner_client_commande->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_client_commande_Click);
-			// 
-			// label39
-			// 
-			this->label39->AutoSize = true;
-			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label38->AutoSize = true;
+			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label39->Location = System::Drawing::Point(134, 16);
-			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(104, 16);
-			this->label39->TabIndex = 44;
-			this->label39->Text = L"Date de naissance";
+			this->label38->Location = System::Drawing::Point(10, 196);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(114, 16);
+			this->label38->TabIndex = 58;
+			this->label38->Text = L"Adresse de livraison";
 			// 
-			// dataGrid_DDN_client_commande
+			// label49
 			// 
-			this->dataGrid_DDN_client_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCellsExceptHeader;
-			this->dataGrid_DDN_client_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_DDN_client_commande->Location = System::Drawing::Point(137, 32);
-			this->dataGrid_DDN_client_commande->Name = L"dataGrid_DDN_client_commande";
-			this->dataGrid_DDN_client_commande->Size = System::Drawing::Size(158, 121);
-			this->dataGrid_DDN_client_commande->TabIndex = 43;
+			this->label49->AutoSize = true;
+			this->label49->Location = System::Drawing::Point(342, 47);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(58, 13);
+			this->label49->TabIndex = 69;
+			this->label49->Text = L"ID adresse";
+			// 
+			// btn_selectionner_adresse_commande
+			// 
+			this->btn_selectionner_adresse_commande->Location = System::Drawing::Point(10, 326);
+			this->btn_selectionner_adresse_commande->Name = L"btn_selectionner_adresse_commande";
+			this->btn_selectionner_adresse_commande->Size = System::Drawing::Size(93, 41);
+			this->btn_selectionner_adresse_commande->TabIndex = 57;
+			this->btn_selectionner_adresse_commande->Text = L"Selectionner l\'adresse";
+			this->btn_selectionner_adresse_commande->UseVisualStyleBackColor = true;
+			this->btn_selectionner_adresse_commande->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_adresse_commande_Click);
+			// 
+			// txtBxRue_adresse_commande
+			// 
+			this->txtBxRue_adresse_commande->Location = System::Drawing::Point(294, 69);
+			this->txtBxRue_adresse_commande->Name = L"txtBxRue_adresse_commande";
+			this->txtBxRue_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxRue_adresse_commande->TabIndex = 66;
+			// 
+			// dataGrid_adresse_commande
+			// 
+			this->dataGrid_adresse_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_adresse_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_adresse_commande->Location = System::Drawing::Point(10, 215);
+			this->dataGrid_adresse_commande->Name = L"dataGrid_adresse_commande";
+			this->dataGrid_adresse_commande->Size = System::Drawing::Size(451, 105);
+			this->dataGrid_adresse_commande->TabIndex = 56;
+			// 
+			// label50
+			// 
+			this->label50->AutoSize = true;
+			this->label50->Location = System::Drawing::Point(263, 72);
+			this->label50->Name = L"label50";
+			this->label50->Size = System::Drawing::Size(27, 13);
+			this->label50->TabIndex = 67;
+			this->label50->Text = L"Rue";
+			// 
+			// label51
+			// 
+			this->label51->AutoSize = true;
+			this->label51->Location = System::Drawing::Point(263, 150);
+			this->label51->Name = L"label51";
+			this->label51->Size = System::Drawing::Size(30, 13);
+			this->label51->TabIndex = 65;
+			this->label51->Text = L"Pays";
+			// 
+			// txtBxPays_adresse_commande
+			// 
+			this->txtBxPays_adresse_commande->Location = System::Drawing::Point(294, 147);
+			this->txtBxPays_adresse_commande->Name = L"txtBxPays_adresse_commande";
+			this->txtBxPays_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxPays_adresse_commande->TabIndex = 64;
 			// 
 			// btn_rechercher_client_commande
 			// 
-			this->btn_rechercher_client_commande->Location = System::Drawing::Point(32, 104);
+			this->btn_rechercher_client_commande->Location = System::Drawing::Point(9, 151);
 			this->btn_rechercher_client_commande->Name = L"btn_rechercher_client_commande";
 			this->btn_rechercher_client_commande->Size = System::Drawing::Size(75, 23);
 			this->btn_rechercher_client_commande->TabIndex = 42;
@@ -2224,52 +2434,141 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_client_commande->UseVisualStyleBackColor = true;
 			this->btn_rechercher_client_commande->Click += gcnew System::EventHandler(this, &MyForm::btn_rechercher_client_commande_Click);
 			// 
+			// label53
+			// 
+			this->label53->AutoSize = true;
+			this->label53->Location = System::Drawing::Point(263, 124);
+			this->label53->Name = L"label53";
+			this->label53->Size = System::Drawing::Size(63, 13);
+			this->label53->TabIndex = 63;
+			this->label53->Text = L"Code postal";
+			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label39->Location = System::Drawing::Point(127, 25);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(104, 16);
+			this->label39->TabIndex = 44;
+			this->label39->Text = L"Date de naissance";
+			// 
+			// txtBxNum_adresse_commande
+			// 
+			this->txtBxNum_adresse_commande->Location = System::Drawing::Point(294, 44);
+			this->txtBxNum_adresse_commande->Name = L"txtBxNum_adresse_commande";
+			this->txtBxNum_adresse_commande->Size = System::Drawing::Size(36, 20);
+			this->txtBxNum_adresse_commande->TabIndex = 57;
+			// 
+			// btn_selectionner_client_commande
+			// 
+			this->btn_selectionner_client_commande->Location = System::Drawing::Point(130, 155);
+			this->btn_selectionner_client_commande->Name = L"btn_selectionner_client_commande";
+			this->btn_selectionner_client_commande->Size = System::Drawing::Size(75, 41);
+			this->btn_selectionner_client_commande->TabIndex = 45;
+			this->btn_selectionner_client_commande->Text = L"Selectionner le client";
+			this->btn_selectionner_client_commande->UseVisualStyleBackColor = true;
+			this->btn_selectionner_client_commande->Click += gcnew System::EventHandler(this, &MyForm::btn_selectionner_client_commande_Click);
+			// 
+			// txtBxCode_postale_adresse_commande
+			// 
+			this->txtBxCode_postale_adresse_commande->Location = System::Drawing::Point(332, 121);
+			this->txtBxCode_postale_adresse_commande->Name = L"txtBxCode_postale_adresse_commande";
+			this->txtBxCode_postale_adresse_commande->Size = System::Drawing::Size(126, 20);
+			this->txtBxCode_postale_adresse_commande->TabIndex = 62;
+			// 
+			// dataGrid_DDN_client_commande
+			// 
+			this->dataGrid_DDN_client_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_DDN_client_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DDN_client_commande->Location = System::Drawing::Point(130, 44);
+			this->dataGrid_DDN_client_commande->Name = L"dataGrid_DDN_client_commande";
+			this->dataGrid_DDN_client_commande->Size = System::Drawing::Size(128, 105);
+			this->dataGrid_DDN_client_commande->TabIndex = 43;
+			// 
+			// label55
+			// 
+			this->label55->AutoSize = true;
+			this->label55->Location = System::Drawing::Point(263, 98);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(26, 13);
+			this->label55->TabIndex = 61;
+			this->label55->Text = L"Ville";
+			// 
 			// label40
 			// 
 			this->label40->AutoSize = true;
 			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label40->Location = System::Drawing::Point(11, 59);
+			this->label40->Location = System::Drawing::Point(7, 106);
 			this->label40->Name = L"label40";
 			this->label40->Size = System::Drawing::Size(51, 16);
 			this->label40->TabIndex = 41;
 			this->label40->Text = L"Prenom";
 			// 
+			// txtBxVille_adresse_commande
+			// 
+			this->txtBxVille_adresse_commande->Location = System::Drawing::Point(294, 95);
+			this->txtBxVille_adresse_commande->Name = L"txtBxVille_adresse_commande";
+			this->txtBxVille_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxVille_adresse_commande->TabIndex = 60;
+			// 
 			// txtBx_nom_client_commande
 			// 
-			this->txtBx_nom_client_commande->Location = System::Drawing::Point(14, 32);
+			this->txtBx_nom_client_commande->Location = System::Drawing::Point(10, 83);
 			this->txtBx_nom_client_commande->Name = L"txtBx_nom_client_commande";
 			this->txtBx_nom_client_commande->Size = System::Drawing::Size(117, 20);
 			this->txtBx_nom_client_commande->TabIndex = 38;
+			// 
+			// label59
+			// 
+			this->label59->AutoSize = true;
+			this->label59->Location = System::Drawing::Point(263, 47);
+			this->label59->Name = L"label59";
+			this->label59->Size = System::Drawing::Size(29, 13);
+			this->label59->TabIndex = 59;
+			this->label59->Text = L"Num";
 			// 
 			// label41
 			// 
 			this->label41->AutoSize = true;
 			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label41->Location = System::Drawing::Point(11, 16);
+			this->label41->Location = System::Drawing::Point(7, 64);
 			this->label41->Name = L"label41";
 			this->label41->Size = System::Drawing::Size(35, 16);
 			this->label41->TabIndex = 40;
 			this->label41->Text = L"Nom";
 			// 
+			// label56
+			// 
+			this->label56->AutoSize = true;
+			this->label56->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label56->Location = System::Drawing::Point(263, 25);
+			this->label56->Name = L"label56";
+			this->label56->Size = System::Drawing::Size(148, 16);
+			this->label56->TabIndex = 56;
+			this->label56->Text = L"Adresse de livraison choisi";
+			// 
 			// txtBx_prenom_client_commande
 			// 
-			this->txtBx_prenom_client_commande->Location = System::Drawing::Point(14, 75);
+			this->txtBx_prenom_client_commande->Location = System::Drawing::Point(10, 125);
 			this->txtBx_prenom_client_commande->Name = L"txtBx_prenom_client_commande";
 			this->txtBx_prenom_client_commande->Size = System::Drawing::Size(117, 20);
 			this->txtBx_prenom_client_commande->TabIndex = 39;
 			// 
 			// tktBx_remise
 			// 
-			this->tktBx_remise->Location = System::Drawing::Point(7, 194);
+			this->tktBx_remise->Location = System::Drawing::Point(7, 395);
 			this->tktBx_remise->Name = L"tktBx_remise";
 			this->tktBx_remise->Size = System::Drawing::Size(200, 20);
 			this->tktBx_remise->TabIndex = 49;
 			// 
 			// txtBx_date_emission
 			// 
-			this->txtBx_date_emission->Location = System::Drawing::Point(9, 152);
+			this->txtBx_date_emission->Location = System::Drawing::Point(9, 353);
 			this->txtBx_date_emission->Name = L"txtBx_date_emission";
 			this->txtBx_date_emission->Size = System::Drawing::Size(200, 20);
 			this->txtBx_date_emission->TabIndex = 45;
@@ -2279,7 +2578,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label33->Location = System::Drawing::Point(4, 175);
+			this->label33->Location = System::Drawing::Point(4, 376);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(47, 16);
 			this->label33->TabIndex = 47;
@@ -2290,7 +2589,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label34->AutoSize = true;
 			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label34->Location = System::Drawing::Point(6, 136);
+			this->label34->Location = System::Drawing::Point(6, 337);
 			this->label34->Name = L"label34";
 			this->label34->Size = System::Drawing::Size(94, 16);
 			this->label34->TabIndex = 48;
@@ -2301,7 +2600,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label44->AutoSize = true;
 			this->label44->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label44->Location = System::Drawing::Point(6, 16);
+			this->label44->Location = System::Drawing::Point(6, 217);
 			this->label44->Name = L"label44";
 			this->label44->Size = System::Drawing::Size(113, 16);
 			this->label44->TabIndex = 43;
@@ -2310,14 +2609,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// txtBx_ID_commande_information
 			// 
 			this->txtBx_ID_commande_information->Enabled = false;
-			this->txtBx_ID_commande_information->Location = System::Drawing::Point(9, 32);
+			this->txtBx_ID_commande_information->Location = System::Drawing::Point(9, 233);
 			this->txtBx_ID_commande_information->Name = L"txtBx_ID_commande_information";
 			this->txtBx_ID_commande_information->Size = System::Drawing::Size(200, 20);
 			this->txtBx_ID_commande_information->TabIndex = 42;
 			// 
 			// txtBx_date_payment
 			// 
-			this->txtBx_date_payment->Location = System::Drawing::Point(9, 113);
+			this->txtBx_date_payment->Location = System::Drawing::Point(9, 314);
 			this->txtBx_date_payment->Name = L"txtBx_date_payment";
 			this->txtBx_date_payment->Size = System::Drawing::Size(200, 20);
 			this->txtBx_date_payment->TabIndex = 40;
@@ -2327,7 +2626,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label46->AutoSize = true;
 			this->label46->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label46->Location = System::Drawing::Point(222, 11);
+			this->label46->Location = System::Drawing::Point(10, 11);
 			this->label46->Name = L"label46";
 			this->label46->Size = System::Drawing::Size(117, 16);
 			this->label46->TabIndex = 38;
@@ -2335,15 +2634,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// dataGrid_ligne_commande
 			// 
+			this->dataGrid_ligne_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGrid_ligne_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_ligne_commande->Location = System::Drawing::Point(215, 27);
+			this->dataGrid_ligne_commande->Location = System::Drawing::Point(13, 30);
 			this->dataGrid_ligne_commande->Name = L"dataGrid_ligne_commande";
-			this->dataGrid_ligne_commande->Size = System::Drawing::Size(462, 186);
+			this->dataGrid_ligne_commande->Size = System::Drawing::Size(664, 133);
 			this->dataGrid_ligne_commande->TabIndex = 37;
 			// 
 			// txtBx_mode_payment
 			// 
-			this->txtBx_mode_payment->Location = System::Drawing::Point(9, 71);
+			this->txtBx_mode_payment->Location = System::Drawing::Point(9, 272);
 			this->txtBx_mode_payment->Name = L"txtBx_mode_payment";
 			this->txtBx_mode_payment->Size = System::Drawing::Size(200, 20);
 			this->txtBx_mode_payment->TabIndex = 22;
@@ -2353,7 +2653,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label52->AutoSize = true;
 			this->label52->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label52->Location = System::Drawing::Point(6, 94);
+			this->label52->Location = System::Drawing::Point(6, 295);
 			this->label52->Name = L"label52";
 			this->label52->Size = System::Drawing::Size(107, 16);
 			this->label52->TabIndex = 27;
@@ -2364,7 +2664,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label54->AutoSize = true;
 			this->label54->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label54->Location = System::Drawing::Point(6, 55);
+			this->label54->Location = System::Drawing::Point(6, 256);
 			this->label54->Name = L"label54";
 			this->label54->Size = System::Drawing::Size(109, 16);
 			this->label54->TabIndex = 28;
@@ -2824,6 +3124,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->EndInit();
 			this->tbPage_GestionCommande->ResumeLayout(false);
 			this->tbPage_GestionCommande->PerformLayout();
+			this->groupBox20->ResumeLayout(false);
+			this->groupBox20->PerformLayout();
 			this->groupBox18->ResumeLayout(false);
 			this->groupBox18->PerformLayout();
 			this->groupBox15->ResumeLayout(false);
@@ -2832,6 +3134,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox17->PerformLayout();
 			this->groupBox19->ResumeLayout(false);
 			this->groupBox19->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_adresse_commande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DDN_client_commande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_ligne_commande))->EndInit();
 			this->tbPage_GestionStock->ResumeLayout(false);
@@ -3360,8 +3663,6 @@ private: System::Void btn_selectionner_SH_Click(System::Object^ sender, System::
 }
 
 // EVENEMENT COMMANDE
-
-
 private: System::Void btn_rechercher_commande_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btn_modifier_commande_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3375,8 +3676,17 @@ private: System::Void btn_nouveau_commande_Click(System::Object^ sender, System:
 	txtBx_mode_payment->Clear();
 	tktBx_remise->Clear();
 	txtBx_ID_client_commande->Clear();
+	txtBx_nom_client_commande->Clear();
+	txtBx_prenom_client_commande->Clear();
+	txtBxNum_adresse_commande->Clear();
+	txtBxID_adresse_commande->Clear();
+	txtBxRue_adresse_commande->Clear();
+	txtBxVille_adresse_commande->Clear();
+	txtBxCode_postale_adresse_commande->Clear();
+	txtBxPays_adresse_commande->Clear();
 
-
+	//dataGrid_DDN_client_commande->DataSource = Client->rechercher("dbo.Client", "", "")->Tables["dbo.Client"];
+	//dataGrid_adresse_commande->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, 0))->Tables["dbo.Adresse"];
 	dataGrid_ligne_commande->DataSource = (LigneCommande->listeLigneCommande("dbo.Commande",0))->Tables["dbo.Commande"];
 
 }
@@ -3408,7 +3718,6 @@ private: System::Void enregistrer_Click(System::Object^ sender, System::EventArg
 		dataGrid_ligne_commande->DataSource = (LigneCommande->listeLigneCommande("dbo.Commande", Convert::ToInt32(txtBx_ID_commande_information->Text)))->Tables["dbo.Commande"];
 	}
 }			///
-
 private: System::Void btn_first_commande_Click(System::Object^ sender, System::EventArgs^ e) {
 	index_commande = 0;
 	txtBx_ID_commande_information->Text = (Commande->listeCommande("dbo.Commande"))->Tables["dbo.Commande"]->Rows[index_commande]->ItemArray[0]->ToString();
@@ -3462,6 +3771,7 @@ private: System::Void btn_last_commande_Click(System::Object^ sender, System::Ev
 
 
 	dataGrid_ligne_commande->DataSource = (LigneCommande->listeLigneCommande("dbo.Commande", Convert::ToInt32(txtBx_ID_commande_information->Text)))->Tables["dbo.Commande"];
+	
 }
 private: System::Void btn_rechercher_client_commande_Click(System::Object^ sender, System::EventArgs^ e) {
 	dataGrid_DDN_client_commande->DataSource = Client->rechercher("dbo.Client", (txtBx_nom_client_commande->Text), (txtBx_prenom_client_commande->Text))->Tables["dbo.Client"];
@@ -3470,11 +3780,20 @@ private: System::Void btn_selectionner_client_commande_Click(System::Object^ sen
 	if (dataGrid_DE_personnel_affichage->SelectedRows->Count >= 0) {
 
 		txtBx_ID_client_commande->Text = (Client->selectionner("dbo.Client", Convert::ToInt32(dataGrid_DDN_client_commande->SelectedRows[0]->Cells["ID_client"]->Value)))->Tables["dbo.Client"]->Rows[0]->ItemArray[0]->ToString();
-
+		dataGrid_adresse_commande->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client_commande->Text)))->Tables["dbo.Adresse"];
 	}
 	else {
 		txtBx_message_personnel->Text = "Merci de rechercher un personnel avec de selectionner !";
 	}
+}
+private: System::Void btn_selectionner_adresse_commande_Click(System::Object^ sender, System::EventArgs^ e) {
+	txtBxID_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["ID_adresse"]->Value->ToString();
+	txtBxNum_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["Num_rue"]->Value->ToString();
+	txtBxRue_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["Nom_rue"]->Value->ToString();
+	txtBxVille_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["Ville"]->Value->ToString();
+	txtBxCode_postale_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["Code_postal"]->Value->ToString();
+	txtBxPays_adresse_commande->Text = dataGrid_adresse_commande->SelectedRows[0]->Cells["Pays"]->Value->ToString();
+
 }
 
 // EVENEMENT SOTCK
@@ -3569,5 +3888,8 @@ private: System::Void btn_rechercher_article_Click(System::Object^ sender, Syste
 	txtBx_quantite_article->Text = (Stock->selectionner("art", txtBx_reference_article_affichage->Text, txtBx_couleur_article_affichage->Text))->Tables["art"]->Rows[0]->ItemArray[1]->ToString();
 
 }
+
+
+
 };
 }
