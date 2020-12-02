@@ -4583,7 +4583,9 @@ private: System::Void btn_selectionner_adresse_commande_Click(System::Object^ se
 private: System::Void btn_modifier_article_Click(System::Object^ sender, System::EventArgs^ e) {
 		int id_couleur = 0;
 		for (int i = 0; i < Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows->Count; i++) {
-			id_couleur = Convert::ToInt32(Nature->IDbyNameCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[0]->ItemArray[0]->ToString());
+			if (Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[i]->ItemArray[1] == txtBx_couleur_article->Text) {
+				id_couleur = Convert::ToInt32(Nature->IDbyNameCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[0]->ItemArray[0]->ToString());
+			}
 		}
 		if (id_couleur == 0)
 			id_couleur = Convert::ToInt32(Nature->ajouter(txtBx_couleur_article->Text));
@@ -4612,12 +4614,14 @@ private: System::Void btn_enregistrer_article_Click(System::Object^ sender, Syst
 	if (txtBx_ID_article->Text == "") {
 		int id_couleur = 0;
 		for (int i = 0; i < Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows->Count; i++) {
-			id_couleur = Convert::ToInt32(Nature->IDbyNameCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[0]->ItemArray[0]->ToString());
+			if (Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[i]->ItemArray[1] == txtBx_couleur_article->Text) {
+				id_couleur = Convert::ToInt32(Nature->IDbyNameCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[0]->ItemArray[0]->ToString());
+			}
 		}
 		if (id_couleur == 0)
 			id_couleur = Convert::ToInt32(Nature->ajouter(txtBx_couleur_article->Text));
 
-		Stock->ajouter(Convert::ToInt32(txtBx_quantite_article->Text), txtBx_reference_article->Text, id_couleur);
+		Stock->ajouter(Convert::ToInt32(txtBx_quantite_article->Text), txtBx_reference_article->Text, Convert::ToInt32(id_couleur));
 
 	index_stock = Convert::ToInt32((Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows->Count) - 1;
 	txtBx_ID_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[0]->ToString();
