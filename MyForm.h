@@ -3723,7 +3723,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
 			txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
 		}
-		if ((Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows->Count > 0) {
+		else {
+			txtBx_ID_client->Text = "0";
+			txtBx_D1A_client->Text = "01/01/1900";
+			txtBx_DDN_client->Text = "01/01/1900";
+			txtBx_email_client->Text = "default";
+			txtBx_Nom_client_information->Text = "default";
+			txtBx_Prenom_client_information->Text = "default";
+
+		}
+		if (txtBx_ID_client->Text != "0" ) {
 			txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
 			txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
 			txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
@@ -3745,7 +3754,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
 			txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
 		}
-		if ((Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows->Count > 0) {
+		else {
+			txtBx_ID_personnel->Text = "0";
+			txtBx_DE_personnel->Text = "01/01/1900";
+			txtBx_Nom_personnel_information->Text = "default";
+			txtBx_ID_SH->Text = "0";
+			txtBx_Prenom_personnel_information->Text = "default";
+
+		}
+
+		if (txtBx_ID_personnel->Text != "0") {
 			txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
 			txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
 			txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
