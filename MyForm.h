@@ -3714,19 +3714,25 @@ private: System::Void btn_rechercher_commande_Click(System::Object^ sender, Syst
 private: System::Void btn_modifier_commande_Click(System::Object^ sender, System::EventArgs^ e) {
 	Commande->modifier(Convert::ToInt32(txtBx_ID_commande_information->Text), txtBx_date_emission->Text, txtBx_date_payment->Text, txtBx_mode_payment->Text, (float)Convert::ToDouble(txtBx_remise->Text), Convert::ToInt32(txtBx_ID_client_commande->Text), txtBx_reference_commande->Text, Convert::ToInt32(txtBxID_adresse_commande->Text));
 
-	/*for (int i = 0; i < dataGrid_ligne_commande->SelectedRows->Count; i++) {
-
+	for (int i = 0; i < dataGrid_ligne_commande->SelectedRows->Count; i++) {
+		txtBx_message_commande->Text = "Test";
+		//int test = false;
 		if (dataGrid_ligne_commande->SelectedRows[i]->Cells["ID_Ligne"]->Value->ToString() == "") {
 			int id_article = Convert::ToInt32(Stock->selectionner("dbo.Article", dataGrid_ligne_commande->SelectedRows[i]->Cells["Reference_article"]->Value->ToString(), dataGrid_ligne_commande->SelectedRows[i]->Cells["Couleur"]->Value->ToString())->Tables["dbo.Article"]->Rows[0]->ItemArray[0]->ToString());
-			txtBx_message_client->Text = "Nouvel ligne de commande ajouté à cette commande ! \n";
+			txtBx_message_commande->Text = "Nouvel ligne de commande ajouté à cette commande ! \n";
 			dataGrid_ligne_commande->SelectedRows[i]->Cells["ID_Ligne"]->Value = LigneCommande->ajouter((float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Prix_unitaire_HT"]->Value->ToString()), (float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Taux_TVA"]->Value->ToString()), Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["Quantite_Produit"]->Value->ToString()), Convert::ToInt32(txtBx_ID_commande_information->Text), id_article);
+			//test = true;
 		}
 		else {
+			//if (test == false) {
+			txtBx_message_commande->Text = "Ligne Modifié ! \n";
 			int id_article = Convert::ToInt32(Stock->selectionner("dbo.Article", dataGrid_ligne_commande->SelectedRows[i]->Cells["Reference_article"]->Value->ToString(), dataGrid_ligne_commande->SelectedRows[i]->Cells["Couleur"]->Value->ToString())->Tables["dbo.Article"]->Rows[0]->ItemArray[0]->ToString());
-			LigneCommande->modifier(Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["ID_Ligne"]->Value->ToString()),(float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Prix_unitaire_HT"]->Value->ToString()), (float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Taux_TVA"]->Value->ToString()), Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["Quantite_Produit"]->Value->ToString()), Convert::ToInt32(txtBx_ID_commande_information->Text), id_article);
+			//NS_Svc::CL_svc_gestionLigneCommande^ test = gcnew NS_Svc::CL_svc_gestionLigneCommande();
+			LigneCommande->modifier(Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["ID_Ligne"]->Value->ToString()), (float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Prix_unitaire_HT"]->Value->ToString()), (float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Taux_TVA"]->Value->ToString()), Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["Quantite_Produit"]->Value->ToString()), Convert::ToInt32(txtBx_ID_commande_information->Text), id_article);
+			
 		}
 
-	}*/
+	}
 }
 private: System::Void btn_supprimer_commande_Click(System::Object^ sender, System::EventArgs^ e) {
 	Commande->supprimer(Convert::ToInt32(txtBx_ID_commande_information->Text));

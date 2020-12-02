@@ -12,13 +12,13 @@ namespace NS_Composants {
 
 	}
 	String^ CL_TBLIGNECOMMANDE::SELECT(void) {
-		return "SELECT Prix_unitaire_HT,Taux_TVA,Quantite_Produit,Reference_article,Couleur,ID_Ligne FROM (dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article) INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur WHERE ID_commande = '" + getID_commande() + "'";
+		return "SELECT Prix_unitaire_HT,Taux_TVA,Quantite_Produit,Reference_article,Couleur,ID_Ligne,dbo.Article.ID_article FROM (dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article) INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur WHERE ID_commande = '" + getID_commande() + "'";
 	}
 	String^ CL_TBLIGNECOMMANDE::INSERT(void) {
 		return "INSERT INTO dbo.Ligne_commande" + "(Prix_unitaire_HT, Taux_TVA, ID_article, ID_commande, Quantite_Produit) " + "VALUES('" + getPrix_unitaire_HT().ToString()->Replace(",", ".") + "', '" + getTaux_TVA().ToString()->Replace(",", ".") + "', '" + Convert::ToInt32(getID_article()) + "', '" + Convert::ToInt32(getID_commande()) + "', '" + getQuantite_Produit() + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBLIGNECOMMANDE::UPDATE(void) {
-		return "UPDATE dbo.Ligne_commande set Quantite_Produit = ' " + Convert::ToInt32(getQuantite_Produit()) + "'" + ", ID_commande = '" + "'" + Convert::ToInt32(getID_commande()) + "'" + ", ID_article = '" + "'" + Convert::ToInt32(getID_article()) + "'" + ", Prix_unitaire_HT = '" + getPrix_unitaire_HT().ToString()->Replace(",",".") + "'" + ", Taux_TVA = '" + getTaux_TVA().ToString()->Replace(",", ".") + "'";
+		return "UPDATE dbo.Ligne_commande set Quantite_Produit = '" + Convert::ToInt32(getQuantite_Produit()) + "'" + ", ID_commande = '" + Convert::ToInt32(getID_commande()) + "'" + ", ID_article = '" + Convert::ToInt32(getID_article()) + "'" + ", Prix_unitaire_HT = '" + getPrix_unitaire_HT().ToString()->Replace(",",".") + "'" + ", Taux_TVA = '" + getTaux_TVA().ToString()->Replace(",", ".") + "' WHERE ID_Ligne= "+Convert::ToInt32(getID_Ligne());
 	}
 	String^ CL_TBLIGNECOMMANDE::DELETE(void) {
 		return "DELETE FROM dbo.Ligne_commande WHERE ID_commande =" + Convert::ToInt32(getID_commande());
@@ -47,7 +47,7 @@ namespace NS_Composants {
 	}
 
 	// SETTER
-	void CL_TBLIGNECOMMANDE::setID_Ligne(int ID_article) {
+	void CL_TBLIGNECOMMANDE::setID_Ligne(int ID_Ligne) {
 		this->ID_Ligne = ID_Ligne;
 	}
 	void CL_TBLIGNECOMMANDE::setID_article(int ID_article) {
