@@ -20,6 +20,13 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionStatistique();
 		DataSet^ reaprovisionnement(String^, int);
+		DataSet^ ArticleMoinsVendus(String^);
+		DataSet^ ArticlePlusVendus(String^);
+		DataSet^ ChiffreAffaireMois(String^ dataTableName, int mois);
+		DataSet^ ValeurAchatStock(String^ dataTableName);
+		DataSet^ ValeurCommercialeStock(String^, int);
+		DataSet^ CalculPanierMoyen(String^ dataTableName);
+		DataSet^ Simulation(String^ dataTableName, float marge, float remise, float demarque, float TVA);
 	};
 
 }

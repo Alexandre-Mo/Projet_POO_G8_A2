@@ -18,6 +18,9 @@ namespace NS_Composants {
 	String^ CL_TBCLIENT::UPDATE(void) {
 		return "UPDATE dbo.Client set Nom_client = '" + getNom_client()->ToString() + "'" + ", Prenom_client = '" + getPrenom_client()->ToString() + "'" + ", Email_client='" + getEmail()->ToString() + "'" + ", DDN_client = '" + getDDN_client()->ToString() + "'" + ", D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
 	}
+	String^ CL_TBCLIENT::UPDATED1A(void) {
+		return "UPDATE dbo.Client set D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
+	}
 	String^ CL_TBCLIENT::DELETE(void) {
 		return "DELETE FROM dbo.Client WHERE ID_client =" + Convert::ToInt32(getID_client());
 	}
@@ -29,6 +32,11 @@ namespace NS_Composants {
 	String^ CL_TBCLIENT::SELECTbyID(void) {
 		return "SELECT * FROM dbo.Client WHERE ID_client = " + Convert::ToInt32(getID_client());
 	}
+
+	String^ CL_TBCLIENT::SELECTD1AbyID(void) {
+		return "SELECT TOP 1 Date_emission FROM Client INNER JOIN Commande ON Client.ID_client = Commande.ID_client WHERE Client.ID_client = "+ Convert::ToInt32(getID_client()) +" ORDER BY Date_emission ASC";
+	}
+	
 
 	// GETTER
 	int CL_TBCLIENT::getID_client() {

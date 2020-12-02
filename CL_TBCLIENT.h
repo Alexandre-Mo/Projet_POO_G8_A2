@@ -21,6 +21,8 @@ namespace NS_Composants {
 		String^ DELETE(void);
 		String^ SELECTbyName(void);
 		String^ SELECTbyID(void);
+		String^ SELECTD1AbyID(void);
+		String^ UPDATED1A(void);
 	
 	// GETTER
 		int getID_client();

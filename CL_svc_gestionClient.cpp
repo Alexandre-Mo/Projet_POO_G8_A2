@@ -56,4 +56,17 @@ namespace NS_Svc {
 		return dataSetClient;
 	}
 
+	DataSet^ CL_svc_gestionClient::searchD1A(String^ dataTableName, int ID_client) {
+		TBCLIENT->setID_client(ID_client);
+		dataSetClient = cad->getRows(TBCLIENT->SELECTD1AbyID(), dataTableName);
+		return dataSetClient;
+	}
+
+	DataSet^ CL_svc_gestionClient::updateD1A(String^ dataTableName, int ID_client,String^ D1A) {
+		TBCLIENT->setD1A_client(D1A);
+		TBCLIENT->setID_client(ID_client);
+		dataSetClient = cad->getRows(TBCLIENT->UPDATED1A(), dataTableName);
+		return dataSetClient;
+	}
+
 }

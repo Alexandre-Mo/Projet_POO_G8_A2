@@ -25,6 +25,8 @@ namespace NS_Svc {
 		void supprimer(int);
 		DataSet^ rechercher(String^, String^, String^);
 		DataSet^ selectionner(String^, int);
+		DataSet^ searchD1A(String^ dataTableName, int ID_client);
+		DataSet^ updateD1A(String^ dataTableName, int ID_client, String^ D1A);
 	};
 
 }

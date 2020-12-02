@@ -154,5 +154,8 @@
     <None Include="SQLScript_create_BDD_Projet.sql">
       <Filter>Fichiers de ressources</Filter>
     </None>
+    <None Include="SQLScript.sql">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
   </ItemGroup>
 </Project>

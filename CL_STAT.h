@@ -7,27 +7,37 @@ namespace NS_Composants {
 	ref class CL_STAT
 	{
 	private:
-
+		int seuil_reaprovisionnement;
+		int mois;
+		float TVA;
+		float remise;
+		float demarque;
+		float marge;
 	public:
 		CL_STAT();
-		/*String^ SELECT(void);
-		String^ INSERT(void);
-		String^ UPDATE(void);
-		String^ DELETE(void);
-		String^ SELECTbyNameAndColor(void);
+		String^ SELECTseuilReaprovisionnement(void);
+		String^ SELECTArticleMoinsVendus(void);
+		String^ SELECTArticlePlusVendus(void);
+		String^ SELECTChiffreAffaireMois(void);
+		String^ SELECTValeurAchatStock(void);
+		String^ SELECTValeurCommercialeStock(int);
+		String^ CL_STAT::SELECTCalculPanierMoyen(void);
+		String^ CL_STAT::SELECTSimulation(void);
 
 		// GETTER
-		int getquantite_stock();
-		int getID_article();
-		int getID_couleur();
-		String^ getReference_article_information();
-		String^ getCouleur();
-		// SETTER
-		void setquantite_stock(int);
-		void setID_article(int);
-		void setID_couleur(int);
-		void setReference_article_information(String^);
-		void setCouleur(String^);*/
-	};
+		int getSeuil_reaprovisionnement();
+		int getmois();
+		float getTVA();
+		float getremise();
+		float getdemarque();
+		float getmarge();
 
+		// SETTER
+		void setSeuil_reaprovisionnement(int);
+		void setmois(int);
+		void setTVA(float);
+		void setremise(float);
+		void setdemarque(float);
+		void setmarge(float);
+	};
 }
