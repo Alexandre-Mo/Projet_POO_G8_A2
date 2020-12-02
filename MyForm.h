@@ -3730,44 +3730,46 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 
 		// CHARGEMENT CLIENT
 		index_client = 0;
+		if ((Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows->Count > 0) {
+			txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
+			txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
+			txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
+			txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
+			txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
+			txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
+		}
+		if ((Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows->Count > 0) {
+			txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
+			txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+			txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+			txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+			txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+			txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-		txtBx_ID_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[0]->ToString();
-		txtBx_D1A_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[1]->ToString();
-		txtBx_DDN_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[2]->ToString();
-		txtBx_email_client->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[3]->ToString();
-		txtBx_Nom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[4]->ToString();
-		txtBx_Prenom_client_information->Text = (Client->listeClient("dbo.Client"))->Tables["dbo.Client"]->Rows[index_client]->ItemArray[5]->ToString();
-
-		txtBx_ID_adresse_client->Text = (Adresse->listeAdresse("dbo.Adresse",1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[0]->ToString();
-		txtBx_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-		txtBx_num_rue_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_code_postal_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-		txtBx_pays_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-		txtBx_ville_client->Text = (Adresse->listeAdresse("dbo.Adresse", 1, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
-
-		dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
-		dataGrid_commande_client->DataSource = (Commande->selectionner("dbo.Commande", Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Commande"];
-		//txtBx_D1A_client->Text = dataGrid_commande_client->Rows[0]->Cells[0]->Value->ToString();
-
+			dataGrid_adresse_livraison->DataSource = (Adr->listeAdresse("dbo.Adresse", 3, Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Adresse"];
+			dataGrid_commande_client->DataSource = (Commande->selectionner("dbo.Commande", Convert::ToInt32(txtBx_ID_client->Text)))->Tables["dbo.Commande"];
+			//txtBx_D1A_client->Text = dataGrid_commande_client->Rows[0]->Cells[0]->Value->ToString();
+		}
 		// CHARGEMENT PERSONNEL 
 
 		index_personnel = 0;
+		if ((Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows->Count > 0) {
+			txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
+			txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
+			txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
+			txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
+			txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
+		}
+		if ((Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows->Count > 0) {
+			txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
+			txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
+			txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
+			txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
+			txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
 
-		txtBx_ID_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[0]->ToString();
-		txtBx_DE_personnel->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[1]->ToString();
-		txtBx_Nom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[2]->ToString();
-		txtBx_ID_SH->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[4]->ToString();
-		txtBx_Prenom_personnel_information->Text = (Personnel->listePersonnel("dbo.Personnel"))->Tables["dbo.Personnel"]->Rows[index_personnel]->ItemArray[3]->ToString();
-
-		txtBx_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[1]->ToString();
-		txtBx_num_rue_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_code_postal_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[3]->ToString();
-		txtBx_pays_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[4]->ToString();
-		txtBx_ville_personnel->Text = (Adresse->listeAdresse("dbo.Adresse", 2, Convert::ToInt32(txtBx_ID_personnel->Text)))->Tables["dbo.Adresse"]->Rows[0]->ItemArray[5]->ToString();
-
-		txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
-		txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
-		
+			txtBx_nom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[2]->ToString();
+			txtBx_prenom_SH->Text = (Personnel->selectionner("dbo.Personnel", Convert::ToInt32(txtBx_ID_SH->Text)))->Tables["dbo.Personnel"]->Rows[0]->ItemArray[3]->ToString();
+		}
 
 		// CHARGEMENT COMMANDE
 		index_commande = 0;
@@ -3807,13 +3809,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			
 		// CHARGEMENT STOCK
 		index_stock = 0;
-
-		txtBx_ID_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[0]->ToString();
-		txtBx_reference_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[2]->ToString();
-		txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[6]->ToString();
-		txtBx_quantite_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[1]->ToString();
-		txtBx_prix_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[4]->ToString();
-
+		if ((Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows->Count > 0) {
+			txtBx_ID_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[0]->ToString();
+			txtBx_reference_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[2]->ToString();
+			txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[6]->ToString();
+			txtBx_quantite_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[1]->ToString();
+			txtBx_prix_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[4]->ToString();
+		}
 
 		
 	}
