@@ -18,9 +18,8 @@ namespace NS_Svc {
 	}
 
 
-	int^ CL_svc_gestionLigneCommande::ajouter(float Prix_unitaire_HT,float Taux_TVA, int Quantite_Produit,int ID_commande, int ID_article) {
+	int^ CL_svc_gestionLigneCommande::ajouter(float Taux_TVA, int Quantite_Produit,int ID_commande, int ID_article) {
 		int id_adresse;
-		TBLIGNECOMMANDE->setPrix_unitaire_HT(Prix_unitaire_HT);
 		TBLIGNECOMMANDE->setTaux_TVA(Taux_TVA);
 		TBLIGNECOMMANDE->setQuantite_Produit(Quantite_Produit);
 		TBLIGNECOMMANDE->setID_commande(ID_commande);
@@ -30,8 +29,7 @@ namespace NS_Svc {
 		return id_adresse;
 	}
 
-	void CL_svc_gestionLigneCommande::modifier(int id, float Prix_unitaire_HT, float Taux_TVA, int Quantite_Produit, int ID_commande, int ID_article) {
-		TBLIGNECOMMANDE->setPrix_unitaire_HT(Prix_unitaire_HT);
+	void CL_svc_gestionLigneCommande::modifier(int id, float Taux_TVA, int Quantite_Produit, int ID_commande, int ID_article) {
 		TBLIGNECOMMANDE->setTaux_TVA(Taux_TVA);
 		TBLIGNECOMMANDE->setQuantite_Produit(Quantite_Produit);
 		TBLIGNECOMMANDE->setID_commande(ID_commande);

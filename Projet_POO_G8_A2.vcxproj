@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CL_CAD.cpp" />
+    <ClCompile Include="CL_STAT.cpp" />
     <ClCompile Include="Cl_svc_facture.cpp" />
     <ClCompile Include="CL_svc_gestionAdresse.cpp" />
     <ClCompile Include="CL_svc_gestionClient.cpp" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CL_CAD.h" />
+    <ClInclude Include="CL_STAT.h" />
     <ClInclude Include="Cl_svc_facture.h" />
     <ClInclude Include="CL_svc_gestionAdresse.h" />
     <ClInclude Include="CL_svc_gestionClient.h" />

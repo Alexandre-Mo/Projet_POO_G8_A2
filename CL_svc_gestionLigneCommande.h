@@ -20,8 +20,8 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionLigneCommande();
 		DataSet^ listeLigneCommande(String^, int);
-		int^ ajouter(float, float, int, int, int);
-		void modifier(int, float , float, int , int , int );
+		int^ ajouter( float, int, int, int);
+		void modifier(int, float, int , int , int );
 		void supprimer(int);
 	}; 
 
