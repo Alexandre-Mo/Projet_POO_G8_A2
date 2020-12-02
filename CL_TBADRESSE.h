@@ -23,6 +23,7 @@ namespace NS_Composants {
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);
+		String^ SELECTbyID(void);
 
 	// GETTER
 		int getID_adresse();

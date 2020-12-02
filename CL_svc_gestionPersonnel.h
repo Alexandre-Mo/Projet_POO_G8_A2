@@ -1,4 +1,6 @@
 #pragma once
+#include "CL_CAD.h"
+#include "CL_TBPERSONNEL.h"
 
 namespace NS_Svc {
 
@@ -9,6 +11,20 @@ namespace NS_Svc {
 
 	ref class CL_svc_gestionPersonnel
 	{
+	private:
+		NS_Composants::CL_CAD^ cad;
+		NS_Composants::CL_TBPERSONNEL^ TBPERSONNEL;
+		DataSet^ dataSetPersonnel;
+
+	public:
+		CL_svc_gestionPersonnel();
+		DataSet^ listePersonnel(String^);
+		int^ ajouter(String^, String^, String^, int);
+		void modifier(int, String^, String^, String^, int);
+		void supprimer(int);
+		DataSet^ rechercher(String^, String^, String^);
+		DataSet^ selectionner(String^, int);
+
 	};
 
 }

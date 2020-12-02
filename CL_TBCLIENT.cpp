@@ -16,15 +16,22 @@ namespace NS_Composants {
 		return "INSERT INTO dbo.Client " + "(DDN_client,Email_client,Nom_client, Prenom_client) " + "VALUES('" + getDDN_client() + "', '" + getEmail() + "', '" + getNom_client() + "', '" + getPrenom_client() + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBCLIENT::UPDATE(void) {
-		return "UPDATE dbo.Client set Nom_client = ' " + getNom_client()->ToString() + "'" + ", Prenom_client = '" + getPrenom_client()->ToString() + "'" + ", Email_client='" + getEmail()->ToString() + "'" + ", DDN_client = '" + getDDN_client()->ToString() + "'" + ", D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
+		return "UPDATE dbo.Client set Nom_client = '" + getNom_client()->ToString() + "'" + ", Prenom_client = '" + getPrenom_client()->ToString() + "'" + ", Email_client='" + getEmail()->ToString() + "'" + ", DDN_client = '" + getDDN_client()->ToString() + "'" + ", D1A_client = '" + getD1A_client()->ToString() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
 	}
 	String^ CL_TBCLIENT::DELETE(void) {
 		return "DELETE FROM dbo.Client WHERE ID_client =" + Convert::ToInt32(getID_client());
 	}
 
+	String^ CL_TBCLIENT::SELECTbyName(void) {
+		return "SELECT ID_client,DDN_client FROM dbo.Client WHERE Nom_client = '" + getNom_client() + "' AND Prenom_client = '" + getPrenom_client()+"'" ;
+	}
+
+	String^ CL_TBCLIENT::SELECTbyID(void) {
+		return "SELECT * FROM dbo.Client WHERE ID_client = " + Convert::ToInt32(getID_client());
+	}
 
 	// GETTER
-	int^ CL_TBCLIENT::getID_client() {
+	int CL_TBCLIENT::getID_client() {
 		return this->ID_client;
 	}
 	String^ CL_TBCLIENT::getD1A_client() {

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CL_CAD.h"
+#include "CL_STAT.h"
 
 
 namespace NS_Svc {
@@ -11,6 +13,14 @@ namespace NS_Svc {
 
 	ref class CL_svc_gestionStatistique
 	{
+	private:
+		NS_Composants::CL_CAD^ cad;
+		NS_Composants::CL_STAT^ TBSTAT;
+		DataSet^ dataSetStat;
+	public:
+		CL_svc_gestionStatistique();
+		DataSet^ reaprovisionnement(String^, int);
 	};
 
 }
+

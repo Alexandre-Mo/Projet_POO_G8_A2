@@ -75,6 +75,18 @@
     <ClCompile Include="CL_svc_gestionAdresse.cpp">
       <Filter>Fichiers sources\Svc_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="CL_svc_gestionLigneCommande.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionNature.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Cl_svc_facture.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_STAT.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -124,6 +136,18 @@
     </ClInclude>
     <ClInclude Include="CL_svc_gestionAdresse.h">
       <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionLigneCommande.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionNature.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Cl_svc_facture.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_STAT.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

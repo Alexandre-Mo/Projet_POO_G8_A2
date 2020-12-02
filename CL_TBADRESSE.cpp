@@ -21,24 +21,35 @@ namespace NS_Composants {
 			return "SELECT * FROM dbo.Adresse WHERE Type ='2' AND ID_personnel = '" + getID_personnel() + "'";
 		}
 		if (getType() == 3) {
-			return "SELECT Nom_rue,Num_rue,Code_postal,Pays,Ville FROM dbo.Adresse WHERE Type ='3' AND ID_client = '" + getID_client() + "'";
+			return "SELECT ID_adresse,Nom_rue,Num_rue,Code_postal,Pays,Ville FROM dbo.Adresse WHERE Type ='3' AND ID_client = '" + getID_client() + "'";
 		}
 		
 	}
+	String^ CL_TBADRESSE::SELECTbyID(void) {
+		return "SELECT * FROM dbo.Adresse WHERE ID_adresse = '" + getID_adresse()+ "'";
+
+	}
 	String^ CL_TBADRESSE::INSERT(void) {
-		return "INSERT INTO dbo.Adresse " + "(Nom_rue,Num_rue,Code_postal,Pays,Ville,Type,ID_client) " + "VALUES('" + getNom_rue() + "', '" + getNum_rue() + "', '" + getCode_postal() + "', '" + getPays() + "', '" + getVille() + "', '" + getType() + "', '" + getID_client() + "'); SELECT @@IDENTITY;";
+
+		if (getType() == 1 || getType() == 3) {
+			return "INSERT INTO dbo.Adresse " + "(Nom_rue,Num_rue,Code_postal,Pays,Ville,Type,ID_client) " + "VALUES('" + getNom_rue() + "', '" + getNum_rue() + "', '" + getCode_postal() + "', '" + getPays() + "', '" + getVille() + "', '" + getType() + "', '" + getID_client() + "'); SELECT @@IDENTITY;";
+		}
+		if (getType() == 2) {
+			return "INSERT INTO dbo.Adresse " + "(Nom_rue,Num_rue,Code_postal,Pays,Ville,Type,ID_personnel) " + "VALUES('" + getNom_rue() + "', '" + getNum_rue() + "', '" + getCode_postal() + "', '" + getPays() + "', '" + getVille() + "', '" + getType() + "', '" + getID_personnel() + "'); SELECT @@IDENTITY;";
+		}
 		
 	}
 	String^ CL_TBADRESSE::UPDATE(void) {
-
+		
+		    
 		if (getType() == 1) {
-			return "UPDATE dbo.Adresse set Nom_rue = ' " + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_client = '" + getID_client() + "' WHERE ID_client = '" + Convert::ToInt32(getID_client()) + "'";
+			return "UPDATE dbo.Adresse set Nom_rue = '" + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_client = '" + getID_client() + "' WHERE ID_adresse = '" + Convert::ToInt32(getID_adresse()) + "'";
 		}
 		if (getType() == 2) {
-			//return "UPDATE dbo.Adresse set Nom_rue = ' " + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_client = '" + getID_client() + "'" + ", ID_personnel = '" + getID_personnel() + "' WHERE ID_adresse = '" + Convert::ToInt32(getID_adresse()) + "'";
-		}
+			return "UPDATE dbo.Adresse set Nom_rue = '" + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_personnel = '" + getID_personnel() + "' WHERE ID_personnel = '" + getID_personnel() + "'";
+			}
 		if (getType() == 3) {
-			return "UPDATE dbo.Adresse set Nom_rue = ' " + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_client = '" + getID_client() + "' WHERE ID_personnel = '" + Convert::ToInt32(getID_personnel()) + "'";
+			return "UPDATE dbo.Adresse set Nom_rue = '" + getNom_rue()->ToString() + "'" + ", Num_rue = '" + getNum_rue() + "'" + ", Code_postal='" + getCode_postal() + "'" + ", Pays = '" + getPays()->ToString() + "'" + ", Ville = '" + getVille()->ToString() + "'" + ", Type = '" + getType() + "'" + ", ID_client = '" + getID_client() + "' WHERE ID_adresse = '" + Convert::ToInt32(getID_adresse()) + "'";
 		}
 	}
 	String^ CL_TBADRESSE::DELETE(void) {

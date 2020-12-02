@@ -1,17 +1,12 @@
-#include "CL_TBLIGNECOMMANDE.h"
+#include "CL_STAT.h"
 
 
 namespace NS_Composants {
 
-	CL_TBLIGNECOMMANDE::CL_TBLIGNECOMMANDE() {
-		this->Prix_unitaire_HT = 0;
-		this->Taux_TVA = 0;
-		this->Qauntite_Produit = 0;
-		this->ID_commande = 0;
-		this->ID_article = 0;
+	CL_STAT::CL_STAT() {
 
 	}
-	String^ CL_TBLIGNECOMMANDE::SELECT(void) {
+	/*String^ CL_TBLIGNECOMMANDE::SELECT(void) {
 		return "SELECT Taux_TVA,Quantite_Produit,Reference_article,Couleur,dbo.Article.Prix_unitaire_HT,ID_Ligne,dbo.Article.ID_article FROM (dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article) INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur WHERE ID_commande = '" + getID_commande() + "'";
 	}
 	String^ CL_TBLIGNECOMMANDE::INSERT(void) {
@@ -65,5 +60,5 @@ namespace NS_Composants {
 	void CL_TBLIGNECOMMANDE::setTaux_TVA(float Taux_TVA) {
 		this->Taux_TVA = Taux_TVA;
 	}
-
+	*/
 }
