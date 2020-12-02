@@ -25,6 +25,10 @@ namespace NS_Composants {
 		}
 		
 	}
+	String^ CL_TBADRESSE::SELECTbyID(void) {
+		return "SELECT * FROM dbo.Adresse WHERE ID_adresse = '" + getID_adresse()+ "'";
+
+	}
 	String^ CL_TBADRESSE::INSERT(void) {
 
 		if (getType() == 1 || getType() == 3) {

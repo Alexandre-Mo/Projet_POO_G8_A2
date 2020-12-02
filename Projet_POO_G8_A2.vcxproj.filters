@@ -81,6 +81,9 @@
     <ClCompile Include="CL_svc_gestionNature.cpp">
       <Filter>Fichiers sources\Svc_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Cl_svc_facture.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -135,6 +138,9 @@
       <Filter>Fichiers d%27en-tête\Svc_h</Filter>
     </ClInclude>
     <ClInclude Include="CL_svc_gestionNature.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Cl_svc_facture.h">
       <Filter>Fichiers d%27en-tête\Svc_h</Filter>
     </ClInclude>
   </ItemGroup>

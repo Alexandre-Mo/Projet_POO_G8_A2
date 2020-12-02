@@ -41,7 +41,7 @@ namespace NS_Svc {
 	}
 
 	void CL_svc_gestionLigneCommande::supprimer(int id) {
-		TBLIGNECOMMANDE->setID_Ligne(id);
+		TBLIGNECOMMANDE->setID_commande(id);
 		cad->actionRowsID(TBLIGNECOMMANDE->DELETE());
 	}
 

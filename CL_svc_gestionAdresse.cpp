@@ -18,7 +18,14 @@ namespace NS_Svc {
 
 		return dataSetAdresse;
 	}
+	DataSet^ CL_svc_gestionAdresse::AdressebyID(String^ dataTableName, int ID) {
+		dataSetAdresse->Clear();
+		TBADRESSE->setID_adresse(ID);
+		TBADRESSE->setID_personnel(ID);
+		dataSetAdresse = cad->getRows(TBADRESSE->SELECTbyID(), dataTableName);
 
+		return dataSetAdresse;
+	}
 
 	int^ CL_svc_gestionAdresse::ajouter(String^ Nom_rue, int Num_rue, int Code_postal, String^ Pays, String^ Ville, int Type, int ID_client, int ID_personnel) {
 		int id_adresse;

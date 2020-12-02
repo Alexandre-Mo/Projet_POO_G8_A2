@@ -20,6 +20,7 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionAdresse();
 		DataSet^ listeAdresse(String^,int, int);
+		DataSet^ AdressebyID(String^, int);
 		int^ ajouter(String^, int, int, String^, String^, int, int, int);
 		void modifier(int, String^, int, int, String^, String^, int, int, int);
 		void supprimer(int,int);

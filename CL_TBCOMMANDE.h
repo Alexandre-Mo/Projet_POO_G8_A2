@@ -15,12 +15,16 @@ namespace NS_Composants {
         int ID_Societe;
         int ID_societe_Produit;
         int ID_client;
+        String^ Reference_commande;
+        int ID_adresse;
     public:
         CL_TBCOMMANDE();
         String^ SELECT(void);
         String^ INSERT(void);
         String^ UPDATE(void);
         String^ DELETE(void);
+        String^ SELECTbyRef(void);
+        String^ SELECTbyIDclient(void);
 
         // GETTER
         int getID_commande();
@@ -28,8 +32,8 @@ namespace NS_Composants {
         String^ getDate_payement();
         String^ getMode_payement();
         float getRemise();
-        int getID_Societe();
-        int getID_societe_Produit();
+        int getID_adresse();
+        String^ getReference_commande();
         int getID_client();
 
         // SETTER
@@ -38,8 +42,8 @@ namespace NS_Composants {
         void setDate_payement(String^);
         void setMode_payement(String^);
         void setRemise(float);
-        void setID_Societe(int);
-        void setID_societe_Produit(int);
+        void setID_adresse(int);
+        void setReference_commande(String^);
         void setID_client(int);
     };
 
