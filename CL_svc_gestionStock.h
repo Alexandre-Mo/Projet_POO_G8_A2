@@ -23,6 +23,8 @@ namespace NS_Svc {
 		void modifier(int, int, String^,int);
 		void supprimer(int);
 		DataSet^ selectionner(String^, String^, String^);
+		void modifierQuantite(int quantite, int id);
+		DataSet^ quantitebyID(String^ dataTableName, int);
 		//DataSet^ rechercher(String^, String^, String^);
 		//DataSet^ selectionner(String^, int);
 

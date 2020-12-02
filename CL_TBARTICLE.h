@@ -19,6 +19,8 @@ namespace NS_Composants {
 		String^ UPDATE(void);
 		String^ DELETE(void);
 		String^ SELECTbyNameAndColor(void);
+		String^ UPDATEQuantite(void);
+		String^ SELECTQuantiteByID(void);
 
 		// GETTER
 		int getquantite_stock();

@@ -348,6 +348,7 @@ private: System::Windows::Forms::Label^ label42;
 		int index_personnel;
 		int index_commande;
 		int index_stock;
+		int quantite;
 		NS_Svc::CL_svc_gestionAdresse^ Adresse_livraison = gcnew NS_Svc::CL_svc_gestionAdresse();
 		NS_Svc::CL_svc_gestionClient^ Client = gcnew NS_Svc::CL_svc_gestionClient();
 		NS_Svc::CL_svc_gestionPersonnel^ Personnel = gcnew NS_Svc::CL_svc_gestionPersonnel();
@@ -4391,6 +4392,8 @@ private: System::Void enregistrer_Click(System::Object^ sender, System::EventArg
 		{
 			int id_article = Convert::ToInt32(Stock->selectionner("dbo.Article", dataGrid_ligne_commande->SelectedRows[i]->Cells["Reference_article"]->Value->ToString(), dataGrid_ligne_commande->SelectedRows[i]->Cells["Couleur"]->Value->ToString())->Tables["dbo.Article"]->Rows[0]->ItemArray[0]->ToString());
 			LigneCommande->ajouter((float)Convert::ToDouble(dataGrid_ligne_commande->SelectedRows[i]->Cells["Taux_TVA"]->Value->ToString()), Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["Quantite_Produit"]->Value->ToString()), Convert::ToInt32(txtBx_ID_commande_information->Text), id_article);
+			int quantite = Convert::ToInt32((Stock->quantitebyID("quantite",id_article))->Tables["quantite"]->Rows[0]->ItemArray[0]->ToString())- Convert::ToInt32(dataGrid_ligne_commande->SelectedRows[i]->Cells["Quantite_Produit"]->Value->ToString());
+			Stock->modifierQuantite(quantite, id_article);
 		}
 	}
 	else {

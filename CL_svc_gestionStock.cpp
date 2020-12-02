@@ -33,6 +33,12 @@ namespace NS_Svc {
 		cad->actionRowsID(TBARTICLE->UPDATE());
 	}
 
+	void CL_svc_gestionStock::modifierQuantite(int quantite, int id) {
+		TBARTICLE->setquantite_stock(quantite);
+		TBARTICLE->setID_article(id);
+		cad->actionRowsID(TBARTICLE->UPDATEQuantite());
+	}
+
 	void CL_svc_gestionStock::supprimer(int id) {
 		TBARTICLE->setID_article(id);
 		cad->actionRowsID(TBARTICLE->DELETE());
@@ -42,6 +48,12 @@ namespace NS_Svc {
 		TBARTICLE->setReference_article_information(ref_article);
 		TBARTICLE->setCouleur(couleur);
 		dataSetArticle = cad->getRows(TBARTICLE->SELECTbyNameAndColor(), dataTableName);
+		return dataSetArticle;
+	}
+
+	DataSet^ CL_svc_gestionStock::quantitebyID(String^ dataTableName,  int id) {
+		TBARTICLE->setID_article(id);
+		dataSetArticle = cad->getRows(TBARTICLE->SELECTQuantiteByID(), dataTableName);
 		return dataSetArticle;
 	}
 
