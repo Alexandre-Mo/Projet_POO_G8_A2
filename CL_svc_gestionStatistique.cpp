@@ -8,7 +8,7 @@ namespace NS_Svc {
 	DataSet^ CL_svc_gestionStatistique::reaprovisionnement(String^ dataTableName,int seuil) {
 
 		dataSetStat->Clear();
-		//dataSetStat = cad->getRows(TBARTICLE->SELECT(), dataTableName);
+		//dataSetStat = cad->getRows(TBSTAT->SELECTseuilReaprovisionnement(), dataTableName);
 
 		return dataSetStat;
 		}
