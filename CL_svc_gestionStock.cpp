@@ -16,8 +16,9 @@ namespace NS_Svc {
 		return dataSetArticle;
 	}
 
-	int CL_svc_gestionStock::ajouter(int quantite, String^ ref,int ID_couleur) {
+	int CL_svc_gestionStock::ajouter(int quantite, String^ ref,int ID_couleur,int Prix_unitaire) {
 		int id_article;
+		TBARTICLE->setPrix_unitaire_HT(Prix_unitaire);
 		TBARTICLE->setquantite_stock(quantite);
 		TBARTICLE->setReference_article_information(ref);
 		TBARTICLE->setID_couleur(ID_couleur);
@@ -25,7 +26,8 @@ namespace NS_Svc {
 		return id_article;
 	}
 
-	void CL_svc_gestionStock::modifier(int quantite, int id, String^ ref,int ID_couleur) {
+	void CL_svc_gestionStock::modifier(int quantite, int id, String^ ref,int ID_couleur, int Prix_unitaire) {
+		TBARTICLE->setPrix_unitaire_HT(Prix_unitaire);
 		TBARTICLE->setquantite_stock(quantite);
 		TBARTICLE->setID_article(id);
 		TBARTICLE->setReference_article_information(ref);

@@ -19,8 +19,8 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionStock();
 		DataSet^ listeArticle(String^);
-		int ajouter(int, String^,int);
-		void modifier(int, int, String^,int);
+		int ajouter(int, String^,int,int);
+		void modifier(int, int, String^,int,int);
 		void supprimer(int);
 		DataSet^ selectionner(String^, String^, String^);
 		void modifierQuantite(int quantite, int id);

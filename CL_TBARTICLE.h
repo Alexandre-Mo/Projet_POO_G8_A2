@@ -12,6 +12,7 @@ namespace NS_Composants {
 		int ID_couleur;
 		String^ Reference_article_information;
 		String^ Couleur;
+		int Prix_unitaire_HT;
 	public:
 		CL_TBARTICLE();
 		String^ SELECT(void);
@@ -28,12 +29,14 @@ namespace NS_Composants {
 		int getID_couleur();
 		String^ getReference_article_information();
 		String^ getCouleur();
+		int getPrix_unitaire_HT();
 		// SETTER
 		void setquantite_stock(int);
 		void setID_article(int);
 		void setID_couleur(int);
 		void setReference_article_information(String^);
 		void setCouleur(String^);
+		void setPrix_unitaire_HT(int);
 	};
 
 }

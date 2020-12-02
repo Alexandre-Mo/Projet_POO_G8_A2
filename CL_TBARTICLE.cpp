@@ -15,10 +15,10 @@ namespace NS_Composants {
 		return "SELECT quantite_stock FROM dbo.Article WHERE ID_article = '" + Convert::ToInt32(getID_article()) + "'";
 	}
 	String^ CL_TBARTICLE::INSERT(void) {
-		return "INSERT INTO dbo.Article" + "(quantite_stock, Reference_article,ID_couleur) " + "VALUES('" + Convert::ToInt32(getquantite_stock()) + "', '" + getReference_article_information() +"','"+ Convert::ToInt32(getID_couleur()) + "'); SELECT @@IDENTITY;";
+		return "INSERT INTO dbo.Article" + "(quantite_stock, Reference_article,ID_couleur,Prix_unitaire_HT) " + "VALUES('" + Convert::ToInt32(getquantite_stock()) + "', '" + getReference_article_information() +"','"+ Convert::ToInt32(getID_couleur()) + "','" + Convert::ToInt32(getPrix_unitaire_HT()) + "'); SELECT @@IDENTITY;";
 	}
 	String^ CL_TBARTICLE::UPDATE(void) {
-		return "UPDATE dbo.Article set quantite_stock = ' " + Convert::ToInt32(getquantite_stock()) + "'" + ", Reference_article = '" + getReference_article_information()->ToString() + "'"+", ID_couleur ='"+ Convert::ToInt32(getID_couleur())+"' WHERE ID_article = '"+ Convert::ToInt32(getID_article()) +"'";
+		return "UPDATE dbo.Article set quantite_stock = ' " + Convert::ToInt32(getquantite_stock()) + "'" + ", Reference_article = '" + getReference_article_information()->ToString() + "'"+", ID_couleur ='"+ Convert::ToInt32(getID_couleur())+"', Prix_unitaire_HT ='"+ Convert::ToInt32(getPrix_unitaire_HT()) +"' WHERE ID_article = '"+ Convert::ToInt32(getID_article()) +"'";
 	}
 	String^ CL_TBARTICLE::UPDATEQuantite(void) {
 		return "UPDATE dbo.Article set quantite_stock = ' " + Convert::ToInt32(getquantite_stock()) + "' WHERE ID_article = '" + Convert::ToInt32(getID_article()) + "'";
@@ -48,6 +48,9 @@ namespace NS_Composants {
 	String^ CL_TBARTICLE::getCouleur() {
 		return this->Couleur;
 	}
+	int CL_TBARTICLE::getPrix_unitaire_HT() {
+		return this->Prix_unitaire_HT;
+	}
 
 	// SETTER
 	void CL_TBARTICLE::setID_article(int ID_article) {
@@ -65,5 +68,9 @@ namespace NS_Composants {
 
 	void CL_TBARTICLE::setID_couleur(int ID_couleur) {
 		this->ID_couleur = ID_couleur;
+	}
+
+	void CL_TBARTICLE::setPrix_unitaire_HT(int Prix_unitaire_HT) {
+		this->Prix_unitaire_HT = Prix_unitaire_HT;
 	}
 }
