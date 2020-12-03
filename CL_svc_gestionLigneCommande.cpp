@@ -43,6 +43,10 @@ namespace NS_Svc {
 		cad->actionRowsID(TBLIGNECOMMANDE->DELETE());
 	}
 
+	void CL_svc_gestionLigneCommande::supprimerbyID_CLIENT(int id) {
+		TBLIGNECOMMANDE->setID_client(id);
+		cad->actionRowsID(TBLIGNECOMMANDE->DELETEbyID_client());
+	}
 
 
 }

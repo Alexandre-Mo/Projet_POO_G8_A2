@@ -16,7 +16,7 @@ namespace NS_Composants {
 		return "SELECT * FROM dbo.Commande ";
 	}
 	String^ CL_TBCOMMANDE::SELECTbyIDclient(void) {
-		return "SELECT Date_emission,Date_livraison,Mode_payement,Remise,Reference_commande FROM dbo.Commande WHERE ID_client='"+Convert::ToInt32(getID_client())+"'";
+		return "SELECT Date_emission,Date_livraison,Mode_payement,Remise,Reference_commande,ID_commande FROM dbo.Commande WHERE ID_client='"+Convert::ToInt32(getID_client())+"'";
 	}
 	String^ CL_TBCOMMANDE::SELECTbyRef(void) {
 		return "SELECT * FROM dbo.Commande WHERE Reference_commande = '"+ getReference_commande() +"'";
@@ -30,6 +30,10 @@ namespace NS_Composants {
 	String^ CL_TBCOMMANDE::DELETE(void) {
 		return "DELETE FROM dbo.Commande WHERE ID_commande =" + Convert::ToInt32(getID_commande());
 	}
+	String^ CL_TBCOMMANDE::DELETEbyIDclient(void) {
+		return "DELETE FROM dbo.Commande WHERE ID_commande =" + Convert::ToInt32(getID_client());
+	}
+
 
 	
 	// GETTER

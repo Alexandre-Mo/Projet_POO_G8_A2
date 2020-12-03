@@ -4684,6 +4684,14 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 
 // EVENEMENT CLIENT
 private: System::Void btn_Supprimer_client_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	for (int i = 0; i < dataGrid_commande_client->Rows->Count; i++) {
+		Dpaiement->supprimer(Convert::ToInt32(dataGrid_commande_client->Rows[i]->Cells["ID_commande"]->Value));
+		LigneCommande->supprimer(Convert::ToInt32(dataGrid_commande_client->Rows[i]->Cells["ID_commande"]->Value));
+		Commande->supprimer(Convert::ToInt32(dataGrid_commande_client->Rows[i]->Cells["ID_commande"]->Value));
+	}
+	//Commande->supprimerbyID_CLIENT(Convert::ToInt32(txtBx_ID_client->Text));
+	Adresse->supprimer(Convert::ToInt32(txtBx_ID_client->Text), 3);
 	Adresse->supprimer(Convert::ToInt32(txtBx_ID_client->Text), 1);
 	Client->supprimer(Convert::ToInt32(txtBx_ID_client->Text));
 	txtBx_message_client->Text = "Client supprimé";

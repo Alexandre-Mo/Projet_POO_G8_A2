@@ -23,6 +23,7 @@ namespace NS_Svc {
 		int^ ajouter( float, int, int, int);
 		void modifier(int, float, int , int , int );
 		void supprimer(int);
+		void supprimerbyID_CLIENT(int id);
 	}; 
 
 }

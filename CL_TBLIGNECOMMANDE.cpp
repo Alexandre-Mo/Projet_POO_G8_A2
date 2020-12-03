@@ -24,6 +24,11 @@ namespace NS_Composants {
 		return "DELETE FROM dbo.Ligne_commande WHERE ID_commande =" + Convert::ToInt32(getID_commande());
 	}
 
+	String^ CL_TBLIGNECOMMANDE::DELETEbyID_client(void) {
+		return "DELETE FROM dbo.Ligne_commande INNER JOIN dbo.Commande ON dbo.Ligne_commande.ID_commande = dbo.Commande.ID_commande WHERE ID_client =" + Convert::ToInt32(getID_client());
+	}
+	
+
 
 	// GETTER
 	int CL_TBLIGNECOMMANDE::getID_Ligne() {
@@ -34,6 +39,9 @@ namespace NS_Composants {
 	}
 	int CL_TBLIGNECOMMANDE::getID_commande() {
 		return this->ID_commande;
+	}
+	int CL_TBLIGNECOMMANDE::getID_client() {
+		return this->ID_client;
 	}
 	int CL_TBLIGNECOMMANDE::getID_article() {
 		return this->ID_article;
@@ -55,6 +63,9 @@ namespace NS_Composants {
 	}
 	void CL_TBLIGNECOMMANDE::setID_commande(int ID_commande) {
 		this->ID_commande = ID_commande;
+	}
+	void CL_TBLIGNECOMMANDE::setID_client(int ID_client) {
+		this->ID_client = ID_client;
 	}
 	void CL_TBLIGNECOMMANDE::setQuantite_Produit(int Qauntite_Produit) {
 		this->Qauntite_Produit = Qauntite_Produit;

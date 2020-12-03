@@ -57,6 +57,11 @@ namespace NS_Svc {
 	}
 
 
+	void CL_svc_gestionCommande::supprimerbyID_CLIENT(int id) {
+		TBCOMMANDE->setID_client(id);
+		cad->actionRowsID(TBCOMMANDE->DELETEbyIDclient());
+	}
+
 	DataSet^ CL_svc_gestionCommande::selectionner(String^ dataTableName, int ID_client) {
 		TBCOMMANDE->setID_client(ID_client);
 		dataSetCommande = cad->getRows(TBCOMMANDE->SELECTbyIDclient(), dataTableName);

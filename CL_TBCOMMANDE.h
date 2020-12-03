@@ -25,6 +25,7 @@ namespace NS_Composants {
         String^ DELETE(void);
         String^ SELECTbyRef(void);
         String^ SELECTbyIDclient(void);
+        String^ DELETEbyIDclient(void);
 
         // GETTER
         int getID_commande();

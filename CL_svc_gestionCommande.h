@@ -26,6 +26,7 @@ namespace NS_Svc {
 		int ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client, String^, int);
 		void modifier(int, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client, String^, int);
 		void supprimer(int);
+		void supprimerbyID_CLIENT(int id);
 		//DataSet^ rechercher(String^, String^, String^);
 		//DataSet^ selectionner(String^, int);
 	};
