@@ -30,7 +30,7 @@ namespace NS_Composants {
 		return "SELECT TEST1.Valeur_Achat+TEST1.Valeur_Achat*0.05 FROM (SELECT SUM(Quantite_stock*Prix_unitaire_HT) AS Valeur_Achat FROM dbo.Article) AS TEST1";
 		if (marge == 2)
 		return "SELECT TEST1.Valeur_Achat+TEST1.Valeur_Achat*0.10 FROM (SELECT SUM(Quantite_stock*Prix_unitaire_HT) AS Valeur_Achat FROM dbo.Article) AS TEST1";
-		if (marge == 3)
+		else 
 		return "SELECT TEST1.Valeur_Achat+TEST1.Valeur_Achat*0.15 FROM (SELECT SUM(Quantite_stock*Prix_unitaire_HT) AS Valeur_Achat FROM dbo.Article) AS TEST1";
 	}
 	String^ CL_STAT::SELECTCalculPanierMoyen() {
