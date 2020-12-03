@@ -6,7 +6,7 @@ namespace NS_Composants {
 
 	}
 	String^ CL_TBNATURE::SELECT(void) {
-		return "SELECT * FROM dbo.Personnel ";
+		return "SELECT * FROM dbo.Nature ";
 	}
 	String^ CL_TBNATURE::INSERT(void) {
 		return "INSERT INTO dbo.Nature" + "(Couleur) " + "VALUES('" + getCouleur()->ToString() + "'); SELECT @@IDENTITY;";

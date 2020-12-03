@@ -1125,6 +1125,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Modifier_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Modifier_client.BackgroundImage")));
 			this->btn_Modifier_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Modifier_client->FlatAppearance->BorderSize = 0;
+			this->btn_Modifier_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Modifier_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Modifier_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Modifier_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1142,6 +1144,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_first_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_client.BackgroundImage")));
 			this->btn_first_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_first_client->FlatAppearance->BorderSize = 0;
+			this->btn_first_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_first_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_first_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_first_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1159,6 +1163,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Supprimer_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Supprimer_client.BackgroundImage")));
 			this->btn_Supprimer_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Supprimer_client->FlatAppearance->BorderSize = 0;
+			this->btn_Supprimer_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Supprimer_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Supprimer_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Supprimer_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1176,6 +1182,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_left_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_client.BackgroundImage")));
 			this->btn_left_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_left_client->FlatAppearance->BorderSize = 0;
+			this->btn_left_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_left_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_left_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_left_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1207,6 +1215,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Nouveau_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Nouveau_client.BackgroundImage")));
 			this->btn_Nouveau_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Nouveau_client->FlatAppearance->BorderSize = 0;
+			this->btn_Nouveau_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Nouveau_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Nouveau_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Nouveau_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1224,6 +1234,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_enregistrer_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_client.BackgroundImage")));
 			this->btn_enregistrer_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_enregistrer_client->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_enregistrer_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_enregistrer_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_enregistrer_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1241,6 +1253,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_right_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_client.BackgroundImage")));
 			this->btn_right_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_right_client->FlatAppearance->BorderSize = 0;
+			this->btn_right_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_right_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_right_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_right_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1258,6 +1272,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_last_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_client.BackgroundImage")));
 			this->btn_last_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_last_client->FlatAppearance->BorderSize = 0;
+			this->btn_last_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_last_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_last_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_last_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1681,6 +1697,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_selectionner_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_client.BackgroundImage")));
 			this->btn_selectionner_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_selectionner_client->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_selectionner_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_selectionner_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_selectionner_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1723,6 +1741,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_client.BackgroundImage")));
 			this->btn_rechercher_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_client->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_client->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_client->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1816,6 +1836,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->txtBx_message_personnel->BackColor = System::Drawing::Color::LightGray;
 			this->txtBx_message_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_message_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->txtBx_message_personnel->Location = System::Drawing::Point(316, 454);
 			this->txtBx_message_personnel->Multiline = true;
 			this->txtBx_message_personnel->Name = L"txtBx_message_personnel";
@@ -1846,6 +1868,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Modifier_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Modifier_personnel.BackgroundImage")));
 			this->btn_Modifier_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Modifier_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Modifier_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Modifier_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Modifier_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Modifier_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1863,6 +1887,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_first_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_personnel.BackgroundImage")));
 			this->btn_first_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_first_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_first_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_first_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_first_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_first_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1880,6 +1906,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Supprimer_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Supprimer_personnel.BackgroundImage")));
 			this->btn_Supprimer_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Supprimer_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Supprimer_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Supprimer_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Supprimer_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Supprimer_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1897,6 +1925,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_left_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_personnel.BackgroundImage")));
 			this->btn_left_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_left_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_left_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_left_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_left_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_left_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1928,6 +1958,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_Nouveau_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Nouveau_personnel.BackgroundImage")));
 			this->btn_Nouveau_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_Nouveau_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Nouveau_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_Nouveau_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_Nouveau_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_Nouveau_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1945,6 +1977,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_enregistrer_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_personnel.BackgroundImage")));
 			this->btn_enregistrer_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_enregistrer_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_enregistrer_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_enregistrer_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_enregistrer_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1962,6 +1996,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_right_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_personnel.BackgroundImage")));
 			this->btn_right_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_right_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_right_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_right_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_right_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_right_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -1979,6 +2015,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_last_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_personnel.BackgroundImage")));
 			this->btn_last_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_last_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_last_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_last_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_last_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_last_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2069,6 +2107,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_selectionner_SH->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_SH.BackgroundImage")));
 			this->btn_selectionner_SH->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_selectionner_SH->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_SH->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_selectionner_SH->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_selectionner_SH->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_selectionner_SH->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -2086,6 +2126,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_SH->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_SH.BackgroundImage")));
 			this->btn_rechercher_SH->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_SH->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_SH->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_SH->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_SH->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_SH->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2391,6 +2433,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_selectionner_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_personnel.BackgroundImage")));
 			this->btn_selectionner_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_selectionner_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_selectionner_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_selectionner_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_selectionner_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -2431,6 +2475,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_personnel.BackgroundImage")));
 			this->btn_rechercher_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_personnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_personnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -2506,6 +2552,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->txtBx_message_commande->BackColor = System::Drawing::Color::LightGray;
 			this->txtBx_message_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_message_commande->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->txtBx_message_commande->Location = System::Drawing::Point(11, 346);
 			this->txtBx_message_commande->Multiline = true;
 			this->txtBx_message_commande->Name = L"txtBx_message_commande";
@@ -2544,6 +2592,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_commande.BackgroundImage")));
 			this->btn_rechercher_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_commande->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_rechercher_commande->Location = System::Drawing::Point(37, 87);
@@ -2599,6 +2649,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_modifier_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_modifier_commande.BackgroundImage")));
 			this->btn_modifier_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_modifier_commande->FlatAppearance->BorderSize = 0;
+			this->btn_modifier_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_modifier_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_modifier_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_modifier_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_modifier_commande->Location = System::Drawing::Point(12, 21);
@@ -2614,6 +2666,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_first_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_commande.BackgroundImage")));
 			this->btn_first_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_first_commande->FlatAppearance->BorderSize = 0;
+			this->btn_first_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_first_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_first_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_first_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2631,6 +2685,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_supprimer_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_supprimer_commande.BackgroundImage")));
 			this->btn_supprimer_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_supprimer_commande->FlatAppearance->BorderSize = 0;
+			this->btn_supprimer_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_supprimer_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_supprimer_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_supprimer_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_supprimer_commande->Location = System::Drawing::Point(12, 65);
@@ -2646,6 +2702,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_left_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_commande.BackgroundImage")));
 			this->btn_left_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_left_commande->FlatAppearance->BorderSize = 0;
+			this->btn_left_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_left_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_left_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_left_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2677,6 +2735,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_nouveau_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_nouveau_commande.BackgroundImage")));
 			this->btn_nouveau_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_nouveau_commande->FlatAppearance->BorderSize = 0;
+			this->btn_nouveau_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_nouveau_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_nouveau_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_nouveau_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_nouveau_commande->Location = System::Drawing::Point(6, 33);
@@ -2692,6 +2752,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->enregistrer->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"enregistrer.BackgroundImage")));
 			this->enregistrer->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->enregistrer->FlatAppearance->BorderSize = 0;
+			this->enregistrer->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->enregistrer->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->enregistrer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->enregistrer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->enregistrer->Location = System::Drawing::Point(6, 77);
@@ -2707,6 +2769,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_right_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_commande.BackgroundImage")));
 			this->btn_right_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_right_commande->FlatAppearance->BorderSize = 0;
+			this->btn_right_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_right_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_right_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_right_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2724,6 +2788,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_last_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_commande.BackgroundImage")));
 			this->btn_last_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_last_commande->FlatAppearance->BorderSize = 0;
+			this->btn_last_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_last_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_last_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_last_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -2989,6 +3055,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_selectionner_adresse_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_adresse_commande.BackgroundImage")));
 			this->btn_selectionner_adresse_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_selectionner_adresse_commande->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_adresse_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_selectionner_adresse_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_selectionner_adresse_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_selectionner_adresse_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_selectionner_adresse_commande->Location = System::Drawing::Point(10, 324);
@@ -3057,6 +3125,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_client_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_client_commande.BackgroundImage")));
 			this->btn_rechercher_client_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_client_commande->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_client_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_client_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_client_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_client_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_rechercher_client_commande->Location = System::Drawing::Point(9, 151);
@@ -3105,6 +3175,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_selectionner_client_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_client_commande.BackgroundImage")));
 			this->btn_selectionner_client_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_selectionner_client_commande->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_client_commande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_selectionner_client_commande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_selectionner_client_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_selectionner_client_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_selectionner_client_commande->Location = System::Drawing::Point(130, 155);
@@ -3383,6 +3455,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->txtBx_message_stock->BackColor = System::Drawing::Color::LightGray;
 			this->txtBx_message_stock->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_message_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txtBx_message_stock->Location = System::Drawing::Point(316, 454);
 			this->txtBx_message_stock->Multiline = true;
 			this->txtBx_message_stock->Name = L"txtBx_message_stock";
@@ -3413,6 +3487,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_modifier_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_modifier_article.BackgroundImage")));
 			this->btn_modifier_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_modifier_article->FlatAppearance->BorderSize = 0;
+			this->btn_modifier_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_modifier_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_modifier_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_modifier_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_modifier_article->Location = System::Drawing::Point(12, 21);
@@ -3428,6 +3504,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_first_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_article.BackgroundImage")));
 			this->btn_first_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_first_article->FlatAppearance->BorderSize = 0;
+			this->btn_first_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_first_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_first_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_first_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -3445,6 +3523,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_supprimer_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_supprimer_article.BackgroundImage")));
 			this->btn_supprimer_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_supprimer_article->FlatAppearance->BorderSize = 0;
+			this->btn_supprimer_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_supprimer_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_supprimer_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_supprimer_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_supprimer_article->Location = System::Drawing::Point(12, 65);
@@ -3460,6 +3540,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_left_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_article.BackgroundImage")));
 			this->btn_left_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_left_article->FlatAppearance->BorderSize = 0;
+			this->btn_left_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_left_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_left_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_left_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -3491,6 +3573,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_nouveau_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_nouveau_article.BackgroundImage")));
 			this->btn_nouveau_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_nouveau_article->FlatAppearance->BorderSize = 0;
+			this->btn_nouveau_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_nouveau_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_nouveau_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_nouveau_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_nouveau_article->Location = System::Drawing::Point(6, 19);
@@ -3506,6 +3590,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_enregistrer_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_article.BackgroundImage")));
 			this->btn_enregistrer_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_enregistrer_article->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_enregistrer_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_enregistrer_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_enregistrer_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_enregistrer_article->Location = System::Drawing::Point(6, 63);
@@ -3521,6 +3607,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_right_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_article.BackgroundImage")));
 			this->btn_right_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_right_article->FlatAppearance->BorderSize = 0;
+			this->btn_right_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_right_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_right_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_right_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -3538,6 +3626,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_last_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_article.BackgroundImage")));
 			this->btn_last_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_last_article->FlatAppearance->BorderSize = 0;
+			this->btn_last_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_last_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_last_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_last_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -3721,6 +3811,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_rechercher_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_article.BackgroundImage")));
 			this->btn_rechercher_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_rechercher_article->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_article->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_rechercher_article->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_rechercher_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_rechercher_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_rechercher_article->Location = System::Drawing::Point(36, 126);
@@ -3825,6 +3917,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_identifier_statistique->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_identifier_statistique.BackgroundImage")));
 			this->btn_identifier_statistique->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_identifier_statistique->FlatAppearance->BorderSize = 0;
+			this->btn_identifier_statistique->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_identifier_statistique->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_identifier_statistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_identifier_statistique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -3868,6 +3962,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_recherche_reaprovisionnement->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_recherche_reaprovisionnement.BackgroundImage")));
 			this->btn_recherche_reaprovisionnement->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_recherche_reaprovisionnement->FlatAppearance->BorderSize = 0;
+			this->btn_recherche_reaprovisionnement->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_recherche_reaprovisionnement->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_recherche_reaprovisionnement->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_recherche_reaprovisionnement->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -3959,6 +4055,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_CalculChiffreAffaireMois->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_CalculChiffreAffaireMois.BackgroundImage")));
 			this->btn_CalculChiffreAffaireMois->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_CalculChiffreAffaireMois->FlatAppearance->BorderSize = 0;
+			this->btn_CalculChiffreAffaireMois->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_CalculChiffreAffaireMois->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_CalculChiffreAffaireMois->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_CalculChiffreAffaireMois->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -4016,9 +4114,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->textBox1->BackColor = System::Drawing::Color::LightGray;
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::Color::White;
+			this->textBox1->ForeColor = System::Drawing::Color::Black;
 			this->textBox1->Location = System::Drawing::Point(77, 396);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
@@ -4031,6 +4129,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_simulation->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_simulation.BackgroundImage")));
 			this->btn_simulation->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_simulation->FlatAppearance->BorderSize = 0;
+			this->btn_simulation->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_simulation->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_simulation->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_simulation->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -4048,6 +4148,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->Btn_valeur_achat_stock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_valeur_achat_stock.BackgroundImage")));
 			this->Btn_valeur_achat_stock->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->Btn_valeur_achat_stock->FlatAppearance->BorderSize = 0;
+			this->Btn_valeur_achat_stock->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->Btn_valeur_achat_stock->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->Btn_valeur_achat_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_valeur_achat_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -4065,6 +4167,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->Btn_valeur_commerciale_stock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_valeur_commerciale_stock.BackgroundImage")));
 			this->Btn_valeur_commerciale_stock->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->Btn_valeur_commerciale_stock->FlatAppearance->BorderSize = 0;
+			this->Btn_valeur_commerciale_stock->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->Btn_valeur_commerciale_stock->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->Btn_valeur_commerciale_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_valeur_commerciale_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -4094,6 +4198,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->btn_panier_moyen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_panier_moyen.BackgroundImage")));
 			this->btn_panier_moyen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_panier_moyen->FlatAppearance->BorderSize = 0;
+			this->btn_panier_moyen->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_panier_moyen->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_panier_moyen->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_panier_moyen->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -5409,8 +5515,9 @@ private: System::Void btn_supprimer_article_Click(System::Object^ sender, System
 		index_stock--;
 		txtBx_ID_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[0]->ToString();
 		txtBx_reference_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[2]->ToString();
-		txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[5]->ToString();
+		txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[6]->ToString();
 		txtBx_quantite_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[1]->ToString();
+		txtBx_prix_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[4]->ToString();
 	}
 }
 private: System::Void btn_nouveau_article_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -5425,7 +5532,7 @@ private: System::Void btn_enregistrer_article_Click(System::Object^ sender, Syst
 	if (txtBx_ID_article->Text == "" && txtBx_couleur_article->Text != "" && txtBx_reference_article->Text != "" && txtBx_quantite_article->Text != "" && txtBx_prix_article->Text != "") {
 		int id_couleur = 0;
 		for (int i = 0; i < Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows->Count; i++) {
-			if (Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[i]->ItemArray[1] == txtBx_couleur_article->Text) {
+			if (Nature->listeCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[i]->ItemArray[1]->ToString() == txtBx_couleur_article->Text) {
 				id_couleur = Convert::ToInt32(Nature->IDbyNameCouleur("dbo.Nature", txtBx_couleur_article->Text)->Tables["dbo.Nature"]->Rows[0]->ItemArray[0]->ToString());
 			}
 		}
@@ -5437,7 +5544,7 @@ private: System::Void btn_enregistrer_article_Click(System::Object^ sender, Syst
 	index_stock = Convert::ToInt32((Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows->Count) - 1;
 	txtBx_ID_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[0]->ToString();
 	txtBx_reference_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[2]->ToString();
-	txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[5]->ToString();
+	txtBx_couleur_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[6]->ToString();
 	txtBx_quantite_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[1]->ToString();
 	txtBx_prix_article->Text = (Stock->listeArticle("dbo.Article"))->Tables["dbo.Article"]->Rows[index_stock]->ItemArray[4]->ToString();
 	}
