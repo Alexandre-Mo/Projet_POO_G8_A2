@@ -411,10 +411,10 @@ private: System::Windows::Forms::Label^ label45;
 private: System::Windows::Forms::TextBox^ txtBx_couleur_article_affichage;
 
 private: System::Windows::Forms::Label^ label48;
-private: System::Windows::Forms::GroupBox^ groupBox20;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::TextBox^ textBox7;
-private: System::Windows::Forms::Label^ label58;
+
+
+
+
 private: System::Windows::Forms::TextBox^ txtBx_message_commande;
 
 private: System::Windows::Forms::Label^ label57;
@@ -438,7 +438,7 @@ private: System::Windows::Forms::Button^ btn_selectionner_adresse_commande;
 
 private: System::Windows::Forms::DataGridView^ dataGrid_adresse_commande;
 
-private: System::Windows::Forms::Button^ button3;
+
 private: System::Windows::Forms::FolderBrowserDialog^ folderBrowserDialog1;
 private: System::Windows::Forms::TextBox^ txtBxID_adresse_commande;
 
@@ -582,6 +582,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->tbC_MenuPrincipal = (gcnew System::Windows::Forms::TabControl());
 			this->tbPage_Informations = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -698,11 +699,6 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_prenom_personnel_affichage = (gcnew System::Windows::Forms::TextBox());
 			this->tbPage_GestionCommande = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox20 = (gcnew System::Windows::Forms::GroupBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->label58 = (gcnew System::Windows::Forms::Label());
 			this->txtBx_message_commande = (gcnew System::Windows::Forms::TextBox());
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->groupBox18 = (gcnew System::Windows::Forms::GroupBox());
@@ -863,7 +859,6 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox9->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->BeginInit();
 			this->tbPage_GestionCommande->SuspendLayout();
-			this->groupBox20->SuspendLayout();
 			this->groupBox18->SuspendLayout();
 			this->groupBox15->SuspendLayout();
 			this->groupBox16->SuspendLayout();
@@ -902,20 +897,22 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbC_MenuPrincipal->Controls->Add(this->tbPage_GestionCommande);
 			this->tbC_MenuPrincipal->Controls->Add(this->tbPage_GestionStock);
 			this->tbC_MenuPrincipal->Controls->Add(this->tbPage_GestionStatistiques);
-			this->tbC_MenuPrincipal->Location = System::Drawing::Point(0, 2);
+			this->tbC_MenuPrincipal->Location = System::Drawing::Point(-4, 2);
 			this->tbC_MenuPrincipal->Multiline = true;
 			this->tbC_MenuPrincipal->Name = L"tbC_MenuPrincipal";
 			this->tbC_MenuPrincipal->SelectedIndex = 0;
-			this->tbC_MenuPrincipal->Size = System::Drawing::Size(1015, 575);
+			this->tbC_MenuPrincipal->Size = System::Drawing::Size(1023, 580);
 			this->tbC_MenuPrincipal->TabIndex = 0;
+			this->tbC_MenuPrincipal->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::tbC_MenuPrincipal_SelectedIndexChanged);
 			// 
 			// tbPage_Informations
 			// 
+			this->tbPage_Informations->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_Informations.BackgroundImage")));
 			this->tbPage_Informations->Controls->Add(this->groupBox1);
 			this->tbPage_Informations->Location = System::Drawing::Point(4, 22);
 			this->tbPage_Informations->Name = L"tbPage_Informations";
 			this->tbPage_Informations->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_Informations->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_Informations->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_Informations->TabIndex = 0;
 			this->tbPage_Informations->Text = L"Informations";
 			this->tbPage_Informations->UseVisualStyleBackColor = true;
@@ -929,28 +926,26 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox1->Controls->Add(this->btn_GestionClient);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->groupBox1->Location = System::Drawing::Point(191, 108);
+			this->groupBox1->Location = System::Drawing::Point(12, 6);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(593, 325);
+			this->groupBox1->Size = System::Drawing::Size(990, 536);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
 			// 
 			// btn_GestionStatistiques
 			// 
-			this->btn_GestionStatistiques->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btn_GestionStatistiques->BackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionStatistiques->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_GestionStatistiques.BackgroundImage")));
 			this->btn_GestionStatistiques->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_GestionStatistiques->Cursor = System::Windows::Forms::Cursors::Default;
 			this->btn_GestionStatistiques->FlatAppearance->BorderSize = 0;
-			this->btn_GestionStatistiques->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btn_GestionStatistiques->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->btn_GestionStatistiques->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionStatistiques->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_GestionStatistiques->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_GestionStatistiques->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_GestionStatistiques->Location = System::Drawing::Point(468, 93);
+			this->btn_GestionStatistiques->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btn_GestionStatistiques->Location = System::Drawing::Point(646, 190);
 			this->btn_GestionStatistiques->Name = L"btn_GestionStatistiques";
 			this->btn_GestionStatistiques->Size = System::Drawing::Size(107, 42);
 			this->btn_GestionStatistiques->TabIndex = 6;
@@ -960,19 +955,18 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_GestionStock
 			// 
-			this->btn_GestionStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btn_GestionStock->BackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionStock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_GestionStock.BackgroundImage")));
 			this->btn_GestionStock->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_GestionStock->Cursor = System::Windows::Forms::Cursors::Default;
 			this->btn_GestionStock->FlatAppearance->BorderSize = 0;
-			this->btn_GestionStock->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btn_GestionStock->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->btn_GestionStock->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionStock->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_GestionStock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_GestionStock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_GestionStock->Location = System::Drawing::Point(355, 93);
+			this->btn_GestionStock->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btn_GestionStock->Location = System::Drawing::Point(533, 190);
 			this->btn_GestionStock->Name = L"btn_GestionStock";
 			this->btn_GestionStock->Size = System::Drawing::Size(107, 42);
 			this->btn_GestionStock->TabIndex = 5;
@@ -982,19 +976,18 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_GestionCommande
 			// 
-			this->btn_GestionCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btn_GestionCommande->BackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionCommande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_GestionCommande.BackgroundImage")));
 			this->btn_GestionCommande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_GestionCommande->Cursor = System::Windows::Forms::Cursors::Default;
 			this->btn_GestionCommande->FlatAppearance->BorderSize = 0;
-			this->btn_GestionCommande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btn_GestionCommande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->btn_GestionCommande->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionCommande->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_GestionCommande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_GestionCommande->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_GestionCommande->Location = System::Drawing::Point(242, 93);
+			this->btn_GestionCommande->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btn_GestionCommande->Location = System::Drawing::Point(420, 190);
 			this->btn_GestionCommande->Name = L"btn_GestionCommande";
 			this->btn_GestionCommande->Size = System::Drawing::Size(107, 42);
 			this->btn_GestionCommande->TabIndex = 4;
@@ -1004,19 +997,18 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_GestionPersonnel
 			// 
-			this->btn_GestionPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btn_GestionPersonnel->BackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionPersonnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_GestionPersonnel.BackgroundImage")));
 			this->btn_GestionPersonnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_GestionPersonnel->Cursor = System::Windows::Forms::Cursors::Default;
 			this->btn_GestionPersonnel->FlatAppearance->BorderSize = 0;
-			this->btn_GestionPersonnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btn_GestionPersonnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->btn_GestionPersonnel->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionPersonnel->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_GestionPersonnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_GestionPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_GestionPersonnel->Location = System::Drawing::Point(129, 93);
+			this->btn_GestionPersonnel->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btn_GestionPersonnel->Location = System::Drawing::Point(307, 190);
 			this->btn_GestionPersonnel->Name = L"btn_GestionPersonnel";
 			this->btn_GestionPersonnel->Size = System::Drawing::Size(107, 42);
 			this->btn_GestionPersonnel->TabIndex = 3;
@@ -1026,19 +1018,18 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_GestionClient
 			// 
-			this->btn_GestionClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btn_GestionClient->BackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionClient->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_GestionClient.BackgroundImage")));
 			this->btn_GestionClient->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->btn_GestionClient->Cursor = System::Windows::Forms::Cursors::Default;
 			this->btn_GestionClient->FlatAppearance->BorderSize = 0;
-			this->btn_GestionClient->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btn_GestionClient->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->btn_GestionClient->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->btn_GestionClient->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			this->btn_GestionClient->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_GestionClient->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_GestionClient->Location = System::Drawing::Point(16, 93);
+			this->btn_GestionClient->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btn_GestionClient->Location = System::Drawing::Point(194, 190);
 			this->btn_GestionClient->Name = L"btn_GestionClient";
 			this->btn_GestionClient->Size = System::Drawing::Size(107, 42);
 			this->btn_GestionClient->TabIndex = 2;
@@ -1051,29 +1042,28 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label2->Location = System::Drawing::Point(154, 173);
+			this->label2->ForeColor = System::Drawing::SystemColors::Control;
+			this->label2->Location = System::Drawing::Point(326, 297);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(288, 133);
+			this->label2->Size = System::Drawing::Size(288, 152);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"| - Projet programmation orienté objet - |\r\n\r\nCréé par : \r\nAlexandre MOREAU\r\nAnto"
-				L"nio ROSEMARY\r\nMaxime GERBER\r\nLudovic WITTMANN\r\n";
+			this->label2->Text = resources->GetString(L"label2.Text");
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->label1->Location = System::Drawing::Point(153, 43);
+			this->label1->ForeColor = System::Drawing::SystemColors::Control;
+			this->label1->Location = System::Drawing::Point(342, 75);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(269, 26);
+			this->label1->Size = System::Drawing::Size(261, 42);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Selectionner l\'onglet voulu\r\n";
+			this->label1->Text = L"Menu principal";
 			// 
 			// tbPage_GestionClient
 			// 
+			this->tbPage_GestionClient->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_GestionClient.BackgroundImage")));
 			this->tbPage_GestionClient->Controls->Add(this->label7);
 			this->tbPage_GestionClient->Controls->Add(this->txtBx_message_client);
 			this->tbPage_GestionClient->Controls->Add(this->groupBox5);
@@ -1082,7 +1072,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionClient->Location = System::Drawing::Point(4, 22);
 			this->tbPage_GestionClient->Name = L"tbPage_GestionClient";
 			this->tbPage_GestionClient->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_GestionClient->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_GestionClient->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_GestionClient->TabIndex = 1;
 			this->tbPage_GestionClient->Text = L"Gestion Client";
 			this->tbPage_GestionClient->UseVisualStyleBackColor = true;
@@ -1092,7 +1082,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(313, 459);
+			this->label7->ForeColor = System::Drawing::SystemColors::Control;
+			this->label7->Location = System::Drawing::Point(313, 469);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(54, 16);
 			this->label7->TabIndex = 46;
@@ -1100,10 +1091,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_message_client
 			// 
-			this->txtBx_message_client->Location = System::Drawing::Point(316, 478);
+			this->txtBx_message_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_message_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_message_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_message_client->Location = System::Drawing::Point(316, 488);
 			this->txtBx_message_client->Multiline = true;
 			this->txtBx_message_client->Name = L"txtBx_message_client";
-			this->txtBx_message_client->Size = System::Drawing::Size(683, 53);
+			this->txtBx_message_client->Size = System::Drawing::Size(683, 43);
 			this->txtBx_message_client->TabIndex = 50;
 			// 
 			// groupBox5
@@ -1115,6 +1110,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox5->Controls->Add(this->groupBox4);
 			this->groupBox5->Controls->Add(this->btn_right_client);
 			this->groupBox5->Controls->Add(this->btn_last_client);
+			this->groupBox5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox5->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox5->Location = System::Drawing::Point(52, 200);
 			this->groupBox5->Name = L"groupBox5";
 			this->groupBox5->Size = System::Drawing::Size(182, 308);
@@ -1124,6 +1122,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_Modifier_client
 			// 
+			this->btn_Modifier_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Modifier_client.BackgroundImage")));
+			this->btn_Modifier_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Modifier_client->FlatAppearance->BorderSize = 0;
+			this->btn_Modifier_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Modifier_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Modifier_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_Modifier_client->Location = System::Drawing::Point(12, 21);
 			this->btn_Modifier_client->Name = L"btn_Modifier_client";
 			this->btn_Modifier_client->Size = System::Drawing::Size(157, 38);
@@ -1134,6 +1139,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_first_client
 			// 
+			this->btn_first_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_client.BackgroundImage")));
+			this->btn_first_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_first_client->FlatAppearance->BorderSize = 0;
+			this->btn_first_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_first_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_first_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_first_client->Location = System::Drawing::Point(6, 247);
 			this->btn_first_client->Name = L"btn_first_client";
 			this->btn_first_client->Size = System::Drawing::Size(38, 38);
@@ -1144,6 +1156,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_Supprimer_client
 			// 
+			this->btn_Supprimer_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Supprimer_client.BackgroundImage")));
+			this->btn_Supprimer_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Supprimer_client->FlatAppearance->BorderSize = 0;
+			this->btn_Supprimer_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Supprimer_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Supprimer_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_Supprimer_client->Location = System::Drawing::Point(12, 65);
 			this->btn_Supprimer_client->Name = L"btn_Supprimer_client";
 			this->btn_Supprimer_client->Size = System::Drawing::Size(157, 38);
@@ -1154,6 +1173,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_left_client
 			// 
+			this->btn_left_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_client.BackgroundImage")));
+			this->btn_left_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_left_client->FlatAppearance->BorderSize = 0;
+			this->btn_left_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_left_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_left_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_left_client->Location = System::Drawing::Point(49, 247);
 			this->btn_left_client->Name = L"btn_left_client";
 			this->btn_left_client->Size = System::Drawing::Size(38, 38);
@@ -1166,6 +1192,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox4->Controls->Add(this->btn_Nouveau_client);
 			this->groupBox4->Controls->Add(this->btn_enregistrer_client);
+			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox4->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox4->Location = System::Drawing::Point(6, 115);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Size = System::Drawing::Size(169, 117);
@@ -1175,6 +1204,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_Nouveau_client
 			// 
+			this->btn_Nouveau_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Nouveau_client.BackgroundImage")));
+			this->btn_Nouveau_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Nouveau_client->FlatAppearance->BorderSize = 0;
+			this->btn_Nouveau_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Nouveau_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Nouveau_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_Nouveau_client->Location = System::Drawing::Point(6, 19);
 			this->btn_Nouveau_client->Name = L"btn_Nouveau_client";
 			this->btn_Nouveau_client->Size = System::Drawing::Size(157, 38);
@@ -1185,6 +1221,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_enregistrer_client
 			// 
+			this->btn_enregistrer_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_client.BackgroundImage")));
+			this->btn_enregistrer_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_enregistrer_client->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_enregistrer_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_enregistrer_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_enregistrer_client->Location = System::Drawing::Point(6, 63);
 			this->btn_enregistrer_client->Name = L"btn_enregistrer_client";
 			this->btn_enregistrer_client->Size = System::Drawing::Size(157, 38);
@@ -1195,6 +1238,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_right_client
 			// 
+			this->btn_right_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_client.BackgroundImage")));
+			this->btn_right_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_right_client->FlatAppearance->BorderSize = 0;
+			this->btn_right_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_right_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_right_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_right_client->Location = System::Drawing::Point(93, 247);
 			this->btn_right_client->Name = L"btn_right_client";
 			this->btn_right_client->Size = System::Drawing::Size(38, 38);
@@ -1205,6 +1255,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_last_client
 			// 
+			this->btn_last_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_client.BackgroundImage")));
+			this->btn_last_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_last_client->FlatAppearance->BorderSize = 0;
+			this->btn_last_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_last_client->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_last_client->ForeColor = System::Drawing::Color::Black;
 			this->btn_last_client->Location = System::Drawing::Point(137, 247);
 			this->btn_last_client->Name = L"btn_last_client";
 			this->btn_last_client->Size = System::Drawing::Size(38, 38);
@@ -1244,9 +1301,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox3->Controls->Add(this->lbl1);
 			this->groupBox3->Controls->Add(this->label89);
 			this->groupBox3->Controls->Add(this->label88);
+			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox3->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox3->Location = System::Drawing::Point(316, 6);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(683, 450);
+			this->groupBox3->Size = System::Drawing::Size(683, 460);
 			this->groupBox3->TabIndex = 38;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Information";
@@ -1257,7 +1317,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label36->AutoSize = true;
 			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label36->Location = System::Drawing::Point(220, 192);
+			this->label36->ForeColor = System::Drawing::SystemColors::Control;
+			this->label36->Location = System::Drawing::Point(220, 197);
 			this->label36->Name = L"label36";
 			this->label36->Size = System::Drawing::Size(133, 16);
 			this->label36->TabIndex = 49;
@@ -1266,8 +1327,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_commande_client
 			// 
 			this->dataGrid_commande_client->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_commande_client->BackgroundColor = System::Drawing::Color::LightSteelBlue;
+			this->dataGrid_commande_client->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->dataGrid_commande_client->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_commande_client->Location = System::Drawing::Point(215, 211);
+			this->dataGrid_commande_client->GridColor = System::Drawing::SystemColors::Desktop;
+			this->dataGrid_commande_client->Location = System::Drawing::Point(215, 216);
 			this->dataGrid_commande_client->Name = L"dataGrid_commande_client";
 			this->dataGrid_commande_client->RowHeadersWidth = 51;
 			this->dataGrid_commande_client->Size = System::Drawing::Size(460, 232);
@@ -1275,36 +1339,50 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_adresse_client
 			// 
+			this->txtBx_ID_adresse_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_adresse_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_adresse_client->Enabled = false;
-			this->txtBx_ID_adresse_client->Location = System::Drawing::Point(149, 269);
+			this->txtBx_ID_adresse_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->txtBx_ID_adresse_client->Location = System::Drawing::Point(149, 274);
 			this->txtBx_ID_adresse_client->Name = L"txtBx_ID_adresse_client";
-			this->txtBx_ID_adresse_client->Size = System::Drawing::Size(58, 20);
+			this->txtBx_ID_adresse_client->Size = System::Drawing::Size(58, 21);
 			this->txtBx_ID_adresse_client->TabIndex = 46;
 			this->txtBx_ID_adresse_client->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// label35
 			// 
 			this->label35->AutoSize = true;
-			this->label35->Location = System::Drawing::Point(85, 272);
+			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label35->ForeColor = System::Drawing::SystemColors::Control;
+			this->label35->Location = System::Drawing::Point(85, 277);
 			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(58, 13);
+			this->label35->Size = System::Drawing::Size(64, 16);
 			this->label35->TabIndex = 47;
 			this->label35->Text = L"ID adresse";
 			this->label35->Click += gcnew System::EventHandler(this, &MyForm::label35_Click);
 			// 
 			// txtBx_rue_client
 			// 
-			this->txtBx_rue_client->Location = System::Drawing::Point(37, 294);
+			this->txtBx_rue_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_rue_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_rue_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_rue_client->Location = System::Drawing::Point(37, 299);
 			this->txtBx_rue_client->Name = L"txtBx_rue_client";
-			this->txtBx_rue_client->Size = System::Drawing::Size(170, 20);
+			this->txtBx_rue_client->Size = System::Drawing::Size(170, 21);
 			this->txtBx_rue_client->TabIndex = 44;
 			// 
 			// label32
 			// 
 			this->label32->AutoSize = true;
-			this->label32->Location = System::Drawing::Point(6, 297);
+			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label32->ForeColor = System::Drawing::SystemColors::Control;
+			this->label32->Location = System::Drawing::Point(6, 302);
 			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(27, 13);
+			this->label32->Size = System::Drawing::Size(29, 16);
 			this->label32->TabIndex = 45;
 			this->label32->Text = L"Rue";
 			// 
@@ -1313,7 +1391,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(6, 16);
+			this->label9->ForeColor = System::Drawing::SystemColors::Control;
+			this->label9->Location = System::Drawing::Point(6, 21);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(55, 16);
 			this->label9->TabIndex = 43;
@@ -1321,25 +1400,37 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_client
 			// 
+			this->txtBx_ID_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_client->Enabled = false;
-			this->txtBx_ID_client->Location = System::Drawing::Point(9, 32);
+			this->txtBx_ID_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_ID_client->Location = System::Drawing::Point(9, 37);
 			this->txtBx_ID_client->Name = L"txtBx_ID_client";
-			this->txtBx_ID_client->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_client->Size = System::Drawing::Size(200, 21);
 			this->txtBx_ID_client->TabIndex = 42;
 			// 
 			// txtBx_D1A_client
 			// 
+			this->txtBx_D1A_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_D1A_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_D1A_client->Enabled = false;
-			this->txtBx_D1A_client->Location = System::Drawing::Point(9, 420);
+			this->txtBx_D1A_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_D1A_client->Location = System::Drawing::Point(9, 425);
 			this->txtBx_D1A_client->Name = L"txtBx_D1A_client";
-			this->txtBx_D1A_client->Size = System::Drawing::Size(200, 20);
+			this->txtBx_D1A_client->Size = System::Drawing::Size(200, 21);
 			this->txtBx_D1A_client->TabIndex = 41;
 			// 
 			// txtBx_DDN_client
 			// 
-			this->txtBx_DDN_client->Location = System::Drawing::Point(9, 216);
+			this->txtBx_DDN_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_DDN_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_DDN_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_DDN_client->Location = System::Drawing::Point(9, 221);
 			this->txtBx_DDN_client->Name = L"txtBx_DDN_client";
-			this->txtBx_DDN_client->Size = System::Drawing::Size(200, 20);
+			this->txtBx_DDN_client->Size = System::Drawing::Size(200, 21);
 			this->txtBx_DDN_client->TabIndex = 40;
 			// 
 			// label8
@@ -1347,7 +1438,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(4, 401);
+			this->label8->ForeColor = System::Drawing::SystemColors::Control;
+			this->label8->Location = System::Drawing::Point(4, 406);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(129, 16);
 			this->label8->TabIndex = 39;
@@ -1358,7 +1450,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(222, 11);
+			this->label6->ForeColor = System::Drawing::SystemColors::Control;
+			this->label6->Location = System::Drawing::Point(222, 16);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(127, 16);
 			this->label6->TabIndex = 38;
@@ -1367,8 +1460,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_adresse_livraison
 			// 
 			this->dataGrid_adresse_livraison->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_adresse_livraison->BackgroundColor = System::Drawing::Color::LightSteelBlue;
+			this->dataGrid_adresse_livraison->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->dataGrid_adresse_livraison->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_adresse_livraison->Location = System::Drawing::Point(215, 27);
+			this->dataGrid_adresse_livraison->GridColor = System::Drawing::SystemColors::Desktop;
+			this->dataGrid_adresse_livraison->Location = System::Drawing::Point(215, 32);
 			this->dataGrid_adresse_livraison->Name = L"dataGrid_adresse_livraison";
 			this->dataGrid_adresse_livraison->RowHeadersWidth = 51;
 			this->dataGrid_adresse_livraison->Size = System::Drawing::Size(462, 156);
@@ -1379,7 +1475,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label92->AutoSize = true;
 			this->label92->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label92->Location = System::Drawing::Point(6, 55);
+			this->label92->ForeColor = System::Drawing::SystemColors::Control;
+			this->label92->Location = System::Drawing::Point(6, 60);
 			this->label92->Name = L"label92";
 			this->label92->Size = System::Drawing::Size(35, 16);
 			this->label92->TabIndex = 25;
@@ -1387,70 +1484,103 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_Nom_client_information
 			// 
-			this->txtBx_Nom_client_information->Location = System::Drawing::Point(9, 71);
+			this->txtBx_Nom_client_information->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_Nom_client_information->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_Nom_client_information->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->txtBx_Nom_client_information->Location = System::Drawing::Point(9, 76);
 			this->txtBx_Nom_client_information->Name = L"txtBx_Nom_client_information";
-			this->txtBx_Nom_client_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_Nom_client_information->Size = System::Drawing::Size(200, 21);
 			this->txtBx_Nom_client_information->TabIndex = 20;
 			// 
 			// label84
 			// 
 			this->label84->AutoSize = true;
-			this->label84->Location = System::Drawing::Point(6, 375);
+			this->label84->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label84->ForeColor = System::Drawing::SystemColors::Control;
+			this->label84->Location = System::Drawing::Point(6, 380);
 			this->label84->Name = L"label84";
-			this->label84->Size = System::Drawing::Size(30, 13);
+			this->label84->Size = System::Drawing::Size(32, 16);
 			this->label84->TabIndex = 36;
 			this->label84->Text = L"Pays";
 			// 
 			// txtBx_Prenom_client_information
 			// 
-			this->txtBx_Prenom_client_information->Location = System::Drawing::Point(9, 114);
+			this->txtBx_Prenom_client_information->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_Prenom_client_information->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_Prenom_client_information->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->txtBx_Prenom_client_information->Location = System::Drawing::Point(9, 119);
 			this->txtBx_Prenom_client_information->Name = L"txtBx_Prenom_client_information";
-			this->txtBx_Prenom_client_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_Prenom_client_information->Size = System::Drawing::Size(200, 21);
 			this->txtBx_Prenom_client_information->TabIndex = 21;
 			// 
 			// txtBx_pays_client
 			// 
-			this->txtBx_pays_client->Location = System::Drawing::Point(37, 372);
+			this->txtBx_pays_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_pays_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_pays_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_pays_client->Location = System::Drawing::Point(37, 377);
 			this->txtBx_pays_client->Name = L"txtBx_pays_client";
-			this->txtBx_pays_client->Size = System::Drawing::Size(170, 20);
+			this->txtBx_pays_client->Size = System::Drawing::Size(170, 21);
 			this->txtBx_pays_client->TabIndex = 35;
 			// 
 			// txtBx_email_client
 			// 
-			this->txtBx_email_client->Location = System::Drawing::Point(9, 163);
+			this->txtBx_email_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_email_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_email_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_email_client->Location = System::Drawing::Point(9, 168);
 			this->txtBx_email_client->Name = L"txtBx_email_client";
-			this->txtBx_email_client->Size = System::Drawing::Size(200, 20);
+			this->txtBx_email_client->Size = System::Drawing::Size(200, 21);
 			this->txtBx_email_client->TabIndex = 22;
 			// 
 			// label85
 			// 
 			this->label85->AutoSize = true;
-			this->label85->Location = System::Drawing::Point(6, 349);
+			this->label85->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label85->ForeColor = System::Drawing::SystemColors::Control;
+			this->label85->Location = System::Drawing::Point(6, 354);
 			this->label85->Name = L"label85";
-			this->label85->Size = System::Drawing::Size(63, 13);
+			this->label85->Size = System::Drawing::Size(71, 16);
 			this->label85->TabIndex = 34;
 			this->label85->Text = L"Code postal";
 			// 
 			// txtBx_num_rue_client
 			// 
-			this->txtBx_num_rue_client->Location = System::Drawing::Point(37, 269);
+			this->txtBx_num_rue_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_num_rue_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_num_rue_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_num_rue_client->Location = System::Drawing::Point(37, 274);
 			this->txtBx_num_rue_client->Name = L"txtBx_num_rue_client";
-			this->txtBx_num_rue_client->Size = System::Drawing::Size(42, 20);
+			this->txtBx_num_rue_client->Size = System::Drawing::Size(42, 21);
 			this->txtBx_num_rue_client->TabIndex = 23;
 			// 
 			// txtBx_code_postal_client
 			// 
-			this->txtBx_code_postal_client->Location = System::Drawing::Point(75, 346);
+			this->txtBx_code_postal_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_code_postal_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_code_postal_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->txtBx_code_postal_client->Location = System::Drawing::Point(75, 351);
 			this->txtBx_code_postal_client->Name = L"txtBx_code_postal_client";
-			this->txtBx_code_postal_client->Size = System::Drawing::Size(132, 20);
+			this->txtBx_code_postal_client->Size = System::Drawing::Size(132, 21);
 			this->txtBx_code_postal_client->TabIndex = 33;
 			// 
 			// label86
 			// 
 			this->label86->AutoSize = true;
-			this->label86->Location = System::Drawing::Point(6, 323);
+			this->label86->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label86->ForeColor = System::Drawing::SystemColors::Control;
+			this->label86->Location = System::Drawing::Point(6, 328);
 			this->label86->Name = L"label86";
-			this->label86->Size = System::Drawing::Size(26, 13);
+			this->label86->Size = System::Drawing::Size(31, 16);
 			this->label86->TabIndex = 32;
 			this->label86->Text = L"Ville";
 			// 
@@ -1459,7 +1589,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label91->AutoSize = true;
 			this->label91->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label91->Location = System::Drawing::Point(6, 98);
+			this->label91->ForeColor = System::Drawing::SystemColors::Control;
+			this->label91->Location = System::Drawing::Point(6, 103);
 			this->label91->Name = L"label91";
 			this->label91->Size = System::Drawing::Size(51, 16);
 			this->label91->TabIndex = 26;
@@ -1467,9 +1598,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ville_client
 			// 
-			this->txtBx_ville_client->Location = System::Drawing::Point(37, 320);
+			this->txtBx_ville_client->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ville_client->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_ville_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtBx_ville_client->Location = System::Drawing::Point(37, 325);
 			this->txtBx_ville_client->Name = L"txtBx_ville_client";
-			this->txtBx_ville_client->Size = System::Drawing::Size(170, 20);
+			this->txtBx_ville_client->Size = System::Drawing::Size(170, 21);
 			this->txtBx_ville_client->TabIndex = 31;
 			// 
 			// label90
@@ -1477,7 +1612,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label90->AutoSize = true;
 			this->label90->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label90->Location = System::Drawing::Point(6, 197);
+			this->label90->ForeColor = System::Drawing::SystemColors::Control;
+			this->label90->Location = System::Drawing::Point(6, 202);
 			this->label90->Name = L"label90";
 			this->label90->Size = System::Drawing::Size(104, 16);
 			this->label90->TabIndex = 27;
@@ -1486,9 +1622,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// lbl1
 			// 
 			this->lbl1->AutoSize = true;
-			this->lbl1->Location = System::Drawing::Point(6, 272);
+			this->lbl1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl1->ForeColor = System::Drawing::SystemColors::Control;
+			this->lbl1->Location = System::Drawing::Point(6, 277);
 			this->lbl1->Name = L"lbl1";
-			this->lbl1->Size = System::Drawing::Size(29, 13);
+			this->lbl1->Size = System::Drawing::Size(35, 16);
 			this->lbl1->TabIndex = 30;
 			this->lbl1->Text = L"Num";
 			this->lbl1->Click += gcnew System::EventHandler(this, &MyForm::label87_Click);
@@ -1498,7 +1637,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label89->AutoSize = true;
 			this->label89->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label89->Location = System::Drawing::Point(6, 147);
+			this->label89->ForeColor = System::Drawing::SystemColors::Control;
+			this->label89->Location = System::Drawing::Point(6, 152);
 			this->label89->Name = L"label89";
 			this->label89->Size = System::Drawing::Size(37, 16);
 			this->label89->TabIndex = 28;
@@ -1509,7 +1649,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label88->AutoSize = true;
 			this->label88->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label88->Location = System::Drawing::Point(6, 248);
+			this->label88->ForeColor = System::Drawing::SystemColors::Control;
+			this->label88->Location = System::Drawing::Point(6, 253);
 			this->label88->Name = L"label88";
 			this->label88->Size = System::Drawing::Size(130, 16);
 			this->label88->TabIndex = 29;
@@ -1525,18 +1666,28 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox2->Controls->Add(this->txtBx_nom_client_affichage);
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->txtBx_Prenom_client_affichage);
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox2->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox2->Location = System::Drawing::Point(9, 6);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(301, 164);
+			this->groupBox2->Size = System::Drawing::Size(301, 188);
 			this->groupBox2->TabIndex = 37;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Affichage";
 			// 
 			// btn_selectionner_client
 			// 
-			this->btn_selectionner_client->Location = System::Drawing::Point(33, 130);
+			this->btn_selectionner_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_client.BackgroundImage")));
+			this->btn_selectionner_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_selectionner_client->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_selectionner_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_selectionner_client->ForeColor = System::Drawing::Color::Black;
+			this->btn_selectionner_client->Location = System::Drawing::Point(25, 146);
 			this->btn_selectionner_client->Name = L"btn_selectionner_client";
-			this->btn_selectionner_client->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_client->Size = System::Drawing::Size(94, 23);
 			this->btn_selectionner_client->TabIndex = 45;
 			this->btn_selectionner_client->Text = L"Selectionner";
 			this->btn_selectionner_client->UseVisualStyleBackColor = true;
@@ -1547,6 +1698,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::Control;
 			this->label5->Location = System::Drawing::Point(134, 16);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(104, 16);
@@ -1556,7 +1708,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_DDN_client
 			// 
 			this->dataGrid_DDN_client->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_DDN_client->BackgroundColor = System::Drawing::Color::LightSteelBlue;
+			this->dataGrid_DDN_client->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->dataGrid_DDN_client->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGrid_DDN_client->GridColor = System::Drawing::SystemColors::Desktop;
 			this->dataGrid_DDN_client->Location = System::Drawing::Point(137, 32);
 			this->dataGrid_DDN_client->Name = L"dataGrid_DDN_client";
 			this->dataGrid_DDN_client->RowHeadersWidth = 51;
@@ -1565,9 +1720,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_rechercher_client
 			// 
-			this->btn_rechercher_client->Location = System::Drawing::Point(33, 101);
+			this->btn_rechercher_client->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_client.BackgroundImage")));
+			this->btn_rechercher_client->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_client->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_rechercher_client->ForeColor = System::Drawing::Color::Black;
+			this->btn_rechercher_client->Location = System::Drawing::Point(25, 117);
 			this->btn_rechercher_client->Name = L"btn_rechercher_client";
-			this->btn_rechercher_client->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_client->Size = System::Drawing::Size(94, 23);
 			this->btn_rechercher_client->TabIndex = 42;
 			this->btn_rechercher_client->Text = L"Rechercher";
 			this->btn_rechercher_client->UseVisualStyleBackColor = true;
@@ -1578,6 +1740,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::Control;
 			this->label3->Location = System::Drawing::Point(11, 59);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(51, 16);
@@ -1586,9 +1749,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_nom_client_affichage
 			// 
+			this->txtBx_nom_client_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_nom_client_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_nom_client_affichage->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->txtBx_nom_client_affichage->Location = System::Drawing::Point(14, 32);
 			this->txtBx_nom_client_affichage->Name = L"txtBx_nom_client_affichage";
-			this->txtBx_nom_client_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_nom_client_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_nom_client_affichage->TabIndex = 38;
 			// 
 			// label4
@@ -1596,6 +1763,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::Control;
 			this->label4->Location = System::Drawing::Point(11, 16);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(35, 16);
@@ -1604,23 +1772,30 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_Prenom_client_affichage
 			// 
+			this->txtBx_Prenom_client_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_Prenom_client_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtBx_Prenom_client_affichage->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->txtBx_Prenom_client_affichage->Location = System::Drawing::Point(14, 75);
 			this->txtBx_Prenom_client_affichage->Name = L"txtBx_Prenom_client_affichage";
-			this->txtBx_Prenom_client_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_Prenom_client_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_Prenom_client_affichage->TabIndex = 39;
 			this->txtBx_Prenom_client_affichage->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// tbPage_GestionPersonnel
 			// 
+			this->tbPage_GestionPersonnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_GestionPersonnel.BackgroundImage")));
 			this->tbPage_GestionPersonnel->Controls->Add(this->label10);
 			this->tbPage_GestionPersonnel->Controls->Add(this->txtBx_message_personnel);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox6);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox8);
 			this->tbPage_GestionPersonnel->Controls->Add(this->groupBox9);
+			this->tbPage_GestionPersonnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->tbPage_GestionPersonnel->Location = System::Drawing::Point(4, 22);
 			this->tbPage_GestionPersonnel->Name = L"tbPage_GestionPersonnel";
 			this->tbPage_GestionPersonnel->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_GestionPersonnel->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_GestionPersonnel->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_GestionPersonnel->TabIndex = 2;
 			this->tbPage_GestionPersonnel->Text = L"Gestion Personnel";
 			this->tbPage_GestionPersonnel->UseVisualStyleBackColor = true;
@@ -1630,6 +1805,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::SystemColors::Control;
 			this->label10->Location = System::Drawing::Point(313, 435);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(54, 16);
@@ -1638,6 +1814,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_message_personnel
 			// 
+			this->txtBx_message_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_message_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_message_personnel->Location = System::Drawing::Point(316, 454);
 			this->txtBx_message_personnel->Multiline = true;
 			this->txtBx_message_personnel->Name = L"txtBx_message_personnel";
@@ -1653,15 +1831,25 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox6->Controls->Add(this->groupBox7);
 			this->groupBox6->Controls->Add(this->btn_right_personnel);
 			this->groupBox6->Controls->Add(this->btn_last_personnel);
+			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox6->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox6->Location = System::Drawing::Point(52, 200);
 			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(182, 308);
+			this->groupBox6->Size = System::Drawing::Size(182, 296);
 			this->groupBox6->TabIndex = 54;
 			this->groupBox6->TabStop = false;
 			this->groupBox6->Text = L"Menu";
 			// 
 			// btn_Modifier_personnel
 			// 
+			this->btn_Modifier_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Modifier_personnel.BackgroundImage")));
+			this->btn_Modifier_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Modifier_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Modifier_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Modifier_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_Modifier_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_Modifier_personnel->Location = System::Drawing::Point(12, 21);
 			this->btn_Modifier_personnel->Name = L"btn_Modifier_personnel";
 			this->btn_Modifier_personnel->Size = System::Drawing::Size(157, 38);
@@ -1672,7 +1860,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_first_personnel
 			// 
-			this->btn_first_personnel->Location = System::Drawing::Point(6, 247);
+			this->btn_first_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_personnel.BackgroundImage")));
+			this->btn_first_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_first_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_first_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_first_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_first_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_first_personnel->Location = System::Drawing::Point(6, 249);
 			this->btn_first_personnel->Name = L"btn_first_personnel";
 			this->btn_first_personnel->Size = System::Drawing::Size(38, 38);
 			this->btn_first_personnel->TabIndex = 39;
@@ -1682,6 +1877,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_Supprimer_personnel
 			// 
+			this->btn_Supprimer_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Supprimer_personnel.BackgroundImage")));
+			this->btn_Supprimer_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Supprimer_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Supprimer_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Supprimer_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_Supprimer_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_Supprimer_personnel->Location = System::Drawing::Point(12, 65);
 			this->btn_Supprimer_personnel->Name = L"btn_Supprimer_personnel";
 			this->btn_Supprimer_personnel->Size = System::Drawing::Size(157, 38);
@@ -1692,7 +1894,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_left_personnel
 			// 
-			this->btn_left_personnel->Location = System::Drawing::Point(49, 247);
+			this->btn_left_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_personnel.BackgroundImage")));
+			this->btn_left_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_left_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_left_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_left_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_left_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_left_personnel->Location = System::Drawing::Point(49, 249);
 			this->btn_left_personnel->Name = L"btn_left_personnel";
 			this->btn_left_personnel->Size = System::Drawing::Size(38, 38);
 			this->btn_left_personnel->TabIndex = 40;
@@ -1704,16 +1913,26 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox7->Controls->Add(this->btn_Nouveau_personnel);
 			this->groupBox7->Controls->Add(this->btn_enregistrer_personnel);
+			this->groupBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox7->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox7->Location = System::Drawing::Point(6, 115);
 			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(169, 117);
+			this->groupBox7->Size = System::Drawing::Size(169, 128);
 			this->groupBox7->TabIndex = 47;
 			this->groupBox7->TabStop = false;
 			this->groupBox7->Text = L"Creer un nouveau personnel";
 			// 
 			// btn_Nouveau_personnel
 			// 
-			this->btn_Nouveau_personnel->Location = System::Drawing::Point(6, 19);
+			this->btn_Nouveau_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Nouveau_personnel.BackgroundImage")));
+			this->btn_Nouveau_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_Nouveau_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_Nouveau_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_Nouveau_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_Nouveau_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_Nouveau_personnel->Location = System::Drawing::Point(6, 36);
 			this->btn_Nouveau_personnel->Name = L"btn_Nouveau_personnel";
 			this->btn_Nouveau_personnel->Size = System::Drawing::Size(157, 38);
 			this->btn_Nouveau_personnel->TabIndex = 44;
@@ -1723,7 +1942,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_enregistrer_personnel
 			// 
-			this->btn_enregistrer_personnel->Location = System::Drawing::Point(6, 63);
+			this->btn_enregistrer_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_personnel.BackgroundImage")));
+			this->btn_enregistrer_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_enregistrer_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_enregistrer_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_enregistrer_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_enregistrer_personnel->Location = System::Drawing::Point(6, 80);
 			this->btn_enregistrer_personnel->Name = L"btn_enregistrer_personnel";
 			this->btn_enregistrer_personnel->Size = System::Drawing::Size(157, 38);
 			this->btn_enregistrer_personnel->TabIndex = 43;
@@ -1733,7 +1959,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_right_personnel
 			// 
-			this->btn_right_personnel->Location = System::Drawing::Point(93, 247);
+			this->btn_right_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_personnel.BackgroundImage")));
+			this->btn_right_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_right_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_right_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_right_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_right_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_right_personnel->Location = System::Drawing::Point(93, 249);
 			this->btn_right_personnel->Name = L"btn_right_personnel";
 			this->btn_right_personnel->Size = System::Drawing::Size(38, 38);
 			this->btn_right_personnel->TabIndex = 41;
@@ -1743,7 +1976,14 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_last_personnel
 			// 
-			this->btn_last_personnel->Location = System::Drawing::Point(137, 247);
+			this->btn_last_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_personnel.BackgroundImage")));
+			this->btn_last_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_last_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_last_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_last_personnel->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_last_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_last_personnel->Location = System::Drawing::Point(137, 249);
 			this->btn_last_personnel->Name = L"btn_last_personnel";
 			this->btn_last_personnel->Size = System::Drawing::Size(38, 38);
 			this->btn_last_personnel->TabIndex = 42;
@@ -1773,6 +2013,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox8->Controls->Add(this->label19);
 			this->groupBox8->Controls->Add(this->label20);
 			this->groupBox8->Controls->Add(this->label22);
+			this->groupBox8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox8->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox8->Location = System::Drawing::Point(316, 6);
 			this->groupBox8->Name = L"groupBox8";
 			this->groupBox8->Size = System::Drawing::Size(683, 426);
@@ -1782,17 +2025,22 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_num_rue_personnel
 			// 
+			this->txtBx_num_rue_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_num_rue_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_num_rue_personnel->Location = System::Drawing::Point(39, 238);
 			this->txtBx_num_rue_personnel->Name = L"txtBx_num_rue_personnel";
-			this->txtBx_num_rue_personnel->Size = System::Drawing::Size(170, 20);
+			this->txtBx_num_rue_personnel->Size = System::Drawing::Size(170, 21);
 			this->txtBx_num_rue_personnel->TabIndex = 45;
 			// 
 			// label21
 			// 
 			this->label21->AutoSize = true;
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label21->ForeColor = System::Drawing::SystemColors::Control;
 			this->label21->Location = System::Drawing::Point(8, 241);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(29, 13);
+			this->label21->Size = System::Drawing::Size(35, 16);
 			this->label21->TabIndex = 46;
 			this->label21->Text = L"Num";
 			// 
@@ -1808,6 +2056,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox10->Controls->Add(this->label13);
 			this->groupBox10->Controls->Add(this->txtBx_prenom_SH);
 			this->groupBox10->Controls->Add(this->txtBx_nom_SH);
+			this->groupBox10->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox10->Location = System::Drawing::Point(305, 75);
 			this->groupBox10->Name = L"groupBox10";
 			this->groupBox10->Size = System::Drawing::Size(372, 231);
@@ -1817,9 +2066,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_selectionner_SH
 			// 
-			this->btn_selectionner_SH->Location = System::Drawing::Point(226, 193);
+			this->btn_selectionner_SH->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_SH.BackgroundImage")));
+			this->btn_selectionner_SH->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_selectionner_SH->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_SH->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_selectionner_SH->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_selectionner_SH->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_selectionner_SH->Location = System::Drawing::Point(270, 193);
 			this->btn_selectionner_SH->Name = L"btn_selectionner_SH";
-			this->btn_selectionner_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_SH->Size = System::Drawing::Size(96, 23);
 			this->btn_selectionner_SH->TabIndex = 46;
 			this->btn_selectionner_SH->Text = L"Selectionner";
 			this->btn_selectionner_SH->UseVisualStyleBackColor = true;
@@ -1827,9 +2083,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_rechercher_SH
 			// 
-			this->btn_rechercher_SH->Location = System::Drawing::Point(40, 193);
+			this->btn_rechercher_SH->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_SH.BackgroundImage")));
+			this->btn_rechercher_SH->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_SH->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_SH->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_SH->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_rechercher_SH->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_rechercher_SH->Location = System::Drawing::Point(64, 193);
 			this->btn_rechercher_SH->Name = L"btn_rechercher_SH";
-			this->btn_rechercher_SH->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_SH->Size = System::Drawing::Size(88, 23);
 			this->btn_rechercher_SH->TabIndex = 53;
 			this->btn_rechercher_SH->Text = L"Rechercher";
 			this->btn_rechercher_SH->UseVisualStyleBackColor = true;
@@ -1840,6 +2103,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label37->AutoSize = true;
 			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label37->ForeColor = System::Drawing::SystemColors::Control;
 			this->label37->Location = System::Drawing::Point(155, 32);
 			this->label37->Name = L"label37";
 			this->label37->Size = System::Drawing::Size(103, 16);
@@ -1849,6 +2113,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_DE_SH
 			// 
 			this->dataGrid_DE_SH->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_DE_SH->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_DE_SH->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_DE_SH->Location = System::Drawing::Point(158, 51);
 			this->dataGrid_DE_SH->Name = L"dataGrid_DE_SH";
@@ -1861,6 +2126,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::SystemColors::Control;
 			this->label12->Location = System::Drawing::Point(6, 16);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(78, 32);
@@ -1869,10 +2135,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_SH
 			// 
+			this->txtBx_ID_SH->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_SH->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_SH->Enabled = false;
 			this->txtBx_ID_SH->Location = System::Drawing::Point(9, 51);
 			this->txtBx_ID_SH->Name = L"txtBx_ID_SH";
-			this->txtBx_ID_SH->Size = System::Drawing::Size(143, 20);
+			this->txtBx_ID_SH->Size = System::Drawing::Size(143, 21);
 			this->txtBx_ID_SH->TabIndex = 49;
 			// 
 			// label26
@@ -1880,6 +2148,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label26->ForeColor = System::Drawing::SystemColors::Control;
 			this->label26->Location = System::Drawing::Point(6, 132);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(122, 32);
@@ -1891,6 +2160,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::SystemColors::Control;
 			this->label13->Location = System::Drawing::Point(6, 74);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(109, 32);
@@ -1899,16 +2169,20 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_prenom_SH
 			// 
+			this->txtBx_prenom_SH->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_prenom_SH->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_prenom_SH->Location = System::Drawing::Point(9, 167);
 			this->txtBx_prenom_SH->Name = L"txtBx_prenom_SH";
-			this->txtBx_prenom_SH->Size = System::Drawing::Size(143, 20);
+			this->txtBx_prenom_SH->Size = System::Drawing::Size(143, 21);
 			this->txtBx_prenom_SH->TabIndex = 46;
 			// 
 			// txtBx_nom_SH
 			// 
+			this->txtBx_nom_SH->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_nom_SH->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_nom_SH->Location = System::Drawing::Point(9, 109);
 			this->txtBx_nom_SH->Name = L"txtBx_nom_SH";
-			this->txtBx_nom_SH->Size = System::Drawing::Size(143, 20);
+			this->txtBx_nom_SH->Size = System::Drawing::Size(143, 21);
 			this->txtBx_nom_SH->TabIndex = 45;
 			// 
 			// label11
@@ -1916,6 +2190,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::SystemColors::Control;
 			this->label11->Location = System::Drawing::Point(6, 16);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(77, 16);
@@ -1924,17 +2199,21 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_personnel
 			// 
+			this->txtBx_ID_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_personnel->Enabled = false;
 			this->txtBx_ID_personnel->Location = System::Drawing::Point(9, 32);
 			this->txtBx_ID_personnel->Name = L"txtBx_ID_personnel";
-			this->txtBx_ID_personnel->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_personnel->Size = System::Drawing::Size(200, 21);
 			this->txtBx_ID_personnel->TabIndex = 42;
 			// 
 			// txtBx_DE_personnel
 			// 
+			this->txtBx_DE_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_DE_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_DE_personnel->Location = System::Drawing::Point(9, 170);
 			this->txtBx_DE_personnel->Name = L"txtBx_DE_personnel";
-			this->txtBx_DE_personnel->Size = System::Drawing::Size(200, 20);
+			this->txtBx_DE_personnel->Size = System::Drawing::Size(200, 21);
 			this->txtBx_DE_personnel->TabIndex = 40;
 			// 
 			// label14
@@ -1942,6 +2221,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::SystemColors::Control;
 			this->label14->Location = System::Drawing::Point(6, 55);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(35, 16);
@@ -1950,63 +2230,82 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_Nom_personnel_information
 			// 
+			this->txtBx_Nom_personnel_information->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_Nom_personnel_information->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_Nom_personnel_information->Location = System::Drawing::Point(9, 71);
 			this->txtBx_Nom_personnel_information->Name = L"txtBx_Nom_personnel_information";
-			this->txtBx_Nom_personnel_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_Nom_personnel_information->Size = System::Drawing::Size(200, 21);
 			this->txtBx_Nom_personnel_information->TabIndex = 20;
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label15->ForeColor = System::Drawing::SystemColors::Control;
 			this->label15->Location = System::Drawing::Point(8, 345);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(30, 13);
+			this->label15->Size = System::Drawing::Size(32, 16);
 			this->label15->TabIndex = 36;
 			this->label15->Text = L"Pays";
 			// 
 			// txtBx_Prenom_personnel_information
 			// 
+			this->txtBx_Prenom_personnel_information->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_Prenom_personnel_information->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_Prenom_personnel_information->Location = System::Drawing::Point(9, 114);
 			this->txtBx_Prenom_personnel_information->Name = L"txtBx_Prenom_personnel_information";
-			this->txtBx_Prenom_personnel_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_Prenom_personnel_information->Size = System::Drawing::Size(200, 21);
 			this->txtBx_Prenom_personnel_information->TabIndex = 21;
 			// 
 			// txtBx_pays_personnel
 			// 
+			this->txtBx_pays_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_pays_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_pays_personnel->Location = System::Drawing::Point(39, 342);
 			this->txtBx_pays_personnel->Name = L"txtBx_pays_personnel";
-			this->txtBx_pays_personnel->Size = System::Drawing::Size(170, 20);
+			this->txtBx_pays_personnel->Size = System::Drawing::Size(170, 21);
 			this->txtBx_pays_personnel->TabIndex = 35;
 			// 
 			// label16
 			// 
 			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label16->ForeColor = System::Drawing::SystemColors::Control;
 			this->label16->Location = System::Drawing::Point(8, 319);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(63, 13);
+			this->label16->Size = System::Drawing::Size(71, 16);
 			this->label16->TabIndex = 34;
 			this->label16->Text = L"Code postal";
 			// 
 			// txtBx_rue_personnel
 			// 
+			this->txtBx_rue_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_rue_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_rue_personnel->Location = System::Drawing::Point(39, 264);
 			this->txtBx_rue_personnel->Name = L"txtBx_rue_personnel";
-			this->txtBx_rue_personnel->Size = System::Drawing::Size(170, 20);
+			this->txtBx_rue_personnel->Size = System::Drawing::Size(170, 21);
 			this->txtBx_rue_personnel->TabIndex = 23;
 			// 
 			// txtBx_code_postal_personnel
 			// 
+			this->txtBx_code_postal_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_code_postal_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_code_postal_personnel->Location = System::Drawing::Point(77, 316);
 			this->txtBx_code_postal_personnel->Name = L"txtBx_code_postal_personnel";
-			this->txtBx_code_postal_personnel->Size = System::Drawing::Size(132, 20);
+			this->txtBx_code_postal_personnel->Size = System::Drawing::Size(132, 21);
 			this->txtBx_code_postal_personnel->TabIndex = 33;
 			// 
 			// label17
 			// 
 			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->ForeColor = System::Drawing::SystemColors::Control;
 			this->label17->Location = System::Drawing::Point(8, 293);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(26, 13);
+			this->label17->Size = System::Drawing::Size(31, 16);
 			this->label17->TabIndex = 32;
 			this->label17->Text = L"Ville";
 			// 
@@ -2015,6 +2314,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label18->ForeColor = System::Drawing::SystemColors::Control;
 			this->label18->Location = System::Drawing::Point(6, 98);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(51, 16);
@@ -2023,9 +2323,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ville_personnel
 			// 
+			this->txtBx_ville_personnel->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ville_personnel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ville_personnel->Location = System::Drawing::Point(39, 290);
 			this->txtBx_ville_personnel->Name = L"txtBx_ville_personnel";
-			this->txtBx_ville_personnel->Size = System::Drawing::Size(170, 20);
+			this->txtBx_ville_personnel->Size = System::Drawing::Size(170, 21);
 			this->txtBx_ville_personnel->TabIndex = 31;
 			// 
 			// label19
@@ -2033,6 +2335,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label19->AutoSize = true;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label19->ForeColor = System::Drawing::SystemColors::Control;
 			this->label19->Location = System::Drawing::Point(6, 151);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(103, 16);
@@ -2042,9 +2345,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label20
 			// 
 			this->label20->AutoSize = true;
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label20->ForeColor = System::Drawing::SystemColors::Control;
 			this->label20->Location = System::Drawing::Point(8, 267);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(27, 13);
+			this->label20->Size = System::Drawing::Size(29, 16);
 			this->label20->TabIndex = 30;
 			this->label20->Text = L"Rue";
 			// 
@@ -2053,6 +2359,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label22->AutoSize = true;
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label22->ForeColor = System::Drawing::SystemColors::Control;
 			this->label22->Location = System::Drawing::Point(6, 215);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(119, 16);
@@ -2069,18 +2376,28 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox9->Controls->Add(this->txtBx_nom_personnel_affichage);
 			this->groupBox9->Controls->Add(this->label25);
 			this->groupBox9->Controls->Add(this->txtBx_prenom_personnel_affichage);
+			this->groupBox9->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox9->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox9->Location = System::Drawing::Point(9, 6);
 			this->groupBox9->Name = L"groupBox9";
-			this->groupBox9->Size = System::Drawing::Size(301, 164);
+			this->groupBox9->Size = System::Drawing::Size(301, 188);
 			this->groupBox9->TabIndex = 51;
 			this->groupBox9->TabStop = false;
 			this->groupBox9->Text = L"Affichage";
 			// 
 			// btn_selectionner_personnel
 			// 
-			this->btn_selectionner_personnel->Location = System::Drawing::Point(33, 130);
+			this->btn_selectionner_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_personnel.BackgroundImage")));
+			this->btn_selectionner_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_selectionner_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_selectionner_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_selectionner_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_selectionner_personnel->Location = System::Drawing::Point(23, 143);
 			this->btn_selectionner_personnel->Name = L"btn_selectionner_personnel";
-			this->btn_selectionner_personnel->Size = System::Drawing::Size(75, 23);
+			this->btn_selectionner_personnel->Size = System::Drawing::Size(97, 23);
 			this->btn_selectionner_personnel->TabIndex = 45;
 			this->btn_selectionner_personnel->Text = L"Selectionner";
 			this->btn_selectionner_personnel->UseVisualStyleBackColor = true;
@@ -2091,6 +2408,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label23->AutoSize = true;
 			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label23->ForeColor = System::Drawing::SystemColors::Control;
 			this->label23->Location = System::Drawing::Point(134, 16);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(103, 16);
@@ -2100,6 +2418,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_DE_personnel_affichage
 			// 
 			this->dataGrid_DE_personnel_affichage->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_DE_personnel_affichage->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_DE_personnel_affichage->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_DE_personnel_affichage->Location = System::Drawing::Point(137, 32);
 			this->dataGrid_DE_personnel_affichage->Name = L"dataGrid_DE_personnel_affichage";
@@ -2109,9 +2428,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_rechercher_personnel
 			// 
-			this->btn_rechercher_personnel->Location = System::Drawing::Point(33, 101);
+			this->btn_rechercher_personnel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_personnel.BackgroundImage")));
+			this->btn_rechercher_personnel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_personnel->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_rechercher_personnel->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_rechercher_personnel->Location = System::Drawing::Point(23, 111);
 			this->btn_rechercher_personnel->Name = L"btn_rechercher_personnel";
-			this->btn_rechercher_personnel->Size = System::Drawing::Size(75, 23);
+			this->btn_rechercher_personnel->Size = System::Drawing::Size(97, 23);
 			this->btn_rechercher_personnel->TabIndex = 42;
 			this->btn_rechercher_personnel->Text = L"Rechercher";
 			this->btn_rechercher_personnel->UseVisualStyleBackColor = true;
@@ -2122,6 +2448,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label24->AutoSize = true;
 			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label24->ForeColor = System::Drawing::SystemColors::Control;
 			this->label24->Location = System::Drawing::Point(11, 59);
 			this->label24->Name = L"label24";
 			this->label24->Size = System::Drawing::Size(51, 16);
@@ -2130,9 +2457,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_nom_personnel_affichage
 			// 
+			this->txtBx_nom_personnel_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_nom_personnel_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_nom_personnel_affichage->Location = System::Drawing::Point(14, 32);
 			this->txtBx_nom_personnel_affichage->Name = L"txtBx_nom_personnel_affichage";
-			this->txtBx_nom_personnel_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_nom_personnel_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_nom_personnel_affichage->TabIndex = 38;
 			// 
 			// label25
@@ -2140,6 +2469,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label25->AutoSize = true;
 			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label25->ForeColor = System::Drawing::SystemColors::Control;
 			this->label25->Location = System::Drawing::Point(11, 16);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(35, 16);
@@ -2148,14 +2478,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_prenom_personnel_affichage
 			// 
+			this->txtBx_prenom_personnel_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_prenom_personnel_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_prenom_personnel_affichage->Location = System::Drawing::Point(14, 75);
 			this->txtBx_prenom_personnel_affichage->Name = L"txtBx_prenom_personnel_affichage";
-			this->txtBx_prenom_personnel_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_prenom_personnel_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_prenom_personnel_affichage->TabIndex = 39;
 			// 
 			// tbPage_GestionCommande
 			// 
-			this->tbPage_GestionCommande->Controls->Add(this->groupBox20);
+			this->tbPage_GestionCommande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_GestionCommande.BackgroundImage")));
 			this->tbPage_GestionCommande->Controls->Add(this->txtBx_message_commande);
 			this->tbPage_GestionCommande->Controls->Add(this->label57);
 			this->tbPage_GestionCommande->Controls->Add(this->groupBox18);
@@ -2164,63 +2496,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionCommande->Location = System::Drawing::Point(4, 22);
 			this->tbPage_GestionCommande->Name = L"tbPage_GestionCommande";
 			this->tbPage_GestionCommande->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_GestionCommande->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_GestionCommande->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_GestionCommande->TabIndex = 3;
 			this->tbPage_GestionCommande->Text = L"Gestion Commande";
 			this->tbPage_GestionCommande->UseVisualStyleBackColor = true;
 			this->tbPage_GestionCommande->Click += gcnew System::EventHandler(this, &MyForm::tbPage_GestionCommande_Click);
 			// 
-			// groupBox20
-			// 
-			this->groupBox20->Controls->Add(this->button3);
-			this->groupBox20->Controls->Add(this->button2);
-			this->groupBox20->Controls->Add(this->textBox7);
-			this->groupBox20->Controls->Add(this->label58);
-			this->groupBox20->Location = System::Drawing::Point(153, 138);
-			this->groupBox20->Name = L"groupBox20";
-			this->groupBox20->Size = System::Drawing::Size(157, 190);
-			this->groupBox20->TabIndex = 57;
-			this->groupBox20->TabStop = false;
-			this->groupBox20->Text = L"Facture";
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(36, 128);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(83, 43);
-			this->button3->TabIndex = 43;
-			this->button3->Text = L"Génerer la facture";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(5, 73);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(148, 23);
-			this->button2->TabIndex = 42;
-			this->button2->Text = L"Selectionner un dossier...";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(5, 102);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(145, 20);
-			this->textBox7->TabIndex = 38;
-			// 
-			// label58
-			// 
-			this->label58->AutoSize = true;
-			this->label58->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label58->Location = System::Drawing::Point(16, 22);
-			this->label58->Name = L"label58";
-			this->label58->Size = System::Drawing::Size(135, 32);
-			this->label58->TabIndex = 40;
-			this->label58->Text = L"Choisir un dossier pour \r\nla facture";
-			// 
 			// txtBx_message_commande
 			// 
+			this->txtBx_message_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_message_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_message_commande->Location = System::Drawing::Point(11, 346);
 			this->txtBx_message_commande->Multiline = true;
 			this->txtBx_message_commande->Name = L"txtBx_message_commande";
@@ -2232,6 +2517,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label57->AutoSize = true;
 			this->label57->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label57->ForeColor = System::Drawing::SystemColors::Control;
 			this->label57->Location = System::Drawing::Point(8, 330);
 			this->label57->Name = L"label57";
 			this->label57->Size = System::Drawing::Size(54, 16);
@@ -2243,7 +2529,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox18->Controls->Add(this->btn_rechercher_commande);
 			this->groupBox18->Controls->Add(this->txtBx_reference_commande_affichage);
 			this->groupBox18->Controls->Add(this->label31);
-			this->groupBox18->Location = System::Drawing::Point(153, 6);
+			this->groupBox18->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox18->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->groupBox18->Location = System::Drawing::Point(153, 100);
 			this->groupBox18->Name = L"groupBox18";
 			this->groupBox18->Size = System::Drawing::Size(157, 126);
 			this->groupBox18->TabIndex = 56;
@@ -2252,6 +2541,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_rechercher_commande
 			// 
+			this->btn_rechercher_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_commande.BackgroundImage")));
+			this->btn_rechercher_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_commande->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_rechercher_commande->Location = System::Drawing::Point(37, 87);
 			this->btn_rechercher_commande->Name = L"btn_rechercher_commande";
 			this->btn_rechercher_commande->Size = System::Drawing::Size(82, 23);
@@ -2262,9 +2556,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_reference_commande_affichage
 			// 
+			this->txtBx_reference_commande_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_reference_commande_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_reference_commande_affichage->Location = System::Drawing::Point(20, 61);
 			this->txtBx_reference_commande_affichage->Name = L"txtBx_reference_commande_affichage";
-			this->txtBx_reference_commande_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_reference_commande_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_reference_commande_affichage->TabIndex = 38;
 			// 
 			// label31
@@ -2272,6 +2568,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label31->AutoSize = true;
 			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label31->ForeColor = System::Drawing::SystemColors::Control;
 			this->label31->Location = System::Drawing::Point(17, 27);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(93, 32);
@@ -2287,6 +2584,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox15->Controls->Add(this->groupBox16);
 			this->groupBox15->Controls->Add(this->btn_right_commande);
 			this->groupBox15->Controls->Add(this->btn_last_commande);
+			this->groupBox15->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox15->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox15->Location = System::Drawing::Point(11, 6);
 			this->groupBox15->Name = L"groupBox15";
 			this->groupBox15->Size = System::Drawing::Size(136, 322);
@@ -2296,6 +2596,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_modifier_commande
 			// 
+			this->btn_modifier_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_modifier_commande.BackgroundImage")));
+			this->btn_modifier_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_modifier_commande->FlatAppearance->BorderSize = 0;
+			this->btn_modifier_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_modifier_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_modifier_commande->Location = System::Drawing::Point(12, 21);
 			this->btn_modifier_commande->Name = L"btn_modifier_commande";
 			this->btn_modifier_commande->Size = System::Drawing::Size(113, 38);
@@ -2306,6 +2611,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_first_commande
 			// 
+			this->btn_first_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_commande.BackgroundImage")));
+			this->btn_first_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_first_commande->FlatAppearance->BorderSize = 0;
+			this->btn_first_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_first_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_first_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_first_commande->Location = System::Drawing::Point(24, 235);
 			this->btn_first_commande->Name = L"btn_first_commande";
 			this->btn_first_commande->Size = System::Drawing::Size(38, 38);
@@ -2316,6 +2628,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_supprimer_commande
 			// 
+			this->btn_supprimer_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_supprimer_commande.BackgroundImage")));
+			this->btn_supprimer_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_supprimer_commande->FlatAppearance->BorderSize = 0;
+			this->btn_supprimer_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_supprimer_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_supprimer_commande->Location = System::Drawing::Point(12, 65);
 			this->btn_supprimer_commande->Name = L"btn_supprimer_commande";
 			this->btn_supprimer_commande->Size = System::Drawing::Size(113, 38);
@@ -2326,6 +2643,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_left_commande
 			// 
+			this->btn_left_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_commande.BackgroundImage")));
+			this->btn_left_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_left_commande->FlatAppearance->BorderSize = 0;
+			this->btn_left_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_left_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_left_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_left_commande->Location = System::Drawing::Point(67, 235);
 			this->btn_left_commande->Name = L"btn_left_commande";
 			this->btn_left_commande->Size = System::Drawing::Size(38, 38);
@@ -2338,6 +2662,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox16->Controls->Add(this->btn_nouveau_commande);
 			this->groupBox16->Controls->Add(this->enregistrer);
+			this->groupBox16->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox16->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox16->Location = System::Drawing::Point(6, 105);
 			this->groupBox16->Name = L"groupBox16";
 			this->groupBox16->Size = System::Drawing::Size(125, 127);
@@ -2347,6 +2674,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_nouveau_commande
 			// 
+			this->btn_nouveau_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_nouveau_commande.BackgroundImage")));
+			this->btn_nouveau_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_nouveau_commande->FlatAppearance->BorderSize = 0;
+			this->btn_nouveau_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_nouveau_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_nouveau_commande->Location = System::Drawing::Point(6, 33);
 			this->btn_nouveau_commande->Name = L"btn_nouveau_commande";
 			this->btn_nouveau_commande->Size = System::Drawing::Size(113, 38);
@@ -2357,6 +2689,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// enregistrer
 			// 
+			this->enregistrer->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"enregistrer.BackgroundImage")));
+			this->enregistrer->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->enregistrer->FlatAppearance->BorderSize = 0;
+			this->enregistrer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->enregistrer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->enregistrer->Location = System::Drawing::Point(6, 77);
 			this->enregistrer->Name = L"enregistrer";
 			this->enregistrer->Size = System::Drawing::Size(113, 38);
@@ -2367,6 +2704,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_right_commande
 			// 
+			this->btn_right_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_commande.BackgroundImage")));
+			this->btn_right_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_right_commande->FlatAppearance->BorderSize = 0;
+			this->btn_right_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_right_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_right_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_right_commande->Location = System::Drawing::Point(24, 279);
 			this->btn_right_commande->Name = L"btn_right_commande";
 			this->btn_right_commande->Size = System::Drawing::Size(38, 38);
@@ -2377,6 +2721,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_last_commande
 			// 
+			this->btn_last_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_commande.BackgroundImage")));
+			this->btn_last_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_last_commande->FlatAppearance->BorderSize = 0;
+			this->btn_last_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_last_commande->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_last_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_last_commande->Location = System::Drawing::Point(67, 279);
 			this->btn_last_commande->Name = L"btn_last_commande";
 			this->btn_last_commande->Size = System::Drawing::Size(38, 38);
@@ -2405,6 +2756,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox17->Controls->Add(this->txtBx_mode_payment);
 			this->groupBox17->Controls->Add(this->label52);
 			this->groupBox17->Controls->Add(this->label54);
+			this->groupBox17->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox17->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox17->Location = System::Drawing::Point(316, 6);
 			this->groupBox17->Name = L"groupBox17";
 			this->groupBox17->Size = System::Drawing::Size(683, 540);
@@ -2417,6 +2771,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label61->AutoSize = true;
 			this->label61->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label61->ForeColor = System::Drawing::SystemColors::Control;
 			this->label61->Location = System::Drawing::Point(543, 11);
 			this->label61->Name = L"label61";
 			this->label61->Size = System::Drawing::Size(104, 16);
@@ -2431,6 +2786,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox30->Controls->Add(this->label70);
 			this->groupBox30->Controls->Add(this->txtBxMontant_total_HT);
 			this->groupBox30->Controls->Add(this->label69);
+			this->groupBox30->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox30->Location = System::Drawing::Point(9, 463);
 			this->groupBox30->Name = L"groupBox30";
 			this->groupBox30->Size = System::Drawing::Size(200, 71);
@@ -2440,10 +2796,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxMontant_total_TTC
 			// 
+			this->txtBxMontant_total_TTC->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxMontant_total_TTC->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxMontant_total_TTC->Enabled = false;
 			this->txtBxMontant_total_TTC->Location = System::Drawing::Point(124, 32);
 			this->txtBxMontant_total_TTC->Name = L"txtBxMontant_total_TTC";
-			this->txtBxMontant_total_TTC->Size = System::Drawing::Size(70, 20);
+			this->txtBxMontant_total_TTC->Size = System::Drawing::Size(70, 21);
 			this->txtBxMontant_total_TTC->TabIndex = 60;
 			// 
 			// label71
@@ -2451,6 +2809,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label71->AutoSize = true;
 			this->label71->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label71->ForeColor = System::Drawing::SystemColors::Control;
 			this->label71->Location = System::Drawing::Point(122, 13);
 			this->label71->Name = L"label71";
 			this->label71->Size = System::Drawing::Size(29, 16);
@@ -2459,10 +2818,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxMontant_total_TVA
 			// 
+			this->txtBxMontant_total_TVA->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxMontant_total_TVA->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxMontant_total_TVA->Enabled = false;
 			this->txtBxMontant_total_TVA->Location = System::Drawing::Point(75, 32);
 			this->txtBxMontant_total_TVA->Name = L"txtBxMontant_total_TVA";
-			this->txtBxMontant_total_TVA->Size = System::Drawing::Size(43, 20);
+			this->txtBxMontant_total_TVA->Size = System::Drawing::Size(43, 21);
 			this->txtBxMontant_total_TVA->TabIndex = 58;
 			// 
 			// label70
@@ -2470,6 +2831,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label70->AutoSize = true;
 			this->label70->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label70->ForeColor = System::Drawing::SystemColors::Control;
 			this->label70->Location = System::Drawing::Point(72, 13);
 			this->label70->Name = L"label70";
 			this->label70->Size = System::Drawing::Size(31, 16);
@@ -2478,10 +2840,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxMontant_total_HT
 			// 
+			this->txtBxMontant_total_HT->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxMontant_total_HT->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxMontant_total_HT->Enabled = false;
 			this->txtBxMontant_total_HT->Location = System::Drawing::Point(6, 32);
 			this->txtBxMontant_total_HT->Name = L"txtBxMontant_total_HT";
-			this->txtBxMontant_total_HT->Size = System::Drawing::Size(63, 20);
+			this->txtBxMontant_total_HT->Size = System::Drawing::Size(63, 21);
 			this->txtBxMontant_total_HT->TabIndex = 56;
 			// 
 			// label69
@@ -2489,6 +2853,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label69->AutoSize = true;
 			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label69->ForeColor = System::Drawing::SystemColors::Control;
 			this->label69->Location = System::Drawing::Point(3, 13);
 			this->label69->Name = L"label69";
 			this->label69->Size = System::Drawing::Size(24, 16);
@@ -2497,6 +2862,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// dataGrid_date_paiement_client_commande
 			// 
+			this->dataGrid_date_paiement_client_commande->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_date_paiement_client_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_date_paiement_client_commande->Location = System::Drawing::Point(546, 30);
 			this->dataGrid_date_paiement_client_commande->Name = L"dataGrid_date_paiement_client_commande";
@@ -2506,10 +2872,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_reference_commande
 			// 
+			this->txtBx_reference_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_reference_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_reference_commande->Enabled = false;
 			this->txtBx_reference_commande->Location = System::Drawing::Point(9, 437);
 			this->txtBx_reference_commande->Name = L"txtBx_reference_commande";
-			this->txtBx_reference_commande->Size = System::Drawing::Size(200, 20);
+			this->txtBx_reference_commande->Size = System::Drawing::Size(200, 21);
 			this->txtBx_reference_commande->TabIndex = 54;
 			// 
 			// label43
@@ -2517,6 +2885,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label43->AutoSize = true;
 			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label43->ForeColor = System::Drawing::SystemColors::Control;
 			this->label43->Location = System::Drawing::Point(6, 418);
 			this->label43->Name = L"label43";
 			this->label43->Size = System::Drawing::Size(154, 16);
@@ -2551,6 +2920,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox19->Controls->Add(this->label41);
 			this->groupBox19->Controls->Add(this->label56);
 			this->groupBox19->Controls->Add(this->txtBx_prenom_client_commande);
+			this->groupBox19->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox19->Location = System::Drawing::Point(215, 169);
 			this->groupBox19->Name = L"groupBox19";
 			this->groupBox19->Size = System::Drawing::Size(467, 371);
@@ -2560,10 +2930,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_client_commande
 			// 
+			this->txtBx_ID_client_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_client_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_client_commande->Enabled = false;
 			this->txtBx_ID_client_commande->Location = System::Drawing::Point(9, 44);
 			this->txtBx_ID_client_commande->Name = L"txtBx_ID_client_commande";
-			this->txtBx_ID_client_commande->Size = System::Drawing::Size(117, 20);
+			this->txtBx_ID_client_commande->Size = System::Drawing::Size(117, 21);
 			this->txtBx_ID_client_commande->TabIndex = 70;
 			// 
 			// label47
@@ -2571,6 +2943,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label47->AutoSize = true;
 			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label47->ForeColor = System::Drawing::SystemColors::Control;
 			this->label47->Location = System::Drawing::Point(6, 25);
 			this->label47->Name = L"label47";
 			this->label47->Size = System::Drawing::Size(54, 16);
@@ -2579,10 +2952,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxID_adresse_commande
 			// 
+			this->txtBxID_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxID_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxID_adresse_commande->Enabled = false;
 			this->txtBxID_adresse_commande->Location = System::Drawing::Point(406, 44);
 			this->txtBxID_adresse_commande->Name = L"txtBxID_adresse_commande";
-			this->txtBxID_adresse_commande->Size = System::Drawing::Size(52, 20);
+			this->txtBxID_adresse_commande->Size = System::Drawing::Size(52, 21);
 			this->txtBxID_adresse_commande->TabIndex = 68;
 			// 
 			// label38
@@ -2590,6 +2965,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label38->AutoSize = true;
 			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label38->ForeColor = System::Drawing::SystemColors::Control;
 			this->label38->Location = System::Drawing::Point(10, 196);
 			this->label38->Name = L"label38";
 			this->label38->Size = System::Drawing::Size(114, 16);
@@ -2599,15 +2975,23 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label49
 			// 
 			this->label49->AutoSize = true;
+			this->label49->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label49->ForeColor = System::Drawing::SystemColors::Control;
 			this->label49->Location = System::Drawing::Point(342, 47);
 			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(58, 13);
+			this->label49->Size = System::Drawing::Size(64, 16);
 			this->label49->TabIndex = 69;
 			this->label49->Text = L"ID adresse";
 			// 
 			// btn_selectionner_adresse_commande
 			// 
-			this->btn_selectionner_adresse_commande->Location = System::Drawing::Point(10, 326);
+			this->btn_selectionner_adresse_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_adresse_commande.BackgroundImage")));
+			this->btn_selectionner_adresse_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_selectionner_adresse_commande->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_adresse_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_selectionner_adresse_commande->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->btn_selectionner_adresse_commande->Location = System::Drawing::Point(10, 324);
 			this->btn_selectionner_adresse_commande->Name = L"btn_selectionner_adresse_commande";
 			this->btn_selectionner_adresse_commande->Size = System::Drawing::Size(93, 41);
 			this->btn_selectionner_adresse_commande->TabIndex = 57;
@@ -2617,14 +3001,17 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxRue_adresse_commande
 			// 
+			this->txtBxRue_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxRue_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxRue_adresse_commande->Location = System::Drawing::Point(294, 69);
 			this->txtBxRue_adresse_commande->Name = L"txtBxRue_adresse_commande";
-			this->txtBxRue_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxRue_adresse_commande->Size = System::Drawing::Size(164, 21);
 			this->txtBxRue_adresse_commande->TabIndex = 66;
 			// 
 			// dataGrid_adresse_commande
 			// 
 			this->dataGrid_adresse_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_adresse_commande->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_adresse_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_adresse_commande->Location = System::Drawing::Point(10, 215);
 			this->dataGrid_adresse_commande->Name = L"dataGrid_adresse_commande";
@@ -2635,30 +3022,43 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label50
 			// 
 			this->label50->AutoSize = true;
+			this->label50->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label50->ForeColor = System::Drawing::SystemColors::Control;
 			this->label50->Location = System::Drawing::Point(263, 72);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(27, 13);
+			this->label50->Size = System::Drawing::Size(29, 16);
 			this->label50->TabIndex = 67;
 			this->label50->Text = L"Rue";
 			// 
 			// label51
 			// 
 			this->label51->AutoSize = true;
+			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label51->ForeColor = System::Drawing::SystemColors::Control;
 			this->label51->Location = System::Drawing::Point(263, 150);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(30, 13);
+			this->label51->Size = System::Drawing::Size(32, 16);
 			this->label51->TabIndex = 65;
 			this->label51->Text = L"Pays";
 			// 
 			// txtBxPays_adresse_commande
 			// 
+			this->txtBxPays_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxPays_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxPays_adresse_commande->Location = System::Drawing::Point(294, 147);
 			this->txtBxPays_adresse_commande->Name = L"txtBxPays_adresse_commande";
-			this->txtBxPays_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxPays_adresse_commande->Size = System::Drawing::Size(164, 21);
 			this->txtBxPays_adresse_commande->TabIndex = 64;
 			// 
 			// btn_rechercher_client_commande
 			// 
+			this->btn_rechercher_client_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_client_commande.BackgroundImage")));
+			this->btn_rechercher_client_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_client_commande->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_client_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_client_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_rechercher_client_commande->Location = System::Drawing::Point(9, 151);
 			this->btn_rechercher_client_commande->Name = L"btn_rechercher_client_commande";
 			this->btn_rechercher_client_commande->Size = System::Drawing::Size(75, 23);
@@ -2670,9 +3070,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label53
 			// 
 			this->label53->AutoSize = true;
+			this->label53->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label53->ForeColor = System::Drawing::SystemColors::Control;
 			this->label53->Location = System::Drawing::Point(263, 124);
 			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(63, 13);
+			this->label53->Size = System::Drawing::Size(71, 16);
 			this->label53->TabIndex = 63;
 			this->label53->Text = L"Code postal";
 			// 
@@ -2681,6 +3084,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label39->AutoSize = true;
 			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label39->ForeColor = System::Drawing::SystemColors::Control;
 			this->label39->Location = System::Drawing::Point(127, 25);
 			this->label39->Name = L"label39";
 			this->label39->Size = System::Drawing::Size(104, 16);
@@ -2689,16 +3093,23 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxNum_adresse_commande
 			// 
+			this->txtBxNum_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxNum_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxNum_adresse_commande->Location = System::Drawing::Point(294, 44);
 			this->txtBxNum_adresse_commande->Name = L"txtBxNum_adresse_commande";
-			this->txtBxNum_adresse_commande->Size = System::Drawing::Size(36, 20);
+			this->txtBxNum_adresse_commande->Size = System::Drawing::Size(36, 21);
 			this->txtBxNum_adresse_commande->TabIndex = 57;
 			// 
 			// btn_selectionner_client_commande
 			// 
+			this->btn_selectionner_client_commande->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_selectionner_client_commande.BackgroundImage")));
+			this->btn_selectionner_client_commande->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_selectionner_client_commande->FlatAppearance->BorderSize = 0;
+			this->btn_selectionner_client_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_selectionner_client_commande->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->btn_selectionner_client_commande->Location = System::Drawing::Point(130, 155);
 			this->btn_selectionner_client_commande->Name = L"btn_selectionner_client_commande";
-			this->btn_selectionner_client_commande->Size = System::Drawing::Size(75, 41);
+			this->btn_selectionner_client_commande->Size = System::Drawing::Size(88, 41);
 			this->btn_selectionner_client_commande->TabIndex = 45;
 			this->btn_selectionner_client_commande->Text = L"Selectionner le client";
 			this->btn_selectionner_client_commande->UseVisualStyleBackColor = true;
@@ -2706,14 +3117,17 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxCode_postale_adresse_commande
 			// 
+			this->txtBxCode_postale_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxCode_postale_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxCode_postale_adresse_commande->Location = System::Drawing::Point(332, 121);
 			this->txtBxCode_postale_adresse_commande->Name = L"txtBxCode_postale_adresse_commande";
-			this->txtBxCode_postale_adresse_commande->Size = System::Drawing::Size(126, 20);
+			this->txtBxCode_postale_adresse_commande->Size = System::Drawing::Size(126, 21);
 			this->txtBxCode_postale_adresse_commande->TabIndex = 62;
 			// 
 			// dataGrid_DDN_client_commande
 			// 
 			this->dataGrid_DDN_client_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_DDN_client_commande->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_DDN_client_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_DDN_client_commande->Location = System::Drawing::Point(130, 44);
 			this->dataGrid_DDN_client_commande->Name = L"dataGrid_DDN_client_commande";
@@ -2724,9 +3138,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label55
 			// 
 			this->label55->AutoSize = true;
+			this->label55->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label55->ForeColor = System::Drawing::SystemColors::Control;
 			this->label55->Location = System::Drawing::Point(263, 98);
 			this->label55->Name = L"label55";
-			this->label55->Size = System::Drawing::Size(26, 13);
+			this->label55->Size = System::Drawing::Size(31, 16);
 			this->label55->TabIndex = 61;
 			this->label55->Text = L"Ville";
 			// 
@@ -2735,6 +3152,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label40->AutoSize = true;
 			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label40->ForeColor = System::Drawing::SystemColors::Control;
 			this->label40->Location = System::Drawing::Point(7, 106);
 			this->label40->Name = L"label40";
 			this->label40->Size = System::Drawing::Size(51, 16);
@@ -2743,24 +3161,31 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBxVille_adresse_commande
 			// 
+			this->txtBxVille_adresse_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBxVille_adresse_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBxVille_adresse_commande->Location = System::Drawing::Point(294, 95);
 			this->txtBxVille_adresse_commande->Name = L"txtBxVille_adresse_commande";
-			this->txtBxVille_adresse_commande->Size = System::Drawing::Size(164, 20);
+			this->txtBxVille_adresse_commande->Size = System::Drawing::Size(164, 21);
 			this->txtBxVille_adresse_commande->TabIndex = 60;
 			// 
 			// txtBx_nom_client_commande
 			// 
+			this->txtBx_nom_client_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_nom_client_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_nom_client_commande->Location = System::Drawing::Point(10, 83);
 			this->txtBx_nom_client_commande->Name = L"txtBx_nom_client_commande";
-			this->txtBx_nom_client_commande->Size = System::Drawing::Size(117, 20);
+			this->txtBx_nom_client_commande->Size = System::Drawing::Size(117, 21);
 			this->txtBx_nom_client_commande->TabIndex = 38;
 			// 
 			// label59
 			// 
 			this->label59->AutoSize = true;
+			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label59->ForeColor = System::Drawing::SystemColors::Control;
 			this->label59->Location = System::Drawing::Point(263, 47);
 			this->label59->Name = L"label59";
-			this->label59->Size = System::Drawing::Size(29, 13);
+			this->label59->Size = System::Drawing::Size(35, 16);
 			this->label59->TabIndex = 59;
 			this->label59->Text = L"Num";
 			// 
@@ -2769,6 +3194,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label41->AutoSize = true;
 			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label41->ForeColor = System::Drawing::SystemColors::Control;
 			this->label41->Location = System::Drawing::Point(7, 64);
 			this->label41->Name = L"label41";
 			this->label41->Size = System::Drawing::Size(35, 16);
@@ -2780,6 +3206,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label56->AutoSize = true;
 			this->label56->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label56->ForeColor = System::Drawing::SystemColors::Control;
 			this->label56->Location = System::Drawing::Point(263, 25);
 			this->label56->Name = L"label56";
 			this->label56->Size = System::Drawing::Size(148, 16);
@@ -2788,23 +3215,29 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_prenom_client_commande
 			// 
+			this->txtBx_prenom_client_commande->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_prenom_client_commande->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_prenom_client_commande->Location = System::Drawing::Point(10, 125);
 			this->txtBx_prenom_client_commande->Name = L"txtBx_prenom_client_commande";
-			this->txtBx_prenom_client_commande->Size = System::Drawing::Size(117, 20);
+			this->txtBx_prenom_client_commande->Size = System::Drawing::Size(117, 21);
 			this->txtBx_prenom_client_commande->TabIndex = 39;
 			// 
 			// txtBx_remise
 			// 
+			this->txtBx_remise->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_remise->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_remise->Location = System::Drawing::Point(7, 395);
 			this->txtBx_remise->Name = L"txtBx_remise";
-			this->txtBx_remise->Size = System::Drawing::Size(200, 20);
+			this->txtBx_remise->Size = System::Drawing::Size(200, 21);
 			this->txtBx_remise->TabIndex = 49;
 			// 
 			// txtBx_date_emission
 			// 
+			this->txtBx_date_emission->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_date_emission->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_date_emission->Location = System::Drawing::Point(9, 353);
 			this->txtBx_date_emission->Name = L"txtBx_date_emission";
-			this->txtBx_date_emission->Size = System::Drawing::Size(200, 20);
+			this->txtBx_date_emission->Size = System::Drawing::Size(200, 21);
 			this->txtBx_date_emission->TabIndex = 45;
 			// 
 			// label33
@@ -2812,6 +3245,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label33->ForeColor = System::Drawing::SystemColors::Control;
 			this->label33->Location = System::Drawing::Point(4, 376);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(47, 16);
@@ -2823,6 +3257,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label34->AutoSize = true;
 			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label34->ForeColor = System::Drawing::SystemColors::Control;
 			this->label34->Location = System::Drawing::Point(6, 337);
 			this->label34->Name = L"label34";
 			this->label34->Size = System::Drawing::Size(94, 16);
@@ -2834,6 +3269,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label44->AutoSize = true;
 			this->label44->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label44->ForeColor = System::Drawing::SystemColors::Control;
 			this->label44->Location = System::Drawing::Point(6, 217);
 			this->label44->Name = L"label44";
 			this->label44->Size = System::Drawing::Size(113, 16);
@@ -2842,17 +3278,21 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_commande_information
 			// 
+			this->txtBx_ID_commande_information->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_commande_information->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_commande_information->Enabled = false;
 			this->txtBx_ID_commande_information->Location = System::Drawing::Point(9, 233);
 			this->txtBx_ID_commande_information->Name = L"txtBx_ID_commande_information";
-			this->txtBx_ID_commande_information->Size = System::Drawing::Size(200, 20);
+			this->txtBx_ID_commande_information->Size = System::Drawing::Size(200, 21);
 			this->txtBx_ID_commande_information->TabIndex = 42;
 			// 
 			// txtBx_date_livraison
 			// 
+			this->txtBx_date_livraison->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_date_livraison->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_date_livraison->Location = System::Drawing::Point(9, 314);
 			this->txtBx_date_livraison->Name = L"txtBx_date_livraison";
-			this->txtBx_date_livraison->Size = System::Drawing::Size(200, 20);
+			this->txtBx_date_livraison->Size = System::Drawing::Size(200, 21);
 			this->txtBx_date_livraison->TabIndex = 40;
 			// 
 			// label46
@@ -2860,6 +3300,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label46->AutoSize = true;
 			this->label46->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label46->ForeColor = System::Drawing::SystemColors::Control;
 			this->label46->Location = System::Drawing::Point(10, 11);
 			this->label46->Name = L"label46";
 			this->label46->Size = System::Drawing::Size(117, 16);
@@ -2869,6 +3310,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// dataGrid_ligne_commande
 			// 
 			this->dataGrid_ligne_commande->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGrid_ligne_commande->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_ligne_commande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_ligne_commande->Location = System::Drawing::Point(13, 30);
 			this->dataGrid_ligne_commande->Name = L"dataGrid_ligne_commande";
@@ -2878,9 +3320,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_mode_payment
 			// 
+			this->txtBx_mode_payment->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_mode_payment->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_mode_payment->Location = System::Drawing::Point(9, 272);
 			this->txtBx_mode_payment->Name = L"txtBx_mode_payment";
-			this->txtBx_mode_payment->Size = System::Drawing::Size(200, 20);
+			this->txtBx_mode_payment->Size = System::Drawing::Size(200, 21);
 			this->txtBx_mode_payment->TabIndex = 22;
 			// 
 			// label52
@@ -2888,6 +3332,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label52->AutoSize = true;
 			this->label52->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label52->ForeColor = System::Drawing::SystemColors::Control;
 			this->label52->Location = System::Drawing::Point(6, 295);
 			this->label52->Name = L"label52";
 			this->label52->Size = System::Drawing::Size(98, 16);
@@ -2899,6 +3344,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label54->AutoSize = true;
 			this->label54->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label54->ForeColor = System::Drawing::SystemColors::Control;
 			this->label54->Location = System::Drawing::Point(6, 256);
 			this->label54->Name = L"label54";
 			this->label54->Size = System::Drawing::Size(109, 16);
@@ -2907,6 +3353,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// tbPage_GestionStock
 			// 
+			this->tbPage_GestionStock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_GestionStock.BackgroundImage")));
 			this->tbPage_GestionStock->Controls->Add(this->label27);
 			this->tbPage_GestionStock->Controls->Add(this->txtBx_message_stock);
 			this->tbPage_GestionStock->Controls->Add(this->groupBox11);
@@ -2915,7 +3362,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionStock->Location = System::Drawing::Point(4, 22);
 			this->tbPage_GestionStock->Name = L"tbPage_GestionStock";
 			this->tbPage_GestionStock->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_GestionStock->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_GestionStock->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_GestionStock->TabIndex = 4;
 			this->tbPage_GestionStock->Text = L"Gestion Stock";
 			this->tbPage_GestionStock->UseVisualStyleBackColor = true;
@@ -2925,6 +3372,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label27->AutoSize = true;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label27->ForeColor = System::Drawing::SystemColors::Control;
 			this->label27->Location = System::Drawing::Point(313, 435);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(54, 16);
@@ -2933,6 +3381,8 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_message_stock
 			// 
+			this->txtBx_message_stock->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_message_stock->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_message_stock->Location = System::Drawing::Point(316, 454);
 			this->txtBx_message_stock->Multiline = true;
 			this->txtBx_message_stock->Name = L"txtBx_message_stock";
@@ -2948,6 +3398,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox11->Controls->Add(this->groupBox12);
 			this->groupBox11->Controls->Add(this->btn_right_article);
 			this->groupBox11->Controls->Add(this->btn_last_article);
+			this->groupBox11->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox11->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox11->Location = System::Drawing::Point(52, 200);
 			this->groupBox11->Name = L"groupBox11";
 			this->groupBox11->Size = System::Drawing::Size(182, 308);
@@ -2957,6 +3410,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_modifier_article
 			// 
+			this->btn_modifier_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_modifier_article.BackgroundImage")));
+			this->btn_modifier_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_modifier_article->FlatAppearance->BorderSize = 0;
+			this->btn_modifier_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_modifier_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_modifier_article->Location = System::Drawing::Point(12, 21);
 			this->btn_modifier_article->Name = L"btn_modifier_article";
 			this->btn_modifier_article->Size = System::Drawing::Size(157, 38);
@@ -2967,6 +3425,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_first_article
 			// 
+			this->btn_first_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_first_article.BackgroundImage")));
+			this->btn_first_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_first_article->FlatAppearance->BorderSize = 0;
+			this->btn_first_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_first_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_first_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_first_article->Location = System::Drawing::Point(6, 247);
 			this->btn_first_article->Name = L"btn_first_article";
 			this->btn_first_article->Size = System::Drawing::Size(38, 38);
@@ -2977,6 +3442,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_supprimer_article
 			// 
+			this->btn_supprimer_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_supprimer_article.BackgroundImage")));
+			this->btn_supprimer_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_supprimer_article->FlatAppearance->BorderSize = 0;
+			this->btn_supprimer_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_supprimer_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_supprimer_article->Location = System::Drawing::Point(12, 65);
 			this->btn_supprimer_article->Name = L"btn_supprimer_article";
 			this->btn_supprimer_article->Size = System::Drawing::Size(157, 38);
@@ -2987,6 +3457,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_left_article
 			// 
+			this->btn_left_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_left_article.BackgroundImage")));
+			this->btn_left_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_left_article->FlatAppearance->BorderSize = 0;
+			this->btn_left_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_left_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_left_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_left_article->Location = System::Drawing::Point(49, 247);
 			this->btn_left_article->Name = L"btn_left_article";
 			this->btn_left_article->Size = System::Drawing::Size(38, 38);
@@ -2999,6 +3476,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox12->Controls->Add(this->btn_nouveau_article);
 			this->groupBox12->Controls->Add(this->btn_enregistrer_article);
+			this->groupBox12->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox12->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox12->Location = System::Drawing::Point(6, 115);
 			this->groupBox12->Name = L"groupBox12";
 			this->groupBox12->Size = System::Drawing::Size(169, 117);
@@ -3008,6 +3488,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_nouveau_article
 			// 
+			this->btn_nouveau_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_nouveau_article.BackgroundImage")));
+			this->btn_nouveau_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_nouveau_article->FlatAppearance->BorderSize = 0;
+			this->btn_nouveau_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_nouveau_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_nouveau_article->Location = System::Drawing::Point(6, 19);
 			this->btn_nouveau_article->Name = L"btn_nouveau_article";
 			this->btn_nouveau_article->Size = System::Drawing::Size(157, 38);
@@ -3018,6 +3503,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_enregistrer_article
 			// 
+			this->btn_enregistrer_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_enregistrer_article.BackgroundImage")));
+			this->btn_enregistrer_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_enregistrer_article->FlatAppearance->BorderSize = 0;
+			this->btn_enregistrer_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_enregistrer_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_enregistrer_article->Location = System::Drawing::Point(6, 63);
 			this->btn_enregistrer_article->Name = L"btn_enregistrer_article";
 			this->btn_enregistrer_article->Size = System::Drawing::Size(157, 38);
@@ -3028,6 +3518,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_right_article
 			// 
+			this->btn_right_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_right_article.BackgroundImage")));
+			this->btn_right_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_right_article->FlatAppearance->BorderSize = 0;
+			this->btn_right_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_right_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_right_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_right_article->Location = System::Drawing::Point(93, 247);
 			this->btn_right_article->Name = L"btn_right_article";
 			this->btn_right_article->Size = System::Drawing::Size(38, 38);
@@ -3038,6 +3535,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_last_article
 			// 
+			this->btn_last_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_last_article.BackgroundImage")));
+			this->btn_last_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_last_article->FlatAppearance->BorderSize = 0;
+			this->btn_last_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_last_article->Font = (gcnew System::Drawing::Font(L"Bernard MT Condensed", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_last_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_last_article->Location = System::Drawing::Point(137, 247);
 			this->btn_last_article->Name = L"btn_last_article";
 			this->btn_last_article->Size = System::Drawing::Size(38, 38);
@@ -3058,6 +3562,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox13->Controls->Add(this->label29);
 			this->groupBox13->Controls->Add(this->txtBx_reference_article);
 			this->groupBox13->Controls->Add(this->label28);
+			this->groupBox13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox13->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox13->Location = System::Drawing::Point(316, 6);
 			this->groupBox13->Name = L"groupBox13";
 			this->groupBox13->Size = System::Drawing::Size(683, 426);
@@ -3067,9 +3574,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_prix_article
 			// 
+			this->txtBx_prix_article->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_prix_article->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_prix_article->Location = System::Drawing::Point(268, 288);
 			this->txtBx_prix_article->Name = L"txtBx_prix_article";
-			this->txtBx_prix_article->Size = System::Drawing::Size(117, 20);
+			this->txtBx_prix_article->Size = System::Drawing::Size(117, 21);
 			this->txtBx_prix_article->TabIndex = 49;
 			// 
 			// label68
@@ -3077,6 +3586,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label68->AutoSize = true;
 			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label68->ForeColor = System::Drawing::SystemColors::Control;
 			this->label68->Location = System::Drawing::Point(265, 272);
 			this->label68->Name = L"label68";
 			this->label68->Size = System::Drawing::Size(93, 16);
@@ -3085,10 +3595,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_ID_article
 			// 
+			this->txtBx_ID_article->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_ID_article->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_ID_article->Enabled = false;
 			this->txtBx_ID_article->Location = System::Drawing::Point(268, 106);
 			this->txtBx_ID_article->Name = L"txtBx_ID_article";
-			this->txtBx_ID_article->Size = System::Drawing::Size(117, 20);
+			this->txtBx_ID_article->Size = System::Drawing::Size(117, 21);
 			this->txtBx_ID_article->TabIndex = 47;
 			// 
 			// label45
@@ -3096,6 +3608,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label45->AutoSize = true;
 			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label45->ForeColor = System::Drawing::SystemColors::Control;
 			this->label45->Location = System::Drawing::Point(265, 90);
 			this->label45->Name = L"label45";
 			this->label45->Size = System::Drawing::Size(80, 16);
@@ -3104,9 +3617,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_quantite_article
 			// 
+			this->txtBx_quantite_article->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_quantite_article->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_quantite_article->Location = System::Drawing::Point(268, 243);
 			this->txtBx_quantite_article->Name = L"txtBx_quantite_article";
-			this->txtBx_quantite_article->Size = System::Drawing::Size(117, 20);
+			this->txtBx_quantite_article->Size = System::Drawing::Size(117, 21);
 			this->txtBx_quantite_article->TabIndex = 45;
 			// 
 			// label30
@@ -3114,6 +3629,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label30->AutoSize = true;
 			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label30->ForeColor = System::Drawing::SystemColors::Control;
 			this->label30->Location = System::Drawing::Point(265, 227);
 			this->label30->Name = L"label30";
 			this->label30->Size = System::Drawing::Size(105, 16);
@@ -3122,9 +3638,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_couleur_article
 			// 
+			this->txtBx_couleur_article->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_couleur_article->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_couleur_article->Location = System::Drawing::Point(268, 194);
 			this->txtBx_couleur_article->Name = L"txtBx_couleur_article";
-			this->txtBx_couleur_article->Size = System::Drawing::Size(117, 20);
+			this->txtBx_couleur_article->Size = System::Drawing::Size(117, 21);
 			this->txtBx_couleur_article->TabIndex = 43;
 			// 
 			// label29
@@ -3132,6 +3650,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label29->AutoSize = true;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label29->ForeColor = System::Drawing::SystemColors::Control;
 			this->label29->Location = System::Drawing::Point(265, 178);
 			this->label29->Name = L"label29";
 			this->label29->Size = System::Drawing::Size(109, 16);
@@ -3140,9 +3659,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_reference_article
 			// 
+			this->txtBx_reference_article->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_reference_article->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_reference_article->Location = System::Drawing::Point(269, 145);
 			this->txtBx_reference_article->Name = L"txtBx_reference_article";
-			this->txtBx_reference_article->Size = System::Drawing::Size(117, 20);
+			this->txtBx_reference_article->Size = System::Drawing::Size(117, 21);
 			this->txtBx_reference_article->TabIndex = 41;
 			// 
 			// label28
@@ -3150,6 +3671,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label28->AutoSize = true;
 			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label28->ForeColor = System::Drawing::SystemColors::Control;
 			this->label28->Location = System::Drawing::Point(266, 129);
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(121, 16);
@@ -3163,6 +3685,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox14->Controls->Add(this->btn_rechercher_article);
 			this->groupBox14->Controls->Add(this->txtBx_reference_article_affichage);
 			this->groupBox14->Controls->Add(this->label42);
+			this->groupBox14->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox14->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox14->Location = System::Drawing::Point(64, 38);
 			this->groupBox14->Name = L"groupBox14";
 			this->groupBox14->Size = System::Drawing::Size(157, 156);
@@ -3172,9 +3697,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_couleur_article_affichage
 			// 
+			this->txtBx_couleur_article_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_couleur_article_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_couleur_article_affichage->Location = System::Drawing::Point(20, 93);
 			this->txtBx_couleur_article_affichage->Name = L"txtBx_couleur_article_affichage";
-			this->txtBx_couleur_article_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_couleur_article_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_couleur_article_affichage->TabIndex = 43;
 			// 
 			// label48
@@ -3182,6 +3709,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label48->AutoSize = true;
 			this->label48->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label48->ForeColor = System::Drawing::SystemColors::Control;
 			this->label48->Location = System::Drawing::Point(17, 77);
 			this->label48->Name = L"label48";
 			this->label48->Size = System::Drawing::Size(109, 16);
@@ -3190,6 +3718,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_rechercher_article
 			// 
+			this->btn_rechercher_article->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_rechercher_article.BackgroundImage")));
+			this->btn_rechercher_article->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_rechercher_article->FlatAppearance->BorderSize = 0;
+			this->btn_rechercher_article->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_rechercher_article->ForeColor = System::Drawing::Color::Black;
 			this->btn_rechercher_article->Location = System::Drawing::Point(36, 126);
 			this->btn_rechercher_article->Name = L"btn_rechercher_article";
 			this->btn_rechercher_article->Size = System::Drawing::Size(82, 23);
@@ -3200,9 +3733,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_reference_article_affichage
 			// 
+			this->txtBx_reference_article_affichage->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_reference_article_affichage->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_reference_article_affichage->Location = System::Drawing::Point(20, 45);
 			this->txtBx_reference_article_affichage->Name = L"txtBx_reference_article_affichage";
-			this->txtBx_reference_article_affichage->Size = System::Drawing::Size(117, 20);
+			this->txtBx_reference_article_affichage->Size = System::Drawing::Size(117, 21);
 			this->txtBx_reference_article_affichage->TabIndex = 38;
 			// 
 			// label42
@@ -3210,6 +3745,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->label42->AutoSize = true;
 			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label42->ForeColor = System::Drawing::SystemColors::Control;
 			this->label42->Location = System::Drawing::Point(17, 29);
 			this->label42->Name = L"label42";
 			this->label42->Size = System::Drawing::Size(121, 16);
@@ -3218,6 +3754,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// tbPage_GestionStatistiques
 			// 
+			this->tbPage_GestionStatistiques->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tbPage_GestionStatistiques.BackgroundImage")));
 			this->tbPage_GestionStatistiques->Controls->Add(this->groupBox29);
 			this->tbPage_GestionStatistiques->Controls->Add(this->groupBox28);
 			this->tbPage_GestionStatistiques->Controls->Add(this->groupBox27);
@@ -3226,7 +3763,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->tbPage_GestionStatistiques->Location = System::Drawing::Point(4, 22);
 			this->tbPage_GestionStatistiques->Name = L"tbPage_GestionStatistiques";
 			this->tbPage_GestionStatistiques->Padding = System::Windows::Forms::Padding(3);
-			this->tbPage_GestionStatistiques->Size = System::Drawing::Size(1007, 549);
+			this->tbPage_GestionStatistiques->Size = System::Drawing::Size(1015, 554);
 			this->tbPage_GestionStatistiques->TabIndex = 5;
 			this->tbPage_GestionStatistiques->Text = L"Gestion Statistiques";
 			this->tbPage_GestionStatistiques->UseVisualStyleBackColor = true;
@@ -3238,15 +3775,20 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox29->Controls->Add(this->label66);
 			this->groupBox29->Controls->Add(this->btn_identifier_statistique);
 			this->groupBox29->Controls->Add(this->dataGrid_article_plus_vendus);
+			this->groupBox29->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox29->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox29->Location = System::Drawing::Point(3, 383);
 			this->groupBox29->Name = L"groupBox29";
 			this->groupBox29->Size = System::Drawing::Size(587, 159);
 			this->groupBox29->TabIndex = 15;
 			this->groupBox29->TabStop = false;
 			this->groupBox29->Text = L"Vente articles";
+			this->groupBox29->Enter += gcnew System::EventHandler(this, &MyForm::groupBox29_Enter);
 			// 
 			// dataGrid_article_moins_vendus
 			// 
+			this->dataGrid_article_moins_vendus->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_article_moins_vendus->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_article_moins_vendus->Location = System::Drawing::Point(291, 48);
 			this->dataGrid_article_moins_vendus->Name = L"dataGrid_article_moins_vendus";
@@ -3257,23 +3799,36 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label67
 			// 
 			this->label67->AutoSize = true;
-			this->label67->Location = System::Drawing::Point(435, 32);
+			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label67->ForeColor = System::Drawing::Color::White;
+			this->label67->Location = System::Drawing::Point(406, 32);
 			this->label67->Name = L"label67";
-			this->label67->Size = System::Drawing::Size(125, 13);
+			this->label67->Size = System::Drawing::Size(150, 13);
 			this->label67->TabIndex = 20;
 			this->label67->Text = L"Articles les moins vendus";
 			// 
 			// label66
 			// 
 			this->label66->AutoSize = true;
+			this->label66->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label66->ForeColor = System::Drawing::Color::White;
 			this->label66->Location = System::Drawing::Point(20, 32);
 			this->label66->Name = L"label66";
-			this->label66->Size = System::Drawing::Size(117, 13);
+			this->label66->Size = System::Drawing::Size(141, 13);
 			this->label66->TabIndex = 17;
 			this->label66->Text = L"Articles les plus vendus";
 			// 
 			// btn_identifier_statistique
 			// 
+			this->btn_identifier_statistique->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_identifier_statistique.BackgroundImage")));
+			this->btn_identifier_statistique->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_identifier_statistique->FlatAppearance->BorderSize = 0;
+			this->btn_identifier_statistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_identifier_statistique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_identifier_statistique->ForeColor = System::Drawing::Color::Black;
 			this->btn_identifier_statistique->Location = System::Drawing::Point(218, 19);
 			this->btn_identifier_statistique->Name = L"btn_identifier_statistique";
 			this->btn_identifier_statistique->Size = System::Drawing::Size(127, 23);
@@ -3284,6 +3839,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// dataGrid_article_plus_vendus
 			// 
+			this->dataGrid_article_plus_vendus->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_article_plus_vendus->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGrid_article_plus_vendus->Location = System::Drawing::Point(20, 48);
 			this->dataGrid_article_plus_vendus->Name = L"dataGrid_article_plus_vendus";
@@ -3297,6 +3853,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox28->Controls->Add(this->label65);
 			this->groupBox28->Controls->Add(this->txtBx_seuil_reaprovisionnement);
 			this->groupBox28->Controls->Add(this->dataGrid_reaprovisionnement);
+			this->groupBox28->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox28->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox28->Location = System::Drawing::Point(144, 178);
 			this->groupBox28->Name = L"groupBox28";
 			this->groupBox28->Size = System::Drawing::Size(446, 200);
@@ -3306,9 +3865,16 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// btn_recherche_reaprovisionnement
 			// 
+			this->btn_recherche_reaprovisionnement->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_recherche_reaprovisionnement.BackgroundImage")));
+			this->btn_recherche_reaprovisionnement->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_recherche_reaprovisionnement->FlatAppearance->BorderSize = 0;
+			this->btn_recherche_reaprovisionnement->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_recherche_reaprovisionnement->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_recherche_reaprovisionnement->ForeColor = System::Drawing::Color::Black;
 			this->btn_recherche_reaprovisionnement->Location = System::Drawing::Point(29, 88);
 			this->btn_recherche_reaprovisionnement->Name = L"btn_recherche_reaprovisionnement";
-			this->btn_recherche_reaprovisionnement->Size = System::Drawing::Size(75, 53);
+			this->btn_recherche_reaprovisionnement->Size = System::Drawing::Size(81, 53);
 			this->btn_recherche_reaprovisionnement->TabIndex = 17;
 			this->btn_recherche_reaprovisionnement->Text = L"Rechercher";
 			this->btn_recherche_reaprovisionnement->UseVisualStyleBackColor = true;
@@ -3317,26 +3883,33 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label65
 			// 
 			this->label65->AutoSize = true;
+			this->label65->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label65->ForeColor = System::Drawing::Color::White;
 			this->label65->Location = System::Drawing::Point(17, 33);
 			this->label65->Name = L"label65";
-			this->label65->Size = System::Drawing::Size(140, 13);
+			this->label65->Size = System::Drawing::Size(167, 13);
 			this->label65->TabIndex = 6;
 			this->label65->Text = L"Seuil de réaprovisionnement";
+			this->label65->Click += gcnew System::EventHandler(this, &MyForm::label65_Click);
 			// 
 			// txtBx_seuil_reaprovisionnement
 			// 
+			this->txtBx_seuil_reaprovisionnement->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_seuil_reaprovisionnement->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_seuil_reaprovisionnement->Location = System::Drawing::Point(20, 49);
 			this->txtBx_seuil_reaprovisionnement->Name = L"txtBx_seuil_reaprovisionnement";
-			this->txtBx_seuil_reaprovisionnement->Size = System::Drawing::Size(100, 20);
+			this->txtBx_seuil_reaprovisionnement->Size = System::Drawing::Size(100, 21);
 			this->txtBx_seuil_reaprovisionnement->TabIndex = 5;
 			// 
 			// dataGrid_reaprovisionnement
 			// 
+			this->dataGrid_reaprovisionnement->BackgroundColor = System::Drawing::Color::LightSteelBlue;
 			this->dataGrid_reaprovisionnement->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGrid_reaprovisionnement->Location = System::Drawing::Point(163, 33);
+			this->dataGrid_reaprovisionnement->Location = System::Drawing::Point(163, 49);
 			this->dataGrid_reaprovisionnement->Name = L"dataGrid_reaprovisionnement";
 			this->dataGrid_reaprovisionnement->RowHeadersWidth = 51;
-			this->dataGrid_reaprovisionnement->Size = System::Drawing::Size(240, 150);
+			this->dataGrid_reaprovisionnement->Size = System::Drawing::Size(240, 134);
 			this->dataGrid_reaprovisionnement->TabIndex = 0;
 			// 
 			// groupBox27
@@ -3345,6 +3918,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox27->Controls->Add(this->label64);
 			this->groupBox27->Controls->Add(this->btn_CalculChiffreAffaireMois);
 			this->groupBox27->Controls->Add(this->txtx_Resultat_CalculChiffreAffaireMois);
+			this->groupBox27->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox27->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox27->Location = System::Drawing::Point(5, 178);
 			this->groupBox27->Name = L"groupBox27";
 			this->groupBox27->Size = System::Drawing::Size(133, 199);
@@ -3354,30 +3930,42 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// cbBx_mois_statistique
 			// 
+			this->cbBx_mois_statistique->BackColor = System::Drawing::Color::White;
 			this->cbBx_mois_statistique->FormattingEnabled = true;
 			this->cbBx_mois_statistique->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
 				L"1", L"2", L"3", L"4", L"5", L"6",
 					L"7", L"8", L"9", L"10", L"11", L"12"
 			});
-			this->cbBx_mois_statistique->Location = System::Drawing::Point(6, 45);
+			this->cbBx_mois_statistique->Location = System::Drawing::Point(6, 66);
 			this->cbBx_mois_statistique->Name = L"cbBx_mois_statistique";
-			this->cbBx_mois_statistique->Size = System::Drawing::Size(121, 21);
+			this->cbBx_mois_statistique->Size = System::Drawing::Size(121, 24);
 			this->cbBx_mois_statistique->TabIndex = 16;
 			// 
 			// label64
 			// 
 			this->label64->AutoSize = true;
-			this->label64->Location = System::Drawing::Point(18, 128);
+			this->label64->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label64->ForeColor = System::Drawing::Color::White;
+			this->label64->Location = System::Drawing::Point(18, 149);
 			this->label64->Name = L"label64";
-			this->label64->Size = System::Drawing::Size(46, 13);
+			this->label64->Size = System::Drawing::Size(54, 13);
 			this->label64->TabIndex = 13;
 			this->label64->Text = L"Résultat";
+			this->label64->Click += gcnew System::EventHandler(this, &MyForm::label64_Click);
 			// 
 			// btn_CalculChiffreAffaireMois
 			// 
-			this->btn_CalculChiffreAffaireMois->Location = System::Drawing::Point(38, 72);
+			this->btn_CalculChiffreAffaireMois->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_CalculChiffreAffaireMois.BackgroundImage")));
+			this->btn_CalculChiffreAffaireMois->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_CalculChiffreAffaireMois->FlatAppearance->BorderSize = 0;
+			this->btn_CalculChiffreAffaireMois->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_CalculChiffreAffaireMois->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btn_CalculChiffreAffaireMois->ForeColor = System::Drawing::Color::Black;
+			this->btn_CalculChiffreAffaireMois->Location = System::Drawing::Point(38, 93);
 			this->btn_CalculChiffreAffaireMois->Name = L"btn_CalculChiffreAffaireMois";
-			this->btn_CalculChiffreAffaireMois->Size = System::Drawing::Size(57, 53);
+			this->btn_CalculChiffreAffaireMois->Size = System::Drawing::Size(65, 53);
 			this->btn_CalculChiffreAffaireMois->TabIndex = 14;
 			this->btn_CalculChiffreAffaireMois->Text = L"Calculer";
 			this->btn_CalculChiffreAffaireMois->UseVisualStyleBackColor = true;
@@ -3385,9 +3973,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtx_Resultat_CalculChiffreAffaireMois
 			// 
-			this->txtx_Resultat_CalculChiffreAffaireMois->Location = System::Drawing::Point(18, 144);
+			this->txtx_Resultat_CalculChiffreAffaireMois->BackColor = System::Drawing::Color::LightGray;
+			this->txtx_Resultat_CalculChiffreAffaireMois->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtx_Resultat_CalculChiffreAffaireMois->Location = System::Drawing::Point(18, 165);
 			this->txtx_Resultat_CalculChiffreAffaireMois->Name = L"txtx_Resultat_CalculChiffreAffaireMois";
-			this->txtx_Resultat_CalculChiffreAffaireMois->Size = System::Drawing::Size(96, 20);
+			this->txtx_Resultat_CalculChiffreAffaireMois->Size = System::Drawing::Size(96, 21);
 			this->txtx_Resultat_CalculChiffreAffaireMois->TabIndex = 12;
 			// 
 			// groupBox26
@@ -3400,6 +3990,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox26->Controls->Add(this->label63);
 			this->groupBox26->Controls->Add(this->btn_panier_moyen);
 			this->groupBox26->Controls->Add(this->txtBx_resultat_statistique);
+			this->groupBox26->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox26->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox26->Location = System::Drawing::Point(596, 6);
 			this->groupBox26->Name = L"groupBox26";
 			this->groupBox26->Size = System::Drawing::Size(408, 537);
@@ -3410,22 +4003,38 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label60
 			// 
 			this->label60->AutoSize = true;
+			this->label60->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label60->ForeColor = System::Drawing::Color::White;
 			this->label60->Location = System::Drawing::Point(74, 377);
 			this->label60->Name = L"label60";
-			this->label60->Size = System::Drawing::Size(59, 13);
+			this->label60->Size = System::Drawing::Size(70, 13);
 			this->label60->TabIndex = 18;
 			this->label60->Text = L"Information";
 			// 
 			// textBox1
 			// 
+			this->textBox1->BackColor = System::Drawing::Color::LightGray;
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::Color::White;
 			this->textBox1->Location = System::Drawing::Point(77, 396);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(249, 108);
 			this->textBox1->TabIndex = 17;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged_1);
 			// 
 			// btn_simulation
 			// 
+			this->btn_simulation->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_simulation.BackgroundImage")));
+			this->btn_simulation->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_simulation->FlatAppearance->BorderSize = 0;
+			this->btn_simulation->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_simulation->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_simulation->ForeColor = System::Drawing::Color::Black;
 			this->btn_simulation->Location = System::Drawing::Point(111, 49);
 			this->btn_simulation->Name = L"btn_simulation";
 			this->btn_simulation->Size = System::Drawing::Size(169, 51);
@@ -3436,6 +4045,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// Btn_valeur_achat_stock
 			// 
+			this->Btn_valeur_achat_stock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_valeur_achat_stock.BackgroundImage")));
+			this->Btn_valeur_achat_stock->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Btn_valeur_achat_stock->FlatAppearance->BorderSize = 0;
+			this->Btn_valeur_achat_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Btn_valeur_achat_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Btn_valeur_achat_stock->ForeColor = System::Drawing::Color::Black;
 			this->Btn_valeur_achat_stock->Location = System::Drawing::Point(111, 223);
 			this->Btn_valeur_achat_stock->Name = L"Btn_valeur_achat_stock";
 			this->Btn_valeur_achat_stock->Size = System::Drawing::Size(169, 53);
@@ -3446,6 +4062,13 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// Btn_valeur_commerciale_stock
 			// 
+			this->Btn_valeur_commerciale_stock->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_valeur_commerciale_stock.BackgroundImage")));
+			this->Btn_valeur_commerciale_stock->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Btn_valeur_commerciale_stock->FlatAppearance->BorderSize = 0;
+			this->Btn_valeur_commerciale_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Btn_valeur_commerciale_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Btn_valeur_commerciale_stock->ForeColor = System::Drawing::Color::Black;
 			this->Btn_valeur_commerciale_stock->Location = System::Drawing::Point(111, 164);
 			this->Btn_valeur_commerciale_stock->Name = L"Btn_valeur_commerciale_stock";
 			this->Btn_valeur_commerciale_stock->Size = System::Drawing::Size(169, 53);
@@ -3457,14 +4080,24 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// label63
 			// 
 			this->label63->AutoSize = true;
+			this->label63->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label63->ForeColor = System::Drawing::Color::White;
 			this->label63->Location = System::Drawing::Point(174, 300);
 			this->label63->Name = L"label63";
-			this->label63->Size = System::Drawing::Size(46, 13);
+			this->label63->Size = System::Drawing::Size(54, 13);
 			this->label63->TabIndex = 13;
 			this->label63->Text = L"Résultat";
 			// 
 			// btn_panier_moyen
 			// 
+			this->btn_panier_moyen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_panier_moyen.BackgroundImage")));
+			this->btn_panier_moyen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btn_panier_moyen->FlatAppearance->BorderSize = 0;
+			this->btn_panier_moyen->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_panier_moyen->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_panier_moyen->ForeColor = System::Drawing::Color::Black;
 			this->btn_panier_moyen->Location = System::Drawing::Point(111, 105);
 			this->btn_panier_moyen->Name = L"btn_panier_moyen";
 			this->btn_panier_moyen->Size = System::Drawing::Size(169, 53);
@@ -3475,9 +4108,11 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			// txtBx_resultat_statistique
 			// 
+			this->txtBx_resultat_statistique->BackColor = System::Drawing::Color::LightGray;
+			this->txtBx_resultat_statistique->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBx_resultat_statistique->Location = System::Drawing::Point(77, 316);
 			this->txtBx_resultat_statistique->Name = L"txtBx_resultat_statistique";
-			this->txtBx_resultat_statistique->Size = System::Drawing::Size(249, 20);
+			this->txtBx_resultat_statistique->Size = System::Drawing::Size(249, 21);
 			this->txtBx_resultat_statistique->TabIndex = 12;
 			// 
 			// groupBox25
@@ -3486,6 +4121,9 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox25->Controls->Add(this->groupBox24);
 			this->groupBox25->Controls->Add(this->groupBox21);
 			this->groupBox25->Controls->Add(this->groupBox23);
+			this->groupBox25->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox25->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->groupBox25->Location = System::Drawing::Point(6, 6);
 			this->groupBox25->Name = L"groupBox25";
 			this->groupBox25->Size = System::Drawing::Size(584, 165);
@@ -3498,9 +4136,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox22->Controls->Add(this->rB_TVA_2_1);
 			this->groupBox22->Controls->Add(this->rB_TVA_20);
 			this->groupBox22->Controls->Add(this->rB_TVA_5_5);
-			this->groupBox22->Location = System::Drawing::Point(37, 37);
+			this->groupBox22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox22->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->groupBox22->Location = System::Drawing::Point(37, 20);
 			this->groupBox22->Name = L"groupBox22";
-			this->groupBox22->Size = System::Drawing::Size(76, 96);
+			this->groupBox22->Size = System::Drawing::Size(76, 119);
 			this->groupBox22->TabIndex = 8;
 			this->groupBox22->TabStop = false;
 			this->groupBox22->Text = L"TVA";
@@ -3508,9 +4149,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_TVA_2_1
 			// 
 			this->rB_TVA_2_1->AutoSize = true;
-			this->rB_TVA_2_1->Location = System::Drawing::Point(9, 64);
+			this->rB_TVA_2_1->ForeColor = System::Drawing::Color::White;
+			this->rB_TVA_2_1->Location = System::Drawing::Point(6, 90);
 			this->rB_TVA_2_1->Name = L"rB_TVA_2_1";
-			this->rB_TVA_2_1->Size = System::Drawing::Size(48, 17);
+			this->rB_TVA_2_1->Size = System::Drawing::Size(53, 20);
 			this->rB_TVA_2_1->TabIndex = 2;
 			this->rB_TVA_2_1->TabStop = true;
 			this->rB_TVA_2_1->Text = L"2,1%";
@@ -3519,9 +4161,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_TVA_20
 			// 
 			this->rB_TVA_20->AutoSize = true;
-			this->rB_TVA_20->Location = System::Drawing::Point(9, 18);
+			this->rB_TVA_20->ForeColor = System::Drawing::Color::White;
+			this->rB_TVA_20->Location = System::Drawing::Point(6, 44);
 			this->rB_TVA_20->Name = L"rB_TVA_20";
-			this->rB_TVA_20->Size = System::Drawing::Size(45, 17);
+			this->rB_TVA_20->Size = System::Drawing::Size(50, 20);
 			this->rB_TVA_20->TabIndex = 0;
 			this->rB_TVA_20->TabStop = true;
 			this->rB_TVA_20->Text = L"20%";
@@ -3530,9 +4173,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_TVA_5_5
 			// 
 			this->rB_TVA_5_5->AutoSize = true;
-			this->rB_TVA_5_5->Location = System::Drawing::Point(9, 41);
+			this->rB_TVA_5_5->ForeColor = System::Drawing::Color::White;
+			this->rB_TVA_5_5->Location = System::Drawing::Point(6, 67);
 			this->rB_TVA_5_5->Name = L"rB_TVA_5_5";
-			this->rB_TVA_5_5->Size = System::Drawing::Size(48, 17);
+			this->rB_TVA_5_5->Size = System::Drawing::Size(53, 20);
 			this->rB_TVA_5_5->TabIndex = 1;
 			this->rB_TVA_5_5->TabStop = true;
 			this->rB_TVA_5_5->Text = L"5,5%";
@@ -3543,9 +4187,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox24->Controls->Add(this->rB_demarque_5);
 			this->groupBox24->Controls->Add(this->rB_demarque_2);
 			this->groupBox24->Controls->Add(this->rB_demarque_3);
-			this->groupBox24->Location = System::Drawing::Point(241, 37);
+			this->groupBox24->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox24->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->groupBox24->Location = System::Drawing::Point(241, 20);
 			this->groupBox24->Name = L"groupBox24";
-			this->groupBox24->Size = System::Drawing::Size(119, 96);
+			this->groupBox24->Size = System::Drawing::Size(119, 119);
 			this->groupBox24->TabIndex = 10;
 			this->groupBox24->TabStop = false;
 			this->groupBox24->Text = L"Démarque Inconnue";
@@ -3553,9 +4200,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_demarque_5
 			// 
 			this->rB_demarque_5->AutoSize = true;
-			this->rB_demarque_5->Location = System::Drawing::Point(6, 65);
+			this->rB_demarque_5->ForeColor = System::Drawing::Color::White;
+			this->rB_demarque_5->Location = System::Drawing::Point(6, 82);
 			this->rB_demarque_5->Name = L"rB_demarque_5";
-			this->rB_demarque_5->Size = System::Drawing::Size(44, 17);
+			this->rB_demarque_5->Size = System::Drawing::Size(49, 20);
 			this->rB_demarque_5->TabIndex = 2;
 			this->rB_demarque_5->TabStop = true;
 			this->rB_demarque_5->Text = L"x5%";
@@ -3564,9 +4212,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_demarque_2
 			// 
 			this->rB_demarque_2->AutoSize = true;
-			this->rB_demarque_2->Location = System::Drawing::Point(6, 19);
+			this->rB_demarque_2->ForeColor = System::Drawing::Color::White;
+			this->rB_demarque_2->Location = System::Drawing::Point(6, 36);
 			this->rB_demarque_2->Name = L"rB_demarque_2";
-			this->rB_demarque_2->Size = System::Drawing::Size(44, 17);
+			this->rB_demarque_2->Size = System::Drawing::Size(49, 20);
 			this->rB_demarque_2->TabIndex = 0;
 			this->rB_demarque_2->TabStop = true;
 			this->rB_demarque_2->Text = L"x2%";
@@ -3575,9 +4224,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_demarque_3
 			// 
 			this->rB_demarque_3->AutoSize = true;
-			this->rB_demarque_3->Location = System::Drawing::Point(6, 42);
+			this->rB_demarque_3->ForeColor = System::Drawing::Color::White;
+			this->rB_demarque_3->Location = System::Drawing::Point(6, 59);
 			this->rB_demarque_3->Name = L"rB_demarque_3";
-			this->rB_demarque_3->Size = System::Drawing::Size(44, 17);
+			this->rB_demarque_3->Size = System::Drawing::Size(49, 20);
 			this->rB_demarque_3->TabIndex = 1;
 			this->rB_demarque_3->TabStop = true;
 			this->rB_demarque_3->Text = L"x3%";
@@ -3587,9 +4237,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// 
 			this->groupBox21->Controls->Add(this->rB_remise_6);
 			this->groupBox21->Controls->Add(this->rB_remise_5);
-			this->groupBox21->Location = System::Drawing::Point(366, 37);
+			this->groupBox21->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox21->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->groupBox21->Location = System::Drawing::Point(366, 20);
 			this->groupBox21->Name = L"groupBox21";
-			this->groupBox21->Size = System::Drawing::Size(77, 96);
+			this->groupBox21->Size = System::Drawing::Size(77, 119);
 			this->groupBox21->TabIndex = 7;
 			this->groupBox21->TabStop = false;
 			this->groupBox21->Text = L"Remise";
@@ -3597,9 +4250,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_remise_6
 			// 
 			this->rB_remise_6->AutoSize = true;
-			this->rB_remise_6->Location = System::Drawing::Point(6, 52);
+			this->rB_remise_6->ForeColor = System::Drawing::Color::White;
+			this->rB_remise_6->Location = System::Drawing::Point(6, 67);
 			this->rB_remise_6->Name = L"rB_remise_6";
-			this->rB_remise_6->Size = System::Drawing::Size(44, 17);
+			this->rB_remise_6->Size = System::Drawing::Size(49, 20);
 			this->rB_remise_6->TabIndex = 4;
 			this->rB_remise_6->TabStop = true;
 			this->rB_remise_6->Text = L"x6%";
@@ -3608,9 +4262,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_remise_5
 			// 
 			this->rB_remise_5->AutoSize = true;
-			this->rB_remise_5->Location = System::Drawing::Point(6, 29);
+			this->rB_remise_5->ForeColor = System::Drawing::Color::White;
+			this->rB_remise_5->Location = System::Drawing::Point(6, 44);
 			this->rB_remise_5->Name = L"rB_remise_5";
-			this->rB_remise_5->Size = System::Drawing::Size(44, 17);
+			this->rB_remise_5->Size = System::Drawing::Size(49, 20);
 			this->rB_remise_5->TabIndex = 3;
 			this->rB_remise_5->TabStop = true;
 			this->rB_remise_5->Text = L"x5%";
@@ -3621,9 +4276,12 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->groupBox23->Controls->Add(this->rB_marge_commerciale_15);
 			this->groupBox23->Controls->Add(this->rB_marge_commerciale_5);
 			this->groupBox23->Controls->Add(this->rB_marge_commerciale_10);
-			this->groupBox23->Location = System::Drawing::Point(119, 37);
+			this->groupBox23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox23->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->groupBox23->Location = System::Drawing::Point(119, 20);
 			this->groupBox23->Name = L"groupBox23";
-			this->groupBox23->Size = System::Drawing::Size(116, 96);
+			this->groupBox23->Size = System::Drawing::Size(116, 119);
 			this->groupBox23->TabIndex = 9;
 			this->groupBox23->TabStop = false;
 			this->groupBox23->Text = L"Marge commerciale";
@@ -3631,9 +4289,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_marge_commerciale_15
 			// 
 			this->rB_marge_commerciale_15->AutoSize = true;
-			this->rB_marge_commerciale_15->Location = System::Drawing::Point(4, 64);
+			this->rB_marge_commerciale_15->ForeColor = System::Drawing::Color::White;
+			this->rB_marge_commerciale_15->Location = System::Drawing::Point(4, 86);
 			this->rB_marge_commerciale_15->Name = L"rB_marge_commerciale_15";
-			this->rB_marge_commerciale_15->Size = System::Drawing::Size(50, 17);
+			this->rB_marge_commerciale_15->Size = System::Drawing::Size(56, 20);
 			this->rB_marge_commerciale_15->TabIndex = 2;
 			this->rB_marge_commerciale_15->TabStop = true;
 			this->rB_marge_commerciale_15->Text = L"x15%";
@@ -3642,9 +4301,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_marge_commerciale_5
 			// 
 			this->rB_marge_commerciale_5->AutoSize = true;
-			this->rB_marge_commerciale_5->Location = System::Drawing::Point(6, 19);
+			this->rB_marge_commerciale_5->ForeColor = System::Drawing::Color::White;
+			this->rB_marge_commerciale_5->Location = System::Drawing::Point(6, 41);
 			this->rB_marge_commerciale_5->Name = L"rB_marge_commerciale_5";
-			this->rB_marge_commerciale_5->Size = System::Drawing::Size(44, 17);
+			this->rB_marge_commerciale_5->Size = System::Drawing::Size(49, 20);
 			this->rB_marge_commerciale_5->TabIndex = 0;
 			this->rB_marge_commerciale_5->TabStop = true;
 			this->rB_marge_commerciale_5->Text = L"x5%";
@@ -3653,9 +4313,10 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			// rB_marge_commerciale_10
 			// 
 			this->rB_marge_commerciale_10->AutoSize = true;
-			this->rB_marge_commerciale_10->Location = System::Drawing::Point(6, 42);
+			this->rB_marge_commerciale_10->ForeColor = System::Drawing::Color::White;
+			this->rB_marge_commerciale_10->Location = System::Drawing::Point(6, 64);
 			this->rB_marge_commerciale_10->Name = L"rB_marge_commerciale_10";
-			this->rB_marge_commerciale_10->Size = System::Drawing::Size(50, 17);
+			this->rB_marge_commerciale_10->Size = System::Drawing::Size(56, 20);
 			this->rB_marge_commerciale_10->TabIndex = 1;
 			this->rB_marge_commerciale_10->TabStop = true;
 			this->rB_marge_commerciale_10->Text = L"x10%";
@@ -3666,6 +4327,7 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1014, 578);
 			this->Controls->Add(this->tbC_MenuPrincipal);
@@ -3704,8 +4366,6 @@ private: System::Windows::Forms::DataGridView^ dataGrid_DE_SH;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid_DE_personnel_affichage))->EndInit();
 			this->tbPage_GestionCommande->ResumeLayout(false);
 			this->tbPage_GestionCommande->PerformLayout();
-			this->groupBox20->ResumeLayout(false);
-			this->groupBox20->PerformLayout();
 			this->groupBox18->ResumeLayout(false);
 			this->groupBox18->PerformLayout();
 			this->groupBox15->ResumeLayout(false);
@@ -4907,6 +5567,16 @@ private: System::Void btn_simulation_Click(System::Object^ sender, System::Event
 	}
 
 	txtBx_resultat_statistique->Text = (Statistique->Simulation("simulation",marge,remise,demarque,TVA))->Tables["simulation"]->Rows[0]->ItemArray[0]->ToString();;
+}
+private: System::Void tbC_MenuPrincipal_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label64_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label65_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void groupBox29_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
