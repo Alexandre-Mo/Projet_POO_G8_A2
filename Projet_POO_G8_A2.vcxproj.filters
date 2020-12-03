@@ -87,6 +87,12 @@
     <ClCompile Include="CL_STAT.cpp">
       <Filter>Fichiers sources\Cmp_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="CL_svc_gestion_date.cpp">
+      <Filter>Fichiers sources\Svc_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_TBDATE.cpp">
+      <Filter>Fichiers sources\Cmp_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -147,6 +153,12 @@
       <Filter>Fichiers d%27en-tête\Svc_h</Filter>
     </ClInclude>
     <ClInclude Include="CL_STAT.h">
+      <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestion_date.h">
+      <Filter>Fichiers d%27en-tête\Svc_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_TBDATE.h">
       <Filter>Fichiers d%27en-tête\Cmp_h</Filter>
     </ClInclude>
   </ItemGroup>

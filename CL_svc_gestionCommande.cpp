@@ -28,7 +28,7 @@ namespace NS_Svc {
 	int CL_svc_gestionCommande::ajouter(String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise,int ID_client,String^ reference_commande, int ID_adresse) {
 		int id_personne;
 		TBCOMMANDE->setDate_emission(Date_emission);
-		TBCOMMANDE->setDate_payement(Date_payement);
+		TBCOMMANDE->setDate_livraison(Date_payement);
 		TBCOMMANDE->setMode_payement(Mode_payement);
 		TBCOMMANDE->setRemise(Remise);
 		TBCOMMANDE->setID_client(ID_client);
@@ -39,10 +39,10 @@ namespace NS_Svc {
 		return id_personne;
 	}
 
-	void CL_svc_gestionCommande::modifier(int id, String^ Date_emission, String^ Date_payement, String^ Mode_payement, float Remise, int ID_client, String^ reference_commande, int ID_adresse) {
+	void CL_svc_gestionCommande::modifier(int id, String^ Date_emission, String^ Date_livraison, String^ Mode_payement, float Remise, int ID_client, String^ reference_commande, int ID_adresse) {
 		TBCOMMANDE->setID_commande(id);
 		TBCOMMANDE->setDate_emission(Date_emission);
-		TBCOMMANDE->setDate_payement(Date_payement);
+		TBCOMMANDE->setDate_livraison(Date_livraison);
 		TBCOMMANDE->setMode_payement(Mode_payement);
 		TBCOMMANDE->setRemise(Remise);
 		TBCOMMANDE->setID_client(ID_client);

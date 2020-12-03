@@ -9,7 +9,7 @@ namespace NS_Composants {
     private:
         int ID_commande;
         String^ Date_emission;
-        String^ Date_payement;
+        String^ Date_livraison;
         String^ Mode_payement;
         float Remise;
         int ID_Societe;
@@ -29,7 +29,7 @@ namespace NS_Composants {
         // GETTER
         int getID_commande();
         String^ getDate_emission();
-        String^ getDate_payement();
+        String^ getDate_livraison();
         String^ getMode_payement();
         float getRemise();
         int getID_adresse();
@@ -39,7 +39,7 @@ namespace NS_Composants {
         // SETTER
         void setID_commande(int);
         void setDate_emission(String^);
-        void setDate_payement(String^);
+        void setDate_livraison(String^);
         void setMode_payement(String^);
         void setRemise(float);
         void setID_adresse(int);

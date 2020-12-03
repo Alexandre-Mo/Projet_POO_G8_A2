@@ -133,10 +133,12 @@
     <ClCompile Include="CL_svc_gestionPersonnel.cpp" />
     <ClCompile Include="CL_svc_gestionStatistique.cpp" />
     <ClCompile Include="CL_svc_gestionStock.cpp" />
+    <ClCompile Include="CL_svc_gestion_date.cpp" />
     <ClCompile Include="CL_TBADRESSE.cpp" />
     <ClCompile Include="CL_TBARTICLE.cpp" />
     <ClCompile Include="CL_TBCLIENT.cpp" />
     <ClCompile Include="CL_TBCOMMANDE.cpp" />
+    <ClCompile Include="CL_TBDATE.cpp" />
     <ClCompile Include="CL_TBLIGNECOMMANDE.cpp" />
     <ClCompile Include="CL_TBNATURE.cpp" />
     <ClCompile Include="CL_TBPERSONNEL.cpp" />
@@ -155,10 +157,12 @@
     <ClInclude Include="CL_svc_gestionPersonnel.h" />
     <ClInclude Include="CL_svc_gestionStatistique.h" />
     <ClInclude Include="CL_svc_gestionStock.h" />
+    <ClInclude Include="CL_svc_gestion_date.h" />
     <ClInclude Include="CL_TBADRESSE.h" />
     <ClInclude Include="CL_TBARTICLE.h" />
     <ClInclude Include="CL_TBCLIENT.h" />
     <ClInclude Include="CL_TBCOMMANDE.h" />
+    <ClInclude Include="CL_TBDATE.h" />
     <ClInclude Include="CL_TBLIGNECOMMANDE.h" />
     <ClInclude Include="CL_TBNATURE.h" />
     <ClInclude Include="CL_TBPERSONNEL.h" />

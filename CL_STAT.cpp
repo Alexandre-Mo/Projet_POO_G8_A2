@@ -12,10 +12,10 @@ namespace NS_Composants {
 	}
 
 	String^ CL_STAT::SELECTArticlePlusVendus(void) {
-		return "SELECT TOP 10 SUM(Quantite_produit) AS Quantite_produit,Reference_article,Couleur FROM((dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article)INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur) GROUP BY dbo.Article.Reference_article, Couleur ORDER BY Quantite_produit DESC";
+		return "SELECT TOP 10 SUM(Quantite_produit) AS Quantite_produit,Reference_article,Couleur FROM((dbo.Ligne_commande RIGHT JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article)INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur) GROUP BY dbo.Article.Reference_article, Couleur ORDER BY Quantite_produit DESC";
 	}
 	String^ CL_STAT::SELECTArticleMoinsVendus(void) {
-		return "SELECT TOP 10 SUM(Quantite_produit) AS Quantite_produit,Reference_article,Couleur FROM((dbo.Ligne_commande INNER JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article)INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur) GROUP BY dbo.Article.Reference_article, Couleur ORDER BY Quantite_produit ASC";
+		return "SELECT TOP 10 SUM(Quantite_produit) AS Quantite_produit,Reference_article,Couleur FROM((dbo.Ligne_commande RIGHT JOIN dbo.Article ON dbo.Ligne_commande.ID_article = dbo.Article.ID_article)INNER JOIN dbo.Nature ON dbo.Article.ID_couleur = dbo.Nature.ID_couleur) GROUP BY dbo.Article.Reference_article, Couleur ORDER BY Quantite_produit ASC";
 	}
 	String^ CL_STAT::SELECTChiffreAffaireMois(void) {
 		return "SELECT SUM(Quantite_Produit*Prix_unitaire_HT)FROM(SELECT Quantite_Produit, ID_article FROM dbo.Ligne_commande INNER JOIN dbo.Commande ON dbo.Ligne_commande.ID_commande = dbo.Commande.ID_commande WHERE MONTH(Date_emission) = "+ Convert::ToInt32(getmois()) +")AS TEST1 INNER JOIN dbo.Article ON TEST1.ID_article = dbo.Article.ID_article";
@@ -39,7 +39,7 @@ namespace NS_Composants {
 	}
 
 	String^ CL_STAT::SELECTSimulation() {
-		return "SELECT TEST1.Valeur_Achat + (TEST1.Valeur_Achat * "+getmarge().ToString()->Replace(",",".")+") + (TEST1.Valeur_Achat * " + getdemarque().ToString()->Replace(",", ".") + ") + (TEST1.Valeur_Achat * " + getTVA().ToString()->Replace(",", ".") + ") + (TEST1.Valeur_Achat *" + getremise().ToString()->Replace(",", ".") + ")FROM(SELECT SUM(Quantite_stock * Prix_unitaire_HT) AS Valeur_Achat FROM dbo.Article) AS TEST1";
+		return "SELECT TEST1.Valeur_Achat + (TEST1.Valeur_Achat * "+getmarge().ToString()->Replace(",",".")+") + (TEST1.Valeur_Achat * " + getdemarque().ToString()->Replace(",", ".") + ") + (TEST1.Valeur_Achat * " + getTVA().ToString()->Replace(",", ".") + ") - (TEST1.Valeur_Achat *" + getremise().ToString()->Replace(",", ".") + ")FROM(SELECT SUM(Quantite_stock * Prix_unitaire_HT) AS Valeur_Achat FROM dbo.Article) AS TEST1";
 	}
 
 	// GETTER
