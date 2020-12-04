@@ -33,9 +33,6 @@ namespace NS_Composants {
 	int CL_TBPERSONNEL::getID_personnel() {
 		return this->ID_personnel;
 	}
-	int CL_TBPERSONNEL::getIDSup_personnel() {
-		return this->IDSup_personnel;
-	}
 	String^ CL_TBPERSONNEL::getDE_personnel() {
 		return this->DE_personnel;
 	}

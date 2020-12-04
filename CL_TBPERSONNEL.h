@@ -23,7 +23,7 @@ namespace NS_Composants {
 
 		// GETTER
 		int getID_personnel();
-		int getIDSup_personnel();
+		//int getIDSup_personnel();
 		String^ getDE_personnel();
 		String^ getNom_personnel();
 		String^ getPrenom_personnel();
